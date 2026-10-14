@@ -1,0 +1,1026 @@
+numeroDex;nome;regiao;tipo1;tipo2;altura;peso;descricao;curiosidade
+1;Bulbasaur;Kanto;Planta;Veneno;0.7;6.9;Carrega uma semente nas costas desde que nasce.;É o número 1 da Pokédex nacional e um dos iniciais de Kanto.
+2;Ivysaur;Kanto;Planta;Veneno;1.0;13.0;O bulbo nas costas cresce e vira um botão de flor.;Evolui para Venusaur no nível 32.
+3;Venusaur;Kanto;Planta;Veneno;2.0;100.0;Uma grande flor nas costas absorve a luz do sol.;Possui Mega Evolução em alguns jogos.
+4;Charmander;Kanto;Fogo;;0.6;8.5;Tem uma chama na ponta da cauda que mostra o seu estado de saúde.;É um dos iniciais de Kanto.
+5;Charmeleon;Kanto;Fogo;;1.1;19.0;Tem temperamento agressivo e usa as garras afiadas em batalha.;Evolui para Charizard no nível 36.
+6;Charizard;Kanto;Fogo;Voador;1.7;90.5;Voa pelos céus e solta fogo muito quente.;Apesar da aparência, não é do tipo Dragão.
+7;Squirtle;Kanto;Água;;0.5;9.0;Se esconde no casco e dispara jatos de água.;É um dos iniciais de Kanto.
+8;Wartortle;Kanto;Água;;1.0;22.5;As orelhas e a cauda peludas ajudam no equilíbrio ao nadar.;Evolui para Blastoise no nível 36.
+9;Blastoise;Kanto;Água;;1.6;85.5;Tem canhões de água no casco com muita potência.;Possui Mega Evolução em alguns jogos.
+10;Caterpie;Kanto;Inseto;;0.3;2.9;Larva que solta fios para se prender e se proteger.;Evolui bem cedo, no nível 7.
+11;Metapod;Kanto;Inseto;;0.7;9.9;Fica quase imóvel dentro do casulo enquanto se prepara para evoluir.;Evolui para Butterfree no nível 10.
+12;Butterfree;Kanto;Inseto;Voador;1.1;32.0;Borboleta que espalha pó colorido pelas asas.;Possui forma Gigantamax.
+13;Weedle;Kanto;Inseto;Veneno;0.3;3.2;Tem um ferrão venenoso na cabeça.;Evolui para Kakuna no nível 7.
+14;Kakuna;Kanto;Inseto;Veneno;0.6;10.0;Casulo duro que quase não se mexe.;Evolui para Beedrill no nível 10.
+15;Beedrill;Kanto;Inseto;Veneno;1.0;29.5;Ataca em bando com os ferrões das patas dianteiras.;Possui Mega Evolução em alguns jogos.
+16;Pidgey;Kanto;Normal;Voador;0.3;1.8;Pássaro dócil que levanta areia para se defender.;Evolui para Pidgeotto no nível 18.
+17;Pidgeotto;Kanto;Normal;Voador;1.1;30.0;Voa por um grande território procurando presas.;Evolui para Pidgeot no nível 36.
+18;Pidgeot;Kanto;Normal;Voador;1.5;39.5;Voa em alta velocidade e tem uma plumagem vistosa.;Possui Mega Evolução em alguns jogos.
+19;Rattata;Kanto;Normal;;0.3;3.5;Roedor que se adapta a qualquer lugar e rói quase tudo.;Na região de Alola tem uma forma do tipo Sombrio e Normal.
+20;Raticate;Kanto;Normal;;0.7;18.5;Seus dentes grandes crescem sem parar.;Evolui de Rattata no nível 20.
+21;Spearow;Kanto;Normal;Voador;0.3;2.0;Pássaro pequeno e agressivo que grita alto.;Evolui para Fearow no nível 20.
+22;Fearow;Kanto;Normal;Voador;1.2;38.0;Tem o bico longo e fino e voa por muito tempo sem pousar.;Evolui de Spearow no nível 20.
+23;Ekans;Kanto;Veneno;;2.0;6.9;Serpente que enrola o corpo antes de dar o bote.;O nome vem de snake escrito ao contrário.
+24;Arbok;Kanto;Veneno;;3.5;65.0;Tem um padrão assustador no pescoço para intimidar.;O nome vem de kobra escrito ao contrário.
+25;Pikachu;Kanto;Elétrico;;0.4;6.0;Armazena eletricidade nas bochechas.;É o mascote da franquia Pokémon.
+26;Raichu;Kanto;Elétrico;;0.8;30.0;Solta descargas fortes e usa a cauda para descarregar a energia.;Evolui de Pikachu com a Pedra do Trovão.
+27;Sandshrew;Kanto;Terra;;0.6;12.0;Se enrola numa bola para se proteger.;Em Alola tem uma forma do tipo Gelo e Aço.
+28;Sandslash;Kanto;Terra;;1.0;29.5;Os espinhos nas costas são muito afiados.;Evolui de Sandshrew no nível 22.
+29;Nidoran♀;Kanto;Veneno;;0.4;7.0;Pequena fêmea com espinhos que soltam veneno.;O símbolo de fêmea faz parte do nome.
+30;Nidorina;Kanto;Veneno;;0.8;20.0;Tem um chifre pequeno e cuida muito bem do grupo.;Evolui para Nidoqueen com a Pedra da Lua.
+31;Nidoqueen;Kanto;Veneno;Terra;1.3;60.0;Tem o corpo coberto de escamas duras.;É do tipo Veneno e Terra.
+32;Nidoran♂;Kanto;Veneno;;0.5;9.0;Pequeno macho com orelhas grandes e um chifre com veneno.;O símbolo de macho faz parte do nome.
+33;Nidorino;Kanto;Veneno;;0.9;19.5;Tem um chifre duro e é bem agressivo.;Evolui para Nidoking com a Pedra da Lua.
+34;Nidoking;Kanto;Veneno;Terra;1.4;62.0;Tem uma cauda grossa e muito forte.;É do tipo Veneno e Terra.
+35;Clefairy;Kanto;Fada;;0.6;7.5;Pokémon pequeno e fofo visto em noites de lua cheia.;Antes era do tipo Normal e hoje é do tipo Fada.
+36;Clefable;Kanto;Fada;;1.3;40.0;Tem audição muito boa e costuma fugir dos humanos.;Evolui de Clefairy com a Pedra da Lua.
+37;Vulpix;Kanto;Fogo;;0.6;9.9;Tem seis caudas que ficam mais quentes com o tempo.;Em Alola tem uma forma do tipo Gelo.
+38;Ninetales;Kanto;Fogo;;1.1;19.9;Tem nove caudas e dizem que vive por muito tempo.;Evolui de Vulpix com a Pedra do Fogo.
+39;Jigglypuff;Kanto;Normal;Fada;0.5;5.5;Canta uma melodia que faz os outros dormirem.;Hoje é do tipo Normal e Fada.
+40;Wigglytuff;Kanto;Normal;Fada;1.0;12.0;Tem a pelagem macia e o corpo elástico que incha.;Evolui de Jigglypuff com a Pedra da Lua.
+41;Zubat;Kanto;Veneno;Voador;0.8;7.5;Vive em cavernas e usa ondas sonoras para se orientar.;Evolui para Golbat no nível 22.
+42;Golbat;Kanto;Veneno;Voador;1.6;55.0;Tem presas afiadas e suga o sangue das presas.;Evolui para Crobat por amizade.
+43;Oddish;Kanto;Planta;Veneno;0.5;5.4;Planta que anda durante a noite espalhando sementes.;Evolui para Gloom no nível 21.
+44;Gloom;Kanto;Planta;Veneno;0.8;8.6;Libera um cheiro forte pelo pistilo.;Evolui para Vileplume com a Pedra da Folha.
+45;Vileplume;Kanto;Planta;Veneno;1.2;18.6;Tem a maior pétala entre os Pokémon e espalha pólen.;Evolui de Gloom com a Pedra da Folha.
+46;Paras;Kanto;Inseto;Planta;0.3;5.4;Tem cogumelos nas costas que crescem junto com ele.;É do tipo Inseto e Planta.
+47;Parasect;Kanto;Inseto;Planta;1.0;29.5;O cogumelo nas costas controla o corpo do hospedeiro.;Evolui de Paras no nível 24.
+48;Venonat;Kanto;Inseto;Veneno;1.0;30.0;Os olhos grandes funcionam como radares.;Evolui para Venomoth no nível 31.
+49;Venomoth;Kanto;Inseto;Veneno;1.5;12.5;Tem asas cobertas de pó venenoso.;É do tipo Inseto e Veneno.
+50;Diglett;Kanto;Terra;;0.2;0.8;Vive debaixo da terra e só mostra a cabeça.;Em Alola tem uma forma do tipo Terra e Aço.
+51;Dugtrio;Kanto;Terra;;0.7;33.3;Três Diglett trabalham juntos cavando túneis.;Evolui de Diglett no nível 26.
+52;Meowth;Kanto;Normal;;0.4;4.2;Gosta de objetos brilhantes, principalmente moedas.;É famoso por falar na série animada.
+53;Persian;Kanto;Normal;;1.0;32.0;Tem um corpo elegante e ataca em silêncio.;Evolui de Meowth no nível 28.
+54;Psyduck;Kanto;Água;;0.8;19.6;Sofre de dores de cabeça constantes.;Usa poderes psíquicos quando a dor aumenta.
+55;Golduck;Kanto;Água;;1.7;76.6;Nada muito rápido graças às membranas nas patas.;Evolui de Psyduck no nível 33.
+56;Mankey;Kanto;Lutador;;0.5;28.0;Se irrita com facilidade e vive em bandos.;Evolui para Primeape no nível 28.
+57;Primeape;Kanto;Lutador;;1.0;32.0;Fica furioso fácil e ataca sem pensar.;Em jogos mais recentes ganhou uma nova evolução, o Annihilape.
+58;Growlithe;Kanto;Fogo;;0.7;19.0;Cachorro leal que protege o seu treinador.;Evolui para Arcanine com a Pedra do Fogo.
+59;Arcanine;Kanto;Fogo;;1.9;155.0;Corre muito rápido e é muito respeitado.;Evolui de Growlithe com a Pedra do Fogo.
+60;Poliwag;Kanto;Água;;0.6;12.4;Vive na água e tem uma espiral na barriga.;Evolui para Poliwhirl no nível 25.
+61;Poliwhirl;Kanto;Água;;1.0;20.0;A espiral na barriga fica mais evidente e o corpo, mais firme.;Pode evoluir para Poliwrath ou Politoed.
+62;Poliwrath;Kanto;Água;Lutador;1.3;54.0;Nada muito bem e tem músculos fortes.;É do tipo Água e Lutador.
+63;Abra;Kanto;Psíquico;;0.9;19.5;Dorme quase o dia todo e usa teletransporte para fugir.;Evolui para Kadabra no nível 16.
+64;Kadabra;Kanto;Psíquico;;1.3;56.5;Emite ondas que atrapalham aparelhos eletrônicos.;Evolui para Alakazam por troca.
+65;Alakazam;Kanto;Psíquico;;1.5;48.0;Tem poderes psíquicos e um QI altíssimo.;Possui Mega Evolução em alguns jogos.
+66;Machop;Kanto;Lutador;;0.8;19.5;Treina os músculos sem parar e levanta pesos enormes.;Evolui para Machoke no nível 28.
+67;Machoke;Kanto;Lutador;;1.5;70.5;Usa um cinto para controlar a própria força.;Evolui para Machamp por troca.
+68;Machamp;Kanto;Lutador;;1.6;130.0;Tem quatro braços para golpear em alta velocidade.;Possui forma Gigantamax.
+69;Bellsprout;Kanto;Planta;Veneno;0.7;4.0;Tem o corpo fino e lembra uma planta.;Evolui para Weepinbell no nível 21.
+70;Weepinbell;Kanto;Planta;Veneno;1.0;6.4;Usa a boca grande para engolir presas.;Evolui para Victreebel com a Pedra da Folha.
+71;Victreebel;Kanto;Planta;Veneno;1.7;15.5;Atrai as presas com um cheiro doce.;É do tipo Planta e Veneno.
+72;Tentacool;Kanto;Água;Veneno;0.9;45.5;Parece uma água-viva e flutua pelo mar.;Evolui para Tentacruel no nível 30.
+73;Tentacruel;Kanto;Água;Veneno;1.6;55.0;Tem muitos tentáculos que podem crescer de novo.;É do tipo Água e Veneno.
+74;Geodude;Kanto;Pedra;Terra;0.4;20.0;Parece uma pedra e é comum em montanhas.;Em Alola tem uma forma do tipo Pedra e Elétrico.
+75;Graveler;Kanto;Pedra;Terra;1.0;105.0;Rola montanha abaixo sem se machucar.;Evolui para Golem por troca.
+76;Golem;Kanto;Pedra;Terra;1.4;300.0;Tem uma casca dura como uma armadura.;É do tipo Pedra e Terra.
+77;Ponyta;Kanto;Fogo;;1.0;30.0;Parece um cavalo e tem a crina de fogo.;Em Galar tem uma forma do tipo Psíquico.
+78;Rapidash;Kanto;Fogo;;1.7;95.0;Corre em grande velocidade e enfrenta qualquer obstáculo.;Evolui de Ponyta no nível 40.
+79;Slowpoke;Kanto;Água;Psíquico;1.2;36.0;É lento e distraído e demora para reagir.;Pode evoluir para Slowbro ou Slowking.
+80;Slowbro;Kanto;Água;Psíquico;1.6;78.5;Tem um Shellder preso à cauda.;É do tipo Água e Psíquico.
+81;Magnemite;Kanto;Elétrico;Aço;0.3;6.0;Flutua usando ímãs e eletromagnetismo.;É do tipo Elétrico e Aço.
+82;Magneton;Kanto;Elétrico;Aço;1.0;60.0;É formado por três Magnemite ligados.;Evolui para Magnezone em locais com campo magnético.
+83;Farfetch'd;Kanto;Normal;Voador;0.8;15.0;Carrega sempre um talo de alho-poró.;Tem uma forma regional em Galar.
+84;Doduo;Kanto;Normal;Voador;1.4;39.2;É um pássaro de duas cabeças que corre rápido.;Evolui para Dodrio no nível 31.
+85;Dodrio;Kanto;Normal;Voador;1.8;85.2;Tem três cabeças que pensam de modo independente.;É do tipo Normal e Voador.
+86;Seel;Kanto;Água;;1.1;90.0;Vive no gelo e é um ótimo nadador.;Evolui para Dewgong no nível 34.
+87;Dewgong;Kanto;Água;Gelo;1.7;120.0;Gosta de água fria e tem a pelagem branca.;É do tipo Água e Gelo.
+88;Grimer;Kanto;Veneno;;0.9;30.0;É uma massa de lodo tóxico.;Em Alola tem uma forma do tipo Veneno e Sombrio.
+89;Muk;Kanto;Veneno;;1.2;30.0;Tem um corpo de lodo venenoso que contamina o ambiente.;Evolui de Grimer no nível 38.
+90;Shellder;Kanto;Água;;0.3;4.0;Se protege dentro de uma concha muito dura.;Evolui para Cloyster com a Pedra da Água.
+91;Cloyster;Kanto;Água;Gelo;1.5;132.5;Tem uma concha cheia de pontas quase indestrutível.;É do tipo Água e Gelo.
+92;Gastly;Kanto;Fantasma;Veneno;1.3;0.1;É feito de gás e flutua assustando as pessoas.;Evolui para Haunter no nível 25.
+93;Haunter;Kanto;Fantasma;Veneno;1.6;0.1;Lambe as pessoas com a língua e drena as suas forças.;Evolui para Gengar por troca.
+94;Gengar;Kanto;Fantasma;Veneno;1.5;40.5;Se esconde nas sombras e imita as pessoas.;Possui Mega Evolução em alguns jogos.
+95;Onix;Kanto;Pedra;Terra;8.8;210.0;É uma serpente de pedra que vive no subsolo.;Evolui para Steelix por troca segurando um item especial.
+96;Drowzee;Kanto;Psíquico;;1.0;32.4;Come os sonhos das pessoas.;Evolui para Hypno no nível 26.
+97;Hypno;Kanto;Psíquico;;1.6;75.6;Carrega um pêndulo para hipnotizar os outros.;É do tipo Psíquico.
+98;Krabby;Kanto;Água;;0.4;6.5;É um caranguejo com garras fortes.;Evolui para Kingler no nível 28.
+99;Kingler;Kanto;Água;;1.3;60.0;Tem uma garra gigante com muito poder.;Possui forma Gigantamax.
+100;Voltorb;Kanto;Elétrico;;0.5;10.4;Parece uma Poké Bola.;Pode explodir quando fica sobrecarregado.
+101;Electrode;Kanto;Elétrico;;1.2;66.6;Explode com a menor irritação.;Evolui de Voltorb no nível 30.
+102;Exeggcute;Kanto;Planta;Psíquico;0.4;2.5;São seis ovos que se comunicam por telepatia.;Evolui para Exeggutor com a Pedra da Folha.
+103;Exeggutor;Kanto;Planta;Psíquico;2.0;120.0;Parece uma palmeira com várias cabeças.;Em Alola tem uma forma do tipo Planta e Dragão.
+104;Cubone;Kanto;Terra;;0.4;6.5;Usa o crânio da mãe como capacete.;Evolui para Marowak no nível 28.
+105;Marowak;Kanto;Terra;;1.0;45.0;Maneja um osso como arma.;Em Alola tem uma forma do tipo Fogo e Fantasma.
+106;Hitmonlee;Kanto;Lutador;;1.5;49.8;Dá chutes muito poderosos.;É uma das evoluções de Tyrogue.
+107;Hitmonchan;Kanto;Lutador;;1.4;50.2;Dá socos muito rápidos.;Também evolui de Tyrogue.
+108;Lickitung;Kanto;Normal;;1.2;65.5;Tem uma língua muito comprida.;Evolui para Lickilicky em jogos mais recentes.
+109;Koffing;Kanto;Veneno;;0.6;1.0;Flutua soltando gás tóxico.;Evolui para Weezing no nível 35.
+110;Weezing;Kanto;Veneno;;1.2;9.5;Tem dois corpos de gás ligados.;Em Galar tem uma forma do tipo Veneno e Fada.
+111;Rhyhorn;Kanto;Terra;Pedra;1.0;115.0;Corre em linha reta e derruba tudo.;Evolui para Rhydon no nível 42.
+112;Rhydon;Kanto;Terra;Pedra;1.9;120.0;Tem um chifre que funciona como broca.;Evolui para Rhyperior por troca com item.
+113;Chansey;Kanto;Normal;;1.1;34.6;Carrega um ovo nutritivo na bolsa.;Evolui para Blissey por amizade.
+114;Tangela;Kanto;Planta;;1.0;35.0;Tem cipós que cobrem todo o corpo.;Evolui para Tangrowth em jogos mais recentes.
+115;Kangaskhan;Kanto;Normal;;2.2;80.0;Cuida do filhote na bolsa da barriga.;Possui Mega Evolução em alguns jogos.
+116;Horsea;Kanto;Água;;0.4;8.0;É um cavalo-marinho que dispara tinta.;Evolui para Seadra no nível 32.
+117;Seadra;Kanto;Água;;1.2;25.0;Tem espinhos venenosos pelo corpo.;Evolui para Kingdra por troca com item.
+118;Goldeen;Kanto;Água;;0.6;15.0;É um peixe elegante com um chifre na testa.;Evolui para Seaking no nível 33.
+119;Seaking;Kanto;Água;;1.3;39.0;Usa o chifre para abrir buracos em rochas.;É do tipo Água.
+120;Staryu;Kanto;Água;;0.8;34.5;É uma estrela-do-mar com o núcleo vermelho.;Evolui para Starmie com a Pedra da Água.
+121;Starmie;Kanto;Água;Psíquico;1.1;80.0;O núcleo brilha em várias cores.;É do tipo Água e Psíquico.
+122;Mr. Mime;Kanto;Psíquico;Fada;1.3;54.5;Cria barreiras invisíveis com mímica.;Em Galar tem uma forma do tipo Gelo e Psíquico.
+123;Scyther;Kanto;Inseto;Voador;1.5;56.0;Tem lâminas afiadas nos braços.;Evolui para Scizor por troca com item.
+124;Jynx;Kanto;Gelo;Psíquico;1.4;40.6;Tem cabelo loiro e se move como se dançasse.;É do tipo Gelo e Psíquico.
+125;Electabuzz;Kanto;Elétrico;;1.1;30.0;Se alimenta de eletricidade.;Evolui para Electivire por troca com item.
+126;Magmar;Kanto;Fogo;;1.3;44.5;Tem o corpo feito de fogo.;Evolui para Magmortar por troca com item.
+127;Pinsir;Kanto;Inseto;;1.5;55.0;Tem chifres em forma de pinça.;Possui Mega Evolução em alguns jogos.
+128;Tauros;Kanto;Normal;;1.4;88.4;Parece um touro e bate a cauda para se irritar.;Em Paldea tem formas regionais.
+129;Magikarp;Kanto;Água;;0.9;10.0;É fraco e quase só se debate.;Evolui para Gyarados no nível 20.
+130;Gyarados;Kanto;Água;Voador;6.5;235.0;É uma serpente furiosa que destrói tudo por perto.;Possui Mega Evolução em alguns jogos.
+131;Lapras;Kanto;Água;Gelo;2.5;220.0;Transporta pessoas pelo mar.;Possui forma Gigantamax.
+132;Ditto;Kanto;Normal;;0.3;4.0;Se transforma em outros Pokémon.;Pode se reproduzir com quase qualquer Pokémon nos jogos.
+133;Eevee;Kanto;Normal;;0.3;6.5;Tem uma evolução instável que depende do ambiente.;Possui várias evoluções, conhecidas como Eeveelutions.
+134;Vaporeon;Kanto;Água;;1.0;29.0;Vive perto da água e tem uma cauda parecida com a de um peixe.;Evolui de Eevee com a Pedra da Água.
+135;Jolteon;Kanto;Elétrico;;0.8;24.5;Tem pelos que soltam eletricidade.;Evolui de Eevee com a Pedra do Trovão.
+136;Flareon;Kanto;Fogo;;0.9;25.0;Tem o corpo quente e uma pelagem fofa.;Evolui de Eevee com a Pedra do Fogo.
+137;Porygon;Kanto;Normal;;0.8;36.5;É um Pokémon artificial feito de dados.;Foi o primeiro Pokémon criado de forma artificial.
+138;Omanyte;Kanto;Pedra;Água;0.4;7.5;É um molusco antigo que vive em conchas.;É revivido a partir de um fóssil.
+139;Omastar;Kanto;Pedra;Água;1.0;35.0;Tem tentáculos que usa para capturar presas.;Evolui de Omanyte no nível 40.
+140;Kabuto;Kanto;Pedra;Água;0.5;11.5;É um crustáceo antigo parecido com um caranguejo-ferradura.;É revivido a partir de um fóssil.
+141;Kabutops;Kanto;Pedra;Água;1.3;40.5;Tem lâminas nos braços e é um caçador ágil.;Evolui de Kabuto no nível 40.
+142;Aerodactyl;Kanto;Pedra;Voador;1.8;59.0;É um pterodáctilo que voava na pré-história.;Possui Mega Evolução em alguns jogos.
+143;Snorlax;Kanto;Normal;;2.1;460.0;Dorme muito e come muito.;Costuma bloquear caminhos nos jogos.
+144;Articuno;Kanto;Gelo;Voador;1.7;55.4;É um pássaro lendário do gelo.;É um dos três pássaros lendários de Kanto.
+145;Zapdos;Kanto;Elétrico;Voador;1.6;52.6;É um pássaro lendário que controla raios.;É um dos três pássaros lendários de Kanto.
+146;Moltres;Kanto;Fogo;Voador;2.0;60.0;É um pássaro lendário que controla o fogo.;É um dos três pássaros lendários de Kanto.
+147;Dratini;Kanto;Dragão;;1.8;3.3;É um dragão raro que troca de pele ao crescer.;Evolui para Dragonair no nível 30.
+148;Dragonair;Kanto;Dragão;;4.0;16.5;Controla o clima e é muito elegante.;Evolui para Dragonite no nível 55.
+149;Dragonite;Kanto;Dragão;Voador;2.2;210.0;Voa em grande velocidade apesar do tamanho.;É do tipo Dragão e Voador.
+150;Mewtwo;Kanto;Psíquico;;2.0;122.0;Foi criado por engenharia genética a partir do Mew.;Possui duas Mega Evoluções.
+151;Mew;Kanto;Psíquico;;0.4;4.0;Diz-se que contém o DNA de todos os Pokémon.;É um Pokémon mítico.
+152;Chikorita;Johto;Planta;;0.9;6.4;Balança a folha em batalha para afastar o inimigo e acalma todos com seu perfume suave.;Evolui para Bayleef. Apareceu pela primeira vez na 2ª geração.
+153;Bayleef;Johto;Planta;;1.2;15.8;Tem um colar de folhas enroladas no pescoço, e em cada uma há um pequeno broto de árvore.;Evolui de Chikorita e evolui para Meganium. Apareceu pela primeira vez na 2ª geração.
+154;Meganium;Johto;Planta;;1.8;100.5;O perfume da flor acalma as emoções e, em batalha, enfraquece o ânimo do adversário.;Evolui de Bayleef. Apareceu pela primeira vez na 2ª geração.
+155;Cyndaquil;Johto;Fogo;;0.5;7.9;Vive tímido, enrolado como uma bola, mas esconde um poder de fogo enorme.;Evolui para Quilava. Apareceu pela primeira vez na 2ª geração.
+156;Quilava;Johto;Fogo;;0.9;19.0;Seu pelo é misterioso: nenhuma chama consegue queimá-lo.;Evolui de Cyndaquil e evolui para Typhlosion. Apareceu pela primeira vez na 2ª geração.
+157;Typhlosion;Johto;Fogo;;1.7;79.5;Dizem que purifica almas perdidas com suas chamas e as guia para o além.;Evolui de Quilava. Apareceu pela primeira vez na 2ª geração.
+158;Totodile;Johto;Água;;0.6;9.5;Mesmo pequeno, tem mandíbulas poderosas, e uma simples mordida de brincadeira pode machucar de verdade.;Evolui para Croconaw. Apareceu pela primeira vez na 2ª geração.
+159;Croconaw;Johto;Água;;1.1;25.0;Depois de fechar as mandíbulas no oponente, nunca mais solta.;Evolui de Totodile e evolui para Feraligatr. Apareceu pela primeira vez na 2ª geração.
+160;Feraligatr;Johto;Água;;2.3;88.8;Abre a boca enorme para intimidar e ataca com a força das patas traseiras.;Evolui de Croconaw. Apareceu pela primeira vez na 2ª geração.
+161;Sentret;Johto;Normal;;0.8;6.0;Quando dorme, outro Sentret fica de guarda e acorda os demais ao primeiro sinal de perigo.;Evolui para Furret. Apareceu pela primeira vez na 2ª geração.
+162;Furret;Johto;Normal;;1.8;32.5;Tem o corpo comprido e fino e escapa de ataques passando por frestas estreitas.;Evolui de Sentret. Apareceu pela primeira vez na 2ª geração.
+163;Hoothoot;Johto;Normal;Voador;0.7;21.2;Pia sempre na mesma hora do dia, e alguns treinadores o usam no lugar de relógio.;Evolui para Noctowl. Apareceu pela primeira vez na 2ª geração.
+164;Noctowl;Johto;Normal;Voador;1.6;40.8;Para pensar melhor, gira a cabeça em 180 graus.;Evolui de Hoothoot. Apareceu pela primeira vez na 2ª geração.
+165;Ledyba;Johto;Inseto;Voador;1.0;10.8;Muito medroso, junta-se aos outros e usa Reflect para proteger o ninho.;Evolui para Ledian. Apareceu pela primeira vez na 2ª geração.
+166;Ledian;Johto;Inseto;Voador;1.4;35.6;Voa à noite espalhando um pó brilhante que, segundo dizem, traz boa sorte.;Evolui de Ledyba. Apareceu pela primeira vez na 2ª geração.
+167;Spinarak;Johto;Inseto;Veneno;0.5;8.5;O veneno das presas é fraco, mas basta para enfraquecer as presas presas na teia.;Evolui para Ariados. Apareceu pela primeira vez na 2ª geração.
+168;Ariados;Johto;Inseto;Veneno;1.1;33.5;Solta fios pela boca para capturar a presa e sai da teia para caçar à noite.;Evolui de Spinarak. Apareceu pela primeira vez na 2ª geração.
+169;Crobat;Johto;Veneno;Voador;1.8;75.0;As patas de trás viraram outro par de asas, e ele voa com precisão até em cavernas apertadas.;Evolui de Golbat. Apareceu pela primeira vez na 2ª geração.
+170;Chinchou;Johto;Água;Elétrico;0.5;12.0;No fundo escuro do oceano, só se comunica piscando suas luzes.;Evolui para Lanturn. Apareceu pela primeira vez na 2ª geração.
+171;Lanturn;Johto;Água;Elétrico;1.2;22.5;Emite uma luz forte que cega a presa e abre espaço para um ataque elétrico.;Evolui de Chinchou. Apareceu pela primeira vez na 2ª geração.
+172;Pichu;Johto;Elétrico;;0.3;2.0;Guarda eletricidade nas bochechas, mas solta sem querer quando fica agitado.;É um Pokémon bebê. Evolui para Pikachu. Apareceu pela primeira vez na 2ª geração.
+173;Cleffa;Johto;Fada;;0.3;3.0;Sua silhueta lembra uma estrela brilhante, e eles dançam juntos quando chove meteoros.;É um Pokémon bebê. Evolui para Clefairy. Apareceu pela primeira vez na 2ª geração.
+174;Igglybuff;Johto;Normal;Fada;0.3;1.0;Aproveita a maciez do corpo para se mover como se estivesse quicando.;É um Pokémon bebê. Evolui para Jigglypuff. Apareceu pela primeira vez na 2ª geração.
+175;Togepi;Johto;Fada;;0.3;1.5;Costuma ser confundido com um ovo andando nos campos e nas montanhas.;É um Pokémon bebê. Evolui para Togetic. Apareceu pela primeira vez na 2ª geração.
+176;Togetic;Johto;Fada;Voador;0.6;3.2;Nunca foi visto na natureza e dizem que evolui sob o carinho de um humano de confiança.;Evolui de Togepi e evolui para Togekiss. Apareceu pela primeira vez na 2ª geração.
+177;Natu;Johto;Psíquico;Voador;0.2;2.0;Como as asas ainda não cresceram, precisa pular para se locomover.;Evolui para Xatu. Apareceu pela primeira vez na 2ª geração.
+178;Xatu;Johto;Psíquico;Voador;1.5;15.0;Enxerga o passado e o futuro, e passa o dia observando o movimento do sol.;Evolui de Natu. Apareceu pela primeira vez na 2ª geração.
+179;Mareep;Johto;Elétrico;;0.6;7.8;Esfregar sua lã gera eletricidade, e tocá-lo com a mão nua dá um choque doloroso.;Evolui para Flaaffy. Apareceu pela primeira vez na 2ª geração.
+180;Flaaffy;Johto;Elétrico;;0.8;13.3;Guarda eletricidade na lã macia, e se acumular demais, começa a ficar careca em alguns pontos.;Evolui de Mareep e evolui para Ampharos. Apareceu pela primeira vez na 2ª geração.
+181;Ampharos;Johto;Elétrico;;1.4;61.5;A cauda brilha forte e, desde muito tempo, serve de farol para os marinheiros.;Evolui de Flaaffy. Apareceu pela primeira vez na 2ª geração.
+182;Bellossom;Johto;Planta;;0.4;5.8;Reúnem-se e parecem dançar, num ritual que dizem chamar o sol.;Evolui de Gloom. Apareceu pela primeira vez na 2ª geração.
+183;Marill;Johto;Água;Fada;0.4;8.5;Mesmo depois de nadar no mar frio, seu pelo repelente à água seca quase na hora.;Evolui de Azurill e evolui para Azumarill. Apareceu pela primeira vez na 2ª geração.
+184;Azumarill;Johto;Água;Fada;0.8;28.5;Cria bolhas de ar e cobre os Azurill com elas quando eles brincam no rio.;Evolui de Marill. Apareceu pela primeira vez na 2ª geração.
+185;Sudowoodo;Johto;Pedra;;1.2;38.0;Finge ser uma árvore, mas nem as crianças se enganam, pois o corpo parece mais pedra do que casca.;Evolui de Bonsly. Apareceu pela primeira vez na 2ª geração.
+186;Politoed;Johto;Água;;1.1;33.9;O grito do macho é mais alto, e os de voz grave e ameaçadora fazem mais sucesso.;Evolui de Poliwhirl. Apareceu pela primeira vez na 2ª geração.
+187;Hoppip;Johto;Planta;Voador;0.4;0.5;Flutua levado pelo vento e, se sente vento forte, une as folhas às de outros para não ser levado.;Evolui para Skiploom. Apareceu pela primeira vez na 2ª geração.
+188;Skiploom;Johto;Planta;Voador;0.6;1.0;A flor desabrocha quando a temperatura passa de 18 graus Celsius.;Evolui de Hoppip e evolui para Jumpluff. Apareceu pela primeira vez na 2ª geração.
+189;Jumpluff;Johto;Planta;Voador;0.8;3.0;Viaja nos ventos quentes do sul para cruzar o mar e chegar a terras distantes.;Evolui de Skiploom. Apareceu pela primeira vez na 2ª geração.
+190;Aipom;Johto;Normal;;0.8;11.5;Vive nas copas das árvores e usa a cauda hábil como se fosse uma mão.;Evolui para Ambipom. Apareceu pela primeira vez na 2ª geração.
+191;Sunkern;Johto;Planta;;0.3;1.8;Se mexe o mínimo possível para guardar os nutrientes que vai usar na evolução.;Evolui para Sunflora. Apareceu pela primeira vez na 2ª geração.
+192;Sunflora;Johto;Planta;;0.8;8.5;Transforma a luz do sol em nutrientes e fica mais ativo durante o dia quente.;Evolui de Sunkern. Apareceu pela primeira vez na 2ª geração.
+193;Yanma;Johto;Inseto;Voador;1.2;38.0;As asas finas e transparentes criam uma força de vento capaz de levantar uma casa.;Evolui para Yanmega. Apareceu pela primeira vez na 2ª geração.
+194;Wooper;Johto;Água;Terra;0.4;8.5;Quando anda em terra, cobre o corpo com uma película viscosa que protege a pele do ressecamento.;Evolui para Quagsire ou Clodsire. Apareceu pela primeira vez na 2ª geração.
+195;Quagsire;Johto;Água;Terra;1.4;75.0;Tem o corpo sempre escorregadio e bate a cabeça no fundo do rio sem se importar.;Evolui de Wooper. Apareceu pela primeira vez na 2ª geração.
+196;Espeon;Johto;Psíquico;;0.9;26.5;Usa um poder misterioso para prever o clima e até os pensamentos das pessoas.;Evolui de Eevee. Apareceu pela primeira vez na 2ª geração.
+197;Umbreon;Johto;Sombrio;;1.0;27.0;Fica mais ativo de madrugada, quando o luar banha a terra.;Evolui de Eevee. Apareceu pela primeira vez na 2ª geração.
+198;Murkrow;Johto;Sombrio;Voador;0.5;2.1;É evitado por ser visto como mau agouro, e dizem que se deve fazer um cântico de proteção ao cruzar com ele.;Evolui para Honchkrow. Apareceu pela primeira vez na 2ª geração.
+199;Slowking;Johto;Água;Psíquico;2.0;79.5;Resolve qualquer problema que lhe apresentem, mas ninguém entende o que ele diz.;Evolui de Slowpoke. Apareceu pela primeira vez na 2ª geração.
+200;Misdreavus;Johto;Fantasma;;0.7;1.0;Se esconde no escuro e arrepia os viajantes com um choro de criança.;Evolui para Mismagius. Apareceu pela primeira vez na 2ª geração.
+201;Unown;Johto;Psíquico;;0.5;5.0;É difícil acreditar que esses Pokémon de formas estranhas sejam seres vivos de verdade.;Não tem evoluções. Apareceu pela primeira vez na 2ª geração.
+202;Wobbuffet;Johto;Psíquico;;1.3;28.5;Para esconder a cauda totalmente preta, vive calado na escuridão.;Evolui de Wynaut. Apareceu pela primeira vez na 2ª geração.
+203;Girafarig;Johto;Normal;Psíquico;1.5;41.5;A cabeça de trás tem um cérebro minúsculo, pequeno demais para pensar.;Evolui para Farigiraf. Apareceu pela primeira vez na 2ª geração.
+204;Pineco;Johto;Inseto;;0.6;7.2;Cola cascas de árvore no corpo com a saliva para ficar mais grosso e maior.;Evolui para Forretress. Apareceu pela primeira vez na 2ª geração.
+205;Forretress;Johto;Inseto;Aço;1.2;125.8;Quando engole a presa, o interior da concha fica exposto, mas ninguém nunca viu o que há ali.;Evolui de Pineco. Apareceu pela primeira vez na 2ª geração.
+206;Dunsparce;Johto;Normal;;1.5;14.0;Seus ninhos são labirintos de túneis, mas nunca se perde porque reconhece o cheiro da terra.;Evolui para Dudunsparce. Apareceu pela primeira vez na 2ª geração.
+207;Gligar;Johto;Terra;Voador;1.1;64.8;A cauda termina num ferrão grosso, e ele cobre o rosto da presa com o corpo antes de picar.;Evolui para Gliscor. Apareceu pela primeira vez na 2ª geração.
+208;Steelix;Johto;Aço;Terra;9.2;400.0;Evoluiu com um item estranho e tem o corpo coberto de pó de aço, mais duro que diamante.;Evolui de Onix. Apareceu pela primeira vez na 2ª geração.
+209;Snubbull;Johto;Fada;;0.6;7.8;Apesar da aparência, é bem tímido e às vezes sofre bullying de outros cachorros.;Evolui para Granbull. Apareceu pela primeira vez na 2ª geração.
+210;Granbull;Johto;Fada;;1.4;48.7;Querido pelos jovens, é tímido e sensível demais para servir de cão de guarda.;Evolui de Snubbull. Apareceu pela primeira vez na 2ª geração.
+211;Qwilfish;Johto;Água;Veneno;0.5;3.9;Os pescadores o detestam porque ele esguicha veneno pelos espinhos por todo lado.;Evolui para Overqwil. Apareceu pela primeira vez na 2ª geração.
+212;Scizor;Johto;Inseto;Aço;1.8;118.0;Evoluiu com um item curioso e a carapaça é mais resistente que aço forjado.;Evolui de Scyther. Apareceu pela primeira vez na 2ª geração.
+213;Shuckle;Johto;Inseto;Pedra;0.6;20.5;As frutas guardadas na concha viram um suco grosso e espesso com o tempo.;Não tem evoluções. Apareceu pela primeira vez na 2ª geração.
+214;Heracross;Johto;Inseto;Lutador;1.5;54.0;Tem um chifre incomparável e força para arremessar várias pessoas treinadas em combate.;Não tem evoluções. Apareceu pela primeira vez na 2ª geração.
+215;Sneasel;Johto;Sombrio;Gelo;0.9;28.0;As garras curvas são ótimas para escalar penhascos e pingam um veneno que age nos nervos.;Evolui para Weavile ou Sneasler. Apareceu pela primeira vez na 2ª geração.
+216;Teddiursa;Johto;Normal;;0.6;8.8;Lambe as patas por causa do mel doce que as impregnou.;Evolui para Ursaring. Apareceu pela primeira vez na 2ª geração.
+217;Ursaring;Johto;Normal;;1.8;125.8;Quando a estação fria chega, vaga por campos e montanhas atrás das frutas favoritas.;Evolui de Teddiursa e evolui para Ursaluna. Apareceu pela primeira vez na 2ª geração.
+218;Slugma;Johto;Fogo;;0.7;35.0;Não tem sangue: em vez disso, magma quente circula pelo corpo levando nutrientes e oxigênio.;Evolui para Magcargo. Apareceu pela primeira vez na 2ª geração.
+219;Magcargo;Johto;Fogo;Pedra;0.8;55.0;A temperatura do corpo é de cerca de 10.000 graus Celsius.;Evolui de Slugma. Apareceu pela primeira vez na 2ª geração.
+220;Swinub;Johto;Gelo;Terra;0.4;6.5;É ótimo para farejar cogumelos escondidos sob a grama ou a neve.;Evolui para Piloswine. Apareceu pela primeira vez na 2ª geração.
+221;Piloswine;Johto;Gelo;Terra;1.1;55.8;O pelo longo cobre olhos, orelhas e patas e o protege do frio intenso.;Evolui de Swinub e evolui para Mamoswine. Apareceu pela primeira vez na 2ª geração.
+222;Corsola;Johto;Água;Pedra;0.6;5.0;Vive em mares quentes e, na pré-história, muitos habitavam os oceanos de Galar.;Evolui para Cursola. Apareceu pela primeira vez na 2ª geração.
+223;Remoraid;Johto;Água;;0.6;12.0;Cospe água com enorme precisão e derruba Burmy dos galhos onde ficam pendurados.;Evolui para Octillery. Apareceu pela primeira vez na 2ª geração.
+224;Octillery;Johto;Água;;0.9;28.5;Ainda cospe água pela boca, mas é tão diferente de Remoraid que por muito tempo ninguém acreditou na evolução.;Evolui de Remoraid. Apareceu pela primeira vez na 2ª geração.
+225;Delibird;Johto;Gelo;Voador;0.9;16.0;Tem o hábito generoso de dividir comida com pessoas e Pokémon, por isso está sempre atrás de mais.;Não tem evoluções. Apareceu pela primeira vez na 2ª geração.
+226;Mantine;Johto;Água;Voador;2.1;220.0;Calmo e gentil, nada com graça e, depois de ganhar velocidade, salta para fora da água.;Evolui de Mantyke. Apareceu pela primeira vez na 2ª geração.
+227;Skarmory;Johto;Aço;Voador;1.7;50.5;Fazem espadas com suas penas, por isso aparece muito em brasões.;Não tem evoluções. Apareceu pela primeira vez na 2ª geração.
+228;Houndour;Johto;Sombrio;Fogo;0.6;10.8;Uiva de um jeito sinistro antes do amanhecer para chamar a atenção do bando.;Evolui para Houndoom. Apareceu pela primeira vez na 2ª geração.
+229;Houndoom;Johto;Sombrio;Fogo;1.4;35.0;Reconhecido pelo uivo sinistro, antigamente era confundido com a morte e temido.;Evolui de Houndour. Apareceu pela primeira vez na 2ª geração.
+230;Kingdra;Johto;Água;Dragão;1.8;152.0;As escamas que solta brilham tanto que já foram dadas de presente a reis.;Evolui de Seadra. Apareceu pela primeira vez na 2ª geração.
+231;Phanpy;Johto;Terra;;0.5;33.5;Usa a tromba longa para tomar banho, e quando se juntam, jogam água uns nos outros.;Evolui para Donphan. Apareceu pela primeira vez na 2ª geração.
+232;Donphan;Johto;Terra;;1.1;120.0;Se atacar com o corpo duro, destrói até uma casa.;Evolui de Phanpy. Apareceu pela primeira vez na 2ª geração.
+233;Porygon2;Johto;Normal;;0.6;32.5;Evoluiu graças a um item estranho, e agora faz gestos e expressões novas, mas sua biologia continua um mistério.;Evolui de Porygon e evolui para Porygon-Z. Apareceu pela primeira vez na 2ª geração.
+234;Stantler;Johto;Normal;;1.4;71.2;Os chifres de formato estranho enfeitiçam quem os vê.;Evolui para Wyrdeer. Apareceu pela primeira vez na 2ª geração.
+235;Smeargle;Johto;Normal;;1.2;58.0;Desenha símbolos com o líquido da ponta da cauda, e fãs pagam caro por eles.;Não tem evoluções. Apareceu pela primeira vez na 2ª geração.
+236;Tyrogue;Johto;Lutador;;0.7;21.0;Pequeno, mas impossível de ignorar, pois soca qualquer alvo próximo sem aviso.;É um Pokémon bebê. Evolui para Hitmonlee, Hitmonchan ou Hitmontop. Apareceu pela primeira vez na 2ª geração.
+237;Hitmontop;Johto;Lutador;;1.4;48.0;Faz uma parada de mão para confundir o ritmo do oponente e depois solta chutes elaborados.;Evolui de Tyrogue. Apareceu pela primeira vez na 2ª geração.
+238;Smoochum;Johto;Gelo;Psíquico;0.4;6.0;Muito curioso, decide o que gosta e não gosta tocando as coisas com os lábios.;É um Pokémon bebê. Evolui para Jynx. Apareceu pela primeira vez na 2ª geração.
+239;Elekid;Johto;Elétrico;;0.6;23.5;Gera eletricidade girando os braços e, em tempestades, as vozes alegres ouvidas no mato podem ser deles.;É um Pokémon bebê. Evolui para Electabuzz. Apareceu pela primeira vez na 2ª geração.
+240;Magby;Johto;Fogo;;0.7;21.4;Vive em áreas vulcânicas e solta faíscas pela boca e pelo nariz a cada respiração.;É um Pokémon bebê. Evolui para Magmar. Apareceu pela primeira vez na 2ª geração.
+241;Miltank;Johto;Normal;;1.2;75.5;Precisa ser ordenhada todo dia ou adoece, e o sabor do leite muda com as estações.;Não tem evoluções. Apareceu pela primeira vez na 2ª geração.
+242;Blissey;Johto;Normal;;1.5;46.8;Cuida com carinho de qualquer pessoa ou Pokémon doente até que melhore.;Evolui de Chansey. Apareceu pela primeira vez na 2ª geração.
+243;Raikou;Johto;Elétrico;;1.9;178.0;Representa a velocidade do raio, e o rugido faz o ar vibrar e o chão tremer como se caíssem relâmpagos.;É um Pokémon lendário. Apareceu pela primeira vez na 2ª geração.
+244;Entei;Johto;Fogo;;2.1;198.0;Representa a paixão do magma e acredita-se que nasceu na erupção de um vulcão.;É um Pokémon lendário. Apareceu pela primeira vez na 2ª geração.
+245;Suicune;Johto;Água;;2.0;187.0;Representa a compaixão de uma fonte pura e corre pela terra com elegância.;É um Pokémon lendário. Apareceu pela primeira vez na 2ª geração.
+246;Larvitar;Johto;Pedra;Terra;0.6;72.0;Come terra e, depois de devorar uma montanha enorme, dorme para poder crescer.;Evolui para Pupitar. Apareceu pela primeira vez na 2ª geração.
+247;Pupitar;Johto;Pedra;Terra;1.2;152.0;Não fica parado nem como pupa, e já tem braços e pernas dentro da casca dura.;Evolui de Larvitar e evolui para Tyranitar. Apareceu pela primeira vez na 2ª geração.
+248;Tyranitar;Johto;Pedra;Sombrio;2.0;202.0;Os tremores de seus passos fazem montanhas desabarem e mudam o terreno ao redor.;Evolui de Pupitar. Apareceu pela primeira vez na 2ª geração.
+249;Lugia;Johto;Psíquico;Voador;5.2;216.0;As asas têm um poder devastador, e um simples bater pode destruir casas comuns.;É um Pokémon lendário. Apareceu pela primeira vez na 2ª geração.
+250;Ho-Oh;Johto;Fogo;Voador;3.8;199.0;As penas brilham em sete cores dependendo do ângulo em que a luz as atinge.;É um Pokémon lendário. Apareceu pela primeira vez na 2ª geração.
+251;Celebi;Johto;Psíquico;Planta;0.6;5.0;Viajou no tempo vindo do futuro, fortalece plantas e árvores com sua energia e também cura feridas.;É um Pokémon mítico. Apareceu pela primeira vez na 2ª geração.
+252;Treecko;Hoenn;Planta;;0.5;5.0;Calmo e controlado, nunca entra em pânico, seja qual for a situação.;Evolui para Grovyle. Apareceu pela primeira vez na 3ª geração.
+253;Grovyle;Hoenn;Planta;;0.9;21.6;Pula de galho em galho com habilidade, e na floresta nenhum Pokémon consegue alcançá-lo quando foge.;Evolui de Treecko e evolui para Sceptile. Apareceu pela primeira vez na 3ª geração.
+254;Sceptile;Hoenn;Planta;;1.7;52.2;Tem sementes nas costas, cheias de nutrientes que revitalizam as árvores.;Evolui de Grovyle. Apareceu pela primeira vez na 3ª geração.
+255;Torchic;Hoenn;Fogo;;0.4;2.5;Guarda a chama dentro do corpo, e abraçá-lo é como abraçar algo quentinho.;Evolui para Combusken. Apareceu pela primeira vez na 3ª geração.
+256;Combusken;Hoenn;Fogo;Lutador;0.9;19.5;Luta com chamas intensas soltas pelo bico e chutes extremamente destrutivos.;Evolui de Torchic e evolui para Blaziken. Apareceu pela primeira vez na 3ª geração.
+257;Blaziken;Hoenn;Fogo;Lutador;1.9;52.0;Tem pernas tão fortes que salta com facilidade um prédio de 30 andares.;Evolui de Combusken. Apareceu pela primeira vez na 3ª geração.
+258;Mudkip;Hoenn;Água;;0.4;7.6;Respira na água pelas guelras das bochechas e, em apuros, mostra uma força incrível.;Evolui para Marshtomp. Apareceu pela primeira vez na 3ª geração.
+259;Marshtomp;Hoenn;Água;Terra;0.7;28.0;Anda muito mais rápido na lama do que nada.;Evolui de Mudkip e evolui para Swampert. Apareceu pela primeira vez na 3ª geração.
+260;Swampert;Hoenn;Água;Terra;1.5;81.9;Prevê tempestades sentindo, com as nadadeiras, as diferenças sutis no som das ondas e dos ventos.;Evolui de Marshtomp. Apareceu pela primeira vez na 3ª geração.
+261;Poochyena;Hoenn;Sombrio;;0.5;13.6;Come de tudo, e o que o distingue são as presas enormes para o tamanho do corpo.;Evolui para Mightyena. Apareceu pela primeira vez na 3ª geração.
+262;Mightyena;Hoenn;Sombrio;;1.0;37.0;Caça em bando na natureza e só obedece treinadores que reconhece como líderes.;Evolui de Poochyena. Apareceu pela primeira vez na 3ª geração.
+263;Zigzagoon;Hoenn;Normal;;0.4;17.5;Foi a forma adquirida pelos que se adaptaram a regiões fora de Galar.;Evolui para Linoone. Apareceu pela primeira vez na 3ª geração.
+264;Linoone;Hoenn;Normal;;0.5;32.5;Usa a velocidade explosiva e as garras afiadas para derrubar a presa, mas não corre bem em curvas.;Evolui de Zigzagoon e evolui para Obstagoon. Apareceu pela primeira vez na 3ª geração.
+265;Wurmple;Hoenn;Inseto;;0.3;3.6;Gosta de seiva e é comum na natureza, e não se sabe por que evolui para formas diferentes.;Evolui para Silcoon ou Cascoon. Apareceu pela primeira vez na 3ª geração.
+266;Silcoon;Hoenn;Inseto;;0.6;10.0;Se envolve em fios finos de seda enquanto guarda energia para evoluir.;Evolui de Wurmple e evolui para Beautifly. Apareceu pela primeira vez na 3ª geração.
+267;Beautifly;Hoenn;Inseto;Voador;1.0;28.4;Colorido e belíssimo, mas ganancioso, espanta os Combee para ficar com a comida favorita.;Evolui de Silcoon. Apareceu pela primeira vez na 3ª geração.
+268;Cascoon;Hoenn;Inseto;;0.7;11.5;A seda que o cobre é fina, mas bem resistente, com brilho e textura superiores à de Silcoon.;Evolui de Wurmple e evolui para Dustox. Apareceu pela primeira vez na 3ª geração.
+269;Dustox;Hoenn;Inseto;Veneno;1.2;31.6;Atraído por fogueiras em noites escuras, é difícil de espantar porque espalha escamas muito tóxicas.;Evolui de Cascoon. Apareceu pela primeira vez na 3ª geração.
+270;Lotad;Hoenn;Água;Planta;0.5;2.6;A folha cresceu tanto que ele não conseguiu mais viver em terra e passou a flutuar na água.;Evolui para Lombre. Apareceu pela primeira vez na 3ª geração.
+271;Lombre;Hoenn;Água;Planta;1.2;32.5;Vive à beira da água ensolarada, dorme sobre um leito de plantas de dia e fica ativo à noite.;Evolui de Lotad e evolui para Ludicolo. Apareceu pela primeira vez na 3ª geração.
+272;Ludicolo;Hoenn;Água;Planta;1.5;55.0;Se ouve música animada, começa a dançar no ritmo para aumentar seu poder.;Evolui de Lombre. Apareceu pela primeira vez na 3ª geração.
+273;Seedot;Hoenn;Planta;;0.5;4.0;Gruda-se ao galho pela parte de cima da cabeça, e ventos fortes às vezes o derrubam.;Evolui para Nuzleaf. Apareceu pela primeira vez na 3ª geração.
+274;Nuzleaf;Hoenn;Planta;Sombrio;1.0;28.0;Vive em buracos em árvores grandes, e o som da flauta de folha enche quem ouve de pavor.;Evolui de Seedot e evolui para Shiftry. Apareceu pela primeira vez na 3ª geração.
+275;Shiftry;Hoenn;Planta;Sombrio;1.3;59.6;Vive quieto na floresta profunda e dizem que cria ventos frios de inverno com seus leques.;Evolui de Nuzleaf. Apareceu pela primeira vez na 3ª geração.
+276;Taillow;Hoenn;Normal;Voador;0.3;2.3;É novo e acabou de sair do ninho, por isso às vezes sente solidão e chora à noite.;Evolui para Swellow. Apareceu pela primeira vez na 3ª geração.
+277;Swellow;Hoenn;Normal;Voador;0.7;19.8;Cuida muito das asas brilhantes e, quando dois se encontram, limpam as penas um do outro.;Evolui de Taillow. Apareceu pela primeira vez na 3ª geração.
+278;Wingull;Hoenn;Água;Voador;0.6;9.5;Plana sobre correntes de ar sem bater as asas e faz o ninho em penhascos à beira-mar.;Evolui para Pelipper. Apareceu pela primeira vez na 3ª geração.
+279;Pelipper;Hoenn;Água;Voador;1.2;28.0;Passa rente à água, mergulha o bico grande no mar, recolhe comida e água e os carrega.;Evolui de Wingull. Apareceu pela primeira vez na 3ª geração.
+280;Ralts;Hoenn;Psíquico;Fada;0.4;6.6;Prefere pessoas animadas às mal-humoradas, mas não faz distinção de idade nem de gênero.;Evolui para Kirlia. Apareceu pela primeira vez na 3ª geração.
+281;Kirlia;Hoenn;Psíquico;Fada;0.8;20.2;Parece uma donzela, mas usa poderes estranhos para projetar visões do paraíso.;Evolui de Ralts e evolui para Gardevoir ou Gallade. Apareceu pela primeira vez na 3ª geração.
+282;Gardevoir;Hoenn;Psíquico;Fada;1.6;48.4;Dedica-se a defender o mestre que ama, e o vestido branco lembra o das damas da nobreza.;Evolui de Kirlia. Apareceu pela primeira vez na 3ª geração.
+283;Surskit;Hoenn;Inseto;Água;0.5;1.7;Vive em lagos e pântanos cheios de plantas e costuma brigar com Dewpider.;Evolui para Masquerain. Apareceu pela primeira vez na 3ª geração.
+284;Masquerain;Hoenn;Inseto;Voador;0.8;3.6;As antenas finas, parecidas com asas, absorvem muita água, e ele espera os dias de chuva em ocos de árvore.;Evolui de Surskit. Apareceu pela primeira vez na 3ª geração.
+285;Shroomish;Hoenn;Planta;;0.4;4.5;Se sente perigo, balança o corpo e solta esporos pela cabeça.;Evolui para Breloom. Apareceu pela primeira vez na 3ª geração.
+286;Breloom;Hoenn;Planta;Lutador;1.2;39.2;As sementes ao redor da cauda são esporos tóxicos endurecidos e horríveis de comer.;Evolui de Shroomish. Apareceu pela primeira vez na 3ª geração.
+287;Slakoth;Hoenn;Normal;;0.8;24.0;O coração bate só uma vez por minuto e, aconteça o que acontecer, fica contente parado.;Evolui para Vigoroth. Apareceu pela primeira vez na 3ª geração.
+288;Vigoroth;Hoenn;Normal;;1.4;46.5;É incapaz de ficar parado, e até quando tenta dormir o sangue fica agitado.;Evolui de Slakoth e evolui para Slaking. Apareceu pela primeira vez na 3ª geração.
+289;Slaking;Hoenn;Normal;;2.0;130.5;Por onde vive, surgem círculos de mais de um metro de diâmetro nos campos de grama.;Evolui de Vigoroth. Apareceu pela primeira vez na 3ª geração.
+290;Nincada;Hoenn;Inseto;Terra;0.5;5.5;Pode viver mais de 10 anos debaixo da terra, absorvendo nutrientes das raízes das árvores.;Evolui para Ninjask ou Shedinja. Apareceu pela primeira vez na 3ª geração.
+291;Ninjask;Hoenn;Inseto;Voador;0.8;12.0;É tão rápido que dizem desviar de qualquer ataque, e adora a seiva das árvores.;Evolui de Nincada. Apareceu pela primeira vez na 3ª geração.
+292;Shedinja;Hoenn;Inseto;Fantasma;0.8;1.2;Estranho: voa sem mexer as asas, tem o corpo oco como uma casca e não respira.;Evolui de Nincada. Apareceu pela primeira vez na 3ª geração.
+293;Whismur;Hoenn;Normal;;0.6;16.3;Quando grita, se assusta com a própria voz e acaba gritando ainda mais alto.;Evolui para Loudred. Apareceu pela primeira vez na 3ª geração.
+294;Loudred;Hoenn;Normal;;1.0;40.5;A força da voz não é só o som, mas a onda de pressão do ar que empurra e fere os oponentes.;Evolui de Whismur e evolui para Exploud. Apareceu pela primeira vez na 3ª geração.
+295;Exploud;Hoenn;Normal;;1.5;84.0;Faz mais do que gritar: emite vários sons pelos buracos do corpo para se comunicar.;Evolui de Loudred. Apareceu pela primeira vez na 3ª geração.
+296;Makuhita;Hoenn;Lutador;;1.0;86.4;Há um rumor de uma receita tradicional de ensopado que ajuda os treinadores a criarem Makuhita fortes.;Evolui para Hariyama. Apareceu pela primeira vez na 3ª geração.
+297;Hariyama;Hoenn;Lutador;;2.3;253.8;Os grandes e gordos não são necessariamente fortes, e há pequenos que se movem com agilidade.;Evolui de Makuhita. Apareceu pela primeira vez na 3ª geração.
+298;Azurill;Hoenn;Normal;Fada;0.2;2.0;Normalmente dócil, quando irritado balança a bola da cauda para esmagar os oponentes.;É um Pokémon bebê. Evolui para Marill. Apareceu pela primeira vez na 3ª geração.
+299;Nosepass;Hoenn;Pedra;;1.0;97.0;O nariz vermelho sempre aponta para o norte, e por isso era muito usado em longas viagens.;Evolui para Probopass. Apareceu pela primeira vez na 3ª geração.
+300;Skitty;Hoenn;Normal;;0.6;11.0;Gosta de correr atrás da própria cauda e, na natureza, vive em buracos de árvores.;Evolui para Delcatty. Apareceu pela primeira vez na 3ª geração.
+301;Delcatty;Hoenn;Normal;;1.1;32.6;Dorme onde quiser sem ter ninho fixo e nunca briga com quem se aproxima enquanto dorme.;Evolui de Skitty. Apareceu pela primeira vez na 3ª geração.
+302;Sableye;Hoenn;Sombrio;Fantasma;0.5;11.0;Come cristais de pedras preciosas, e no escuro os olhos brilham como joias.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+303;Mawile;Hoenn;Aço;Fada;0.6;11.5;Morde com a boca enorme, e as mandíbulas são na verdade chifres de aço transformados.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+304;Aron;Hoenn;Aço;Pedra;0.4;60.0;Quando evolui, a armadura de aço cai, e antigamente as pessoas a aproveitavam no dia a dia.;Evolui para Lairon. Apareceu pela primeira vez na 3ª geração.
+305;Lairon;Hoenn;Aço;Pedra;0.9;120.0;Em disputas de território, luta batendo o corpo contra o dos rivais.;Evolui de Aron e evolui para Aggron. Apareceu pela primeira vez na 3ª geração.
+306;Aggron;Hoenn;Aço;Pedra;2.1;360.0;Há muito tempo, um rei usava um elmo que imitava a cabeça de um Aggron.;Evolui de Lairon. Apareceu pela primeira vez na 3ª geração.
+307;Meditite;Hoenn;Lutador;Psíquico;0.6;11.2;Aumenta a energia interior meditando e sobrevive com uma única fruta por dia.;Evolui para Medicham. Apareceu pela primeira vez na 3ª geração.
+308;Medicham;Hoenn;Lutador;Psíquico;1.3;31.5;Pelo poder da meditação, desenvolveu o sexto sentido e a capacidade de usar psicocinese.;Evolui de Meditite. Apareceu pela primeira vez na 3ª geração.
+309;Electrike;Hoenn;Elétrico;;0.6;15.2;Guarda eletricidade no pelo e solta faíscas por todo o corpo quando o ar está seco.;Evolui para Manectric. Apareceu pela primeira vez na 3ª geração.
+310;Manectric;Hoenn;Elétrico;;1.5;40.2;Aparece raramente diante das pessoas e dizem que faz ninho onde caiu um raio.;Evolui de Electrike. Apareceu pela primeira vez na 3ª geração.
+311;Plusle;Hoenn;Elétrico;;0.4;4.2;Quando torce pelo parceiro, solta faíscas elétricas por todo o corpo.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+312;Minun;Hoenn;Elétrico;;0.4;4.2;Adora torcer pelo parceiro na batalha e solta faíscas do corpo quando faz isso.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+313;Volbeat;Hoenn;Inseto;;0.7;17.7;A cauda brilha como uma lâmpada, e com os outros Volbeat desenha formas geométricas no céu noturno.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+314;Illumise;Hoenn;Inseto;;0.6;17.7;Lidera um voo de Volbeat luminosos para desenhar sinais no céu da noite.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+315;Roselia;Hoenn;Planta;Veneno;0.3;2.0;Bonito, mas com espinhos muito venenosos, e há uma antiga tradição de enviá-los a um rival.;Evolui de Budew e evolui para Roserade. Apareceu pela primeira vez na 3ª geração.
+316;Gulpin;Hoenn;Veneno;;0.4;10.3;Quase todo o corpo é estômago, e o coração e o cérebro são minúsculos em comparação.;Evolui para Swalot. Apareceu pela primeira vez na 3ª geração.
+317;Swalot;Hoenn;Veneno;;1.7;80.0;Não tem dentes e engole inteiro o que comer, seja o que for.;Evolui de Gulpin. Apareceu pela primeira vez na 3ª geração.
+318;Carvanha;Hoenn;Água;Sombrio;0.8;20.8;Tem presas afiadas e mandíbulas poderosas, e os marinheiros evitam as tocas deles a todo custo.;Evolui para Sharpedo. Apareceu pela primeira vez na 3ª geração.
+319;Sharpedo;Hoenn;Água;Sombrio;1.8;88.8;Conhecido como o Valentão do Mar, ataca qualquer navio que entre nas águas onde vive.;Evolui de Carvanha. Apareceu pela primeira vez na 3ª geração.
+320;Wailmer;Hoenn;Água;;2.0;130.0;Ao sugar muita água do mar, vira uma bola grande e saltitante.;Evolui para Wailord. Apareceu pela primeira vez na 3ª geração.
+321;Wailord;Hoenn;Água;;14.5;398.0;O tamanho imenso faz seu sucesso, e observar Wailord é um passeio turístico favorito.;Evolui de Wailmer. Apareceu pela primeira vez na 3ª geração.
+322;Numel;Hoenn;Fogo;Terra;0.7;24.0;Guarda no corpo magma a quase 1.200 graus Celsius.;Evolui para Camerupt. Apareceu pela primeira vez na 3ª geração.
+323;Camerupt;Hoenn;Fogo;Terra;1.9;220.0;As corcovas das costas se formam por uma transformação dos ossos.;Evolui de Numel. Apareceu pela primeira vez na 3ª geração.
+324;Torkoal;Hoenn;Fogo;;0.5;80.4;Há minas de carvão abandonadas cheias deles, que cavam sem parar atrás de carvão.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+325;Spoink;Hoenn;Psíquico;;0.7;30.6;Guarda uma pérola no topo da cabeça que amplifica seus poderes psíquicos.;Evolui para Grumpig. Apareceu pela primeira vez na 3ª geração.
+326;Grumpig;Hoenn;Psíquico;;0.9;71.5;Usa as pérolas pretas do corpo para controlar seus poderes fantásticos.;Evolui de Spoink. Apareceu pela primeira vez na 3ª geração.
+327;Spinda;Hoenn;Normal;;1.1;5.0;Cada Spinda tem um padrão de manchas diferente, e desvia dos ataques com movimentos cambaleantes.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+328;Trapinch;Hoenn;Terra;;0.7;15.0;Faz um buraco cônico sem saída e espera no fundo a presa cair.;Evolui para Vibrava. Apareceu pela primeira vez na 3ª geração.
+329;Vibrava;Hoenn;Terra;Dragão;1.1;15.3;Para as asas crescerem, dissolve presas nos sucos digestivos e as bebe todo dia.;Evolui de Trapinch e evolui para Flygon. Apareceu pela primeira vez na 3ª geração.
+330;Flygon;Hoenn;Terra;Dragão;2.0;82.0;É chamado de Espírito do Deserto porque o bater das asas parece uma mulher cantando.;Evolui de Vibrava. Apareceu pela primeira vez na 3ª geração.
+331;Cacnea;Hoenn;Planta;;0.4;51.3;Quanto mais árido e duro o ambiente, mais bonita e perfumada é a flor que cultiva.;Evolui para Cacturne. Apareceu pela primeira vez na 3ª geração.
+332;Cacturne;Hoenn;Planta;Sombrio;1.3;77.4;Se um viajante cruza o deserto no meio da noite, ele o segue com um grupo desordenado.;Evolui de Cacnea. Apareceu pela primeira vez na 3ª geração.
+333;Swablu;Hoenn;Normal;Voador;0.4;1.2;Parece uma nuvem cúmulo, então é difícil para os inimigos encontrá-lo.;Evolui para Altaria. Apareceu pela primeira vez na 3ª geração.
+334;Altaria;Hoenn;Dragão;Voador;1.1;20.6;Tem temperamento gentil, mas, se provocado, ameaça com gritos agudos e ataca sem piedade.;Evolui de Swablu. Apareceu pela primeira vez na 3ª geração.
+335;Zangoose;Hoenn;Normal;;1.3;40.3;Costuma andar de quatro, mas quando se irrita levanta nas patas traseiras e mostra as garras.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+336;Seviper;Hoenn;Veneno;;2.7;52.5;A cauda em forma de espada serve para cortar os inimigos e para espalhar veneno.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+337;Lunatone;Hoenn;Pedra;Psíquico;1.0;168.0;Foi descoberto onde caiu um meteoro há 40 anos, e o olhar pode fazer o inimigo dormir.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+338;Solrock;Hoenn;Pedra;Psíquico;1.2;154.0;A energia solar é a fonte de seu poder, e por isso ele é forte durante o dia.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+339;Barboach;Hoenn;Água;Terra;0.4;1.9;Mora em pântanos de água turva, onde a má visibilidade o esconde e a gosma o torna difícil de agarrar.;Evolui para Whiscash. Apareceu pela primeira vez na 3ª geração.
+340;Whiscash;Hoenn;Água;Terra;0.9;23.6;Bate a nadadeira da cauda no fundo do pântano para sacudir o chão e assustar a presa.;Evolui de Barboach. Apareceu pela primeira vez na 3ª geração.
+341;Corphish;Hoenn;Água;;0.6;11.5;Era um Pokémon de longe que fugiu para a natureza e consegue se adaptar até ao rio mais sujo.;Evolui para Crawdaunt. Apareceu pela primeira vez na 3ª geração.
+342;Crawdaunt;Hoenn;Água;Sombrio;1.1;32.8;Bruto e adorador de batalhas, se joga contra qualquer inimigo que se aproxime do ninho.;Evolui de Corphish. Apareceu pela primeira vez na 3ª geração.
+343;Baltoy;Hoenn;Terra;Psíquico;0.5;21.5;Foi descoberto em ruínas antigas e gira o tempo todo enquanto se move.;Evolui para Claydol. Apareceu pela primeira vez na 3ª geração.
+344;Claydol;Hoenn;Terra;Psíquico;1.5;108.0;Parece ter nascido de bonecos de argila feitos por povos antigos e flutua usando telecinesia.;Evolui de Baltoy. Apareceu pela primeira vez na 3ª geração.
+345;Lileep;Hoenn;Pedra;Planta;1.0;23.8;Fica preso às rochas do fundo do mar e prende a presa com tentáculos em forma de pétalas.;Evolui para Cradily. Apareceu pela primeira vez na 3ª geração.
+346;Cradily;Hoenn;Pedra;Planta;1.5;60.4;Depois de pegar a presa nos tentáculos, digere inteira e absorve os nutrientes.;Evolui de Lileep. Apareceu pela primeira vez na 3ª geração.
+347;Anorith;Hoenn;Pedra;Inseto;0.7;12.5;Nada rápido puxando as oito asas na água como remos de um barco.;Evolui para Armaldo. Apareceu pela primeira vez na 3ª geração.
+348;Armaldo;Hoenn;Pedra;Inseto;1.5;68.2;Apesar de viver em terra, nada bem e mergulha no mar atrás de presas com as garras afiadas.;Evolui de Anorith. Apareceu pela primeira vez na 3ª geração.
+349;Feebas;Hoenn;Água;;0.6;7.4;É feio e malcuidado, mas muito resistente e sobrevive com pouca água.;Evolui para Milotic. Apareceu pela primeira vez na 3ª geração.
+350;Milotic;Hoenn;Água;;6.2;162.0;Dizem que só de ver a beleza de um Milotic qualquer emoção hostil se acalma.;Evolui de Feebas. Apareceu pela primeira vez na 3ª geração.
+351;Castform;Hoenn;Normal;;0.3;0.8;A forma muda conforme o clima, e quanto mais difícil o tempo, mais difícil fica seu temperamento.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+352;Kecleon;Hoenn;Normal;;1.0;22.0;Muda de cor para se camuflar e também quando o humor ou a saúde mudam.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+353;Shuppet;Hoenn;Fantasma;;0.6;2.3;Há um provérbio que diz: evite a casa onde os Shuppet se reúnem ao anoitecer.;Evolui para Banette. Apareceu pela primeira vez na 3ª geração.
+354;Banette;Hoenn;Fantasma;;1.1;12.5;Nasceu do ressentimento de ser abandonado, e dizem que tratá-lo bem o faz voltar a ser um boneco.;Evolui de Shuppet. Apareceu pela primeira vez na 3ª geração.
+355;Duskull;Hoenn;Fantasma;;0.8;15.0;As crianças de Hisui se comportam depois de ouvir a história deste Pokémon que vaga antes da hora das bruxas.;Evolui para Dusclops. Apareceu pela primeira vez na 3ª geração.
+356;Dusclops;Hoenn;Fantasma;;1.6;30.6;Dizem que quem espia dentro do corpo enfaixado é puxado pelas frestas e nunca mais volta.;Evolui de Duskull e evolui para Dusknoir. Apareceu pela primeira vez na 3ª geração.
+357;Tropius;Hoenn;Planta;Voador;2.0;100.0;Tem cachos de frutas deliciosas no pescoço, e em regiões quentes muitas fazendas o criam.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+358;Chimecho;Hoenn;Psíquico;;0.6;1.0;Emite ondas de ar fortes o bastante para derrubar presas maiores que ele.;Evolui de Chingling. Apareceu pela primeira vez na 3ª geração.
+359;Absol;Hoenn;Sombrio;;1.2;47.0;Como detecta perigo, as pessoas o confundiam com um mensageiro da desgraça.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+360;Wynaut;Hoenn;Psíquico;;0.6;14.0;Anda em bando e dorme em grupo apertado numa caverna.;É um Pokémon bebê. Evolui para Wobbuffet. Apareceu pela primeira vez na 3ª geração.
+361;Snorunt;Hoenn;Gelo;;0.7;16.8;Chega junto com a primeira neve, e acredita-se que as casas que ele visita prosperam por gerações.;Evolui para Glalie ou Froslass. Apareceu pela primeira vez na 3ª geração.
+362;Glalie;Hoenn;Gelo;;1.5;256.5;Cobre o corpo com uma armadura de gelo mais dura que aço e congela a presa com o sopro antes de devorá-la.;Evolui de Snorunt. Apareceu pela primeira vez na 3ª geração.
+363;Spheal;Hoenn;Gelo;Água;0.8;39.5;Na época em que o gelo chega à costa, prefere viver sobre ele, onde há menos predadores.;Evolui para Sealeo. Apareceu pela primeira vez na 3ª geração.
+364;Sealeo;Hoenn;Gelo;Água;1.1;87.6;Os bigodes brancos são sensíveis, e ele equilibra o Spheal na ponta do nariz para checar o cheiro e o toque.;Evolui de Spheal e evolui para Walrein. Apareceu pela primeira vez na 3ª geração.
+365;Walrein;Hoenn;Gelo;Água;1.4;150.6;As presas grossas quebram gelo flutuante e, se quebram, crescem de novo até o ano seguinte.;Evolui de Sealeo. Apareceu pela primeira vez na 3ª geração.
+366;Clamperl;Hoenn;Água;;0.4;52.5;As pérolas são preciosíssimas e podem custar mais de 10 vezes as de Shellder.;Evolui para Huntail ou Gorebyss. Apareceu pela primeira vez na 3ª geração.
+367;Huntail;Hoenn;Água;;1.7;27.0;Vive em mares profundos, e a tradição diz que, quando aparece na praia, algo de ruim vai acontecer.;Evolui de Clamperl. Apareceu pela primeira vez na 3ª geração.
+368;Gorebyss;Hoenn;Água;;1.8;22.6;Suga os fluidos do corpo da presa, e o que sobra afunda e vira comida de outros Pokémon.;Evolui de Clamperl. Apareceu pela primeira vez na 3ª geração.
+369;Relicanth;Hoenn;Água;Pedra;1.0;23.4;Foi descoberto em explorações do mar profundo, e sua aparência não muda há 100 milhões de anos, por isso é um fóssil vivo.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+370;Luvdisc;Hoenn;Água;;0.6;8.7;Vive em recifes de mares quentes e adora dormir entre os galhos de Corsola.;Não tem evoluções. Apareceu pela primeira vez na 3ª geração.
+371;Bagon;Hoenn;Dragão;;0.6;42.1;É solitário e não forma grupos com outros da sua espécie.;Evolui para Shelgon. Apareceu pela primeira vez na 3ª geração.
+372;Shelgon;Hoenn;Dragão;;1.1;110.5;Ignora a fome e nunca come, e parece que só evolui quando gasta toda a energia guardada.;Evolui de Bagon e evolui para Salamence. Apareceu pela primeira vez na 3ª geração.
+373;Salamence;Hoenn;Dragão;Voador;1.5;102.6;Voar o deixa de bom humor, mas ele vira uma ameaça descontrolada se algo o irrita.;Evolui de Shelgon. Apareceu pela primeira vez na 3ª geração.
+374;Beldum;Hoenn;Aço;Psíquico;0.6;95.2;As células do corpo são de material magnético, e em vez de sangue correm forças magnéticas.;Evolui para Metang. Apareceu pela primeira vez na 3ª geração.
+375;Metang;Hoenn;Aço;Psíquico;1.2;202.5;Usa forças magnéticas para flutuar e voa em alta velocidade por montanhas atrás de presas.;Evolui de Beldum e evolui para Metagross. Apareceu pela primeira vez na 3ª geração.
+376;Metagross;Hoenn;Aço;Psíquico;1.6;550.0;Nasce da fusão de dois Metang e vence os oponentes com um cérebro de supercomputador.;Evolui de Metang. Apareceu pela primeira vez na 3ª geração.
+377;Regirock;Hoenn;Pedra;;1.7;230.0;Pesquisas avançadas estudaram seu corpo de pedra por dentro e não acharam nada, nem cérebro nem coração.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+378;Regice;Hoenn;Gelo;;1.8;175.0;Tem o corpo de gelo sólido e diz-se que nasceu sob gelo espesso na era glacial.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+379;Registeel;Hoenn;Aço;;1.9;205.0;Dizem que nasceu no manto da Terra, bem fundo, e chegou à superfície há 10.000 anos.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+380;Latias;Hoenn;Dragão;Psíquico;1.4;40.0;É muito inteligente e capaz de entender a fala humana.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+381;Latios;Hoenn;Dragão;Psíquico;2.0;60.0;Só abre o coração para um treinador de espírito compassivo.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+382;Kyogre;Hoenn;Água;;4.5;352.0;Dizem que é a personificação do próprio mar, e as lendas contam seus embates com Groudon.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+383;Groudon;Hoenn;Terra;;3.5;950.0;Pela Reversão Primitiva e com todo o poder da natureza, volta à sua verdadeira forma.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+384;Rayquaza;Hoenn;Dragão;Voador;7.0;206.5;Voa para sempre pela camada de ozônio e se alimenta de meteoroides.;É um Pokémon lendário. Apareceu pela primeira vez na 3ª geração.
+385;Jirachi;Hoenn;Aço;Psíquico;0.3;1.1;Acredita-se que, quando acordar do sono de 1.000 anos, realizará os desejos escritos nos papéis da cabeça.;É um Pokémon mítico. Apareceu pela primeira vez na 3ª geração.
+386;Deoxys;Hoenn;Psíquico;;1.7;60.8;Surgiu de um vírus vindo do espaço, é muito inteligente e usa poderes psicocinéticos.;É um Pokémon mítico. Apareceu pela primeira vez na 3ª geração.
+387;Turtwig;Sinnoh;Planta;;0.4;10.2;Fica mais ativo com mais sol, e o casco parece lodo, um pouco úmido e quente.;Evolui para Grotle. Apareceu pela primeira vez na 4ª geração.
+388;Grotle;Sinnoh;Planta;;1.1;97.0;Aparece onde há água de nascente limpa, e as frutas dos arbustos do casco são doces e deliciosas.;Evolui de Turtwig e evolui para Torterra. Apareceu pela primeira vez na 4ª geração.
+389;Torterra;Sinnoh;Planta;Terra;2.2;310.0;De corpo enorme, serviria de paisagem para um jardim, e sua força é incomparável.;Evolui de Grotle. Apareceu pela primeira vez na 4ª geração.
+390;Chimchar;Sinnoh;Fogo;;0.5;6.2;Cheio de energia e sempre animado, já foi temido como uma aparição chamada Cauda-Lanterna.;Evolui para Monferno. Apareceu pela primeira vez na 4ª geração.
+391;Monferno;Sinnoh;Fogo;Lutador;0.9;22.0;Quanto mais azul o rosto, mais poderoso ele vai ficar.;Evolui de Chimchar e evolui para Infernape. Apareceu pela primeira vez na 4ª geração.
+392;Infernape;Sinnoh;Fogo;Lutador;1.2;55.0;Alto e resistente, se envolve em chamas e luta como se dançasse, um espetáculo de se ver.;Evolui de Monferno. Apareceu pela primeira vez na 4ª geração.
+393;Piplup;Sinnoh;Água;;0.4;5.2;Prefere o frio e aparece nas costas, é adorável, mas orgulhoso demais para aceitar ajuda.;Evolui para Prinplup. Apareceu pela primeira vez na 4ª geração.
+394;Prinplup;Sinnoh;Água;;0.8;23.0;Nada com elegância no mar gelado e canta com uma voz que lembra o rugir da maré.;Evolui de Piplup e evolui para Empoleon. Apareceu pela primeira vez na 4ª geração.
+395;Empoleon;Sinnoh;Água;Aço;1.7;84.5;Desde a antiguidade é venerado em Hisui, onde o chamam de Mestre das Ondas.;Evolui de Prinplup. Apareceu pela primeira vez na 4ª geração.
+396;Starly;Sinnoh;Normal;Voador;0.3;2.0;Vivem em campos e montanhas em bandos grandes, e seus gritos são bem irritantes.;Evolui para Staravia. Apareceu pela primeira vez na 4ª geração.
+397;Staravia;Sinnoh;Normal;Voador;0.6;15.5;Formam bandos enormes e brigam entre si o tempo todo.;Evolui de Starly e evolui para Staraptor. Apareceu pela primeira vez na 4ª geração.
+398;Staraptor;Sinnoh;Normal;Voador;1.2;24.9;Deixou o bando por ter ganhado força suficiente para sobreviver sozinho.;Evolui de Staravia. Apareceu pela primeira vez na 4ª geração.
+399;Bidoof;Sinnoh;Normal;;0.5;20.0;Tem um rosto simples e dificilmente se abala com alguma coisa.;Evolui para Bibarel. Apareceu pela primeira vez na 4ª geração.
+400;Bibarel;Sinnoh;Normal;Água;1.0;31.5;O pelo repele água e também é excelente para conservar o calor.;Evolui de Bidoof. Apareceu pela primeira vez na 4ª geração.
+401;Kricketot;Sinnoh;Inseto;;0.3;2.2;Quando as árvores mudam de cor, mais deles aparecem, e o som das antenas parece um instrumento.;Evolui para Kricketune. Apareceu pela primeira vez na 4ª geração.
+402;Kricketune;Sinnoh;Inseto;;1.0;25.5;Usa os braços em forma de sabre para produzir som, e a melodia varia de indivíduo para indivíduo.;Evolui de Kricketot. Apareceu pela primeira vez na 4ª geração.
+403;Shinx;Sinnoh;Elétrico;;0.5;9.5;Balança o corpo para gerar eletricidade e, apesar do tamanho, é agressivo, então é preciso ter paciência.;Evolui para Luxio. Apareceu pela primeira vez na 4ª geração.
+404;Luxio;Sinnoh;Elétrico;;0.9;30.5;Usa com orgulho as garras eletrificadas como armas e divide a caça igualmente com os outros.;Evolui de Shinx e evolui para Luxray. Apareceu pela primeira vez na 4ª geração.
+405;Luxray;Sinnoh;Elétrico;;1.4;42.0;Vivem em bandos liderados por um macho, e dizem que, quando os olhos brilham dourados, enxerga através de tudo.;Evolui de Luxio. Apareceu pela primeira vez na 4ª geração.
+406;Budew;Sinnoh;Planta;Veneno;0.2;1.2;Quando a luz do sol fica mais forte, o botão da cabeça se abre.;É um Pokémon bebê. Evolui para Roselia. Apareceu pela primeira vez na 4ª geração.
+407;Roserade;Sinnoh;Planta;Veneno;0.9;14.5;Dentro do buquê de cada mão, esconde chicotes de espinhos cheios de veneno forte.;Evolui de Roselia. Apareceu pela primeira vez na 4ª geração.
+408;Cranidos;Sinnoh;Pedra;;0.9;31.5;É raríssimo, e eles duelam batendo cabeça contra cabeça, e o barulho ecoa por toda a área.;Evolui para Rampardos. Apareceu pela primeira vez na 4ª geração.
+409;Rampardos;Sinnoh;Pedra;;1.6;102.5;Pouco se sabe sobre sua biologia, e derruba árvores enormes com a bela cabeça parecida com uma pérola.;Evolui de Cranidos. Apareceu pela primeira vez na 4ª geração.
+410;Shieldon;Sinnoh;Pedra;Aço;0.5;57.0;Pouco conhecido por quase ninguém tê-lo visto, mas é calmo, não gosta de conflitos e gosta de lustrar o corpo.;Evolui para Bastiodon. Apareceu pela primeira vez na 4ª geração.
+411;Bastiodon;Sinnoh;Pedra;Aço;1.3;149.5;O rosto é resistente como diamante, e essa dureza dá uma defesa muito estável.;Evolui de Shieldon. Apareceu pela primeira vez na 4ª geração.
+412;Burmy;Sinnoh;Inseto;;0.2;3.4;Se a capa sofrer o menor dano, conserta na hora com o que estiver por perto.;Evolui para Wormadam ou Mothim. Apareceu pela primeira vez na 4ª geração.
+413;Wormadam;Sinnoh;Inseto;Planta;0.5;6.5;Quando Burmy evoluiu, a capa virou parte do corpo e nunca é descartada.;Evolui de Burmy. Apareceu pela primeira vez na 4ª geração.
+414;Mothim;Sinnoh;Inseto;Voador;0.9;23.3;Espalha escamas cor de aço ao bater as asas e, apesar de comer néctar, não costuma ser visto nas flores.;Evolui de Burmy. Apareceu pela primeira vez na 4ª geração.
+415;Combee;Sinnoh;Inseto;Voador;0.3;5.5;Juram lealdade a uma rainha e trabalham duro para juntar néctar.;Evolui para Vespiquen. Apareceu pela primeira vez na 4ª geração.
+416;Vespiquen;Sinnoh;Inseto;Voador;1.2;38.5;Comanda os súditos para construir a colmeia e elimina intrusos que invadem o ninho para usá-los de alimento.;Evolui de Combee. Apareceu pela primeira vez na 4ª geração.
+417;Pachirisu;Sinnoh;Elétrico;;0.4;3.9;Espécie parente da linha de Pikachu, é calmo, mas perigoso se alguém tocar a cauda eletrificada.;Não tem evoluções. Apareceu pela primeira vez na 4ª geração.
+418;Buizel;Sinnoh;Água;;0.7;29.5;Se move livremente na água girando a cauda bifurcada para se impulsionar.;Evolui para Floatzel. Apareceu pela primeira vez na 4ª geração.
+419;Floatzel;Sinnoh;Água;;1.1;33.5;Tem uma bolsa de flutuação longa e bonita que o impede de se afogar até em mares agitados.;Evolui de Buizel. Apareceu pela primeira vez na 4ª geração.
+420;Cherubi;Sinnoh;Planta;;0.4;3.3;Quando a fruta ao lado do corpo fica grande e gorda, usa seus nutrientes para evoluir.;Evolui para Cherrim. Apareceu pela primeira vez na 4ª geração.
+421;Cherrim;Sinnoh;Planta;;0.5;9.3;Fica parado, só com um tremor ocasional, e muitos Pokémon se juntam ao redor atraídos pelo cheiro.;Evolui de Cherubi. Apareceu pela primeira vez na 4ª geração.
+422;Shellos;Sinnoh;Água;;0.3;6.3;É comum em praias de águas quentes e, surpreendentemente amigável, rasteja até qualquer pessoa que vê.;Evolui para Gastrodon. Apareceu pela primeira vez na 4ª geração.
+423;Gastrodon;Sinnoh;Água;Terra;0.9;29.9;Come areia da praia e, se encontra outro de cor diferente, uma briga feroz é inevitável.;Evolui de Shellos. Apareceu pela primeira vez na 4ª geração.
+424;Ambipom;Sinnoh;Normal;;1.2;20.3;Para afirmar o parentesco, os membros da espécie formam um anel ligando as caudas duplicadas.;Evolui de Aipom. Apareceu pela primeira vez na 4ª geração.
+425;Drifloon;Sinnoh;Fantasma;Voador;0.4;1.2;Dizem que atrai crianças pequenas e as leva para o além, e há quem diga que nasce de almas humanas reencarnadas.;Evolui para Drifblim. Apareceu pela primeira vez na 4ª geração.
+426;Drifblim;Sinnoh;Fantasma;Voador;1.2;15.0;Flutua ao entardecer em silêncio total, e sua aparência passageira e melancólica toca algumas pessoas.;Evolui de Drifloon. Apareceu pela primeira vez na 4ª geração.
+427;Buneary;Sinnoh;Normal;;0.4;5.5;Minha hipótese é que enrola as orelhas porque a audição é aguçada demais.;Evolui para Lopunny. Apareceu pela primeira vez na 4ª geração.
+428;Lopunny;Sinnoh;Normal;;1.2;33.3;O pelo é quente e incrivelmente leve, e ele chuta como um mestre de caratê para afastar oponentes.;Evolui de Buneary. Apareceu pela primeira vez na 4ª geração.
+429;Mismagius;Sinnoh;Fantasma;;0.9;4.4;As palavras mágicas que entoa afastam o azar, então há o costume de convidá-lo para casa.;Evolui de Misdreavus. Apareceu pela primeira vez na 4ª geração.
+430;Honchkrow;Sinnoh;Sombrio;Voador;0.9;27.3;Com um grito seu, um bando de Murkrow vem voando, e a noite parece cair de repente.;Evolui de Murkrow. Apareceu pela primeira vez na 4ª geração.
+431;Glameow;Sinnoh;Normal;;0.5;3.9;Enfeitiça os humanos com a cauda em espiral e o olhar penetrante, e as garras escondidas são afiadíssimas.;Evolui para Purugly. Apareceu pela primeira vez na 4ª geração.
+432;Purugly;Sinnoh;Normal;;1.0;43.8;Atrevido e difícil de domar, é popular pelo pelo mais bonito que veludo.;Evolui de Glameow. Apareceu pela primeira vez na 4ª geração.
+433;Chingling;Sinnoh;Psíquico;;0.2;0.6;Me deu uma dor de cabeça terrível quando pareceu gritar sem fazer som algum.;É um Pokémon bebê. Evolui para Chimecho. Apareceu pela primeira vez na 4ª geração.
+434;Stunky;Sinnoh;Veneno;Sombrio;0.4;19.2;O veneno que jorra de trás tem um cheiro tão ruim que uma só fungada pode causar perda de memória.;Evolui para Skuntank. Apareceu pela primeira vez na 4ª geração.
+435;Skuntank;Sinnoh;Veneno;Sombrio;1.0;38.0;Borrifa um líquido venenoso para derrubar a presa e às vezes, enjoado do próprio cheiro, deixa a presa sem comer.;Evolui de Stunky. Apareceu pela primeira vez na 4ª geração.
+436;Bronzor;Sinnoh;Aço;Psíquico;0.5;60.5;Flutua com uma energia misteriosa, e o desenho nas costas é considerado sagrado e aparece em imagens de civilizações antigas.;Evolui para Bronzong. Apareceu pela primeira vez na 4ª geração.
+437;Bronzong;Sinnoh;Aço;Psíquico;1.3;187.0;Alguns acreditam que o grito de sino abre portais para outro mundo, e desde a antiguidade é venerado como um deus.;Evolui de Bronzor. Apareceu pela primeira vez na 4ª geração.
+438;Bonsly;Sinnoh;Pedra;;0.5;15.0;Suas lágrimas despertam a compaixão de quem as vê, mas não se deixe enganar.;É um Pokémon bebê. Evolui para Sudowoodo. Apareceu pela primeira vez na 4ª geração.
+439;Mime Jr.;Sinnoh;Psíquico;Fada;0.6;13.0;Aparece de vez em quando em mercados movimentados, imita as pessoas como uma criança e observa a reação com olhos brilhantes.;É um Pokémon bebê. Evolui para Mr. Mime. Apareceu pela primeira vez na 4ª geração.
+440;Happiny;Sinnoh;Normal;;0.6;24.4;Imitando Chansey, guarda uma pedra redonda na bolsa da barriga e a adora.;É um Pokémon bebê. Evolui para Chansey. Apareceu pela primeira vez na 4ª geração.
+441;Chatot;Sinnoh;Normal;Voador;0.5;1.9;Artista versátil, imita a fala humana, e dizem que os mais velhos e experientes até entendem o significado das palavras.;Não tem evoluções. Apareceu pela primeira vez na 4ª geração.
+442;Spiritomb;Sinnoh;Fantasma;Sombrio;1.0;108.0;Lança maldições com pensamentos malignos, e escritos dizem que nasceu da união de 108 espíritos malignos.;Não tem evoluções. Apareceu pela primeira vez na 4ª geração.
+443;Gible;Sinnoh;Dragão;Terra;0.7;20.5;Faz ninho em cavernas sem luz do sol, e os dentes afiados caem quando gastos, mas crescem em poucos dias.;Evolui para Gabite. Apareceu pela primeira vez na 4ª geração.
+444;Gabite;Sinnoh;Dragão;Terra;1.4;56.0;Costuma ser violento, mas quando dei a ele uma conta de vidro que cobiçava, ficou de repente dócil.;Evolui de Gible e evolui para Garchomp. Apareceu pela primeira vez na 4ª geração.
+445;Garchomp;Sinnoh;Dragão;Terra;1.9;95.0;Corta os céus em velocidade cegante, um espetáculo magnífico, e tem temperamento selvagem.;Evolui de Gabite. Apareceu pela primeira vez na 4ª geração.
+446;Munchlax;Sinnoh;Normal;;0.6;105.0;O estômago robusto permite que devore até comida estragada sem se incomodar.;É um Pokémon bebê. Evolui para Snorlax. Apareceu pela primeira vez na 4ª geração.
+447;Riolu;Sinnoh;Lutador;;0.7;20.2;Com aparência infantil, tem a misteriosa capacidade de ler a mente dos humanos.;É um Pokémon bebê. Evolui para Lucario. Apareceu pela primeira vez na 4ª geração.
+448;Lucario;Sinnoh;Lutador;Aço;1.2;54.0;Parece muito galante, emite ondas de energia e as controla com precisão para sentir seres distantes.;Evolui de Riolu. Apareceu pela primeira vez na 4ª geração.
+449;Hippopotas;Sinnoh;Terra;;0.8;49.5;Grande e preguiçoso, é difícil de detectar porque gosta de se enterrar e ficar escondido sob a terra.;Evolui para Hippowdon. Apareceu pela primeira vez na 4ª geração.
+450;Hippowdon;Sinnoh;Terra;;2.0;300.0;Esquentado e violento, levanta redemoinhos de areia para esmagar o ânimo dos inimigos antes de atacar.;Evolui de Hippopotas. Apareceu pela primeira vez na 4ª geração.
+451;Skorupi;Sinnoh;Veneno;Inseto;0.8;12.0;As garras são afiadas como lâminas e venenosas, o que o torna um Pokémon muito perigoso.;Evolui para Drapion. Apareceu pela primeira vez na 4ª geração.
+452;Drapion;Sinnoh;Veneno;Sombrio;1.3;61.5;Tem temperamento bruto e feroz, com força imensa e uma casca que faz espadas ricochetearem.;Evolui de Skorupi. Apareceu pela primeira vez na 4ª geração.
+453;Croagunk;Sinnoh;Veneno;Lutador;0.7;23.0;Manipula veneno e tem personalidade traiçoeira, mas faz certo sucesso pela aparência peculiar.;Evolui para Toxicroak. Apareceu pela primeira vez na 4ª geração.
+454;Toxicroak;Sinnoh;Veneno;Lutador;1.3;44.4;As garras carmesim têm uma toxina forte, que diluída e misturada a ervas vira um tônico.;Evolui de Croagunk. Apareceu pela primeira vez na 4ª geração.
+455;Carnivine;Sinnoh;Planta;;1.4;27.0;Apesar de ser um Pokémon planta, tem temperamento guloso e indisciplinado.;Não tem evoluções. Apareceu pela primeira vez na 4ª geração.
+456;Finneon;Sinnoh;Água;;0.4;7.0;É lindo vê-lo nadando com as longas nadadeiras caudais rosadas ondulando atrás.;Evolui para Lumineon. Apareceu pela primeira vez na 4ª geração.
+457;Lumineon;Sinnoh;Água;;1.2;24.0;Caça com as nadadeiras brilhantes, e os cardumes perto da superfície à noite são de tirar o fôlego.;Evolui de Finneon. Apareceu pela primeira vez na 4ª geração.
+458;Mantyke;Sinnoh;Água;Voador;1.0;65.0;Embora tenha forma de bola, é bom nadador e descobri que, com cardumes de Remoraid, aprende a se comportar.;É um Pokémon bebê. Evolui para Mantine. Apareceu pela primeira vez na 4ª geração.
+459;Snover;Sinnoh;Planta;Gelo;1.0;50.5;É fácil encontrá-lo na neve, e há histórias de Snover aparecendo em vilas sem fazer mal.;Evolui para Abomasnow. Apareceu pela primeira vez na 4ª geração.
+460;Abomasnow;Sinnoh;Planta;Gelo;2.2;135.5;Poderoso, divide pedras enormes com facilidade, não gosta de companhia e vive quieto no fundo das montanhas.;Evolui de Snover. Apareceu pela primeira vez na 4ª geração.
+461;Weavile;Sinnoh;Sombrio;Gelo;1.1;34.0;Encurrala presas em bando, sob a liderança de um chefe, e tem uma astúcia cada vez maior.;Evolui de Sneasel. Apareceu pela primeira vez na 4ª geração.
+462;Magnezone;Sinnoh;Elétrico;Aço;1.2;180.0;Teorizo que um campo magnético especial mudou sua estrutura molecular e causou a evolução.;Evolui de Magneton. Apareceu pela primeira vez na 4ª geração.
+463;Lickilicky;Sinnoh;Normal;;1.7;140.0;A língua estica e encolhe à vontade e chega a mais de 10 vezes a altura do corpo.;Evolui de Lickitung. Apareceu pela primeira vez na 4ª geração.
+464;Rhyperior;Sinnoh;Terra;Pedra;2.4;282.8;Evoluiu com um item curioso, e a pele rochosa é de uma substância misteriosa que resiste a muito.;Evolui de Rhydon. Apareceu pela primeira vez na 4ª geração.
+465;Tangrowth;Sinnoh;Planta;;2.0;128.6;Coberto de longas trepadeiras como um arbusto, balança os feixes como braços e os enrola na presa.;Evolui de Tangela. Apareceu pela primeira vez na 4ª geração.
+466;Electivire;Sinnoh;Elétrico;;1.8;138.6;A evolução foi causada por um item incomum, e a saída elétrica aumenta com os batimentos do coração.;Evolui de Electabuzz. Apareceu pela primeira vez na 4ª geração.
+467;Magmortar;Sinnoh;Fogo;;1.6;68.0;Evoluiu com um item estranho, e as bolas de fogo dos braços em forma de tubo derretem ferro.;Evolui de Magmar. Apareceu pela primeira vez na 4ª geração.
+468;Togekiss;Sinnoh;Fada;Voador;1.5;38.0;Poucos o viram, e depois de estudar os escritos, tenho certeza de que aparece quando reina a paz.;Evolui de Togetic. Apareceu pela primeira vez na 4ª geração.
+469;Yanmega;Sinnoh;Inseto;Voador;1.9;51.5;Extremamente violento, não desperdiça energia na caça e mira só os pontos mais fracos da presa.;Evolui de Yanma. Apareceu pela primeira vez na 4ª geração.
+470;Leafeon;Sinnoh;Planta;;1.0;25.5;Células parecidas com as das plantas foram achadas no pelo, e a cauda dura derruba uma árvore grande de um golpe.;Evolui de Eevee. Apareceu pela primeira vez na 4ª geração.
+471;Glaceon;Sinnoh;Gelo;;0.8;25.9;Consegue baixar a temperatura do corpo muito rápido e congela o ar, criando pó de diamante que brilha como joias.;Evolui de Eevee. Apareceu pela primeira vez na 4ª geração.
+472;Gliscor;Sinnoh;Terra;Voador;2.0;42.5;Plana sem fazer barulho com asas negras e crava as presas afiadas na garganta da presa.;Evolui de Gligar. Apareceu pela primeira vez na 4ª geração.
+473;Mamoswine;Sinnoh;Gelo;Terra;2.5;291.0;A espécie atingiu seu auge durante a era do gelo.;Evolui de Piloswine. Apareceu pela primeira vez na 4ª geração.
+474;Porygon-Z;Sinnoh;Normal;;0.9;34.0;Um item curioso causou esta evolução, e a capacidade de ataque aumentou muito, mas o comportamento ficou ainda mais estranho.;Evolui de Porygon2. Apareceu pela primeira vez na 4ª geração.
+475;Gallade;Sinnoh;Psíquico;Lutador;1.6;52.0;As lâminas que saem dos cotovelos são mais afiadas que as melhores espadas.;Evolui de Kirlia. Apareceu pela primeira vez na 4ª geração.
+476;Probopass;Sinnoh;Pedra;Aço;1.4;340.0;Emite magnetismo poderoso e controla a areia de ferro que forma o bigode exuberante.;Evolui de Nosepass. Apareceu pela primeira vez na 4ª geração.
+477;Dusknoir;Sinnoh;Fantasma;;2.2;106.6;Vai ao encontro de quem teve a vida encerrada e leva a alma até o além.;Evolui de Dusclops. Apareceu pela primeira vez na 4ª geração.
+478;Froslass;Sinnoh;Gelo;Fantasma;1.3;26.6;Habitado pela alma de uma mulher que morreu com rancor nas montanhas nevadas.;Evolui de Snorunt. Apareceu pela primeira vez na 4ª geração.
+479;Rotom;Sinnoh;Elétrico;Fantasma;0.3;0.3;É um Pokémon bizarro que parece um fogo-fátuo movido a eletricidade.;Não tem evoluções. Apareceu pela primeira vez na 4ª geração.
+480;Uxie;Sinnoh;Psíquico;;0.3;0.3;Temido, mas também respeitado, por roubar a memória de malfeitores.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+481;Mesprit;Sinnoh;Psíquico;;0.3;0.3;Conhecido como o Ser da Emoção, era temido porque quem o desrespeitava tinha as emoções bagunçadas.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+482;Azelf;Sinnoh;Psíquico;;0.3;0.3;O temido Ser da Vontade, que, segundo as lendas, manipula a vontade dos inimigos e os transforma em marionetes.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+483;Dialga;Sinnoh;Aço;Dragão;5.4;683.0;É venerado como um deus na lenda de Hisui, e seu nascimento fez o rio do tempo começar a correr no mundo.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+484;Palkia;Sinnoh;Água;Dragão;4.2;336.0;É temido como um deus na lenda de Hisui, e seu nascimento fez as paredes do mundo desaparecerem, criando o céu.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+485;Heatran;Sinnoh;Fogo;Aço;1.7;430.0;Contam histórias que nasceu do magma fervente dentro do Monte Coronet.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+486;Regigigas;Sinnoh;Normal;;3.7;420.0;Segundo a lenda, juntou as massas de terra e as amarrou com corda para criar o continente de Hisui.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+487;Giratina;Sinnoh;Fantasma;Dragão;4.5;750.0;Um verso de Hisui conta que uma luz poderosa cria uma sombra profunda.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+488;Cresselia;Sinnoh;Psíquico;;1.5;85.6;Lembra a lua crescente e deixa um rastro de luz brilhante ao voar pelo céu da noite.;É um Pokémon lendário. Apareceu pela primeira vez na 4ª geração.
+489;Phione;Sinnoh;Água;;0.4;3.1;Pode ser visto flutuando perto da costa nas estações de mar quente, e o corpo azul se mistura à água.;É um Pokémon mítico. Apareceu pela primeira vez na 4ª geração.
+490;Manaphy;Sinnoh;Água;;0.3;1.4;Dizem que migra pelos oceanos e visita as águas costeiras de Hisui só raramente.;É um Pokémon mítico. Apareceu pela primeira vez na 4ª geração.
+491;Darkrai;Sinnoh;Sombrio;;1.5;50.5;Numa noite sem lua, todos os moradores de uma vila tiveram pesadelos.;É um Pokémon mítico. Apareceu pela primeira vez na 4ª geração.
+492;Shaymin;Sinnoh;Planta;;0.2;2.1;Quando as estações mudam e o inverno cruel acaba, e as pessoas agradecem aos céus, ele aparece e cobre o campo de flores.;É um Pokémon mítico. Apareceu pela primeira vez na 4ª geração.
+493;Arceus;Sinnoh;Normal;;3.2;320.0;É a fonte celestial de onde jorra a luz que brilha sobre Hisui.;É um Pokémon mítico. Apareceu pela primeira vez na 4ª geração.
+494;Victini;Unova;Psíquico;Fogo;0.4;4.0;Quando compartilha a energia infinita que cria, o corpo de quem a recebe fica transbordando de poder.;É um Pokémon mítico. Apareceu pela primeira vez na 5ª geração.
+495;Snivy;Unova;Planta;;0.6;8.1;Faz fotossíntese tomando sol com a cauda, e quando não está bem, a cauda murcha.;Evolui para Servine. Apareceu pela primeira vez na 5ª geração.
+496;Servine;Unova;Planta;;0.8;16.0;Quando fica sujo, as folhas não fazem fotossíntese, então se mantém sempre limpo.;Evolui de Snivy e evolui para Serperior. Apareceu pela primeira vez na 5ª geração.
+497;Serperior;Unova;Planta;;3.3;63.0;Para os movimentos do oponente só com o olhar e absorve a energia solar, ampliando-a por dentro.;Evolui de Servine. Apareceu pela primeira vez na 5ª geração.
+498;Tepig;Unova;Fogo;;0.5;9.9;Adora frutas assadas, mas às vezes se empolga e as queima até virarem carvão.;Evolui para Pignite. Apareceu pela primeira vez na 5ª geração.
+499;Pignite;Unova;Fogo;Lutador;1.0;55.5;Quando o fogo interno se inflama, os movimentos ficam mais rápidos e precisos.;Evolui de Tepig e evolui para Emboar. Apareceu pela primeira vez na 5ª geração.
+500;Emboar;Unova;Fogo;Lutador;1.6;150.0;Dominou golpes rápidos e potentes e deixa crescer uma barba de fogo.;Evolui de Pignite. Apareceu pela primeira vez na 5ª geração.
+501;Oshawott;Unova;Água;;0.5;5.9;Este Pokémon de Unova usa a concha da barriga como arma para cortar os inimigos.;Evolui para Dewott. Apareceu pela primeira vez na 5ª geração.
+502;Dewott;Unova;Água;;0.8;24.5;A técnica refinada das duas conchas é fruto do treino diário e faz até mestres da espada fugirem.;Evolui de Oshawott e evolui para Samurott. Apareceu pela primeira vez na 5ª geração.
+503;Samurott;Unova;Água;;1.5;94.6;De coração duro e lâmina habilidosa, esta forma rara é fruto da evolução do Pokémon em Hisui.;Evolui de Dewott. Apareceu pela primeira vez na 5ª geração.
+504;Patrat;Unova;Normal;;0.5;11.6;Muito cauteloso, sempre um deles vigia, mas não nota um inimigo vindo por trás.;Evolui para Watchog. Apareceu pela primeira vez na 5ª geração.
+505;Watchog;Unova;Normal;;1.1;27.0;Ao ver um inimigo, levanta a cauda e cospe sementes de fruta guardadas nas bochechas.;Evolui de Patrat. Apareceu pela primeira vez na 5ª geração.
+506;Lillipup;Unova;Normal;;0.4;4.1;É mais esperto que a criança comum e não esquece o carinho que recebe nem os maus-tratos.;Evolui para Herdier. Apareceu pela primeira vez na 5ª geração.
+507;Herdier;Unova;Normal;;0.9;14.7;O pelo preto é denso e elástico, e até presas afiadas ricocheteiam.;Evolui de Lillipup e evolui para Stoutland. Apareceu pela primeira vez na 5ª geração.
+508;Stoutland;Unova;Normal;;1.2;61.0;Tem muito orgulho do bigode e dizem que o comprimento define a posição social na espécie.;Evolui de Herdier. Apareceu pela primeira vez na 5ª geração.
+509;Purrloin;Unova;Sombrio;;0.4;10.1;Atrai os oponentes com seu jeito adorável e depois os arranha e ri deles.;Evolui para Liepard. Apareceu pela primeira vez na 5ª geração.
+510;Liepard;Unova;Sombrio;;1.1;37.5;Silencioso, se aproxima da presa por trás sem fazer nenhum som.;Evolui de Purrloin. Apareceu pela primeira vez na 5ª geração.
+511;Pansage;Unova;Planta;;0.6;10.5;É bom em achar frutas e as reúne de todo lugar, e divide generosamente com os amigos.;Evolui para Simisage. Apareceu pela primeira vez na 5ª geração.
+512;Simisage;Unova;Planta;;1.1;30.5;De temperamento ruim, luta girando a cauda cheia de espinhos, e a folha da cabeça é muito amarga.;Evolui de Pansage. Apareceu pela primeira vez na 5ª geração.
+513;Pansear;Unova;Fogo;;0.6;11.0;Vive em cavernas de vulcões, e o fogo do tufo da cabeça chega a 300 graus Celsius.;Evolui para Simisear. Apareceu pela primeira vez na 5ª geração.
+514;Simisear;Unova;Fogo;;1.0;28.0;Quando se empolga, saem brasas da cabeça e da cauda e ele esquenta.;Evolui de Pansear. Apareceu pela primeira vez na 5ª geração.
+515;Panpour;Unova;Água;;0.6;13.5;A água guardada no tufo é cheia de nutrientes e as plantas que a recebem crescem grandes.;Evolui para Simipour. Apareceu pela primeira vez na 5ª geração.
+516;Simipour;Unova;Água;;1.0;29.0;Prefere lugares com água limpa e, quando o tufo seca, reabastece sugando água com a cauda.;Evolui de Panpour. Apareceu pela primeira vez na 5ª geração.
+517;Munna;Unova;Psíquico;;0.6;23.3;Come sonhos e solta névoa, rosa quando come um sonho bom e preta quando come um pesadelo.;Evolui para Musharna. Apareceu pela primeira vez na 5ª geração.
+518;Musharna;Unova;Psíquico;;1.1;60.5;Cochila e sonha o tempo todo, e é melhor deixá-lo quieto, pois fica muito mal-humorado ao acordar.;Evolui de Munna. Apareceu pela primeira vez na 5ª geração.
+519;Pidove;Unova;Normal;Voador;0.3;2.1;É esquecido e não muito esperto, mas muitos treinadores o amam pela simpatia e sinceridade.;Evolui para Tranquill. Apareceu pela primeira vez na 5ª geração.
+520;Tranquill;Unova;Normal;Voador;0.6;15.0;Esses Pokémon inteligentes têm memória aguçada, e entregadores costumam escolhê-los como parceiros.;Evolui de Pidove e evolui para Unfezant. Apareceu pela primeira vez na 5ª geração.
+521;Unfezant;Unova;Normal;Voador;1.2;29.0;É inteligente e muito orgulhoso, e todos prestam atenção em quem é treinador de um.;Evolui de Tranquill. Apareceu pela primeira vez na 5ª geração.
+522;Blitzle;Unova;Elétrico;;0.8;29.8;A crina brilha quando solta eletricidade, e eles usam a frequência e o ritmo dos clarões para se comunicar.;Evolui para Zebstrika. Apareceu pela primeira vez na 5ª geração.
+523;Zebstrika;Unova;Elétrico;;1.6;79.5;Tem movimentos como raios, e quando corre a toda velocidade, o som de trovão reverbera.;Evolui de Blitzle. Apareceu pela primeira vez na 5ª geração.
+524;Roggenrola;Unova;Pedra;;0.4;18.0;Quando detecta um ruído, começa a se mover, e o núcleo de energia o deixa um pouco quente ao toque.;Evolui para Boldore. Apareceu pela primeira vez na 5ª geração.
+525;Boldore;Unova;Pedra;;0.9;102.0;Usa o som para monitorar o que há por perto e, quando irritado, ataca sem mudar a direção em que olha.;Evolui de Roggenrola e evolui para Gigalith. Apareceu pela primeira vez na 5ª geração.
+526;Gigalith;Unova;Pedra;;1.7;260.0;Seus disparos de energia explodem um caminhão, mas só funcionam quando o sol está brilhando.;Evolui de Boldore. Apareceu pela primeira vez na 5ª geração.
+527;Woobat;Unova;Psíquico;Voador;0.4;2.1;Emite ondas ultrassônicas ao voar em busca de presas, os Pokémon do tipo inseto.;Evolui para Swoobat. Apareceu pela primeira vez na 5ª geração.
+528;Swoobat;Unova;Psíquico;Voador;0.9;10.5;O formato do nariz é de bom augúrio e em algumas regiões é símbolo de boa sorte.;Evolui de Woobat. Apareceu pela primeira vez na 5ª geração.
+529;Drilbur;Unova;Terra;;0.3;8.5;É escavador e usa as garras para cavar, mas estraga plantações, então muitos fazendeiros não gostam dele.;Evolui para Excadrill. Apareceu pela primeira vez na 5ª geração.
+530;Excadrill;Unova;Terra;Aço;0.7;40.4;Conhecido como Rei da Broca, escava túneis a mais de 140 km/h.;Evolui de Drilbur. Apareceu pela primeira vez na 5ª geração.
+531;Audino;Unova;Normal;;1.1;31.0;Tem bom coração e, tocando com as antenas, percebe os sentimentos e a saúde dos outros.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+532;Timburr;Unova;Lutador;;0.6;12.5;Os que carregam toras de três vezes seu tamanho estão perto de evoluir.;Evolui para Gurdurr. Apareceu pela primeira vez na 5ª geração.
+533;Gurdurr;Unova;Lutador;;1.2;40.0;É ótimo em demolição, e não em construção, mas há técnica no jeito de usar a viga de metal.;Evolui de Timburr e evolui para Conkeldurr. Apareceu pela primeira vez na 5ª geração.
+534;Conkeldurr;Unova;Lutador;;1.4;87.0;Quando luta com tudo, joga os pilares de concreto de lado e pula nos oponentes para socá-los.;Evolui de Gurdurr. Apareceu pela primeira vez na 5ª geração.
+535;Tympole;Unova;Água;;0.5;4.5;Usa ondas sonoras para se comunicar com os da mesma espécie, e pessoas e outros Pokémon não ouvem seus alertas.;Evolui para Palpitoad. Apareceu pela primeira vez na 5ª geração.
+536;Palpitoad;Unova;Água;Terra;0.8;17.0;Às vezes o canto é sublime para os ouvidos, e os de caroços maiores cantam com maior variedade de sons.;Evolui de Tympole e evolui para Seismitoad. Apareceu pela primeira vez na 5ª geração.
+537;Seismitoad;Unova;Água;Terra;1.5;62.0;É popular entre os idosos, que dizem que a vibração dos caroços é ótima para massagens.;Evolui de Palpitoad. Apareceu pela primeira vez na 5ª geração.
+538;Throh;Unova;Lutador;;1.3;55.5;Treinam em grupos de cinco, e quem não acompanha deixa o cinto e sai do grupo.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+539;Sawk;Unova;Lutador;;1.4;51.0;Os golpes de caratê de um Sawk treinado ao extremo podem cortar o próprio oceano.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+540;Sewaddle;Unova;Inseto;Planta;0.3;2.5;Faz as próprias roupas com folhas e por isso é mascote popular entre estilistas.;Evolui para Swadloon. Apareceu pela primeira vez na 5ª geração.
+541;Swadloon;Unova;Inseto;Planta;0.5;7.3;Se protege do frio enrolado em folhas e vive se movendo, comendo folhas nas florestas.;Evolui de Sewaddle e evolui para Leavanny. Apareceu pela primeira vez na 5ª geração.
+542;Leavanny;Unova;Inseto;Planta;1.2;20.5;Aquece os ovos com o calor de folhas fermentando e faz agasalhos de folhas para os Sewaddle.;Evolui de Swadloon. Apareceu pela primeira vez na 5ª geração.
+543;Venipede;Unova;Inseto;Veneno;0.4;5.3;As presas são muito venenosas, e se vê uma presa que acha que pode comer, salta sem pensar no que pode acontecer.;Evolui para Whirlipede. Apareceu pela primeira vez na 5ª geração.
+544;Whirlipede;Unova;Inseto;Veneno;1.2;58.5;Se protege com uma casca resistente e espinhos venenosos enquanto guarda energia para evoluir.;Evolui de Venipede e evolui para Scolipede. Apareceu pela primeira vez na 5ª geração.
+545;Scolipede;Unova;Inseto;Veneno;2.5;200.5;Trava batalhas ferozes por território com Centiskorch, e quem vence faz do perdedor sua refeição.;Evolui de Whirlipede. Apareceu pela primeira vez na 5ª geração.
+546;Cottonee;Unova;Planta;Fada;0.3;0.6;Tecer o algodão de Cottonee e de Eldegoss dá um tecido finíssimo, valorizado por marcas de luxo.;Evolui para Whimsicott. Apareceu pela primeira vez na 5ª geração.
+547;Whimsicott;Unova;Planta;Fada;0.7;6.6;Enquanto toma sol, o algodão continua crescendo, e quando sobra muito, ele o arranca e espalha.;Evolui de Cottonee. Apareceu pela primeira vez na 5ª geração.
+548;Petilil;Unova;Planta;;0.5;6.6;As folhas da cabeça são muito valorizadas como remédio: secas ao sol e fervidas, dão um chá amargo.;Evolui para Lilligant. Apareceu pela primeira vez na 5ª geração.
+549;Lilligant;Unova;Planta;;1.1;16.3;Suspeito que as pernas bem desenvolvidas são resultado de uma vida em montanhas cobertas de neve.;Evolui de Petilil. Apareceu pela primeira vez na 5ª geração.
+550;Basculin;Unova;Água;;1.0;18.0;Embora seja diferente dos outros, inclusive no temperamento, que é gentil, o classifiquei como forma regional.;Evolui para Basculegion. Apareceu pela primeira vez na 5ª geração.
+551;Sandile;Unova;Terra;Sombrio;0.7;15.2;É pequeno, mas tem pernas e parte inferior fortes, e atravessa o deserto como se nadasse na areia.;Evolui para Krokorok. Apareceu pela primeira vez na 5ª geração.
+552;Krokorok;Unova;Terra;Sombrio;1.0;33.4;Tem olhos especiais para ver no escuro, mas se mexe pouco à noite porque o deserto esfria.;Evolui de Sandile e evolui para Krookodile. Apareceu pela primeira vez na 5ª geração.
+553;Krookodile;Unova;Terra;Sombrio;1.5;96.3;Muito agressivo, mas também tem paciência de ficar escondido sob a areia por dias esperando a presa.;Evolui de Krokorok. Apareceu pela primeira vez na 5ª geração.
+554;Darumaka;Unova;Fogo;;0.6;37.5;É um símbolo popular de boa sorte e nunca cai de dormir, por mais que o empurrem.;Evolui para Darmanitan. Apareceu pela primeira vez na 5ª geração.
+555;Darmanitan;Unova;Fogo;;1.3;92.9;O poder aumenta com a temperatura do fogo, que pode chegar a 1.400 graus Celsius.;Evolui de Darumaka. Apareceu pela primeira vez na 5ª geração.
+556;Maractus;Unova;Planta;;1.0;28.0;Uma vez por ano, espalha as sementes, cheias de nutrientes e uma fonte preciosa de comida no deserto.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+557;Dwebble;Unova;Inseto;Pedra;0.3;14.5;Primeiro tenta achar uma pedra para morar, mas se não achar, pode se mudar para a parte de um Hippowdon.;Evolui para Crustle. Apareceu pela primeira vez na 5ª geração.
+558;Crustle;Unova;Inseto;Pedra;1.4;200.0;As garras grossas são sua maior arma, fortes o bastante para rachar a carapaça de um Rhyperior.;Evolui de Dwebble. Apareceu pela primeira vez na 5ª geração.
+559;Scraggy;Unova;Sombrio;Lutador;0.6;11.8;Se protege com a pele resistente e acredita-se que evolui quando ela estiver totalmente esticada.;Evolui para Scrafty. Apareceu pela primeira vez na 5ª geração.
+560;Scrafty;Unova;Sombrio;Lutador;1.1;30.0;Conhecido pelo temperamento agressivo, cuida muito bem da família, dos amigos e do território.;Evolui de Scraggy. Apareceu pela primeira vez na 5ª geração.
+561;Sigilyph;Unova;Psíquico;Voador;1.4;14.0;Foi descoberto no deserto onde voam, sob as areias, as ruínas do que pode ter sido uma cidade antiga.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+562;Yamask;Unova;Fantasma;;0.5;1.5;O espírito de uma pessoa de uma era passada virou este Pokémon, que vaga em ruínas atrás de alguém que reconheça seu rosto.;Evolui para Cofagrigus ou Runerigus. Apareceu pela primeira vez na 5ª geração.
+563;Cofagrigus;Unova;Fantasma;;1.7;76.5;Há muitas imagens dele decorando tumbas antigas, símbolo da riqueza dos reis de eras passadas.;Evolui de Yamask. Apareceu pela primeira vez na 5ª geração.
+564;Tirtouga;Unova;Água;Pedra;0.7;16.5;Considerado ancestral de muitos Pokémon tartaruga, foi trazido de volta à vida de um fóssil.;Evolui para Carracosta. Apareceu pela primeira vez na 5ª geração.
+565;Carracosta;Unova;Água;Pedra;1.2;81.0;Sai da água atrás de presas, apesar de se mover mais devagar em terra.;Evolui de Tirtouga. Apareceu pela primeira vez na 5ª geração.
+566;Archen;Unova;Pedra;Voador;0.5;9.5;Dizem que é o ancestral dos Pokémon pássaros e vivia nas copas, comendo frutas e Pokémon inseto.;Evolui para Archeops. Apareceu pela primeira vez na 5ª geração.
+567;Archeops;Unova;Pedra;Voador;1.4;32.0;Apesar de voar, parecia caçar melhor no chão.;Evolui de Archen. Apareceu pela primeira vez na 5ª geração.
+568;Trubbish;Unova;Veneno;;0.6;31.0;Nasceu de um saco cheio de lixo, e os Weezing de Galar adoram os gases que ele solta.;Evolui para Garbodor. Apareceu pela primeira vez na 5ª geração.
+569;Garbodor;Unova;Veneno;;1.9;107.3;O líquido tóxico lançado pelo braço direito é tão forte que mata na hora uma criatura enfraquecida.;Evolui de Trubbish. Apareceu pela primeira vez na 5ª geração.
+570;Zorua;Unova;Sombrio;;0.7;12.5;Uma alma que partiu e voltou à vida em Hisui, tira poder do ressentimento, que sobe como energia sobre sua cabeça.;Evolui para Zoroark. Apareceu pela primeira vez na 5ª geração.
+571;Zoroark;Unova;Sombrio;;1.6;81.1;Com o pelo branco desgrenhado, parece a própria morte e ataca seus inimigos mortais sem se importar com a própria segurança.;Evolui de Zorua. Apareceu pela primeira vez na 5ª geração.
+572;Minccino;Unova;Normal;;0.4;5.8;Se cumprimentam acariciando-se com as caudas, e o de cauda mais fofa é um pouco mais convencido.;Evolui para Cinccino. Apareceu pela primeira vez na 5ª geração.
+573;Cinccino;Unova;Normal;;0.5;7.5;Um óleo especial no pelo ajuda a evitar ataques e é vendido por um preço alto no mercado.;Evolui de Minccino. Apareceu pela primeira vez na 5ª geração.
+574;Gothita;Unova;Psíquico;;0.4;5.8;Mesmo quando parece não haver ninguém por perto, ainda dá para ouvi-lo choramingando baixinho.;Evolui para Gothorita. Apareceu pela primeira vez na 5ª geração.
+575;Gothorita;Unova;Psíquico;;0.7;18.0;Nas noites de céu estrelado, o poder psíquico é o mais forte.;Evolui de Gothita e evolui para Gothitelle. Apareceu pela primeira vez na 5ª geração.
+576;Gothitelle;Unova;Psíquico;;1.5;44.0;Um criminoso que teve o destino mostrado por um Gothitelle sumiu naquele mesmo dia e nunca mais foi visto.;Evolui de Gothorita. Apareceu pela primeira vez na 5ª geração.
+577;Solosis;Unova;Psíquico;;0.3;1.0;Muitos dizem que o líquido especial que o cobre o faria sobreviver no vácuo do espaço.;Evolui para Duosion. Apareceu pela primeira vez na 5ª geração.
+578;Duosion;Unova;Psíquico;;0.6;8.0;O cérebro se dividiu em dois, que raramente pensam igual, e suas ações são totalmente imprevisíveis.;Evolui de Solosis e evolui para Reuniclus. Apareceu pela primeira vez na 5ª geração.
+579;Reuniclus;Unova;Psíquico;;1.0;20.1;Dizem que beber o líquido ao redor de Reuniclus traz sabedoria.;Evolui de Duosion. Apareceu pela primeira vez na 5ª geração.
+580;Ducklett;Unova;Água;Voador;0.5;5.5;Nada melhor do que voa e come, feliz, seu prato favorito, o musgo de turfa, mergulhando.;Evolui para Swanna. Apareceu pela primeira vez na 5ª geração.
+581;Swanna;Unova;Água;Voador;1.3;24.2;Começa a dançar ao anoitecer, e o que dança no meio é o líder do bando.;Evolui de Ducklett. Apareceu pela primeira vez na 5ª geração.
+582;Vanillite;Unova;Gelo;;0.4;5.7;Dizem que nasceu de um pingente de gelo e solta ar a -50 graus Celsius para ficar mais confortável.;Evolui para Vanillish. Apareceu pela primeira vez na 5ª geração.
+583;Vanillish;Unova;Gelo;;1.1;41.0;Dispara ar frio de quase -100 graus Celsius contra os inimigos, congelando-os.;Evolui de Vanillite e evolui para Vanilluxe. Apareceu pela primeira vez na 5ª geração.
+584;Vanilluxe;Unova;Gelo;;1.3;57.5;Acredita-se que se formou quando dois Vanillish se uniram, e a temperatura do corpo é de cerca de -6 graus Celsius.;Evolui de Vanillish. Apareceu pela primeira vez na 5ª geração.
+585;Deerling;Unova;Normal;Planta;0.6;19.5;A mudança das estações muda a cor e o cheiro do pelo.;Evolui para Sawsbuck. Apareceu pela primeira vez na 5ª geração.
+586;Sawsbuck;Unova;Normal;Planta;1.9;92.5;Migram conforme as estações, e por isso alguns o chamam de arauto da primavera.;Evolui de Deerling. Apareceu pela primeira vez na 5ª geração.
+587;Emolga;Unova;Elétrico;Voador;0.4;5.0;Adora frutas doces e às vezes enche tanto as bochechas que não consegue voar direito.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+588;Karrablast;Unova;Inseto;;0.5;5.9;Cospe um líquido da boca para derreter a casca de Shelmet e não come a casca, só o que está dentro.;Evolui para Escavalier. Apareceu pela primeira vez na 5ª geração.
+589;Escavalier;Unova;Inseto;Aço;1.0;33.0;Ataca os inimigos com as lanças prontas, e um duelo seu com Ferrothorn ficou famoso numa pintura.;Evolui de Karrablast. Apareceu pela primeira vez na 5ª geração.
+590;Foongus;Unova;Planta;Veneno;0.2;1.0;Os esporos que solta pelas mãos são muito venenosos, mas depois de bem secos servem de remédio para o estômago.;Evolui para Amoonguss. Apareceu pela primeira vez na 5ª geração.
+591;Amoonguss;Unova;Planta;Veneno;0.6;10.5;Costuma se mexer pouco e fica parado perto de Poké Bolas caídas no chão.;Evolui de Foongus. Apareceu pela primeira vez na 5ª geração.
+592;Frillish;Unova;Água;Fantasma;1.2;33.0;A lenda diz que os moradores de uma antiga cidade submersa se transformaram nestes Pokémon.;Evolui para Jellicent. Apareceu pela primeira vez na 5ª geração.
+593;Jellicent;Unova;Água;Fantasma;2.2;135.0;Sempre que há lua cheia, cardumes se juntam perto da superfície do mar esperando as presas aparecerem.;Evolui de Frillish. Apareceu pela primeira vez na 5ª geração.
+594;Alomomola;Unova;Água;;1.2;31.6;Ajuda Pokémon enfraquecidos porque quem os persegue também pode atacar Alomomola.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+595;Joltik;Unova;Inseto;Elétrico;0.1;0.6;Se agarra a outros Pokémon e suga a eletricidade estática, e é comum vê-lo grudado em Yamper.;Evolui para Galvantula. Apareceu pela primeira vez na 5ª geração.
+596;Galvantula;Unova;Inseto;Elétrico;0.8;14.3;Arma armadilhas de fios eletrificados perto de ninhos de aves para pegar filhotes que ainda voam mal.;Evolui de Joltik. Apareceu pela primeira vez na 5ª geração.
+597;Ferroseed;Unova;Planta;Aço;0.6;18.8;Prefere cavernas cobertas de musgo, cujas enzimas ajudam os espinhos a crescer grandes e fortes.;Evolui para Ferrothorn. Apareceu pela primeira vez na 5ª geração.
+598;Ferrothorn;Unova;Planta;Aço;1.0;110.0;Os espinhos são mais duros que aço, e ele sobe paredes de pedra cravando os espinhos das antenas.;Evolui de Ferroseed. Apareceu pela primeira vez na 5ª geração.
+599;Klink;Unova;Aço;;0.3;21.0;Suspeita-se que inspirou a invenção das primeiras engrenagens por povos antigos.;Evolui para Klang. Apareceu pela primeira vez na 5ª geração.
+600;Klang;Unova;Aço;;0.6;51.0;Muitas empresas de Galar o escolhem como logotipo, símbolo da tecnologia industrial.;Evolui de Klink e evolui para Klinklang. Apareceu pela primeira vez na 5ª geração.
+601;Klinklang;Unova;Aço;;0.6;81.0;As três engrenagens que o formam giram em alta velocidade, e a nova engrenagem com espinhos não é uma criatura viva.;Evolui de Klang. Apareceu pela primeira vez na 5ª geração.
+602;Tynamo;Unova;Elétrico;;0.2;0.3;Um sozinho solta só um fiozinho de eletricidade, então se juntam em grupo para dar um choque forte.;Evolui para Eelektrik. Apareceu pela primeira vez na 5ª geração.
+603;Eelektrik;Unova;Elétrico;;1.2;22.0;Têm grande apetite e, ao ver a presa, atacam e a paralisam com eletricidade.;Evolui de Tynamo e evolui para Eelektross. Apareceu pela primeira vez na 5ª geração.
+604;Eelektross;Unova;Elétrico;;2.1;80.5;Saem do mar usando os braços e atacam presas na costa, arrastando-as logo para o oceano.;Evolui de Eelektrik. Apareceu pela primeira vez na 5ª geração.
+605;Elgyem;Unova;Psíquico;;0.5;9.0;Foi descoberto há uns 50 anos, e o cérebro muito desenvolvido o ajuda a usar seus poderes psíquicos.;Evolui para Beheeyem. Apareceu pela primeira vez na 5ª geração.
+606;Beheeyem;Unova;Psíquico;;1.0;34.5;Às vezes é visto flutuando sobre campos de trigo e consegue controlar as memórias dos oponentes.;Evolui de Elgyem. Apareceu pela primeira vez na 5ª geração.
+607;Litwick;Unova;Fantasma;Fogo;0.3;3.1;Quanto mais jovem a vida que absorve, mais brilhante e sinistra fica a chama da cabeça.;Evolui para Lampent. Apareceu pela primeira vez na 5ª geração.
+608;Lampent;Unova;Fantasma;Fogo;0.6;13.0;Fica à espreita nas cidades fingindo ser um lampião e, ao achar alguém cuja morte está perto, o segue em silêncio.;Evolui de Litwick e evolui para Chandelure. Apareceu pela primeira vez na 5ª geração.
+609;Chandelure;Unova;Fantasma;Fogo;1.0;34.3;Dizem que em casas iluminadas por Chandelure em vez de lâmpadas os funerais eram constantes.;Evolui de Lampent. Apareceu pela primeira vez na 5ª geração.
+610;Axew;Unova;Dragão;;0.6;18.0;Brincam batendo as presas grandes uma na outra, e elas quebram, mas crescem tão rápido que não é problema.;Evolui para Fraxure. Apareceu pela primeira vez na 5ª geração.
+611;Fraxure;Unova;Dragão;;1.0;36.0;A pele é dura como armadura, e a estratégia favorita é atacar o oponente e espetá-lo com as presas ao mesmo tempo.;Evolui de Axew e evolui para Haxorus. Apareceu pela primeira vez na 5ª geração.
+612;Haxorus;Unova;Dragão;;1.8;105.5;Normalmente bondoso, mas assustador se irritado, e as presas cortam vigas de aço.;Evolui de Fraxure. Apareceu pela primeira vez na 5ª geração.
+613;Cubchoo;Unova;Gelo;;0.5;8.5;Funga antes de usar um golpe e usa o ranho gelado para dar o elemento gelo a qualquer golpe.;Evolui para Beartic. Apareceu pela primeira vez na 5ª geração.
+614;Beartic;Unova;Gelo;;2.6;260.0;Nada com energia em mares gelados e, quando cansa, congela a água com o sopro para descansar no gelo.;Evolui de Cubchoo. Apareceu pela primeira vez na 5ª geração.
+615;Cryogonal;Unova;Gelo;;1.1;148.0;Quando o tempo esquenta, vira vapor d'água, por isso quase nunca é visto no verão.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+616;Shelmet;Unova;Inseto;;0.4;7.7;Tem uma fisiologia estranha que reage à eletricidade, e por algum motivo evolui junto de Karrablast.;Evolui para Accelgor. Apareceu pela primeira vez na 5ª geração.
+617;Accelgor;Unova;Inseto;;0.8;25.3;Ao largar a casca ficou ágil e, para não desidratar, se envolve em faixas de membrana.;Evolui de Shelmet. Apareceu pela primeira vez na 5ª geração.
+618;Stunfisk;Unova;Terra;Elétrico;0.7;11.0;Por algum motivo, sorri um pouco quando solta uma corrente elétrica forte pelas marcas amarelas do corpo.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+619;Mienfoo;Unova;Lutador;;0.9;20.0;Pequeno, mas de temperamento feroz, e quem se aproxima sem cuidado é recebido com uma saraivada de ataques graciosos.;Evolui para Mienshao. Apareceu pela primeira vez na 5ª geração.
+620;Mienshao;Unova;Lutador;;1.4;35.5;Seus chutes, em velocidade cegante, partem rochas enormes em pedacinhos.;Evolui de Mienfoo. Apareceu pela primeira vez na 5ª geração.
+621;Druddigon;Unova;Dragão;;1.6;139.0;São cruéis e astutos, e moram em ninhos cavados por outros Pokémon, tratando-os como seus.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+622;Golett;Unova;Terra;Fantasma;1.0;92.0;Foi criado de argila e recebeu ordens do mestre há milhares de anos, e as segue até hoje.;Evolui para Golurk. Apareceu pela primeira vez na 5ª geração.
+623;Golurk;Unova;Terra;Fantasma;2.8;330.0;Há uma teoria de que dentro dele há uma máquina de movimento perpétuo que produz energia ilimitada, mas não foi provada.;Evolui de Golett. Apareceu pela primeira vez na 5ª geração.
+624;Pawniard;Unova;Sombrio;Aço;0.5;10.2;Um bando se forma para servir a um chefe Bisharp, e cada um treina duro sonhando em assumir a liderança.;Evolui para Bisharp. Apareceu pela primeira vez na 5ª geração.
+625;Bisharp;Unova;Sombrio;Aço;1.6;70.0;Surgem conflitos violentos entre Bisharp e Fraxure nos lugares onde há pedras de afiar.;Evolui de Pawniard e evolui para Kingambit. Apareceu pela primeira vez na 5ª geração.
+626;Bouffalant;Unova;Normal;;1.6;94.6;Vivem em manadas de uns 20 e os que traem a manada perdem o cabelo da cabeça, não se sabe por quê.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+627;Rufflet;Unova;Normal;Voador;0.5;10.5;A aparência de filhote engana sobre o temperamento esquentado, e desafia os pais sempre que pode para provar sua força.;Evolui para Braviary. Apareceu pela primeira vez na 5ª geração.
+628;Braviary;Unova;Normal;Voador;1.5;41.0;Gritando um grito de guerra de gelar o sangue, esta ave enorme e feroz sai para caçar.;Evolui de Rufflet. Apareceu pela primeira vez na 5ª geração.
+629;Vullaby;Unova;Sombrio;Voador;0.5;9.0;Crescem rápido, e os ossos que ficam pequenos demais para os mais velhos passam para os filhotes do ninho.;Evolui para Mandibuzz. Apareceu pela primeira vez na 5ª geração.
+630;Mandibuzz;Unova;Sombrio;Voador;1.2;39.5;Se enfeitam com ossos e parece haver modas entre eles, com ossos diferentes entrando e saindo de moda.;Evolui de Vullaby. Apareceu pela primeira vez na 5ª geração.
+631;Heatmor;Unova;Fogo;;1.4;58.0;Uma chama serve de língua e derrete a casca dura de Durant para devorar o que está dentro.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+632;Durant;Unova;Inseto;Aço;0.3;33.0;Com as mandíbulas grandes, rói até pedra.;Não tem evoluções. Apareceu pela primeira vez na 5ª geração.
+633;Deino;Unova;Sombrio;Dragão;0.8;17.3;Como não enxerga, morde tudo o que toca para entender o que há ao redor.;Evolui para Zweilous. Apareceu pela primeira vez na 5ª geração.
+634;Zweilous;Unova;Sombrio;Dragão;1.4;50.0;As duas cabeças brigam por um único pedaço de comida e ele é coberto de cicatrizes mesmo sem lutar com outros.;Evolui de Deino e evolui para Hydreigon. Apareceu pela primeira vez na 5ª geração.
+635;Hydreigon;Unova;Sombrio;Dragão;1.8;160.0;As três cabeças se revezam mordendo o oponente e os ataques só param quando o alvo cai.;Evolui de Zweilous. Apareceu pela primeira vez na 5ª geração.
+636;Larvesta;Unova;Inseto;Fogo;1.1;28.8;O corpo é quente por inteiro e solta fogo pelas pontas dos chifres para intimidar predadores e assustar presas.;Evolui para Volcarona. Apareceu pela primeira vez na 5ª geração.
+637;Volcarona;Unova;Inseto;Fogo;1.6;46.0;Sai de um casulo formado por chamas ardentes, e murais antigos o retratam como um deus do fogo.;Evolui de Larvesta. Apareceu pela primeira vez na 5ª geração.
+638;Cobalion;Unova;Aço;Lutador;2.1;250.0;Desde que nasce, tem ar de líder e sua presença acalma até inimigos cruéis.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+639;Terrakion;Unova;Pedra;Lutador;1.9;260.0;Na lenda de Unova, enfrentou humanos para proteger outros Pokémon.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+640;Virizion;Unova;Planta;Lutador;2.0;200.0;Cerca os oponentes com uma saraivada de movimentos rápidos, cortando-os com os chifres.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+641;Tornadus;Unova;Voador;;1.5;63.0;Dizem que esse Pokémon que agita tempestades faz as estações mudarem ao levantar o ar.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+642;Thundurus;Unova;Elétrico;Voador;1.5;61.0;Dizem que este mestre da eletricidade guerreia com seu rival Tornadus desde tempos imemoriais.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+643;Reshiram;Unova;Dragão;Fogo;3.2;330.0;Segundo o mito, se as pessoas ignoram a verdade e se consomem na ganância, Reshiram chega para queimar seus reinos.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+644;Zekrom;Unova;Dragão;Elétrico;2.9;345.0;A mitologia diz que, se as pessoas perdem a retidão do coração, seus reinos serão arrasados pelos raios de Zekrom.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+645;Landorus;Unova;Terra;Voador;1.5;68.0;Quando as encarnações do vento e do raio se chocam, Landorus chega para acabar com o conflito.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+646;Kyurem;Unova;Dragão;Gelo;3.0;325.0;Parece usar seu poder sobre o gelo para congelar o próprio corpo e estabilizar a estrutura das células.;É um Pokémon lendário. Apareceu pela primeira vez na 5ª geração.
+647;Keldeo;Unova;Água;Lutador;1.4;48.5;Dizem que precisa sobreviver a batalhas duras e desenvolver totalmente o chifre da testa para despertar seu verdadeiro poder.;É um Pokémon mítico. Apareceu pela primeira vez na 5ª geração.
+648;Meloetta;Unova;Normal;Psíquico;0.6;6.5;Suas melodias são cantadas com um método vocal especial que controla os sentimentos de quem as ouve.;É um Pokémon mítico. Apareceu pela primeira vez na 5ª geração.
+649;Genesect;Unova;Inseto;Aço;1.5;82.5;Existiu há 300 milhões de anos e foi modificado pela Equipe Plasma, que instalou um canhão nas costas.;É um Pokémon mítico. Apareceu pela primeira vez na 5ª geração.
+650;Chespin;Kalos;Planta;;0.4;9.0;A casca de madeira da cabeça e das costas é tão grossa que nem um caminhão o abala.;Evolui para Quilladin. Apareceu pela primeira vez na 6ª geração.
+651;Quilladin;Kalos;Planta;;0.7;29.0;Fortalecem a parte de baixo do corpo batendo um no outro, mas são gentis e não começam brigas.;Evolui de Chespin e evolui para Chesnaught. Apareceu pela primeira vez na 6ª geração.
+652;Chesnaught;Kalos;Planta;Lutador;1.6;90.0;Em postura defensiva, com os punhos protegendo o rosto, aguenta até a explosão de uma bomba.;Evolui de Quilladin. Apareceu pela primeira vez na 6ª geração.
+653;Fennekin;Kalos;Fogo;;0.4;9.4;Anda mordiscando um graveto como lanche e intimida os oponentes soprando ar quente pelas orelhas.;Evolui para Braixen. Apareceu pela primeira vez na 6ª geração.
+654;Braixen;Kalos;Fogo;;1.0;14.5;Quando o graveto é tirado da cauda, o atrito o acende.;Evolui de Fennekin e evolui para Delphox. Apareceu pela primeira vez na 6ª geração.
+655;Delphox;Kalos;Fogo;Psíquico;1.5;39.0;Com poder psíquico, cria um redemoinho de fogo de 3.000 graus Celsius que incinera quem for sugado.;Evolui de Braixen. Apareceu pela primeira vez na 6ª geração.
+656;Froakie;Kalos;Água;;0.3;7.0;Protege a pele com bolhas delicadas e, sob o ar despreocupado, vigia o que está ao redor.;Evolui para Frogadier. Apareceu pela primeira vez na 6ª geração.
+657;Frogadier;Kalos;Água;;0.6;10.9;É incomparavelmente rápido e escala uma torre de mais de 600 metros em um minuto.;Evolui de Froakie e evolui para Greninja. Apareceu pela primeira vez na 6ª geração.
+658;Greninja;Kalos;Água;Sombrio;1.5;40.0;Aparece e some com a graça de um ninja, brinca com os inimigos e os corta com estrelas de arremesso de água.;Evolui de Frogadier. Apareceu pela primeira vez na 6ª geração.
+659;Bunnelby;Kalos;Normal;;0.4;5.0;Muito sensível a perigo, e ao ouvir Corviknight bater as asas cava um buraco e se esconde na hora.;Evolui para Diggersby. Apareceu pela primeira vez na 6ª geração.
+660;Diggersby;Kalos;Normal;Terra;1.0;42.4;O pelo da barriga retém muito bem o calor, e antigamente faziam roupas pesadas de inverno com o pelo que ele largava.;Evolui de Bunnelby. Apareceu pela primeira vez na 6ª geração.
+661;Fletchling;Kalos;Normal;Voador;0.3;1.7;Quando se empolga, a temperatura do corpo sobe muito.;Evolui para Fletchinder. Apareceu pela primeira vez na 6ª geração.
+662;Fletchinder;Kalos;Fogo;Voador;0.7;16.0;São extremamente territoriais e agressivos e brigam entre si pelos locais de alimentação.;Evolui de Fletchling e evolui para Talonflame. Apareceu pela primeira vez na 6ª geração.
+663;Talonflame;Kalos;Fogo;Voador;1.2;24.5;Mergulha na presa a até 500 km/h e a ataca com chutes poderosos, sem dar chance de fuga.;Evolui de Fletchinder. Apareceu pela primeira vez na 6ª geração.
+664;Scatterbug;Kalos;Inseto;;0.3;2.5;O pó que cobre o corpo regula a temperatura, então ele vive em qualquer região ou clima.;Evolui para Spewpa. Apareceu pela primeira vez na 6ª geração.
+665;Spewpa;Kalos;Inseto;;0.3;8.4;Os bicos das aves nem arranham seu corpo resistente, e ele se defende soltando pó.;Evolui de Scatterbug e evolui para Vivillon. Apareceu pela primeira vez na 6ª geração.
+666;Vivillon;Kalos;Inseto;Voador;1.2;17.0;Os desenhos das asas dependem do clima e do relevo do local onde vive.;Evolui de Spewpa. Apareceu pela primeira vez na 6ª geração.
+667;Litleo;Kalos;Fogo;Normal;0.6;13.5;Este Pokémon de sangue quente é cheio de curiosidade, e a juba curta esquenta quando ele se irrita ou luta.;Evolui para Pyroar. Apareceu pela primeira vez na 6ª geração.
+668;Pyroar;Kalos;Fogo;Normal;1.5;81.5;O hálito passa de 5.500 graus Celsius, mas ele não o usa nas presas.;Evolui de Litleo. Apareceu pela primeira vez na 6ª geração.
+669;Flabébé;Kalos;Fada;;0.1;0.1;Usa uma coroa feita do pólen que juntou de sua flor.;Evolui para Floette. Apareceu pela primeira vez na 6ª geração.
+670;Floette;Kalos;Fada;;0.2;0.9;Dá o próprio poder às flores e se dedica de coração a cuidar delas.;Evolui de Flabébé e evolui para Florges. Apareceu pela primeira vez na 6ª geração.
+671;Florges;Kalos;Fada;;1.1;10.0;Pode viver centenas de anos e dizem que dedica a vida toda a proteger jardins.;Evolui de Floette. Apareceu pela primeira vez na 6ª geração.
+672;Skiddo;Kalos;Planta;;0.9;31.0;Se tem sol e água, não precisa comer, pois gera energia com as folhas das costas.;Evolui para Gogoat. Apareceu pela primeira vez na 6ª geração.
+673;Gogoat;Kalos;Planta;;1.7;91.0;Vivem em regiões montanhosas, e o líder do rebanho é decidido numa batalha de chifres.;Evolui de Skiddo. Apareceu pela primeira vez na 6ª geração.
+674;Pancham;Kalos;Lutador;;0.6;8.0;Para ser levado a sério, está sempre lançando olhares ameaçadores aos outros.;Evolui para Pangoro. Apareceu pela primeira vez na 6ª geração.
+675;Pangoro;Kalos;Lutador;Sombrio;2.1;136.0;Usa a folha para prever os movimentos dos oponentes e dá socos que viram sucata um caminhão.;Evolui de Pancham. Apareceu pela primeira vez na 6ª geração.
+676;Furfrou;Kalos;Normal;;1.2;28.0;Se deixado em paz, o pelo cresce e cresce, e só deixa quem confia cortar.;Não tem evoluções. Apareceu pela primeira vez na 6ª geração.
+677;Espurr;Kalos;Psíquico;;0.3;3.5;Tem poder psíquico suficiente para fazer um lutador voar, mas como não consegue controlá-lo, acha um incômodo.;Evolui para Meowstic. Apareceu pela primeira vez na 6ª geração.
+678;Meowstic;Kalos;Psíquico;;0.6;8.5;O instinto de defesa dos machos é forte, e é ao proteger a si ou aos parceiros que soltam todo o poder.;Evolui de Espurr. Apareceu pela primeira vez na 6ª geração.
+679;Honedge;Kalos;Aço;Fantasma;0.8;2.0;O olho azul no guarda-mão da espada é o verdadeiro corpo, e com seu pano velho drena a vida das pessoas.;Evolui para Doublade. Apareceu pela primeira vez na 6ª geração.
+680;Doublade;Kalos;Aço;Fantasma;0.8;4.5;As duas espadas usam a estratégia de alternar rápido entre ataque e defesa para derrubar a presa.;Evolui de Honedge e evolui para Aegislash. Apareceu pela primeira vez na 6ª geração.
+681;Aegislash;Kalos;Aço;Fantasma;1.7;53.0;Os poderes espectrais são fortes e manipulam os outros, e já os usou para forçar pessoas e Pokémon a construírem um reino.;Evolui de Doublade. Apareceu pela primeira vez na 6ª geração.
+682;Spritzee;Kalos;Fada;;0.2;0.5;O cheiro do corpo encanta quem o sente, e as damas nobres tinham grande amor por ele.;Evolui para Aromatisse. Apareceu pela primeira vez na 6ª geração.
+683;Aromatisse;Kalos;Fada;;0.8;15.5;Produz aromas que vão de doces, que fortalecem aliados, a fedidos, que tiram a vontade de lutar do oponente.;Evolui de Spritzee. Apareceu pela primeira vez na 6ª geração.
+684;Swirlix;Kalos;Fada;;0.4;3.5;O pelo fofo tem cheiro doce de algodão-doce, e ele cospe fios grudentos para enredar os inimigos.;Evolui para Slurpuff. Apareceu pela primeira vez na 6ª geração.
+685;Slurpuff;Kalos;Fada;;0.8;5.0;O pelo tem muito ar, por isso é macio ao toque e mais leve do que parece.;Evolui de Swirlix. Apareceu pela primeira vez na 6ª geração.
+686;Inkay;Kalos;Sombrio;Psíquico;0.4;3.5;Mostra aos inimigos o piscar de suas manchas luminosas para desanimá-los e aproveita para fugir.;Evolui para Malamar. Apareceu pela primeira vez na 6ª geração.
+687;Malamar;Kalos;Sombrio;Psíquico;1.5;47.0;Dizem que os poderes hipnóticos tiveram um papel em certos eventos que mudaram a história.;Evolui de Inkay. Apareceu pela primeira vez na 6ª geração.
+688;Binacle;Kalos;Pedra;Água;0.5;31.0;Se os dois não trabalham bem juntos, tanto o ataque quanto a defesa desmoronam.;Evolui para Barbaracle. Apareceu pela primeira vez na 6ª geração.
+689;Barbaracle;Kalos;Pedra;Água;1.3;96.0;Ter um olho em cada palma permite vigiar todas as direções, e em apuros os membros agem sozinhos.;Evolui de Binacle. Apareceu pela primeira vez na 6ª geração.
+690;Skrelp;Kalos;Veneno;Água;0.5;7.3;Parece uma alga podre, por isso se mistura às algas à deriva no oceano e escapa dos inimigos.;Evolui para Dragalge. Apareceu pela primeira vez na 6ª geração.
+691;Dragalge;Kalos;Veneno;Dragão;1.8;81.5;Gera energia de dragão expondo o penacho da cabeça acima da superfície do mar, sob o sol.;Evolui de Skrelp. Apareceu pela primeira vez na 6ª geração.
+692;Clauncher;Kalos;Água;;0.5;8.3;Detona o gás acumulado na garra direita para lançar água como uma bala.;Evolui para Clawitzer. Apareceu pela primeira vez na 6ª geração.
+693;Clawitzer;Kalos;Água;;1.3;35.3;O braço direito é um canhão que lança projéteis feitos de água do mar.;Evolui de Clauncher. Apareceu pela primeira vez na 6ª geração.
+694;Helioptile;Kalos;Elétrico;Normal;0.5;6.0;O sol alimenta sua geração de eletricidade, e se isso é interrompido ele fica estressado e fraco.;Evolui para Heliolisk. Apareceu pela primeira vez na 6ª geração.
+695;Heliolisk;Kalos;Elétrico;Normal;1.0;21.0;Um só tomando sol com a gola aberta já gera eletricidade para abastecer uma cidade.;Evolui de Helioptile. Apareceu pela primeira vez na 6ª geração.
+696;Tyrunt;Kalos;Pedra;Dragão;0.8;26.0;É egoísta, gosta de ser mimado e pode ferir gravemente o treinador só de brincar.;Evolui para Tyrantrum. Apareceu pela primeira vez na 6ª geração.
+697;Tyrantrum;Kalos;Pedra;Dragão;2.5;270.0;Uma mordida das mandíbulas enormes destrói um carro, e foi o rei do mundo antigo.;Evolui de Tyrunt. Apareceu pela primeira vez na 6ª geração.
+698;Amaura;Kalos;Pedra;Gelo;1.3;25.2;É um Pokémon antigo, já extinto, e às vezes são achados exemplares congelados no gelo.;Evolui para Aurorus. Apareceu pela primeira vez na 6ª geração.
+699;Aurorus;Kalos;Pedra;Gelo;2.7;225.0;Quando tomado pela raiva, solta ar gelado que cobre tudo ao redor de gelo.;Evolui de Amaura. Apareceu pela primeira vez na 6ª geração.
+700;Sylveon;Kalos;Fada;;1.0;23.5;Emite uma aura calmante pelos órgãos em forma de fita e os enrola em quem briga para devolver a calma na hora.;Evolui de Eevee. Apareceu pela primeira vez na 6ª geração.
+701;Hawlucha;Kalos;Lutador;Voador;0.8;21.5;Sempre faz uma pose antes do golpe final, e às vezes os oponentes aproveitam o tempo para contra-atacar.;Não tem evoluções. Apareceu pela primeira vez na 6ª geração.
+702;Dedenne;Kalos;Elétrico;Fada;0.2;2.2;Como não gera muita eletricidade sozinho, a rouba de tomadas ou de outros Pokémon elétricos.;Não tem evoluções. Apareceu pela primeira vez na 6ª geração.
+703;Carbink;Kalos;Pedra;Fada;0.3;5.7;Dizem que em algum lugar do mundo há uma veia de minério com uma grande matilha de Carbink dormindo.;Não tem evoluções. Apareceu pela primeira vez na 6ª geração.
+704;Goomy;Kalos;Dragão;;0.3;2.8;Se esconde na sombra das árvores, onde é úmido, e se a gosma do corpo secar, fica sem forças na hora.;Evolui para Sliggoo. Apareceu pela primeira vez na 6ª geração.
+705;Sliggoo;Kalos;Dragão;;0.8;17.5;Uma criatura melancólica, e suspeito que a casca metálica se formou pela reação do muco com o ferro de Hisui.;Evolui de Goomy e evolui para Goodra. Apareceu pela primeira vez na 6ª geração.
+706;Goodra;Kalos;Dragão;;2.0;150.5;Controla livremente a dureza da casca metálica, odeia a solidão e é muito grudento, e fica furioso se o ignoram.;Evolui de Sliggoo. Apareceu pela primeira vez na 6ª geração.
+707;Klefki;Kalos;Aço;Fada;0.2;3.0;Suga íons de metal com o chifre da cabeça e parece amar tanto as chaves que a cabeça virou uma.;Não tem evoluções. Apareceu pela primeira vez na 6ª geração.
+708;Phantump;Kalos;Fantasma;Planta;0.4;7.0;Com voz de criança, chama os adultos para o fundo da floresta e os faz se perder entre as árvores.;Evolui para Trevenant. Apareceu pela primeira vez na 6ª geração.
+709;Trevenant;Kalos;Fantasma;Planta;1.5;71.0;Pequenas raízes dos pés se ligam às árvores da floresta e dão a ele controle sobre elas.;Evolui de Phantump. Apareceu pela primeira vez na 6ª geração.
+710;Pumpkaboo;Kalos;Fantasma;Planta;0.4;5.0;A luz que sai dos buracos da abóbora hipnotiza e controla pessoas e Pokémon que a veem.;Evolui para Gourgeist. Apareceu pela primeira vez na 6ª geração.
+711;Gourgeist;Kalos;Fantasma;Planta;0.9;12.5;Na escuridão de uma noite sem lua, bate à porta, e quem atende é levado para o além.;Evolui de Pumpkaboo. Apareceu pela primeira vez na 6ª geração.
+712;Bergmite;Kalos;Gelo;;1.0;99.5;Vive em montanhas cobertas de neve o ano todo e congela o vapor do ar para fazer o capacete de gelo de defesa.;Evolui para Avalugg. Apareceu pela primeira vez na 6ª geração.
+713;Avalugg;Kalos;Gelo;;2.0;505.0;A armadura de gelo na mandíbula inferior supera o aço e quebra rochas com facilidade.;Evolui de Bergmite. Apareceu pela primeira vez na 6ª geração.
+714;Noibat;Kalos;Voador;Dragão;0.5;8.0;Nenhum comprimento de onda sonora está fora de sua capacidade, e as ondas ultrassônicas vencem Pokémon bem maiores.;Evolui para Noivern. Apareceu pela primeira vez na 6ª geração.
+715;Noivern;Kalos;Voador;Dragão;1.5;85.0;Voa no escuro e enfraquece os inimigos com ondas ultrassônicas capazes de esmagar pedra.;Evolui de Noibat. Apareceu pela primeira vez na 6ª geração.
+716;Xerneas;Kalos;Fada;;3.0;215.0;Quando os chifres da cabeça brilham em sete cores, dizem que está compartilhando vida eterna.;É um Pokémon lendário. Apareceu pela primeira vez na 6ª geração.
+717;Yveltal;Kalos;Sombrio;Voador;5.8;203.0;Quando sua vida chega ao fim, absorve a energia vital de todos os seres vivos e vira um casulo de novo.;É um Pokémon lendário. Apareceu pela primeira vez na 6ª geração.
+718;Zygarde;Kalos;Dragão;Terra;5.0;305.0;Dizem que pode mudar para uma forma ainda mais poderosa ao lutar contra quem ameaça o ecossistema.;É um Pokémon lendário. Apareceu pela primeira vez na 6ª geração.
+719;Diancie;Kalos;Pedra;Fada;0.7;8.8;Cria na hora muitos diamantes comprimindo o carbono do ar entre as mãos.;É um Pokémon mítico. Apareceu pela primeira vez na 6ª geração.
+720;Hoopa;Kalos;Psíquico;Fantasma;0.5;9.0;Dizem que pode agarrar tudo o que deseja com seus seis anéis e seis braços enormes.;É um Pokémon mítico. Apareceu pela primeira vez na 6ª geração.
+721;Volcanion;Kalos;Fogo;Água;1.7;195.0;Solta o vapor interno pelos braços nas costas, com poder para explodir uma montanha.;É um Pokémon mítico. Apareceu pela primeira vez na 6ª geração.
+722;Rowlet;Alola;Planta;Voador;0.3;1.5;Voa sem fazer barulho com asas delicadas e domina a arte de lançar penas afiadas como adagas.;Evolui para Dartrix. Apareceu pela primeira vez na 7ª geração.
+723;Dartrix;Alola;Planta;Voador;0.7;16.0;Toma sol com frequência para juntar poder, provavelmente por causa do clima gelado.;Evolui de Rowlet e evolui para Decidueye. Apareceu pela primeira vez na 7ª geração.
+724;Decidueye;Alola;Planta;Fantasma;1.6;36.6;O ar guardado nas hastes das penas isola o corpo contra o frio extremo de Hisui.;Evolui de Dartrix. Apareceu pela primeira vez na 7ª geração.
+725;Litten;Alola;Fogo;;0.4;4.3;Tentar acariciá-lo antes de ele confiar em você rende um arranhão feio das garras afiadas.;Evolui para Torracat. Apareceu pela primeira vez na 7ª geração.
+726;Torracat;Alola;Fogo;;0.7;25.0;Diante de um inimigo forte, o espírito de luta cresce e o sino de fogo arde mais quente.;Evolui de Litten e evolui para Incineroar. Apareceu pela primeira vez na 7ª geração.
+727;Incineroar;Alola;Fogo;Sombrio;1.8;83.0;O comportamento bruto e agressivo é sua marca, mas ajudar Pokémon pequenos mostra que tem um lado bondoso.;Evolui de Torracat. Apareceu pela primeira vez na 7ª geração.
+728;Popplio;Alola;Água;;0.4;7.5;Para criar balões grandes e fortes, precisa ser persistente.;Evolui para Brionne. Apareceu pela primeira vez na 7ª geração.
+729;Brionne;Alola;Água;;0.6;17.5;Em noites de mar calmo, dançam juntos ao canto do Primarina que os lidera.;Evolui de Popplio e evolui para Primarina. Apareceu pela primeira vez na 7ª geração.
+730;Primarina;Alola;Água;Fada;1.8;44.0;Para ele, toda batalha é um palco, e o canto e a dança dos balões hipnotizam a plateia.;Evolui de Brionne. Apareceu pela primeira vez na 7ª geração.
+731;Pikipek;Alola;Normal;Voador;0.3;1.2;Parece magrelo, mas os músculos do pescoço são fortes, e ele bica uma árvore 16 vezes por segundo.;Evolui para Trumbeak. Apareceu pela primeira vez na 7ª geração.
+732;Trumbeak;Alola;Normal;Voador;0.6;14.8;Dispara pela boca as sementes das frutas que comeu, e elas espalhadas viram plantas novas.;Evolui de Pikipek e evolui para Toucannon. Apareceu pela primeira vez na 7ª geração.
+733;Toucannon;Alola;Normal;Voador;1.1;26.0;Conhecido por formar casais harmoniosos, é levado a casamentos como amuleto de sorte.;Evolui de Trumbeak. Apareceu pela primeira vez na 7ª geração.
+734;Yungoos;Alola;Normal;;0.4;6.0;Come de tudo, mas prefere seres vivos frescos e marcha pelas ruas atrás de presas.;Evolui para Gumshoos. Apareceu pela primeira vez na 7ª geração.
+735;Gumshoos;Alola;Normal;;0.7;14.2;Paciente por natureza, perde o controle e ataca ao ver seu prato favorito: Rattata.;Evolui de Yungoos. Apareceu pela primeira vez na 7ª geração.
+736;Grubbin;Alola;Inseto;;0.4;4.4;Usa as mandíbulas grandes para cavar ninhos no chão da floresta e adora a seiva doce das árvores.;Evolui para Charjabug. Apareceu pela primeira vez na 7ª geração.
+737;Charjabug;Alola;Inseto;Elétrico;0.5;10.5;A digestão transforma as folhas que come em eletricidade, guardada numa bolsa elétrica na barriga.;Evolui de Grubbin e evolui para Vikavolt. Apareceu pela primeira vez na 7ª geração.
+738;Vikavolt;Alola;Inseto;Elétrico;1.5;45.0;Se leva um Charjabug como bateria reserva, dispara raios elétricos potentes em sequência.;Evolui de Charjabug. Apareceu pela primeira vez na 7ª geração.
+739;Crabrawler;Alola;Lutador;;0.6;7.0;Já foi visto confundindo Exeggutor com um coqueiro e subindo nele.;Evolui para Crabominable. Apareceu pela primeira vez na 7ª geração.
+740;Crabominable;Alola;Lutador;Gelo;1.7;180.0;Bate antes de pensar e há registros de que desviou avalanches com uma saraivada de socos.;Evolui de Crabrawler. Apareceu pela primeira vez na 7ª geração.
+741;Oricorio;Alola;Fogo;Voador;0.6;3.4;Este Oricorio bebeu néctar vermelho, e se o treinador der uma ordem errada, fica furioso.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+742;Cutiefly;Alola;Inseto;Fada;0.1;0.2;A aura do oponente diz a Cutiefly qual será o próximo movimento dele.;Evolui para Ribombee. Apareceu pela primeira vez na 7ª geração.
+743;Ribombee;Alola;Inseto;Fada;0.2;0.5;Detestam se molhar ou levar chuva, e no nublado Galar quase nunca são vistos.;Evolui de Cutiefly. Apareceu pela primeira vez na 7ª geração.
+744;Rockruff;Alola;Pedra;;0.5;9.2;Intimida os oponentes batendo no chão as pedras do pescoço.;Evolui para Lycanroc. Apareceu pela primeira vez na 7ª geração.
+745;Lycanroc;Alola;Pedra;;0.8;25.0;Com movimentos rápidos, vai encurralando a presa aos poucos.;Evolui de Rockruff. Apareceu pela primeira vez na 7ª geração.
+746;Wishiwashi;Alola;Água;;0.2;0.3;Quando sente perigo, chora, e o brilho das lágrimas chama os outros Wishiwashi.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+747;Mareanie;Alola;Veneno;Água;0.4;8.0;Ao contrário dos de Alola, os de Galar ainda não descobriram que os galhos de Corsola são deliciosos.;Evolui para Toxapex. Apareceu pela primeira vez na 7ª geração.
+748;Toxapex;Alola;Veneno;Água;0.7;14.5;Dentro da bolsa de veneno há uma toxina tão forte que até um Wailord ainda sofre três dias depois.;Evolui de Mareanie. Apareceu pela primeira vez na 7ª geração.
+749;Mudbray;Alola;Terra;;1.0;110.0;Come terra para fazer lama e passa nos pés para ter aderência e andar em terreno áspero sem escorregar.;Evolui para Mudsdale. Apareceu pela primeira vez na 7ª geração.
+750;Mudsdale;Alola;Terra;;2.5;920.0;Tem tanta resistência que carregaria mais de 10 toneladas por Galar sem descanso nem sono.;Evolui de Mudbray. Apareceu pela primeira vez na 7ª geração.
+751;Dewpider;Alola;Água;Inseto;0.3;4.0;Vive normalmente debaixo d'água e, quando sai atrás de comida, leva água numa bolha na cabeça.;Evolui para Araquanid. Apareceu pela primeira vez na 7ª geração.
+752;Araquanid;Alola;Água;Inseto;1.8;82.0;Cuida dos Dewpider, colocando-os na bolha e deixando que comam as sobras.;Evolui de Dewpider. Apareceu pela primeira vez na 7ª geração.
+753;Fomantis;Alola;Planta;;0.3;1.5;De dia toma sol e dorme tranquilo, e acorda e se move à noite.;Evolui para Lurantis. Apareceu pela primeira vez na 7ª geração.
+754;Lurantis;Alola;Planta;;0.9;18.5;As pétalas dos braços são finas e afiadíssimas e disparam raios laser se ele juntar luz antes.;Evolui de Fomantis. Apareceu pela primeira vez na 7ª geração.
+755;Morelull;Alola;Planta;Fada;0.2;1.5;Vivem em florestas escuras até de dia e espalham esporos tremeluzentes que fazem os inimigos dormir.;Evolui para Shiinotic. Apareceu pela primeira vez na 7ª geração.
+756;Shiinotic;Alola;Planta;Fada;1.0;11.5;Se vir uma luz no fundo da floresta à noite, não se aproxime, pois ele faz você dormir profundamente.;Evolui de Morelull. Apareceu pela primeira vez na 7ª geração.
+757;Salandit;Alola;Veneno;Fogo;0.6;4.8;Furtivo, se esconde atrás da presa e a imobiliza com gás venenoso antes que ela perceba.;Evolui para Salazzle. Apareceu pela primeira vez na 7ª geração.
+758;Salazzle;Alola;Veneno;Fogo;1.2;22.2;O vencedor das disputas entre eles é decidido por quem tem mais Salandit macho por perto.;Evolui de Salandit. Apareceu pela primeira vez na 7ª geração.
+759;Stufful;Alola;Normal;Lutador;0.5;6.8;O jeito de se proteger agitando os braços é adorável, mas é melhor ficar bem longe.;Evolui para Bewear. Apareceu pela primeira vez na 7ª geração.
+760;Bewear;Alola;Normal;Lutador;2.1;135.0;Os golpes que usa para derrubar a presa dariam inveja em um lutador de artes marciais.;Evolui de Stufful. Apareceu pela primeira vez na 7ª geração.
+761;Bounsweet;Alola;Planta;;0.3;3.2;Quando atacado, solta um suor doce e delicioso, e o cheiro só atrai mais inimigos.;Evolui para Steenee. Apareceu pela primeira vez na 7ª geração.
+762;Steenee;Alola;Planta;;0.7;8.2;Qualquer Corvisquire que o bique recebe uma pancada das sépalas e depois um chute certeiro.;Evolui de Bounsweet e evolui para Tsareena. Apareceu pela primeira vez na 7ª geração.
+763;Tsareena;Alola;Planta;;1.2;21.4;Um chute das pontas endurecidas das pernas deixa no oponente uma ferida no corpo e na alma que nunca cura.;Evolui de Steenee. Apareceu pela primeira vez na 7ª geração.
+764;Comfey;Alola;Fada;;0.1;0.3;Cheiram muito bem, e como cada um usa flores diferentes, cada um tem seu cheiro próprio.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+765;Oranguru;Alola;Normal;Psíquico;1.5;76.0;Conhece a floresta de cabo a rabo e, ao achar um Pokémon ferido, junta ervas medicinais para tratá-lo.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+766;Passimian;Alola;Lutador;;2.0;82.8;Vivem em grupos de cerca de 20, e cada membro cumpre uma função.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+767;Wimpod;Alola;Inseto;Água;0.5;12.0;Reúnem-se em enxames, sempre atentos a perigo, e se espalham ao detectar um inimigo.;Evolui para Golisopod. Apareceu pela primeira vez na 7ª geração.
+768;Golisopod;Alola;Inseto;Água;2.0;108.0;Vivem em navios afundados ou em buracos no leito do mar, e quando lutam com Grapploct, o perdedor vira refeição.;Evolui de Wimpod. Apareceu pela primeira vez na 7ª geração.
+769;Sandygast;Alola;Fantasma;Terra;0.5;70.0;Habita praias e controla quem põe a mão na boca, forçando a pessoa a aumentar o corpo dele.;Evolui para Palossand. Apareceu pela primeira vez na 7ª geração.
+770;Palossand;Alola;Fantasma;Terra;1.3;250.0;Vive em praias, mas odeia água, e não mantém a forma de castelo se for encharcado pela chuva.;Evolui de Sandygast. Apareceu pela primeira vez na 7ª geração.
+771;Pyukumuku;Alola;Água;;0.3;1.2;É coberto por uma gosma que mantém a pele úmida e permite ficar dias em terra sem secar.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+772;Type: Null;Alola;Normal;;1.9;120.5;Foi criado com base num poderoso Pokémon do mito, e a máscara limita seu poder para mantê-lo sob controle.;É um Pokémon lendário. Evolui para Silvally.
+773;Silvally;Alola;Normal;;2.3;100.5;O último fator para liberar seu verdadeiro poder foi um laço forte com um treinador de confiança.;É um Pokémon lendário. Evolui de Type: Null.
+774;Minior;Alola;Pedra;Voador;0.3;40.0;A casca externa é incomumente resistente, mas o choque da queda no chão a quebra em pedacinhos.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+775;Komala;Alola;Normal;;0.4;19.9;Fica dormindo do nascimento à morte por causa das propriedades sedativas das folhas que come.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+776;Turtonator;Alola;Fogo;Dragão;2.0;212.0;Comer enxofre em seu habitat vulcânico faz surgir compostos explosivos na casca.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+777;Togedemaru;Alola;Elétrico;Aço;0.3;3.3;Quando está em apuros, se enrola numa bola, arrepia os espinhos do pelo e solta eletricidade sem distinção.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+778;Mimikyu;Alola;Fantasma;Fada;0.2;0.7;Houve um cientista que espiou sob o pano velho de Mimikyu em nome da pesquisa.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+779;Bruxish;Alola;Água;Psíquico;0.9;19.0;A pele é grossa o bastante para resistir aos espinhos de Mareanie, e ele tritura e come os espinhos.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+780;Drampa;Alola;Normal;Dragão;3.0;185.0;É gentil e simpático até se irritar, e então levanta uma ventania e achata tudo ao redor.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+781;Dhelmise;Alola;Fantasma;Planta;3.9;210.0;Depois de baixar a âncora, espera a presa, pega Wailord grandes e drena a energia vital deles.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+782;Jangmo-o;Alola;Dragão;;0.6;29.7;Bate as escamas para se comunicar com os da espécie, e as escamas são pelos duros como metal.;Evolui para Hakamo-o. Apareceu pela primeira vez na 7ª geração.
+783;Hakamo-o;Alola;Dragão;Lutador;1.2;47.0;Antes de atacar os inimigos, bate as escamas e ruge.;Evolui de Jangmo-o e evolui para Kommo-o. Apareceu pela primeira vez na 7ª geração.
+784;Kommo-o;Alola;Dragão;Lutador;1.6;78.2;Certas ruínas têm pinturas de guerreiros antigos usando armaduras feitas de escamas de Kommo-o.;Evolui de Hakamo-o. Apareceu pela primeira vez na 7ª geração.
+785;Tapu Koko;Alola;Elétrico;Fada;1.8;20.5;Divindade guardiã de Melemele que maneja raios, é cheio de curiosidade e aparece às pessoas de vez em quando.;É um Pokémon lendário. Apareceu pela primeira vez na 7ª geração.
+786;Tapu Lele;Alola;Psíquico;Fada;1.2;18.6;Chamado de divindade guardiã, não sente culpa pelo temperamento cruel e pode ser descrito como a natureza encarnada.;É um Pokémon lendário. Apareceu pela primeira vez na 7ª geração.
+787;Tapu Bulu;Alola;Planta;Fada;1.9;45.5;Faz sons de sino com a cauda para avisar onde está e evitar conflitos desnecessários.;É um Pokémon lendário. Apareceu pela primeira vez na 7ª geração.
+788;Tapu Fini;Alola;Água;Fada;1.3;21.2;Chamado de divindade guardiã, mas desgraças terríveis às vezes atingem quem se aproxima sem cuidado.;É um Pokémon lendário. Apareceu pela primeira vez na 7ª geração.
+789;Cosmog;Alola;Psíquico;;0.2;0.1;É muito curioso, mas pouco cuidadoso e costuma se colocar em perigo.;É um Pokémon lendário. Evolui para Cosmoem.
+790;Cosmoem;Alola;Psíquico;;0.1;999.9;Suga poeira do ar a uma velocidade incrível, acumulando energia no núcleo em preparação para evoluir.;É um Pokémon lendário. Evolui de Cosmog e evolui para Solgaleo ou Lunala.
+791;Solgaleo;Alola;Psíquico;Aço;3.4;230.0;Já foi conhecido como a Fera que Devora o Sol, e irradia energia em forma de luz sem limites.;É um Pokémon lendário. Evolui de Cosmoem.
+792;Lunala;Alola;Psíquico;Fantasma;4.0;120.0;Rouba a luz do ambiente e depois vira a lua cheia, espalhando a própria luz pelo céu da noite.;É um Pokémon lendário. Evolui de Cosmoem.
+793;Nihilego;Alola;Pedra;Veneno;1.2;55.5;Apareceu neste mundo por um Buraco de Minhoca Ultra e parece um parasita que se alimenta de pessoas e Pokémon.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+794;Buzzwole;Alola;Inseto;Lutador;2.4;333.6;Anda por aí exibindo os músculos anormalmente inchados e é um tipo de Ultra Fera.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+795;Pheromosa;Alola;Inseto;Lutador;1.8;25.0;Embora seja estranha a este mundo e um perigo aqui, parece ser um organismo comum no mundo onde vive.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+796;Xurkitree;Alola;Elétrico;;3.8;100.0;Foram chamados de Ultra Feras, e alguns ficam parados como árvores, com braços e pernas enfiados no chão.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+797;Celesteela;Alola;Aço;Voador;9.2;999.9;Embora seja estranho a este mundo e um perigo aqui, parece ser um organismo comum no mundo onde vive.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+798;Kartana;Alola;Planta;Aço;0.3;0.1;Embora seja estranho a este mundo e um perigo aqui, parece ser um organismo comum no mundo onde vive.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+799;Guzzlord;Alola;Sombrio;Dragão;5.5;888.0;Uma forma de vida desconhecida chamada UB, talvez sempre faminta, e certamente sempre devorando algo.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+800;Necrozma;Alola;Psíquico;;2.4;230.0;Precisa de luz para sobreviver e sai em fúria atrás dela, e seus lasers cortam tudo em pedaços.;É um Pokémon lendário. Apareceu pela primeira vez na 7ª geração.
+801;Magearna;Alola;Aço;Fada;1.0;80.5;Construído há cerca de 500 anos por um cientista, a parte chamada Coração da Alma é o ser vivo de verdade.;É um Pokémon mítico. Apareceu pela primeira vez na 7ª geração.
+802;Marshadow;Alola;Lutador;Fantasma;0.7;22.2;Pode se esconder em qualquer sombra, por isso passou muito tempo sem ser descoberto.;É um Pokémon mítico. Apareceu pela primeira vez na 7ª geração.
+803;Poipole;Alola;Veneno;;0.6;1.8;Uma Ultra Fera de outro mundo, gargalha como louco ao borrifar veneno dos espinhos da cabeça nos oponentes.;Evolui para Naganadel. Apareceu pela primeira vez na 7ª geração.
+804;Naganadel;Alola;Veneno;Dragão;3.6;150.0;Um tipo de Ultra Fera, dispara um líquido venenoso e brilhante pelos espinhos.;Evolui de Poipole. Apareceu pela primeira vez na 7ª geração.
+805;Stakataka;Alola;Pedra;Aço;5.5;820.0;Quando muros de pedra começaram a se mexer e atacar, a identidade do brutamontes era este ser misterioso, que lembra uma Ultra Fera.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+806;Blacephalon;Alola;Fogo;Fantasma;1.8;13.0;Uma UB que surgiu de um Buraco de Minhoca Ultra, causa explosões e aproveita o susto dos oponentes para roubar sua vitalidade.;Não tem evoluções. Apareceu pela primeira vez na 7ª geração.
+807;Zeraora;Alola;Elétrico;;1.5;44.5;Solta faíscas das almofadas dos membros, e por onde corre os raios brilham e os trovões ecoam.;É um Pokémon mítico. Apareceu pela primeira vez na 7ª geração.
+808;Meltan;Alola;Aço;;0.2;8.0;Vivem em grupo, mas, na hora certa, um Meltan forte absorve todos os outros e evolui.;É um Pokémon mítico. Evolui para Melmetal.
+809;Melmetal;Alola;Aço;;2.5;800.0;A força centrífuga está por trás dos socos dos braços pesados em forma de porca sextavada.;É um Pokémon mítico. Evolui de Meltan.
+810;Grookey;Galar;Planta;;0.3;5.0;Ataca com batidas rápidas do graveto e, quanto mais rápido bate, mais empolgado fica.;Evolui para Thwackey. Apareceu pela primeira vez na 8ª geração.
+811;Thwackey;Galar;Planta;;0.7;14.0;Ao tocar batidas rápidas na batalha, se empolga tanto com o ritmo que nem nota que já derrubou o oponente.;Evolui de Grookey e evolui para Rillaboom. Apareceu pela primeira vez na 8ª geração.
+812;Rillaboom;Galar;Planta;;2.1;90.0;Quem tem as melhores técnicas de percussão vira o chefe do bando.;Evolui de Thwackey. Apareceu pela primeira vez na 8ª geração.
+813;Scorbunny;Galar;Fogo;;0.3;4.5;Tem almofadas especiais atrás dos pés e uma no nariz, que irradiam muito calor quando ele está pronto para lutar.;Evolui para Raboot. Apareceu pela primeira vez na 8ª geração.
+814;Raboot;Galar;Fogo;;0.6;9.0;Chuta frutas dos galhos e as controla com os pés para treinar o jogo de pernas.;Evolui de Scorbunny e evolui para Cinderace. Apareceu pela primeira vez na 8ª geração.
+815;Cinderace;Galar;Fogo;;1.4;33.0;É bom no ataque e na defesa, e se anima quando o torcem.;Evolui de Raboot. Apareceu pela primeira vez na 8ª geração.
+816;Sobble;Galar;Água;;0.3;4.0;Quando se molha, a pele muda de cor e ele fica invisível como se estivesse camuflado.;Evolui para Drizzile. Apareceu pela primeira vez na 8ª geração.
+817;Drizzile;Galar;Água;;0.7;11.5;Muito inteligente, mas também preguiçoso, mantém inimigos fora do território colocando armadilhas por toda parte.;Evolui de Sobble e evolui para Inteleon. Apareceu pela primeira vez na 8ª geração.
+818;Inteleon;Galar;Água;;1.9;45.2;As membranas dos olhos o deixam achar os pontos fracos dos inimigos e acertá-los com água disparada dos dedos.;Evolui de Drizzile. Apareceu pela primeira vez na 8ª geração.
+819;Skwovet;Galar;Normal;;0.3;2.5;Come frutas sem parar, um hábito que o deixou mais resistente do que parece.;Evolui para Greedent. Apareceu pela primeira vez na 8ª geração.
+820;Greedent;Galar;Normal;;0.6;6.0;Comum em Galar, tem dentes fortes e rói até as cascas de fruta mais duras.;Evolui de Skwovet. Apareceu pela primeira vez na 8ª geração.
+821;Rookidee;Galar;Voador;;0.2;1.8;Pula com agilidade e aproveita qualquer chance para desorientar oponentes maiores.;Evolui para Corvisquire. Apareceu pela primeira vez na 8ª geração.
+822;Corvisquire;Galar;Voador;;0.8;16.0;As lições de muitas batalhas duras o ensinaram a avaliar com precisão a força do oponente.;Evolui de Rookidee e evolui para Corviknight. Apareceu pela primeira vez na 8ª geração.
+823;Corviknight;Galar;Voador;Aço;2.2;75.0;Com grande inteligência e habilidade de voo, atuam com muito sucesso como o serviço de táxi aéreo de Galar.;Evolui de Corvisquire. Apareceu pela primeira vez na 8ª geração.
+824;Blipbug;Galar;Inseto;;0.4;8.0;Costuma ser achado em jardins e usa os pelos do corpo para avaliar o ambiente.;Evolui para Dottler. Apareceu pela primeira vez na 8ª geração.
+825;Dottler;Galar;Inseto;Psíquico;0.4;19.5;Enquanto cresce dentro da casca, usa poderes psíquicos para vigiar o mundo e se preparar para evoluir.;Evolui de Blipbug e evolui para Orbeetle. Apareceu pela primeira vez na 8ª geração.
+826;Orbeetle;Galar;Inseto;Psíquico;0.4;40.8;Emite energia psíquica para observar o que está ao redor, e isso pode incluir coisas a mais de 10 km.;Evolui de Dottler. Apareceu pela primeira vez na 8ª geração.
+827;Nickit;Galar;Sombrio;;0.6;8.9;Astuto e cauteloso, sobrevive roubando comida dos outros.;Evolui para Thievul. Apareceu pela primeira vez na 8ª geração.
+828;Thievul;Galar;Sombrio;;1.2;19.9;Com o corpo ágil e garras afiadas, anda roubando comida e ovos.;Evolui de Nickit. Apareceu pela primeira vez na 8ª geração.
+829;Gossifleur;Galar;Planta;;0.4;2.2;Rodopia ao vento cantando uma música alegre, e esse espetáculo encantou muitos a criá-lo.;Evolui para Eldegoss. Apareceu pela primeira vez na 8ª geração.
+830;Eldegoss;Galar;Planta;;0.5;2.5;O algodão da cabeça pode ser fiado em um fio brilhante e lindo, uma especialidade de Galar.;Evolui de Gossifleur. Apareceu pela primeira vez na 8ª geração.
+831;Wooloo;Galar;Normal;;0.6;6.0;Se a lã crescer demais, não consegue se mover, e o tecido feito com ela é surpreendentemente forte.;Evolui para Dubwool. Apareceu pela primeira vez na 8ª geração.
+832;Dubwool;Galar;Normal;;1.3;43.0;Os chifres majestosos servem só para impressionar o sexo oposto e nunca são usados em batalha.;Evolui de Wooloo. Apareceu pela primeira vez na 8ª geração.
+833;Chewtle;Galar;Água;;0.3;8.5;Começa as batalhas atacando com o chifre duro como pedra e, quando o oponente recua, morde e não larga mais.;Evolui para Drednaw. Apareceu pela primeira vez na 8ª geração.
+834;Drednaw;Galar;Água;Pedra;1.0;115.5;Estica rápido o pescoço retrátil para cravar as presas afiadas em inimigos distantes e derrubá-los.;Evolui de Chewtle. Apareceu pela primeira vez na 8ª geração.
+835;Yamper;Galar;Elétrico;;0.3;13.5;Glutão, só ajuda as pessoas no trabalho porque quer guloseimas.;Evolui para Boltund. Apareceu pela primeira vez na 8ª geração.
+836;Boltund;Galar;Elétrico;;1.0;34.0;Manda eletricidade pelas pernas para aumentar a força e, em velocidade máxima, passa fácil de 80 km/h.;Evolui de Yamper. Apareceu pela primeira vez na 8ª geração.
+837;Rolycoly;Galar;Pedra;;0.3;12.0;Corre como um monociclo, mesmo em terreno rochoso, e se mantém queimando carvão.;Evolui para Carkol. Apareceu pela primeira vez na 8ª geração.
+838;Carkol;Galar;Pedra;Fogo;1.1;78.0;Rolando as pernas rápido, passa de 29 km/h, e as chamas que solta passam de 1.000 graus Celsius.;Evolui de Rolycoly e evolui para Coalossal. Apareceu pela primeira vez na 8ª geração.
+839;Coalossal;Galar;Pedra;Fogo;2.8;310.5;Em batalha, sua montanha de carvão fica vermelha viva e solta faíscas que queimam a área ao redor.;Evolui de Carkol. Apareceu pela primeira vez na 8ª geração.
+840;Applin;Galar;Planta;Dragão;0.2;0.5;Assim que nasce, se enfia numa maçã, que serve de comida, e o sabor da fruta define a evolução.;Evolui para Flapple, Appletun ou Dipplin. Apareceu pela primeira vez na 8ª geração.
+841;Flapple;Galar;Planta;Dragão;0.3;1.0;Voa com asas de casca de maçã e cospe um ácido forte, e também pode ter a forma de uma maçã.;Evolui de Applin. Apareceu pela primeira vez na 8ª geração.
+842;Appletun;Galar;Planta;Dragão;0.4;13.0;O corpo é coberto de néctar doce, e a pele das costas é especialmente gostosa.;Evolui de Applin. Apareceu pela primeira vez na 8ª geração.
+843;Silicobra;Galar;Terra;;2.2;7.6;Solta areia pelas narinas e, enquanto o inimigo está cego, se enterra para se esconder.;Evolui para Sandaconda. Apareceu pela primeira vez na 8ª geração.
+844;Sandaconda;Galar;Terra;;3.8;65.5;Seu jeito de se enrolar o deixa soltar areia da bolsa com mais eficiência.;Evolui de Silicobra. Apareceu pela primeira vez na 8ª geração.
+845;Cramorant;Galar;Voador;Água;0.8;18.0;Faminto, engole Arrokuda inteiro, e às vezes erra e tenta engolir outro Pokémon.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+846;Arrokuda;Galar;Água;;0.5;1.0;Depois de comer à vontade, fica muito lento, e é aí que Cramorant o engole.;Evolui para Barraskewda. Apareceu pela primeira vez na 8ª geração.
+847;Barraskewda;Galar;Água;;1.3;30.0;Gira as nadadeiras da cauda para se impulsionar e, a mais de 185 km/h, acerta a presa e a espeta.;Evolui de Arrokuda. Apareceu pela primeira vez na 8ª geração.
+848;Toxel;Galar;Elétrico;Veneno;0.4;11.0;Manipula a composição química do veneno para produzir eletricidade.;É um Pokémon bebê. Evolui para Toxtricity. Apareceu pela primeira vez na 8ª geração.
+849;Toxtricity;Galar;Elétrico;Veneno;1.6;40.0;Esquentado e agressivo, bebe água parada para absorver as toxinas que ela tiver.;Evolui de Toxel. Apareceu pela primeira vez na 8ª geração.
+850;Sizzlipede;Galar;Fogo;Inseto;0.7;1.0;Envolve a presa com o corpo quente, cozinhando-a nas espirais, e depois de bem passada a devora até o último pedaço.;Evolui para Centiskorch. Apareceu pela primeira vez na 8ª geração.
+851;Centiskorch;Galar;Fogo;Inseto;3.0;120.0;O corpo em chamas já é perigoso, e este Pokémon excessivamente hostil também tem presas grandes e afiadas.;Evolui de Sizzlipede. Apareceu pela primeira vez na 8ª geração.
+852;Clobbopus;Galar;Lutador;;0.6;4.0;Os tentáculos se soltam fácil, mas ele não se assusta, pois sabe que crescem de novo.;Evolui para Grapploct. Apareceu pela primeira vez na 8ª geração.
+853;Grapploct;Galar;Lutador;;1.6;39.0;Procura um oponente para testar sua habilidade e sai para a terra.;Evolui de Clobbopus. Apareceu pela primeira vez na 8ª geração.
+854;Sinistea;Galar;Fantasma;;0.1;0.2;A xícara onde vive é uma peça famosa de louça antiga.;Evolui para Polteageist. Apareceu pela primeira vez na 8ª geração.
+855;Polteageist;Galar;Fantasma;;0.2;0.4;Deixar chá preto esquecido é um convite para que ele se despeje nele, transformando o chá em um novo Polteageist.;Evolui de Sinistea. Apareceu pela primeira vez na 8ª geração.
+856;Hatenna;Galar;Psíquico;;0.4;3.4;Se sente uma emoção forte, foge o mais rápido que pode.;Evolui para Hattrem. Apareceu pela primeira vez na 8ª geração.
+857;Hattrem;Galar;Psíquico;;0.6;4.8;Usa as tranças da cabeça para bater nos inimigos e fazê-los se calar.;Evolui de Hatenna e evolui para Hatterene. Apareceu pela primeira vez na 8ª geração.
+858;Hatterene;Galar;Psíquico;Fada;2.1;5.1;Se você fizer barulho perto dele, corre o risco de ser rasgado pelas garras do tentáculo.;Evolui de Hattrem. Apareceu pela primeira vez na 8ª geração.
+859;Impidimp;Galar;Sombrio;Fada;0.4;5.5;Entra escondido nas casas das pessoas, rouba coisas e se alimenta da energia negativa dos moradores frustrados.;Evolui para Morgrem. Apareceu pela primeira vez na 8ª geração.
+860;Morgrem;Galar;Sombrio;Fada;0.8;12.5;Com esperteza, tenta atrair as pessoas para a floresta, e alguns acreditam que faz as plantações crescerem.;Evolui de Impidimp e evolui para Grimmsnarl. Apareceu pela primeira vez na 8ª geração.
+861;Grimmsnarl;Galar;Sombrio;Fada;1.5;61.0;Os pelos funcionam como fibras musculares e, ao se desenrolarem, prendem os oponentes como tentáculos.;Evolui de Morgrem. Apareceu pela primeira vez na 8ª geração.
+862;Obstagoon;Galar;Sombrio;Normal;1.6;46.0;Evoluiu depois de muitas lutas e, cruzando os braços, solta um grito que faz qualquer oponente recuar.;Evolui de Linoone. Apareceu pela primeira vez na 8ª geração.
+863;Perrserker;Galar;Aço;;0.8;28.0;Depois de muitas batalhas, desenvolveu garras perigosas que, estendidas, formam adagas.;Evolui de Meowth. Apareceu pela primeira vez na 8ª geração.
+864;Cursola;Galar;Fantasma;;1.0;0.4;Cuidado com o corpo de ectoplasma que cerca sua alma, pois quem o tocar fica duro como pedra.;Evolui de Corsola. Apareceu pela primeira vez na 8ª geração.
+865;Sirfetch’d;Galar;Lutador;;0.8;117.0;Depois de desviar ataques com o escudo de folha duro, contra-ataca com o talo de alho-poró afiado.;Evolui de Farfetch’d. Apareceu pela primeira vez na 8ª geração.
+866;Mr. Rime;Galar;Gelo;Psíquico;1.5;58.2;Os movimentos divertidos o tornam muito popular, e ele solta poder psíquico pelo desenho da barriga.;Evolui de Mr. Mime. Apareceu pela primeira vez na 8ª geração.
+867;Runerigus;Galar;Terra;Fantasma;1.6;66.6;Nunca toque no corpo de sombra, ou será mostrado a você as memórias terríveis por trás do desenho gravado.;Evolui de Yamask. Apareceu pela primeira vez na 8ª geração.
+868;Milcery;Galar;Fada;;0.2;0.3;Dizem que toda confeitaria visitada por Milcery tem sucesso e boa sorte garantidos.;Evolui para Alcremie. Apareceu pela primeira vez na 8ª geração.
+869;Alcremie;Galar;Fada;;0.3;0.5;Quando está contente, o creme que sai das mãos fica mais doce e rico.;Evolui de Milcery. Apareceu pela primeira vez na 8ª geração.
+870;Falinks;Galar;Lutador;;3.0;62.0;Os seis trabalham juntos como um só Pokémon, e o trabalho em equipe é também a estratégia de batalha.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+871;Pincurchin;Galar;Elétrico;;0.3;1.0;Guarda eletricidade em cada espinho, e mesmo se um quebrar, continua emitindo por pelo menos três horas.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+872;Snom;Galar;Gelo;Inseto;0.3;3.8;Come a neve acumulada no chão, e quanto mais come, maiores e mais impressionantes ficam os espinhos das costas.;Evolui para Frosmoth. Apareceu pela primeira vez na 8ª geração.
+873;Frosmoth;Galar;Gelo;Inseto;1.3;42.0;Não tem piedade de quem profana campos e montanhas e voa com asas de gelo causando nevascas para afastar os culpados.;Evolui de Snom. Apareceu pela primeira vez na 8ª geração.
+874;Stonjourner;Galar;Pedra;;2.5;520.0;Uma vez por ano, em data e hora específicas, aparecem do nada e formam um círculo.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+875;Eiscue;Galar;Gelo;;1.4;89.0;Mantém a cabeça sensível ao calor fresca com gelo e pesca balançando um único fio no mar para atrair presas.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+876;Indeedee;Galar;Psíquico;Normal;0.9;28.0;Pelos chifres, percebe as emoções das criaturas ao redor.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+877;Morpeko;Galar;Elétrico;Sombrio;0.3;3.0;Carrega sementes assadas com eletricidade como se fossem tesouros preciosos.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+878;Cufant;Galar;Aço;;1.2;100.0;Se o trabalho exige força de verdade, ele se sai bem, e o corpo de cobre enferruja na chuva e fica verde vivo.;Evolui para Copperajah. Apareceu pela primeira vez na 8ª geração.
+879;Copperajah;Galar;Aço;;3.0;650.0;Vivem em manadas e a tromba tem uma força de aperto incrível, capaz de esmagar rochas gigantes até virarem pó.;Evolui de Cufant. Apareceu pela primeira vez na 8ª geração.
+880;Dracozolt;Galar;Elétrico;Dragão;1.8;190.0;Os músculos poderosos da cauda geram a eletricidade, e a parte de cima do corpo é pequena demais perto da de baixo.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+881;Arctozolt;Galar;Elétrico;Gelo;2.3;150.0;Viveu em praias pré-históricas e conservava comida com o gelo do corpo.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+882;Dracovish;Galar;Água;Dragão;2.3;215.0;As pernas poderosas correm a mais de 60 km/h, mas ele só respira debaixo d'água.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+883;Arctovish;Galar;Água;Gelo;2.0;175.0;A pele do rosto é imune a ataques, mas dificuldades para respirar o levaram à extinção mesmo assim.;Não tem evoluções. Apareceu pela primeira vez na 8ª geração.
+884;Duraludon;Galar;Aço;Dragão;1.8;40.0;O metal especial do corpo é muito leve, por isso tem considerável agilidade.;Evolui para Archaludon. Apareceu pela primeira vez na 8ª geração.
+885;Dreepy;Galar;Dragão;Fantasma;0.5;2.0;Sozinho e fraco, até uma criança o venceria, mas com amigos para treinar, evolui e fica muito mais forte.;Evolui para Drakloak. Apareceu pela primeira vez na 8ª geração.
+886;Drakloak;Galar;Dragão;Fantasma;1.4;11.0;Sem um Dreepy na cabeça para cuidar, fica tão inquieto que tenta substituir o que falta por qualquer Pokémon que achar.;Evolui de Dreepy e evolui para Dragapult. Apareceu pela primeira vez na 8ª geração.
+887;Dragapult;Galar;Dragão;Fantasma;3.0;50.0;Parece que os Dreepy dentro dos chifres esperam ansiosos para ser lançados a velocidades supersônicas.;Evolui de Drakloak. Apareceu pela primeira vez na 8ª geração.
+888;Zacian;Galar;Fada;;2.8;110.0;Dormiu por muitos anos, e alguns dizem que é a irmã mais velha de Zamazenta, e outros que os dois são rivais.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+889;Zamazenta;Galar;Lutador;;2.9;210.0;Dormiu por eras em forma de estátua, tanto tempo que as pessoas esqueceram que existia.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+890;Eternatus;Galar;Veneno;Dragão;20.0;950.0;Estava dentro de um meteorito que caiu há 20.000 anos, e parece haver ligação com o fenômeno Dynamax.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+891;Kubfu;Galar;Lutador;;0.6;12.0;Se puxa o longo cabelo branco da cabeça, o espírito de luta cresce e o poder surge do fundo da barriga.;É um Pokémon lendário. Evolui para Urshifu.
+892;Urshifu;Galar;Lutador;Sombrio;1.9;105.0;Habita as montanhas de uma região distante e corre por penhascos íngremes, treinando as pernas e refinando os golpes.;É um Pokémon lendário. Evolui de Kubfu.
+893;Zarude;Galar;Sombrio;Planta;1.8;70.0;Quando as trepadeiras do corpo se soltam, viram nutrientes no solo.;É um Pokémon mítico. Apareceu pela primeira vez na 8ª geração.
+894;Regieleki;Galar;Elétrico;;1.2;145.0;O corpo todo é um único órgão que gera energia elétrica.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+895;Regidrago;Galar;Dragão;;2.1;200.0;O corpo é feito de energia de dragão cristalizada, e dizem que tem os poderes de todos os Pokémon dragão.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+896;Glastrier;Galar;Gelo;;2.2;800.0;Tem uma força física tremenda, e a máscara de gelo que cobre o rosto é 100 vezes mais dura que diamante.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+897;Spectrier;Galar;Fantasma;;2.0;44.5;Ao correr pela noite, absorve a energia vital das criaturas que dormem.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+898;Calyrex;Galar;Psíquico;Planta;1.1;7.7;É conhecido na lenda como um rei que governou Galar nos tempos antigos.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+899;Wyrdeer;Hisui;Normal;Psíquico;1.8;95.1;As esferas pretas brilham com uma luz estranha quando ele ergue barreiras invisíveis.;Evolui de Stantler. Apareceu pela primeira vez na 8ª geração.
+900;Kleavor;Hisui;Inseto;Pedra;1.8;89.0;Uma criatura violenta que derruba árvores gigantes com machados rudimentares e se protege com pedra dura.;Evolui de Scyther. Apareceu pela primeira vez na 8ª geração.
+901;Ursaluna;Hisui;Terra;Normal;2.4;290.0;Acredito que foi o terreno pantanoso de Hisui que deu a ele o físico robusto e a capacidade de manipular turfa à vontade.;Evolui de Ursaring. Apareceu pela primeira vez na 8ª geração.
+902;Basculegion;Hisui;Água;Fantasma;3.0;110.0;Veste-se com as almas de companheiros que morreram antes de cumprir o objetivo de subir o rio.;Evolui de Basculin. Apareceu pela primeira vez na 8ª geração.
+903;Sneasler;Hisui;Lutador;Veneno;1.3;43.0;Por causa do veneno forte e da força física assustadora, nenhuma outra espécie conseguia vencê-lo nas terras altas congeladas.;Evolui de Sneasel. Apareceu pela primeira vez na 8ª geração.
+904;Overqwil;Hisui;Sombrio;Veneno;2.5;60.5;Os espinhos em forma de lança e o temperamento selvagem lhe renderam o apelido de demônio do mar, e ele bebe veneno para se nutrir.;Evolui de Qwilfish. Apareceu pela primeira vez na 8ª geração.
+905;Enamorus;Hisui;Fada;Voador;1.6;48.0;Quando voa de além-mar até esta terra, o inverno rigoroso chega ao fim.;É um Pokémon lendário. Apareceu pela primeira vez na 8ª geração.
+906;Sprigatito;Paldea;Planta;;0.4;4.1;O cheiro doce do corpo hipnotiza quem está perto e fica mais forte quando ele está no sol.;Evolui para Floragato. Apareceu pela primeira vez na 9ª geração.
+907;Floragato;Paldea;Planta;;0.9;12.2;A dureza do pelo depende do humor, e quando está pronto para lutar fica pontudo como agulhas.;Evolui de Sprigatito e evolui para Meowscarada. Apareceu pela primeira vez na 9ª geração.
+908;Meowscarada;Paldea;Planta;Sombrio;1.5;31.2;Com ótimo despiste, arma os inimigos com bombas de flor cheias de pólen.;Evolui de Floragato. Apareceu pela primeira vez na 9ª geração.
+909;Fuecoco;Paldea;Fogo;;0.4;9.8;A bolsa de chama é pequena, então a energia vaza sempre pela marca no alto da cabeça e tremula de um lado para o outro.;Evolui para Crocalor. Apareceu pela primeira vez na 9ª geração.
+910;Crocalor;Paldea;Fogo;;1.0;30.7;A válvula da bolsa de chama está muito ligada às cordas vocais.;Evolui de Fuecoco e evolui para Skeledirge. Apareceu pela primeira vez na 9ª geração.
+911;Skeledirge;Paldea;Fogo;Fantasma;1.6;326.5;O canto suave acalma a alma de quem ouve e ele queima os inimigos com chamas de mais de 3.000 graus Celsius.;Evolui de Crocalor. Apareceu pela primeira vez na 9ª geração.
+912;Quaxly;Paldea;Água;;0.5;6.1;As pernas fortes o deixam nadar fácil até em rios de correnteza rápida.;Evolui para Quaxwell. Apareceu pela primeira vez na 9ª geração.
+913;Quaxwell;Paldea;Água;;1.2;21.5;Esforçado, observa pessoas e Pokémon de várias regiões e incorpora os movimentos nas suas danças.;Evolui de Quaxly e evolui para Quaquaval. Apareceu pela primeira vez na 9ª geração.
+914;Quaquaval;Paldea;Água;Lutador;1.8;61.9;Dança de jeitos que lembram lugares distantes e hipnotiza quem o vê.;Evolui de Quaxwell. Apareceu pela primeira vez na 9ª geração.
+915;Lechonk;Paldea;Normal;;0.5;10.2;Despreza qualquer comida que não seja a melhor, e o corpo solta um cheiro de ervas que os Pokémon inseto detestam.;Evolui para Oinkologne. Apareceu pela primeira vez na 9ª geração.
+916;Oinkologne;Paldea;Normal;;1.0;120.0;Encanta Pokémon fêmeas com o cheiro doce e sedutor que sai do corpo todo.;Evolui de Lechonk. Apareceu pela primeira vez na 9ª geração.
+917;Tarountula;Paldea;Inseto;;0.3;4.0;O fio que solta por trás é forte como arame, e o segredo dessa força ainda é objeto de pesquisa.;Evolui para Spidops. Apareceu pela primeira vez na 9ª geração.
+918;Spidops;Paldea;Inseto;;1.0;16.5;Cobre o território com fios fortes e grudentos para montar armadilhas para invasores.;Evolui de Tarountula. Apareceu pela primeira vez na 9ª geração.
+919;Nymble;Paldea;Inseto;;0.2;1.0;É muito hábil num estilo de luta em que usa os saltos para desviar de ataques e ainda causar dano.;Evolui para Lokix. Apareceu pela primeira vez na 9ª geração.
+920;Lokix;Paldea;Inseto;Sombrio;1.0;17.5;Usa o terceiro par de patas, normalmente dobrado, no Modo Combate, que sobrecarrega o corpo e não dura muito.;Evolui de Nymble. Apareceu pela primeira vez na 9ª geração.
+921;Pawmi;Paldea;Elétrico;;0.3;2.5;As almofadas das patas são órgãos que soltam eletricidade, e ele dispara das patas da frente em pé nas de trás.;Evolui para Pawmo. Apareceu pela primeira vez na 9ª geração.
+922;Pawmo;Paldea;Elétrico;Lutador;0.4;6.5;Usa uma técnica única em que golpeia os inimigos com as patas da frente e os eletrifica ao mesmo tempo.;Evolui de Pawmi e evolui para Pawmot. Apareceu pela primeira vez na 9ª geração.
+923;Pawmot;Paldea;Elétrico;Lutador;0.9;41.0;O pelo fofo age como bateria e armazena tanta eletricidade quanto um carro elétrico.;Evolui de Pawmo. Apareceu pela primeira vez na 9ª geração.
+924;Tandemaus;Paldea;Normal;;0.3;1.8;O casal fica junto a qualquer custo, divide a comida achada exatamente ao meio e a come junto.;Evolui para Maushold. Apareceu pela primeira vez na 9ª geração.
+925;Maushold;Paldea;Normal;;0.3;2.8;O casal maior protege os pequenos nas batalhas, e contra oponentes fortes o grupo todo entra na luta.;Evolui de Tandemaus. Apareceu pela primeira vez na 9ª geração.
+926;Fidough;Paldea;Fada;;0.3;10.9;O fermento do hálito é útil para cozinhar, por isso é protegido pelas pessoas há muito tempo.;Evolui para Dachsbun. Apareceu pela primeira vez na 9ª geração.
+927;Dachsbun;Paldea;Fada;;0.5;14.9;A pele endurece quando exposta a calor intenso, e o corpo tem um aroma apetitoso.;Evolui de Fidough. Apareceu pela primeira vez na 9ª geração.
+928;Smoliv;Paldea;Planta;Normal;0.3;6.5;Transforma nutrientes em óleo e o guarda na fruta da cabeça.;Evolui para Dolliv. Apareceu pela primeira vez na 9ª geração.
+929;Dolliv;Paldea;Planta;Normal;0.6;11.9;Toma sol à vontade até as frutas da cabeça amadurecerem.;Evolui de Smoliv e evolui para Arboliva. Apareceu pela primeira vez na 9ª geração.
+930;Arboliva;Paldea;Planta;Normal;1.4;48.2;Afasta inimigos lançando o óleo aromático e rico com força para quebrar uma pedra.;Evolui de Dolliv. Apareceu pela primeira vez na 9ª geração.
+931;Squawkabilly;Paldea;Normal;Voador;0.6;2.4;Os bandos de penas verdes são os que mais mandam, e o barulho é grande quando saem em busca de comida de manhã e à tarde.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+932;Nacli;Paldea;Pedra;;0.4;16.0;O chão raspa seu corpo enquanto anda, e por isso deixa sal para trás.;Evolui para Naclstack. Apareceu pela primeira vez na 9ª geração.
+933;Naclstack;Paldea;Pedra;;0.6;105.0;Comprime sal-gema dentro do corpo e dispara bolinhas de sal duras com força para furar uma chapa de ferro.;Evolui de Nacli e evolui para Garganacl. Apareceu pela primeira vez na 9ª geração.
+934;Garganacl;Paldea;Pedra;;2.3;240.0;Muitos Pokémon se juntam em volta dele querendo lamber o sal rico em minerais.;Evolui de Naclstack. Apareceu pela primeira vez na 9ª geração.
+935;Charcadet;Paldea;Fogo;;0.6;10.5;O poder de fogo aumenta quando luta e passa de 1.000 graus Celsius.;Evolui para Armarouge ou Ceruledge. Apareceu pela primeira vez na 9ª geração.
+936;Armarouge;Paldea;Fogo;Psíquico;1.5;85.0;Veste uma armadura reforçada por energia psíquica e de fogo e dispara bolas de fogo ardentes.;Evolui de Charcadet. Apareceu pela primeira vez na 9ª geração.
+937;Ceruledge;Paldea;Fogo;Fantasma;1.6;62.0;Uma velha armadura cheia de rancor causou esta evolução.;Evolui de Charcadet. Apareceu pela primeira vez na 9ª geração.
+938;Tadbulb;Paldea;Elétrico;;0.3;0.4;Flutua usando a eletricidade guardada no corpo e, com nuvens de tempestade por perto, sobe mais.;Evolui para Bellibolt. Apareceu pela primeira vez na 9ª geração.
+939;Bellibolt;Paldea;Elétrico;;1.2;113.0;O que parecem olhos são órgãos que soltam a eletricidade gerada pelo dínamo do umbigo.;Evolui de Tadbulb. Apareceu pela primeira vez na 9ª geração.
+940;Wattrel;Paldea;Elétrico;Voador;0.4;3.6;Fazem ninhos em penhascos na costa, e eles têm uma textura estranha, crepitante, e são uma iguaria popular.;Evolui para Kilowattrel. Apareceu pela primeira vez na 9ª geração.
+941;Kilowattrel;Paldea;Elétrico;Voador;1.4;38.6;Guarda em uma bolsa da garganta a eletricidade gerada pelas asas, e como as penas têm pouco óleo, nada mal.;Evolui de Wattrel. Apareceu pela primeira vez na 9ª geração.
+942;Maschiff;Paldea;Sombrio;;0.5;16.0;A mandíbula e as presas bem desenvolvidas esmagam pedras, e a gordura grossa dá uma defesa excelente.;Evolui para Mabosstiff. Apareceu pela primeira vez na 9ª geração.
+943;Mabosstiff;Paldea;Sombrio;;1.1;61.0;Adora brincar com crianças e, apesar de gentil, assume uma aparência intimidadora ao proteger a família.;Evolui de Maschiff. Apareceu pela primeira vez na 9ª geração.
+944;Shroodle;Paldea;Veneno;Normal;0.2;0.7;Para afastar inimigos do território, pinta marcas ao redor do ninho com um líquido venenoso de cheiro ácido.;Evolui para Grafaiai. Apareceu pela primeira vez na 9ª geração.
+945;Grafaiai;Paldea;Veneno;Normal;0.7;27.2;Cada um pinta seu desenho único e o repete várias vezes ao longo da vida.;Evolui de Shroodle. Apareceu pela primeira vez na 9ª geração.
+946;Bramblin;Paldea;Planta;Fantasma;0.6;0.6;Nem ele sabe para onde vai enquanto rola pelo mato levado pelo vento.;Evolui para Brambleghast. Apareceu pela primeira vez na 9ª geração.
+947;Brambleghast;Paldea;Planta;Fantasma;1.2;6.0;Vaga por regiões áridas e, raramente, surtos em massa deles enterram uma cidade inteira.;Evolui de Bramblin. Apareceu pela primeira vez na 9ª geração.
+948;Toedscool;Paldea;Terra;Planta;0.9;33.0;Embora lembre Tentacool, é uma espécie totalmente diferente.;Evolui para Toedscruel. Apareceu pela primeira vez na 9ª geração.
+949;Toedscruel;Paldea;Terra;Planta;1.9;58.0;Enrola os 10 tentáculos na presa e suga seus nutrientes, causando dor.;Evolui de Toedscool. Apareceu pela primeira vez na 9ª geração.
+950;Klawf;Paldea;Pedra;;1.3;79.0;Vive em penhascos íngremes, desvia dos ataques de lado e investe com as garras nos pontos fracos.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+951;Capsakid;Paldea;Planta;;0.3;3.0;Pratos tradicionais de Paldea podem ser muito picantes porque levam entre os ingredientes os dentes da frente que ele larga.;Evolui para Scovillain. Apareceu pela primeira vez na 9ª geração.
+952;Scovillain;Paldea;Planta;Fogo;0.9;15.0;A cabeça verde ficou cruel porque as substâncias picantes estimulam o cérebro.;Evolui de Capsakid. Apareceu pela primeira vez na 9ª geração.
+953;Rellor;Paldea;Inseto;;0.2;1.0;Rola sua bola de lama enquanto a energia de que precisa para evoluir amadurece.;Evolui para Rabsca. Apareceu pela primeira vez na 9ª geração.
+954;Rabsca;Paldea;Inseto;Psíquico;0.3;3.5;Um bebê dorme dentro da bola, e Rabsca a rola com as pernas para garantir que ele durma bem.;Evolui de Rellor. Apareceu pela primeira vez na 9ª geração.
+955;Flittle;Paldea;Psíquico;;0.2;1.5;Passa o tempo correndo por terras desertas e, se alguém roubar suas frutas queridas, vai atrás e se vinga.;Evolui para Espathra. Apareceu pela primeira vez na 9ª geração.
+956;Espathra;Paldea;Psíquico;;1.9;90.0;Solta poder psíquico pelos vãos das golas coloridas e corre a mais de 190 km/h.;Evolui de Flittle. Apareceu pela primeira vez na 9ª geração.
+957;Tinkatink;Paldea;Fada;Aço;0.4;8.9;Bate sucata de ferro para fazer um martelo e o refaz várias vezes até ficar satisfeito com o resultado.;Evolui para Tinkatuff. Apareceu pela primeira vez na 9ª geração.
+958;Tinkatuff;Paldea;Fada;Aço;0.7;59.1;Moram em pilhas de sucata de metal e testam a força dos martelos uns dos outros batendo um no outro.;Evolui de Tinkatink e evolui para Tinkaton. Apareceu pela primeira vez na 9ª geração.
+959;Tinkaton;Paldea;Fada;Aço;0.7;112.8;O martelo passa de 100 kg, mas ele o balança fácil enquanto rouba o que quer e leva o saque para casa.;Evolui de Tinkatuff. Apareceu pela primeira vez na 9ª geração.
+960;Wiglett;Paldea;Água;;1.2;1.8;Embora lembre Diglett, é uma espécie totalmente diferente.;Evolui para Wugtrio. Apareceu pela primeira vez na 9ª geração.
+961;Wugtrio;Paldea;Água;;1.2;5.4;Uma variedade de Pokémon peixe, já foi considerado uma forma regional de Dugtrio.;Evolui de Wiglett. Apareceu pela primeira vez na 9ª geração.
+962;Bombirdier;Paldea;Voador;Sombrio;1.5;42.9;Usa o avental do peito para embrulhar comida e a leva de volta ao ninho.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+963;Finizen;Paldea;Água;;1.3;60.2;O anel de água é feito de água do mar misturada a um fluido grudento que ele solta pelo orifício respiratório.;Evolui para Palafin. Apareceu pela primeira vez na 9ª geração.
+964;Palafin;Paldea;Água;;1.3;60.2;A capacidade física é igual à de Finizen, mas quando os aliados correm perigo, se transforma e se fortalece.;Evolui de Finizen. Apareceu pela primeira vez na 9ª geração.
+965;Varoom;Paldea;Aço;Veneno;1.0;35.0;A parte de aço é o corpo de verdade, e ele se agarra a rochas e converte os minerais em energia para se mover.;Evolui para Revavroom. Apareceu pela primeira vez na 9ª geração.
+966;Revavroom;Paldea;Aço;Veneno;1.8;120.0;Ameaça os outros com o som do escapamento e põe a língua para fora da boca cilíndrica, borrifando fluidos tóxicos.;Evolui de Varoom. Apareceu pela primeira vez na 9ª geração.
+967;Cyclizar;Paldea;Dragão;Normal;1.6;63.0;Corre a mais de 110 km/h carregando um humano, e o calor do corpo do cavaleiro aquece suas costas e levanta seu ânimo.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+968;Orthworm;Paldea;Aço;;2.5;310.0;Vive em desertos áridos e mantém o corpo de metal comendo o ferro do solo.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+969;Glimmet;Paldea;Pedra;Veneno;0.7;8.0;Os cristais minerais tóxicos parecem pétalas de flor, e ele espalha um pó venenoso como pólen para se proteger.;Evolui para Glimmora. Apareceu pela primeira vez na 9ª geração.
+970;Glimmora;Paldea;Pedra;Veneno;1.5;45.0;As pétalas são feitas de energia de veneno cristalizada, e ficou claro recentemente que se parecem com Joias Tera.;Evolui de Glimmet. Apareceu pela primeira vez na 9ª geração.
+971;Greavard;Paldea;Fantasma;;0.6;35.0;Simpático, não gosta de ficar sozinho, e se você lhe der um pouco de atenção, vai segui-lo para sempre.;Evolui para Houndstone. Apareceu pela primeira vez na 9ª geração.
+972;Houndstone;Paldea;Fantasma;;2.0;15.0;Um Pokémon querido e muito lamentado renasceu como Houndstone e não gosta que toquem na protuberância da cabeça.;Evolui de Greavard. Apareceu pela primeira vez na 9ª geração.
+973;Flamigo;Paldea;Voador;Lutador;1.6;37.0;Graças a um comportamento chamado sincronização, o bando todo ataca ao mesmo tempo em perfeita harmonia.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+974;Cetoddle;Paldea;Gelo;;1.2;45.0;Vive em regiões geladas em grupos de uns cinco e adora os minerais da neve e do gelo.;Evolui para Cetitan. Apareceu pela primeira vez na 9ª geração.
+975;Cetitan;Paldea;Gelo;;4.5;700.0;A energia de gelo se acumula no chifre da mandíbula superior, que atinge temperaturas criogênicas e congela o ambiente.;Evolui de Cetoddle. Apareceu pela primeira vez na 9ª geração.
+976;Veluza;Paldea;Água;Psíquico;2.5;90.0;Tem excelente capacidade de regeneração, larga carne extra para ficar mais ágil e então ataca a presa.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+977;Dondozo;Paldea;Água;;12.0;220.0;Trata Tatsugiri como chefe e o segue com lealdade, e apesar de poderoso, não parece muito inteligente.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+978;Tatsugiri;Paldea;Dragão;Água;0.3;8.0;É muito astuto e finge fraqueza para atrair presas, depois manda o parceiro atacar.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+979;Annihilape;Paldea;Lutador;Fantasma;1.2;56.0;Imbui os punhos com o poder da raiva que guardava escondida no coração.;Evolui de Primeape. Apareceu pela primeira vez na 9ª geração.
+980;Clodsire;Paldea;Veneno;Terra;1.8;223.0;Vive no fundo de lagoas e pântanos e leva Wooper nas costas, atravessando a água de uma margem à outra.;Evolui de Wooper. Apareceu pela primeira vez na 9ª geração.
+981;Farigiraf;Paldea;Normal;Psíquico;3.2;160.0;A cabeça endurecida da cauda protege a da frente enquanto chicoteia o pescoço longo para cabecear inimigos.;Evolui de Girafarig. Apareceu pela primeira vez na 9ª geração.
+982;Dudunsparce;Paldea;Normal;;3.6;39.2;Expulsa inimigos do ninho sugando ar para encher os pulmões longos e estreitos e soltando-o numa rajada intensa.;Evolui de Dunsparce. Apareceu pela primeira vez na 9ª geração.
+983;Kingambit;Paldea;Sombrio;Aço;2.0;120.0;Embora comande um exército enorme em batalha, não é bom em criar estratégias complexas.;Evolui de Bisharp. Apareceu pela primeira vez na 9ª geração.
+984;Great Tusk;Paldea;Terra;Lutador;2.2;320.0;Parece um Pokémon misterioso que, segundo uma revista de paranormal, vive desde a antiguidade.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+985;Scream Tail;Paldea;Fada;Psíquico;1.2;8.0;Parece um Pokémon misterioso descrito numa revista de paranormal como um Jigglypuff de um bilhão de anos atrás.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+986;Brute Bonnet;Paldea;Planta;Sombrio;1.2;21.0;Lembra um pouco um Pokémon descrito numa revista duvidosa como um cruzamento de dinossauro com cogumelo.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+987;Flutter Mane;Paldea;Fantasma;Fada;1.4;4.0;Tem traços parecidos com um pterossauro fantasma de uma revista de paranormal, mas os dois têm pouco mais em comum.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+988;Slither Wing;Paldea;Inseto;Lutador;3.2;92.0;Lembra um pouco uma forma antiga de Volcarona apresentada numa revista duvidosa.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+989;Sandy Shocks;Paldea;Elétrico;Terra;2.3;60.0;Lembra de leve um Magneton que viveu 10.000 anos, tema de um artigo de uma revista de paranormal.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+990;Iron Treads;Paldea;Terra;Aço;0.9;240.0;Foi avistado nos últimos anos e se parece com um objeto misterioso descrito num diário de expedição antigo.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+991;Iron Bundle;Paldea;Gelo;Água;0.6;11.0;Parece um objeto misterioso citado num livro antigo, com apenas dois avistamentos registrados.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+992;Iron Hands;Paldea;Lutador;Elétrico;1.8;380.7;Tem muitas semelhanças com o objeto Iron Hands, citado num diário de expedição.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+993;Iron Jugulis;Paldea;Sombrio;Voador;1.3;111.0;É possível que o objeto Iron Jugulis, descrito num livro antigo, seja na verdade este Pokémon.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+994;Iron Moth;Paldea;Fogo;Veneno;1.2;36.0;Não há registros de captura dessa espécie, e faltam dados, mas as características batem com um objeto de um livro antigo.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+995;Iron Thorns;Paldea;Pedra;Elétrico;1.6;303.0;Algumas características marcantes combinam com as de um objeto chamado Iron Thorns num diário de expedição.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+996;Frigibax;Paldea;Dragão;Gelo;0.5;17.0;Vive em florestas e áreas acidentadas e, com o poder da nadadeira dorsal, resfria o interior do ninho como uma geladeira.;Evolui para Arctibax. Apareceu pela primeira vez na 9ª geração.
+997;Arctibax;Paldea;Dragão;Gelo;0.8;30.0;Ataca com a lâmina da nadadeira dorsal congelada, dando uma cambalhota no ar.;Evolui de Frigibax e evolui para Baxcalibur. Apareceu pela primeira vez na 9ª geração.
+998;Baxcalibur;Paldea;Dragão;Gelo;2.1;210.0;Entra na batalha virando de cabeça para baixo e soltando ar gelado pela boca.;Evolui de Arctibax. Apareceu pela primeira vez na 9ª geração.
+999;Gimmighoul;Paldea;Fantasma;;0.3;5.0;Vive dentro de um velho baú de tesouro e às vezes é deixado num canto de loja porque ninguém percebe que é um Pokémon.;Evolui para Gholdengo. Apareceu pela primeira vez na 9ª geração.
+1000;Gholdengo;Paldea;Aço;Fantasma;1.2;30.0;Tem um corpo resistente feito de moedas empilhadas e domina os inimigos disparando moeda após moeda em sequência.;Evolui de Gimmighoul. Apareceu pela primeira vez na 9ª geração.
+1001;Wo-Chien;Paldea;Sombrio;Planta;1.5;74.2;Drena a energia vital da vegetação, fazendo as florestas próximas murcharem e os campos ficarem estéreis.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1002;Chien-Pao;Paldea;Sombrio;Gelo;1.9;152.2;O ódio dos que morreram pela espada há muito tempo se vestiu de neve e virou um Pokémon.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1003;Ting-Lu;Paldea;Sombrio;Terra;2.7;699.7;Baixa devagar a cabeça pesadíssima no chão, abrindo a terra em fissuras de mais de 50 metros de profundidade.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1004;Chi-Yu;Paldea;Sombrio;Fogo;0.4;4.9;A inveja acumulada em contas curvas que provocaram vários conflitos se vestiu de fogo e virou um Pokémon.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1005;Roaring Moon;Paldea;Dragão;Sombrio;2.0;380.0;Segundo uma revista duvidosa, tem ligação com um fenômeno que ocorre em certa região.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1006;Iron Valiant;Paldea;Fada;Lutador;1.4;35.0;É possível que seja o objeto listado como Iron Valiant num diário de expedição.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1007;Koraidon;Paldea;Lutador;Dragão;2.5;303.0;Parece Cyclizar, mas é muito mais robusto e feroz.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1008;Miraidon;Paldea;Elétrico;Dragão;3.5;240.0;Parece ser a Serpente de Ferro citada num livro antigo, que teria reduzido a terra a cinzas com seus raios.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1009;Walking Wake;Paldea;Água;Dragão;3.5;280.0;Parece uma ilustração de uma revista de paranormal, que seria um Suicune superantigo.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1010;Iron Leaves;Paldea;Planta;Psíquico;1.5;125.0;Segundo os poucos relatos de testemunhas, usou as lâminas brilhantes para picar árvores grandes e rochas.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1011;Dipplin;Paldea;Planta;Dragão;0.4;9.7;A cabeça que aparece é da serpente da frente, e a cauda pertence à serpente do núcleo.;Evolui de Applin e evolui para Hydrapple. Apareceu pela primeira vez na 9ª geração.
+1012;Poltchageist;Paldea;Planta;Fantasma;0.1;1.1;Parece uma forma regional de Sinistea, mas descobriu-se recentemente que os dois não têm nenhuma relação.;Evolui para Sinistcha. Apareceu pela primeira vez na 9ª geração.
+1013;Sinistcha;Paldea;Planta;Fantasma;0.2;2.2;Prefere lugares frescos e escuros, como o fundo de uma estante ou o espaço sob o assoalho de uma casa.;Evolui de Poltchageist. Apareceu pela primeira vez na 9ª geração.
+1014;Okidogi;Paldea;Veneno;Lutador;1.8;92.2;É um brutamontes de pavio curto e pulveriza qualquer coisa balançando a corrente do pescoço.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1015;Munkidori;Paldea;Veneno;Psíquico;1.0;12.2;Fica num lugar seguro enquanto brinca com os inimigos, usando psicocinese para causar tontura intensa.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1016;Fezandipiti;Paldea;Veneno;Fada;1.4;30.1;Bate as asas brilhantes para espalhar feromônios que cativam pessoas e Pokémon.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1017;Ogerpon;Paldea;Planta;;1.2;39.8;Este Pokémon travesso é cheio de curiosidade e luta extraindo a energia de tipo contida em suas máscaras.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1018;Archaludon;Paldea;Aço;Dragão;2.0;60.0;Cava buracos em montanhas atrás de comida e é tão resistente que um desabamento não o abala.;Evolui de Duraludon. Apareceu pela primeira vez na 9ª geração.
+1019;Hydrapple;Paldea;Planta;Dragão;1.8;93.0;Essas serpentes caprichosas se uniram, e nas raras vezes em que os humores se alinham, o poder verdadeiro é liberado.;Evolui de Dipplin. Apareceu pela primeira vez na 9ª geração.
+1020;Gouging Fire;Paldea;Fogo;Dragão;3.5;590.0;Lembra um Pokémon sinistro mostrado numa revista de paranormal, que seria um Entei regenerado de um fóssil.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1021;Raging Bolt;Paldea;Elétrico;Dragão;5.2;480.0;Lembra um Pokémon que virou assunto por um tempo após uma revista de paranormal dizer que era o ancestral de Raikou.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1022;Iron Boulder;Paldea;Pedra;Psíquico;1.5;162.5;Recebeu o nome de um objeto misterioso registrado num livro antigo, e o corpo parece metálico.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1023;Iron Crown;Paldea;Aço;Psíquico;1.6;156.0;Supostamente houve um incidente em que lançou lâminas brilhantes que cortaram tudo ao redor em pedaços.;Não tem evoluções. Apareceu pela primeira vez na 9ª geração.
+1024;Terapagos;Paldea;Normal;;0.2;6.5;Acredita-se que viveu na antiga Paldea até ser pego por mudanças sísmicas e se extinguir.;É um Pokémon lendário. Apareceu pela primeira vez na 9ª geração.
+1025;Pecharunt;Paldea;Veneno;Fantasma;0.3;0.3;A casca em forma de pêssego guarda um veneno potente, e ele faz mochi venenoso e serve a pessoas e Pokémon.;É um Pokémon mítico. Apareceu pela primeira vez na 9ª geração.
