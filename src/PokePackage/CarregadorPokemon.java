@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class CarregadorPokemon {
@@ -40,5 +41,33 @@ public class CarregadorPokemon {
 			}
 		}
 		return lista;
+	}
+
+	/**
+	 * Devolve os Pokémon na ordem em que devem ser inseridos na ABB para ela ficar balanceada.
+	 *
+	 * Inserir em ordem crescente (como o CSV está) faz a ABB virar uma lista encadeada: altura n, busca O(n).
+	 * Aqui ordenamos pela chave da árvore e inserimos primeiro o elemento do meio, depois o meio de cada
+	 * metade, e assim por diante. A altura fica em torno de log2(n).
+	 *
+	 * @param lista    Pokémon carregados (não é alterada)
+	 * @param chave    a mesma chave da ABB: por Dex ou por nome
+	 */
+	public static List<Pokemon> ordemBalanceada(List<Pokemon> lista, Comparator<Pokemon> chave) {
+		List<Pokemon> ordenada = new ArrayList<>(lista);
+		ordenada.sort(chave);
+		List<Pokemon> resultado = new ArrayList<>(ordenada.size());
+		meioPrimeiro(ordenada, 0, ordenada.size() - 1, resultado);
+		return resultado;
+	}
+
+	private static void meioPrimeiro(List<Pokemon> ordenada, int ini, int fim, List<Pokemon> saida) {
+		if (ini > fim) {
+			return;
+		}
+		int meio = (ini + fim) >>> 1;
+		saida.add(ordenada.get(meio));
+		meioPrimeiro(ordenada, ini, meio - 1, saida);
+		meioPrimeiro(ordenada, meio + 1, fim, saida);
 	}
 }
