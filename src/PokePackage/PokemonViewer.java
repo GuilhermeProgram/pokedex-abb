@@ -308,9 +308,16 @@ public class PokemonViewer extends JFrame {
 					if (MINIATURAS.containsKey(dex)) {
 						continue;
 					}
-					BufferedImage img = ler(dex);
-					if (img != null) {
-						MINIATURAS.put(dex, reduzir(img, 96));
+					BufferedImage mini = lerMiniaturaGuardada(dex);
+					if (mini == null) {
+						BufferedImage img = ler(dex);
+						if (img != null) {
+							mini = reduzir(img, 96);
+							guardarMiniatura(dex, mini);
+						}
+					}
+					if (mini != null) {
+						MINIATURAS.put(dex, mini);
 					}
 					if (++n % 12 == 0) {
 						aoAvancar.run();
@@ -319,7 +326,36 @@ public class PokemonViewer extends JFrame {
 				aoAvancar.run();
 			}, "miniaturas");
 			preCarga.setDaemon(true);
+			preCarga.setPriority(Thread.MIN_PRIORITY); // não disputa CPU com a animação
 			preCarga.start();
+		}
+
+		/**
+		 * Miniaturas prontas ficam em images/mini/: da segunda abertura em diante a lista carrega em instantes,
+		 * em vez de decodificar e reduzir as 1025 artes grandes de novo.
+		 */
+		private static BufferedImage lerMiniaturaGuardada(int dex) {
+			File arquivo = new File("images/mini/" + dex + ".png");
+			File original = new File("images/" + dex + ".png");
+			if (!arquivo.exists() || arquivo.lastModified() < original.lastModified()) {
+				return null; // não existe, ou a arte foi baixada de novo depois
+			}
+			try {
+				return ImageIO.read(arquivo);
+			} catch (IOException e) {
+				return null;
+			}
+		}
+
+		private static void guardarMiniatura(int dex, BufferedImage mini) {
+			try {
+				File pasta = new File("images/mini");
+				if (pasta.isDirectory() || pasta.mkdirs()) {
+					ImageIO.write(mini, "png", new File(pasta, dex + ".png"));
+				}
+			} catch (IOException | RuntimeException e) {
+				// sem cache em disco: só fica mais lento na próxima abertura
+			}
 		}
 
 		/** Só para testes sem janela: espera a pré-carga terminar. */
@@ -1500,27 +1536,56 @@ public class PokemonViewer extends JFrame {
 			return Math.max(220, Math.min(h - 24, (int) (w * 0.46)));
 		}
 
+		// Fundo da janela: degradê + dois brilhos grandes. Muda só quando a cor, o tamanho ou a posição da arte
+		// mudam, então fica guardado numa imagem pequena (1/4 do tamanho) e é só esticado a cada quadro.
+		private BufferedImage fundoCache;
+		private int fundoW = -1, fundoH = -1, fundoCx, fundoCy, fundoLado, fundoRgbA, fundoRgbB;
+
 		@Override
 		protected void paintComponent(Graphics g) {
-			Graphics2D g2 = (Graphics2D) g.create();
-			qualidade(g2);
-			g2.setPaint(new GradientPaint(0, 0, FUNDO_A, getWidth(), getHeight(), FUNDO_B));
-			g2.fillRect(0, 0, getWidth(), getHeight());
-
-			// brilho nas cores dos tipos, atrás da arte (pintado no fundo para não ter bordas)
-			if (heroi.getParent() != null && heroi.getWidth() > 0) {
-				Rectangle r = SwingUtilities.convertRectangle(heroi.getParent(), heroi.getBounds(), this);
-				int lado = ladoHeroi(r.width, r.height);
-				float cx = r.x + r.width - lado / 2f - 36;
-				float cy = r.y + r.height / 2f + 6;
-				Color a = accentA(), b = accentB();
-				g2.setPaint(new RadialGradientPaint(new Point2D.Float(cx, cy), lado * 1.05f, new float[] { 0f, 1f },
-						new Color[] { comAlpha(a, 90), comAlpha(a, 0) }));
-				g2.fill(new Rectangle2D.Float(0, 0, getWidth(), getHeight()));
-				g2.setPaint(new RadialGradientPaint(new Point2D.Float(cx - lado * 0.3f, cy + lado * 0.25f),
-						lado * 0.7f, new float[] { 0f, 1f }, new Color[] { comAlpha(b, 60), comAlpha(b, 0) }));
-				g2.fill(new Rectangle2D.Float(0, 0, getWidth(), getHeight()));
+			int w = getWidth(), h = getHeight();
+			if (w <= 0 || h <= 0) {
+				return;
 			}
+			boolean temArte = heroi.getParent() != null && heroi.getWidth() > 0;
+			int cx = 0, cy = 0, lado = 0;
+			if (temArte) {
+				Rectangle r = SwingUtilities.convertRectangle(heroi.getParent(), heroi.getBounds(), this);
+				lado = ladoHeroi(r.width, r.height);
+				cx = Math.round(r.x + r.width - lado / 2f - 36);
+				cy = Math.round(r.y + r.height / 2f + 6);
+			}
+			Color a = accentA(), b = accentB();
+			if (fundoCache == null || fundoW != w || fundoH != h || fundoCx != cx || fundoCy != cy || fundoLado != lado
+					|| fundoRgbA != a.getRGB() || fundoRgbB != b.getRGB()) {
+				int bw = Math.max(1, w / 4), bh = Math.max(1, h / 4);
+				if (fundoCache == null || fundoCache.getWidth() != bw || fundoCache.getHeight() != bh) {
+					fundoCache = new BufferedImage(bw, bh, BufferedImage.TYPE_INT_RGB);
+				}
+				Graphics2D c = fundoCache.createGraphics();
+				c.scale(bw / (double) w, bh / (double) h);
+				c.setPaint(new GradientPaint(0, 0, FUNDO_A, w, h, FUNDO_B));
+				c.fillRect(0, 0, w, h);
+				if (temArte) {
+					c.setPaint(new RadialGradientPaint(new Point2D.Float(cx, cy), lado * 1.05f, new float[] { 0f, 1f },
+							new Color[] { comAlpha(a, 90), comAlpha(a, 0) }));
+					c.fill(new Rectangle2D.Float(0, 0, w, h));
+					c.setPaint(new RadialGradientPaint(new Point2D.Float(cx - lado * 0.3f, cy + lado * 0.25f),
+							lado * 0.7f, new float[] { 0f, 1f }, new Color[] { comAlpha(b, 60), comAlpha(b, 0) }));
+					c.fill(new Rectangle2D.Float(0, 0, w, h));
+				}
+				c.dispose();
+				fundoW = w;
+				fundoH = h;
+				fundoCx = cx;
+				fundoCy = cy;
+				fundoLado = lado;
+				fundoRgbA = a.getRGB();
+				fundoRgbB = b.getRGB();
+			}
+			Graphics2D g2 = (Graphics2D) g.create();
+			g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+			g2.drawImage(fundoCache, 0, 0, w, h, null);
 			g2.dispose();
 		}
 
