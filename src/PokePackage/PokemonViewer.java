@@ -1026,6 +1026,7 @@ public class PokemonViewer extends JFrame {
 		private final JLabel lblAviso = new JLabel(" ");
 		private final javax.swing.Timer avisoTimer;
 		private boolean sincronizando = false;
+		private SeletorRegiao seletorRegiao; // null quando os dados têm uma região só
 
 		// principal
 		private final Heroi heroi = new Heroi();
@@ -1140,7 +1141,21 @@ public class PokemonViewer extends JFrame {
 			caixaCampo.setOpaque(false);
 			caixaCampo.setBorder(new EmptyBorder(0, 18, 0, 18));
 			caixaCampo.add(campo, BorderLayout.CENTER);
-			topo.add(caixaCampo, BorderLayout.CENTER);
+			JPanel centro = new JPanel(new BorderLayout());
+			centro.setOpaque(false);
+			centro.add(caixaCampo, BorderLayout.NORTH);
+			List<String> nomesRegioes = regioesPresentes();
+			if (nomesRegioes.size() > 1) {
+				seletorRegiao = new SeletorRegiao(nomesRegioes);
+				seletorRegiao.aoMudar(this::aoTrocarRegiao);
+				JPanel caixaRegiao = new JPanel(new BorderLayout());
+				caixaRegiao.setOpaque(false);
+				caixaRegiao.setBorder(new EmptyBorder(10, 18, 0, 18));
+				caixaRegiao.add(seletorRegiao, BorderLayout.CENTER);
+				centro.add(caixaRegiao, BorderLayout.CENTER);
+				atualizarSeletorRegiao();
+			}
+			topo.add(centro, BorderLayout.CENTER);
 
 			lblAviso.setFont(fonte(Font.PLAIN, 13f));
 			lblAviso.setForeground(new Color(0xFF, 0x9A, 0x9A));
@@ -1214,6 +1229,9 @@ public class PokemonViewer extends JFrame {
 			BotaoTexto cadastrar = new BotaoTexto("Cadastrar", "Registrar um Pokémon pelo nome ou número");
 			cadastrar.addActionListener(e -> cadastrar());
 			botoes.add(cadastrar);
+			BotaoTexto batalhar = new BotaoTexto("Batalhar", "Lutar com o Pokémon da tela contra um adversário descoberto");
+			batalhar.addActionListener(e -> batalhar());
+			botoes.add(batalhar);
 			BotaoRedondo anterior = new BotaoRedondo("‹", "Anterior (seta esquerda)");
 			BotaoRedondo proximo = new BotaoRedondo("›", "Próximo (seta direita)");
 			anterior.addActionListener(e -> navegar(-1));
@@ -1333,6 +1351,46 @@ public class PokemonViewer extends JFrame {
 			avisoTimer.restart();
 		}
 
+		private transient DadosBatalha dadosBatalha;
+
+		/** Abre a batalha: o Pokémon da tela contra um adversário sorteado entre os já descobertos (achado pelo buscador). */
+		private void batalhar() {
+			if (atual == null || !descobertos.contains(atual.getNumeroDex())) {
+				aviso("Escolha um Pokémon já descoberto para batalhar.");
+				return;
+			}
+			try {
+				if (dadosBatalha == null) {
+					dadosBatalha = new DadosBatalha("dados");
+				}
+			} catch (IOException ex) {
+				aviso("Não achei a pasta dados/ (rode a partir da raiz do projeto).");
+				return;
+			}
+			if (dadosBatalha.golpesDe(atual.getNumeroDex()).isEmpty()) {
+				aviso(atual.getNome() + " não tem golpes cadastrados.");
+				return;
+			}
+			List<Pokemon> candidatos = new ArrayList<>();
+			for (Pokemon p : lista) {
+				if (descobertos.contains(p.getNumeroDex()) && p.getNumeroDex() != atual.getNumeroDex()
+						&& !dadosBatalha.golpesDe(p.getNumeroDex()).isEmpty()) {
+					candidatos.add(p);
+				}
+			}
+			if (candidatos.isEmpty()) {
+				aviso("Descubra pelo menos mais um Pokémon para ter um adversário.");
+				return;
+			}
+			Pokemon sorteado = candidatos.get(new java.util.Random().nextInt(candidatos.size()));
+			Pokemon oponente = buscador.apply(String.valueOf(sorteado.getNumeroDex())); // busca na ABB
+			if (oponente == null) {
+				oponente = sorteado;
+			}
+			Frame dono = (Frame) SwingUtilities.getWindowAncestor(this);
+			new TelaBatalha(dono, dadosBatalha, atual, oponente).setVisible(true);
+		}
+
 		/** Enter no campo: usa o buscador (a ABB, quando estiver ligada). */
 		private void buscar() {
 			String texto = campo.getText().trim();
@@ -1434,12 +1492,74 @@ public class PokemonViewer extends JFrame {
 			}
 		}
 
+		private static final List<String> ORDEM_REGIOES = List.of("Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos",
+				"Alola", "Galar", "Hisui", "Paldea");
+
+		/** Regiões que existem nos dados, na ordem das gerações (as desconhecidas vão para o fim). */
+		private List<String> regioesPresentes() {
+			Set<String> existentes = new java.util.TreeSet<>();
+			for (Pokemon p : lista) {
+				if (p.getRegiao() != null && !p.getRegiao().isBlank()) {
+					existentes.add(p.getRegiao());
+				}
+			}
+			List<String> resultado = new ArrayList<>();
+			for (String r : ORDEM_REGIOES) {
+				if (existentes.remove(r)) {
+					resultado.add(r);
+				}
+			}
+			resultado.addAll(existentes);
+			return resultado;
+		}
+
+		private void aoTrocarRegiao() {
+			filtrar();
+			atualizarSeletorRegiao();
+			if (modelo.size() > 0 && (atual == null || modelo.indexOf(atual) < 0)) {
+				exibir(modelo.get(0)); // mostra o primeiro da região escolhida
+			}
+		}
+
+		/** Mostra "descobertos/total" da região escolhida (ou de todas). */
+		private void atualizarSeletorRegiao() {
+			if (seletorRegiao == null) {
+				return;
+			}
+			String regiao = seletorRegiao.regiao();
+			int total = 0, achados = 0;
+			for (Pokemon p : lista) {
+				if (regiao == null || regiao.equals(p.getRegiao())) {
+					total++;
+					if (descobertos.contains(p.getNumeroDex())) {
+						achados++;
+					}
+				}
+			}
+			seletorRegiao.setProgresso(achados + "/" + total);
+		}
+
+		/** Só para testes: escolhe a região (null = todas). */
+		void selecionarRegiao(String regiao) {
+			if (seletorRegiao != null) {
+				seletorRegiao.escolher(regiao);
+			}
+		}
+
+		int itensNaLista() {
+			return modelo.size();
+		}
+
 		/** Filtra a lista lateral enquanto o usuário digita. */
 		private void filtrar() {
 			String f = normalizar(campo.getText());
 			sincronizando = true;
 			modelo.clear();
+			String regiao = seletorRegiao == null ? null : seletorRegiao.regiao();
 			for (Pokemon p : lista) {
+				if (regiao != null && !regiao.equals(p.getRegiao())) {
+					continue;
+				}
 				boolean nomeVisivel = descobertos.contains(p.getNumeroDex()); // nome de quem não foi descoberto é segredo
 				if (f.isEmpty() || (nomeVisivel && normalizar(p.getNome()).contains(f))
 						|| String.valueOf(p.getNumeroDex()).startsWith(f)) {
@@ -1514,6 +1634,7 @@ public class PokemonViewer extends JFrame {
 		}
 
 		private void atualizarContador() {
+			atualizarSeletorRegiao();
 			String progresso = "Descobertos " + descobertos.size() + "/" + lista.size();
 			if (atual == null) {
 				lblContador.setText(lista.isEmpty() ? " " : progresso);
@@ -2205,6 +2326,135 @@ public class PokemonViewer extends JFrame {
 			g2.setStroke(new BasicStroke(2.6f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
 			g2.drawLine(cx - direcao * 3, cy - 7, cx + direcao * 4, cy);
 			g2.drawLine(cx + direcao * 4, cy, cx - direcao * 3, cy + 7);
+			g2.dispose();
+		}
+	}
+
+	/**
+	 * Seletor de região da lista lateral: setas para trocar e, no centro, o nome da região com o progresso
+	 * (ex.: Kanto  3/151). A primeira opção é "Todas".
+	 */
+	static class SeletorRegiao extends JComponent {
+		private static final long serialVersionUID = 1L;
+		private static final int ZONA_SETA = 40;
+
+		private final List<String> regioes = new ArrayList<>(); // posição 0 = todas (null)
+		private int indice = 0;
+		private String progresso = "";
+		private int hover = 0; // -1 seta esquerda, 1 seta direita, 2 centro, 0 nenhum
+		private transient Runnable aoMudar = () -> { };
+
+		SeletorRegiao(List<String> nomes) {
+			regioes.add(null);
+			regioes.addAll(nomes);
+			setPreferredSize(new Dimension(100, 40));
+			setToolTipText("Filtrar a lista por região");
+			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+			MouseAdapter mouse = new MouseAdapter() {
+				@Override
+				public void mouseMoved(MouseEvent e) {
+					mudarHover(zona(e.getX()));
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					mudarHover(0);
+				}
+
+				@Override
+				public void mousePressed(MouseEvent e) {
+					trocar(zona(e.getX()) == -1 ? -1 : 1);
+				}
+
+				@Override
+				public void mouseWheelMoved(java.awt.event.MouseWheelEvent e) {
+					trocar(e.getWheelRotation() > 0 ? 1 : -1);
+				}
+			};
+			addMouseListener(mouse);
+			addMouseMotionListener(mouse);
+			addMouseWheelListener(mouse);
+		}
+
+		private int zona(int x) {
+			return x < ZONA_SETA ? -1 : x > getWidth() - ZONA_SETA ? 1 : 2;
+		}
+
+		private void mudarHover(int z) {
+			if (z != hover) {
+				hover = z;
+				repaint();
+			}
+		}
+
+		void aoMudar(Runnable acao) {
+			this.aoMudar = acao;
+		}
+
+		/** Região escolhida, ou null para todas. */
+		String regiao() {
+			return regioes.get(indice);
+		}
+
+		void escolher(String regiao) {
+			int i = regioes.indexOf(regiao);
+			if (i >= 0 && i != indice) {
+				indice = i;
+				aoMudar.run();
+				repaint();
+			}
+		}
+
+		void setProgresso(String texto) {
+			if (!texto.equals(progresso)) {
+				progresso = texto;
+				repaint();
+			}
+		}
+
+		private void trocar(int passo) {
+			indice = (indice + passo + regioes.size()) % regioes.size();
+			aoMudar.run();
+			repaint();
+		}
+
+		@Override
+		protected void paintComponent(Graphics g) {
+			Graphics2D g2 = (Graphics2D) g.create();
+			qualidade(g2);
+			int w = getWidth(), h = getHeight();
+			g2.setColor(PAINEL);
+			g2.fill(new RoundRectangle2D.Float(0, 0, w - 1, h - 1, h, h));
+			g2.setColor(BORDA);
+			g2.setStroke(new BasicStroke(1.2f));
+			g2.draw(new RoundRectangle2D.Float(0.6f, 0.6f, w - 2.2f, h - 2.2f, h, h));
+
+			// setas desenhadas à mão (não dependem da fonte)
+			g2.setStroke(new BasicStroke(2.2f, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+			for (int lado = -1; lado <= 1; lado += 2) {
+				g2.setColor(hover == lado ? TEXTO : SUAVE);
+				int cx = lado < 0 ? ZONA_SETA / 2 + 2 : w - ZONA_SETA / 2 - 2;
+				int cy = h / 2;
+				g2.drawLine(cx - lado * 2, cy - 5, cx + lado * 3, cy);
+				g2.drawLine(cx + lado * 3, cy, cx - lado * 2, cy + 5);
+			}
+
+			// nome + progresso, centralizados juntos
+			String nome = regiao() == null ? "Todas" : regiao();
+			Font fNome = fonte(Font.BOLD, 14f), fProg = fonte(Font.PLAIN, 13f);
+			FontMetrics mNome = g2.getFontMetrics(fNome), mProg = g2.getFontMetrics(fProg);
+			int larguraNome = mNome.stringWidth(nome);
+			int larguraProg = progresso.isEmpty() ? 0 : mProg.stringWidth(progresso) + 10;
+			float x = (w - larguraNome - larguraProg) / 2f;
+			float y = (h - mNome.getHeight()) / 2f + mNome.getAscent();
+			g2.setFont(fNome);
+			g2.setColor(TEXTO);
+			g2.drawString(nome, x, y);
+			if (larguraProg > 0) {
+				g2.setFont(fProg);
+				g2.setColor(SUAVE);
+				g2.drawString(progresso, x + larguraNome + 10, y);
+			}
 			g2.dispose();
 		}
 	}
