@@ -1,36 +1,53 @@
-package PokePackage;
 
-import java.util.List;
+package PokePackage;
 
 public class BuscaPokemon {
 
-    // Busca um Pokémon pelo número da Pokédex
+    // Busca o Pokémon pelo número
     public static Pokemon buscarPorNumero(
-            List<Pokemon> pokemons, int numero) {
+            ArvoreBinaria arvore, int numero) {
 
-        for (Pokemon pokemon : pokemons) {
-            if (pokemon.getNumeroDex() == numero) {
-                return pokemon;
-            }
-        }
-
-        return null;
-    }
-
-    // Busca um Pokémon pelo nome
-    public static Pokemon buscarPorNome(
-            List<Pokemon> pokemons, String nome) {
-
-        if (nome == null) {
+        if (arvore == null) {
             return null;
         }
 
-        for (Pokemon pokemon : pokemons) {
-            if (pokemon.getNome().equalsIgnoreCase(nome.trim())) {
-                return pokemon;
-            }
+        return arvore.buscar(numero);
+    }
+
+    // Busca o Pokémon pelo nome
+    public static Pokemon buscarPorNome(
+            ArvoreBinaria arvore, String nome) {
+
+        if (arvore == null || nome == null) {
+            return null;
         }
 
-        return null;
+        return buscarNomeNo(arvore.raiz, nome.trim());
+    }
+
+    // Vai passando pelos nós até achar o nome
+    private static Pokemon buscarNomeNo(
+            No atual, String nome) {
+
+        if (atual == null) {
+            return null;
+        }
+
+        // Confere se é o Pokémon que estamos procurando
+        if (atual.pokemon.getNome()
+                .equalsIgnoreCase(nome)) {
+            return atual.pokemon;
+        }
+
+        // Procura primeiro do lado esquerdo
+        Pokemon encontrado = buscarNomeNo(
+                atual.esquerda, nome);
+
+        if (encontrado != null) {
+            return encontrado;
+        }
+
+        // Se não achou, procura do lado direito
+        return buscarNomeNo(atual.direita, nome);
     }
 }
