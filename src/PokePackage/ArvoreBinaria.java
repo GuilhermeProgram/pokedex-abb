@@ -1,3 +1,4 @@
+package PokePackage;
 
 public class ArvoreBinaria {
 
@@ -14,10 +15,10 @@ public class ArvoreBinaria {
             return new No(pokemon);
         }
 
-        if (pokemon.numero < atual.pokemon.numero) {
+        if (pokemon.getNumeroDex()< atual.pokemon.getNumeroDex()) {
             atual.esquerda = inserirNo(atual.esquerda, pokemon);
         }
-        else if (pokemon.numero > atual.pokemon.numero) {
+        else if (pokemon.getNumeroDex() > atual.pokemon.getNumeroDex()) {
             atual.direita = inserirNo(atual.direita, pokemon);
         }
 
@@ -35,11 +36,11 @@ public class ArvoreBinaria {
             return null;
         }
 
-        if (numero == atual.pokemon.numero) {
+        if (numero == atual.pokemon.getNumeroDex()) {
             return atual.pokemon;
         }
 
-        if (numero < atual.pokemon.numero) {
+        if (numero < atual.pokemon.getNumeroDex()) {
             return buscarNo(atual.esquerda, numero);
         }
 
@@ -57,10 +58,10 @@ public class ArvoreBinaria {
             return null;
         }
 
-        if (numero < atual.pokemon.numero) {
+        if (numero < atual.pokemon.getNumeroDex()) {
             atual.esquerda = removerNo(atual.esquerda, numero);
         }
-        else if (numero > atual.pokemon.numero) {
+        else if (numero > atual.pokemon.getNumeroDex()) {
             atual.direita = removerNo(atual.direita, numero);
         }
         else {
@@ -79,14 +80,13 @@ public class ArvoreBinaria {
                 return atual.esquerda;
             }
 
-            // possui dois filhos
             No sucessor = encontrarMenor(atual.direita);
 
             atual.pokemon = sucessor.pokemon;
 
             atual.direita = removerNo(
                 atual.direita,
-                sucessor.pokemon.numero
+                sucessor.pokemon.getNumeroDex()
             );
         }
 
@@ -101,5 +101,29 @@ public class ArvoreBinaria {
         }
 
         return atual;
+    }
+
+
+    public Pokemon buscarPorNome(String nome) {
+        return buscarPorNomeNo(raiz, nome);
+    }
+
+    private Pokemon buscarPorNomeNo(No atual, String nome) {
+
+        if (atual == null) {
+            return null;
+        }
+
+        if (atual.pokemon.getNome().equalsIgnoreCase(nome)) {
+            return atual.pokemon;
+        }
+
+        Pokemon encontrado = buscarPorNomeNo(atual.esquerda, nome);
+
+        if (encontrado != null) {
+            return encontrado;
+        }
+
+        return buscarPorNomeNo(atual.direita, nome);
     }
 }

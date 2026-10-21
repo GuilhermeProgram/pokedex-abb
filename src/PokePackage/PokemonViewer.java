@@ -1069,8 +1069,8 @@ public class PokemonViewer extends JFrame {
 			relogio.start();
 
 			configurarAtalhos();
+
 			Imagens.preCarregarMiniaturas(lista, () -> SwingUtilities.invokeLater(jlist::repaint));
-			exibir(null);
 		}
 
 		// ---------- animação ----------
@@ -2507,6 +2507,7 @@ public class PokemonViewer extends JFrame {
 			System.out.println("Erro ao ler pokemons.csv: " + e.getMessage());
 			return;
 		}
+
 		// A API só tem imagens até BaixadorImagens.ULTIMO_DEX_API: o resto do CSV é ignorado.
 		final List<Pokemon> todos = new ArrayList<>();
 		for (Pokemon p : lista) {
@@ -2517,34 +2518,49 @@ public class PokemonViewer extends JFrame {
 			}
 		}
 
-		// Busca provisória na lista: por número Dex ou por nome.
-		Function<String, Pokemon> buscaProvisoria = texto -> {
-			try {
-				int dex = Integer.parseInt(texto.trim());
-				for (Pokemon p : todos) {
-					if (p.getNumeroDex() == dex) {
-						return p;
-					}
-				}
-				return null;
-			} catch (NumberFormatException e) {
-				String t = normalizar(texto);
-				for (Pokemon p : todos) { // nome exato
-					if (normalizar(p.getNome()).equals(t)) {
-						return p;
-					}
-				}
-				for (Pokemon p : todos) { // começa com o texto
-					if (normalizar(p.getNome()).startsWith(t)) {
-						return p;
-					}
-				}
+		// Cria a ABB e insere os Pokémon carregados do CSV.
+		final ArvoreBinaria arvore = new ArvoreBinaria();
+		for (Pokemon pokemon : todos) {
+			arvore.inserir(pokemon);
+		}
+
+		// A View utiliza esta função para buscar por número ou nome.
+		Function<String, Pokemon> buscador = texto -> {
+			String busca = texto.trim();
+
+			if (busca.isEmpty()) {
 				return null;
 			}
+
+			// Busca pelo número da Pokédex.
+			if (busca.matches("\\d+")) {
+				try {
+					return arvore.buscar(Integer.parseInt(busca));
+				} catch (NumberFormatException e) {
+					return null;
+				}
+			}
+
+			// Busca pelo nome completo.
+			Pokemon encontrado = arvore.buscarPorNome(busca);
+			if (encontrado != null) {
+				return encontrado;
+			}
+
+			// Mantém o comportamento anterior de aceitar prefixos.
+			String prefixo = normalizar(busca);
+			for (Pokemon pokemon : todos) {
+				if (normalizar(pokemon.getNome()).startsWith(prefixo)) {
+					return pokemon;
+				}
+			}
+
+			return null;
 		};
 
+		// Abre a janela (era isso que faltava).
 		SwingUtilities.invokeLater(() -> {
-			PokemonViewer janela = new PokemonViewer(buscaProvisoria, () -> todos);
+			PokemonViewer janela = new PokemonViewer(buscador, () -> todos);
 			janela.setVisible(true);
 			if (!todos.isEmpty()) {
 				janela.exibir(todos.get(0));
