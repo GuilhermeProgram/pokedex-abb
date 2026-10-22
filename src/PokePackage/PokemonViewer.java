@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.LinkedHashMap;
@@ -431,6 +430,9 @@ public class PokemonViewer extends JFrame {
 	 * ondas para água, raios para elétrico e assim por diante). Cada Pokémon
 	 * recebe sempre o mesmo desenho, porque a "sorte" vem do número Dex.
 	 */
+	/** Cenário animado atrás da arte (partículas por tipo). Desligado por ser pesado; mude para true para ver de novo. */
+	static final boolean AMBIENTE_ANIMADO = false;
+
 	static class Ambiente {
 
 		// camadas que não mudam a cada quadro ficam prontas (só o padrão é redesenhado)
@@ -1101,7 +1103,7 @@ public class PokemonViewer extends JFrame {
 			avisoTimer = new javax.swing.Timer(3500, e -> lblAviso.setText(" "));
 			avisoTimer.setRepeats(false);
 
-			relogio = new javax.swing.Timer(16, e -> passo());
+			relogio = new javax.swing.Timer(25, e -> passo()); // ~40 quadros por segundo
 			relogio.start();
 
 			configurarAtalhos();
@@ -1852,6 +1854,16 @@ public class PokemonViewer extends JFrame {
 				g2.drawImage(pronta, x, y, null);
 			}
 
+			/** Fundo leve e parado atrás da arte: um brilho circular nas cores do tipo (bem mais barato que o cenário animado). */
+			private void desenharMedalhaoSimples(Graphics2D g2, float cx, float cy, float raio, Color a, Color b) {
+				g2.setPaint(new RadialGradientPaint(cx, cy, raio, new float[] { 0f, 1f },
+						new Color[] { comAlpha(a, 110), comAlpha(b, 0) }));
+				g2.fill(new Ellipse2D.Float(cx - raio, cy - raio, raio * 2, raio * 2));
+				g2.setStroke(new BasicStroke(2f));
+				g2.setColor(comAlpha(mix(a, Color.WHITE, 0.4f), 60));
+				g2.draw(new Ellipse2D.Float(cx - raio * 0.92f, cy - raio * 0.92f, raio * 1.84f, raio * 1.84f));
+			}
+
 			private Rectangle botaoScan = new Rectangle(); // área do botão ESCANEAR (vazia quando não aparece)
 			private boolean sobreBotao = false;
 
@@ -1917,7 +1929,11 @@ public class PokemonViewer extends JFrame {
 				g2.setComposite(AlphaComposite.SrcOver.derive((float) Math.max(0.0, Math.min(1.0, e))));
 				final boolean conhecido = descoberto(p.getNumeroDex());
 				final boolean escaneando = scanDex == p.getNumeroDex();
-				Ambiente.desenhar(g2, conhecido ? Ambiente.tipoDoCenario(p) : null, p.getNumeroDex(), cx, cy, raio, a, b, fase);
+				if (AMBIENTE_ANIMADO) {
+					Ambiente.desenhar(g2, conhecido ? Ambiente.tipoDoCenario(p) : null, p.getNumeroDex(), cx, cy, raio, a, b, fase);
+				} else {
+					desenharMedalhaoSimples(g2, cx, cy, raio, a, b);
+				}
 				g2.setComposite(antes);
 
 				// arte flutuando
