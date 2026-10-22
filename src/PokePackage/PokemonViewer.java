@@ -2535,41 +2535,8 @@ public class PokemonViewer extends JFrame {
 			arvore.inserir(pokemon);
 		}
 
-		// A View utiliza esta função para buscar por número ou nome.
-		Function<String, Pokemon> buscador = texto -> {
-			String busca = texto.trim();
+		Function<String, Pokemon> buscador = texto -> BuscaPokemon.buscar(arvore, texto);
 
-			if (busca.isEmpty()) {
-				return null;
-			}
-
-			// Busca pelo número da Pokédex.
-			if (busca.matches("\\d+")) {
-				try {
-					return arvore.buscar(Integer.parseInt(busca));
-				} catch (NumberFormatException e) {
-					return null;
-				}
-			}
-
-			// Busca pelo nome completo.
-			Pokemon encontrado = arvore.buscarPorNome(busca);
-			if (encontrado != null) {
-				return encontrado;
-			}
-
-			// Mantém o comportamento anterior de aceitar prefixos.
-			String prefixo = normalizar(busca);
-			for (Pokemon pokemon : todos) {
-				if (normalizar(pokemon.getNome()).startsWith(prefixo)) {
-					return pokemon;
-				}
-			}
-
-			return null;
-		};
-
-		// Abre a janela (era isso que faltava).
 		SwingUtilities.invokeLater(() -> {
 			PokemonViewer janela = new PokemonViewer(buscador, () -> todos);
 			janela.setVisible(true);

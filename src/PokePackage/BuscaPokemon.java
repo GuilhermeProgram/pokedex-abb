@@ -1,5 +1,8 @@
-
 package PokePackage;
+
+import java.text.Normalizer;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BuscaPokemon {
 
@@ -14,7 +17,7 @@ public class BuscaPokemon {
         return arvore.buscar(numero);
     }
 
-    // Busca o Pokémon pelo nome
+    // Busca o Pokémon pelo nome (nome inteiro, sem diferenciar maiúsculas nem acentos)
     public static Pokemon buscarPorNome(
             ArvoreBinaria arvore, String nome) {
 
@@ -22,7 +25,7 @@ public class BuscaPokemon {
             return null;
         }
 
-        return buscarNomeNo(arvore.raiz, nome.trim());
+        return buscarNomeNo(arvore.raiz, normalizar(nome));
     }
 
     // Vai passando pelos nós até achar o nome
@@ -34,8 +37,7 @@ public class BuscaPokemon {
         }
 
         // Confere se é o Pokémon que estamos procurando
-        if (atual.pokemon.getNome()
-                .equalsIgnoreCase(nome)) {
+        if (normalizar(atual.pokemon.getNome()).equals(nome)) {
             return atual.pokemon;
         }
 
@@ -49,5 +51,83 @@ public class BuscaPokemon {
 
         // Se não achou, procura do lado direito
         return buscarNomeNo(atual.direita, nome);
+    }
+
+    // Busca todos os Pokémon cujo nome começa com o texto (ex.: "char" acha Charmander,
+    // Charmeleon e Charizard). O resultado vem em ordem crescente do número da Pokédex.
+    public static List<Pokemon> buscarPorPrefixo(
+            ArvoreBinaria arvore, String texto) {
+
+        List<Pokemon> resultado = new ArrayList<>();
+
+        if (arvore == null || texto == null) {
+            return resultado;
+        }
+
+        String prefixo = normalizar(texto);
+
+        if (prefixo.isEmpty()) {
+            return resultado;
+        }
+
+        prefixoNo(arvore.raiz, prefixo, resultado);
+        return resultado;
+    }
+
+    // Percurso em ordem: esquerda, nó, direita (por isso o resultado sai ordenado por Dex)
+    private static void prefixoNo(
+            No atual, String prefixo, List<Pokemon> resultado) {
+
+        if (atual == null) {
+            return;
+        }
+
+        prefixoNo(atual.esquerda, prefixo, resultado);
+
+        if (normalizar(atual.pokemon.getNome()).startsWith(prefixo)) {
+            resultado.add(atual.pokemon);
+        }
+
+        prefixoNo(atual.direita, prefixo, resultado);
+    }
+
+    // Busca usada pela interface: número, depois nome inteiro, depois o começo do nome
+    public static Pokemon buscar(
+            ArvoreBinaria arvore, String texto) {
+
+        if (arvore == null || texto == null) {
+            return null;
+        }
+
+        String busca = texto.trim();
+
+        if (busca.isEmpty()) {
+            return null;
+        }
+
+        // Só dígitos: busca pelo número na ABB
+        if (busca.matches("\\d+")) {
+            try {
+                return buscarPorNumero(arvore, Integer.parseInt(busca));
+            } catch (NumberFormatException e) {
+                return null;
+            }
+        }
+
+        Pokemon exato = buscarPorNome(arvore, busca);
+
+        if (exato != null) {
+            return exato;
+        }
+
+        List<Pokemon> comecam = buscarPorPrefixo(arvore, busca);
+        return comecam.isEmpty() ? null : comecam.get(0);
+    }
+
+    // Tira acentos e maiúsculas para comparar nomes ("Flabébé" = "flabebe")
+    static String normalizar(String texto) {
+        return Normalizer.normalize(texto.trim(), Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "")
+                .toLowerCase();
     }
 }
