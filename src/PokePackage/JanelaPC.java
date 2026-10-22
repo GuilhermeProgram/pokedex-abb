@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-import static PokePackage.PokemonViewer.*;
+import static PokePackage.PokemonViewer.PokemonViewer.*;
 
 /**
  * PC: a caixa onde ficam os Pokémon capturados, como no jogo (grade de 6 x 5 por caixa, com sprites pixelados).
