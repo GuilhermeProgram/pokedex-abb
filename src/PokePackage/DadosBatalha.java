@@ -1,6 +1,7 @@
 package PokePackage;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,6 +37,8 @@ public class DadosBatalha {
 	private final Map<Integer, Golpe> golpes = new HashMap<>();
 	private final Map<Integer, List<Golpe>> golpesDoPokemon = new HashMap<>();
 	private final Map<String, Integer> vantagens = new HashMap<>(); // "Atacante>Defensor" -> fator em %
+	/** Formas Mega de cada Pokémon (chave = número Dex original). Cada forma é um Pokemon com numeroDex = id da forma (>10000). */
+	private final Map<Integer, List<Pokemon>> megas = new HashMap<>();
 
 	/** @param pasta pasta com os CSV, normalmente "dados" */
 	public DadosBatalha(String pasta) throws IOException {
@@ -58,6 +61,22 @@ public class DadosBatalha {
 		for (String[] c : ler(pasta + "/vantagens.csv")) {
 			vantagens.put(c[0] + ">" + c[1], num(c[2]));
 		}
+		// megas.csv é opcional: sem ele a batalha funciona, só não há Mega Evolução
+		if (new File(pasta + "/megas.csv").exists()) {
+			for (String[] c : ler(pasta + "/megas.csv")) {
+				int idForma = num(c[0]), dex = num(c[1]);
+				Pokemon mega = new Pokemon(idForma, c[2], "", c[3], c[4].isBlank() ? null : c[4], null, null, "", "");
+				atributos.put(idForma, new Atributos(num(c[5]), num(c[6]), num(c[7]), num(c[8]), num(c[9]), num(c[10])));
+				golpesDoPokemon.put(idForma, golpesDe(dex)); // a Mega usa os mesmos golpes da forma normal
+				megas.computeIfAbsent(dex, k -> new ArrayList<>()).add(mega);
+			}
+		}
+	}
+
+	/** Formas Mega do Pokémon (lista vazia se não tiver). */
+	public List<Pokemon> megasDe(int numeroDex) {
+		List<Pokemon> lista = megas.get(numeroDex);
+		return lista == null ? new ArrayList<>() : lista;
 	}
 
 	private static int num(String s) {

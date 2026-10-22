@@ -1,0 +1,92 @@
+idForma;numeroDex;nome;tipo1;tipo2;hp;ataque;defesa;ataqueEspecial;defesaEspecial;velocidade
+10033;3;Mega Venusaur;Planta;Veneno;80;100;123;122;120;80
+10034;6;Mega Charizard X;Fogo;Dragão;78;130;111;130;85;100
+10035;6;Mega Charizard Y;Fogo;Voador;78;104;78;159;115;100
+10036;9;Mega Blastoise;Água;;79;103;120;135;115;78
+10037;65;Mega Alakazam;Psíquico;;55;50;65;175;105;150
+10038;94;Mega Gengar;Fantasma;Veneno;60;65;80;170;95;130
+10039;115;Mega Kangaskhan;Normal;;105;125;100;60;100;100
+10040;127;Mega Pinsir;Inseto;Voador;65;155;120;65;90;105
+10041;130;Mega Gyarados;Água;Sombrio;95;155;109;70;130;81
+10042;142;Mega Aerodactyl;Pedra;Voador;80;135;85;70;95;150
+10043;150;Mega Mewtwo X;Psíquico;Lutador;106;190;100;154;100;130
+10044;150;Mega Mewtwo Y;Psíquico;;106;150;70;194;120;140
+10045;181;Mega Ampharos;Elétrico;Dragão;90;95;105;165;110;45
+10046;212;Mega Scizor;Inseto;Aço;70;150;140;65;100;75
+10047;214;Mega Heracross;Inseto;Lutador;80;185;115;40;105;75
+10048;229;Mega Houndoom;Sombrio;Fogo;75;90;90;140;90;115
+10049;248;Mega Tyranitar;Pedra;Sombrio;100;164;150;95;120;71
+10050;257;Mega Blaziken;Fogo;Lutador;80;160;80;130;80;100
+10051;282;Mega Gardevoir;Psíquico;Fada;68;85;65;165;135;100
+10052;303;Mega Mawile;Aço;Fada;50;105;125;55;95;50
+10053;306;Mega Aggron;Aço;;70;140;230;60;80;50
+10054;308;Mega Medicham;Lutador;Psíquico;60;100;85;80;85;100
+10055;310;Mega Manectric;Elétrico;;70;75;80;135;80;135
+10056;354;Mega Banette;Fantasma;;64;165;75;93;83;75
+10057;359;Mega Absol;Sombrio;;65;150;60;115;60;115
+10058;445;Mega Garchomp;Dragão;Terra;108;170;115;120;95;92
+10059;448;Mega Lucario;Lutador;Aço;70;145;88;140;70;112
+10060;460;Mega Abomasnow;Planta;Gelo;90;132;105;132;105;30
+10062;380;Mega Latias;Dragão;Psíquico;80;100;120;140;150;110
+10063;381;Mega Latios;Dragão;Psíquico;80;130;100;160;120;110
+10064;260;Mega Swampert;Água;Terra;100;150;110;95;110;70
+10065;254;Mega Sceptile;Planta;Dragão;70;110;75;145;85;145
+10066;302;Mega Sableye;Sombrio;Fantasma;50;85;125;85;115;20
+10067;334;Mega Altaria;Dragão;Fada;75;110;110;110;105;80
+10068;475;Mega Gallade;Psíquico;Lutador;68;165;95;65;115;110
+10069;531;Mega Audino;Normal;Fada;103;60;126;80;126;50
+10070;319;Mega Sharpedo;Água;Sombrio;70;140;70;110;65;105
+10071;80;Mega Slowbro;Água;Psíquico;95;75;180;130;80;30
+10072;208;Mega Steelix;Aço;Terra;75;125;230;55;95;30
+10073;18;Mega Pidgeot;Normal;Voador;83;80;80;135;80;121
+10074;362;Mega Glalie;Gelo;;80;120;80;120;80;100
+10075;719;Mega Diancie;Pedra;Fada;50;160;110;160;110;110
+10076;376;Mega Metagross;Aço;Psíquico;80;145;150;105;110;110
+10079;384;Mega Rayquaza;Dragão;Voador;105;180;100;180;100;115
+10087;323;Mega Camerupt;Fogo;Terra;70;120;100;145;105;20
+10088;428;Mega Lopunny;Normal;Lutador;65;136;94;54;96;135
+10089;373;Mega Salamence;Dragão;Voador;95;145;130;120;90;120
+10090;15;Mega Beedrill;Inseto;Veneno;65;150;40;15;80;145
+10278;36;Mega Clefable;Fada;Voador;95;80;93;135;110;70
+10279;71;Mega Victreebel;Planta;Veneno;80;125;85;135;95;70
+10280;121;Mega Starmie;Água;Psíquico;60;100;105;130;105;120
+10281;149;Mega Dragonite;Dragão;Voador;91;124;115;145;125;100
+10282;154;Mega Meganium;Planta;Fada;80;92;115;143;115;80
+10283;160;Mega Feraligatr;Água;Dragão;85;160;125;89;93;78
+10284;227;Mega Skarmory;Aço;Voador;65;140;110;40;100;110
+10285;478;Mega Froslass;Gelo;Fantasma;70;80;70;140;100;120
+10286;500;Mega Emboar;Fogo;Lutador;110;148;75;110;110;75
+10287;530;Mega Excadrill;Terra;Aço;110;165;100;65;65;103
+10288;545;Mega Scolipede;Inseto;Veneno;60;140;149;75;99;62
+10289;560;Mega Scrafty;Sombrio;Lutador;65;130;135;55;135;68
+10290;604;Mega Eelektross;Elétrico;;85;145;80;135;90;80
+10291;609;Mega Chandelure;Fantasma;Fogo;60;75;110;175;110;90
+10292;652;Mega Chesnaught;Planta;Lutador;88;137;172;74;115;44
+10293;655;Mega Delphox;Fogo;Psíquico;75;69;72;159;125;134
+10294;658;Mega Greninja;Água;Sombrio;72;125;77;133;81;142
+10295;668;Mega Pyroar;Fogo;Normal;86;88;92;129;86;126
+10297;687;Mega Malamar;Sombrio;Psíquico;86;102;88;98;120;88
+10298;689;Mega Barbaracle;Pedra;Lutador;72;140;130;64;106;88
+10299;691;Mega Dragalge;Veneno;Dragão;65;85;105;132;163;44
+10300;701;Mega Hawlucha;Lutador;Voador;78;137;100;74;93;118
+10302;780;Mega Drampa;Normal;Dragão;78;85;110;160;116;36
+10303;870;Mega Falinks;Lutador;;65;135;135;70;65;100
+10304;26;Mega Raichu X;Elétrico;;60;135;95;90;95;110
+10305;26;Mega Raichu Y;Elétrico;;60;100;55;160;80;130
+10306;358;Mega Chimecho;Psíquico;Aço;75;50;110;135;120;65
+10307;359;Mega Absol Z;Sombrio;Fantasma;65;154;60;75;60;151
+10308;398;Mega Staraptor;Lutador;Voador;85;140;100;60;90;110
+10309;445;Mega Garchomp Z;Dragão;;108;130;85;141;85;151
+10310;448;Mega Lucario Z;Lutador;Aço;70;100;70;164;70;151
+10311;485;Mega Heatran;Fogo;Aço;91;120;106;175;141;67
+10312;491;Mega Darkrai;Sombrio;;70;120;130;165;130;85
+10313;623;Mega Golurk;Terra;Fantasma;89;159;105;70;105;55
+10314;678;Mega Meowstic;Psíquico;;74;48;76;143;101;124
+10315;740;Mega Crabominable;Lutador;Gelo;97;157;122;62;107;33
+10316;768;Mega Golisopod;Inseto;Aço;75;150;175;70;120;40
+10317;801;Mega Magearna;Aço;Fada;80;125;115;170;115;95
+10319;807;Mega Zeraora;Elétrico;;88;157;75;147;80;153
+10320;952;Mega Scovillain;Planta;Fogo;65;138;85;138;85;75
+10321;970;Mega Glimmora;Pedra;Veneno;83;90;105;150;96;101
+10322;978;Mega Tatsugiri;Dragão;Água;68;65;90;135;125;92
+10325;998;Mega Baxcalibur;Dragão;Gelo;115;175;117;105;101;87

@@ -1229,7 +1229,7 @@ public class PokemonViewer extends JFrame {
 			BotaoTexto cadastrar = new BotaoTexto("Cadastrar", "Registrar um Pokémon pelo nome ou número");
 			cadastrar.addActionListener(e -> cadastrar());
 			botoes.add(cadastrar);
-			BotaoTexto batalhar = new BotaoTexto("Batalhar", "Lutar com o Pokémon da tela contra um adversário descoberto");
+			BotaoTexto batalhar = new BotaoTexto("Batalhar", "Modo batalha: monte um time com os Pokémon que você capturou");
 			batalhar.addActionListener(e -> batalhar());
 			botoes.add(batalhar);
 			BotaoRedondo anterior = new BotaoRedondo("‹", "Anterior (seta esquerda)");
@@ -1353,12 +1353,11 @@ public class PokemonViewer extends JFrame {
 
 		private transient DadosBatalha dadosBatalha;
 
-		/** Abre a batalha: o Pokémon da tela contra um adversário sorteado entre os já descobertos (achado pelo buscador). */
+		/**
+		 * Modo batalha: o jogador monta um time com os Pokémon já descobertos (capturados) e luta contra
+		 * um time sorteado entre os outros descobertos (cada adversário é achado pelo buscador, ou seja, pela ABB).
+		 */
 		private void batalhar() {
-			if (atual == null || !descobertos.contains(atual.getNumeroDex())) {
-				aviso("Escolha um Pokémon já descoberto para batalhar.");
-				return;
-			}
 			try {
 				if (dadosBatalha == null) {
 					dadosBatalha = new DadosBatalha("dados");
@@ -1367,28 +1366,40 @@ public class PokemonViewer extends JFrame {
 				aviso("Não achei a pasta dados/ (rode a partir da raiz do projeto).");
 				return;
 			}
-			if (dadosBatalha.golpesDe(atual.getNumeroDex()).isEmpty()) {
-				aviso(atual.getNome() + " não tem golpes cadastrados.");
-				return;
-			}
-			List<Pokemon> candidatos = new ArrayList<>();
+			List<Pokemon> capturados = new ArrayList<>();
 			for (Pokemon p : lista) {
-				if (descobertos.contains(p.getNumeroDex()) && p.getNumeroDex() != atual.getNumeroDex()
-						&& !dadosBatalha.golpesDe(p.getNumeroDex()).isEmpty()) {
-					candidatos.add(p);
+				if (descobertos.contains(p.getNumeroDex()) && !dadosBatalha.golpesDe(p.getNumeroDex()).isEmpty()) {
+					capturados.add(p);
 				}
 			}
-			if (candidatos.isEmpty()) {
-				aviso("Descubra pelo menos mais um Pokémon para ter um adversário.");
+			if (capturados.size() < 2) {
+				aviso("Descubra pelo menos 2 Pokémon para poder batalhar.");
 				return;
 			}
-			Pokemon sorteado = candidatos.get(new java.util.Random().nextInt(candidatos.size()));
-			Pokemon oponente = buscador.apply(String.valueOf(sorteado.getNumeroDex())); // busca na ABB
-			if (oponente == null) {
-				oponente = sorteado;
-			}
 			Frame dono = (Frame) SwingUtilities.getWindowAncestor(this);
-			new TelaBatalha(dono, dadosBatalha, atual, oponente).setVisible(true);
+			relogio.stop(); // a Pokédex fica parada enquanto as janelas de batalha estão abertas
+			try {
+				List<Pokemon> meu = new SeletorBatalha(dono, capturados, capturados.contains(atual) ? atual : null).escolher();
+				if (meu.isEmpty()) {
+					return;
+				}
+				List<Pokemon> candidatos = new ArrayList<>(capturados);
+				candidatos.removeAll(meu);
+				if (candidatos.isEmpty()) {
+					aviso("Falta um adversário: descubra mais um Pokémon além do seu time.");
+					return;
+				}
+				Collections.shuffle(candidatos);
+				List<Pokemon> adversarios = new ArrayList<>();
+				for (Pokemon c : candidatos.subList(0, Math.min(meu.size(), candidatos.size()))) {
+					Pokemon achado = buscador.apply(String.valueOf(c.getNumeroDex())); // busca na ABB
+					adversarios.add(achado != null ? achado : c);
+				}
+				new TelaBatalha(dono, dadosBatalha, meu, adversarios).setVisible(true);
+			} finally {
+				ultimoQuadro = System.nanoTime();
+				relogio.start();
+			}
 		}
 
 		/** Enter no campo: usa o buscador (a ABB, quando estiver ligada). */

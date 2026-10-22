@@ -25,6 +25,34 @@ public class BaixadorImagens {
 	private static final String BASE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 	private static final String PASTA = "images";
 
+	/** Baixa também a arte das formas Mega (ids da forma em dados/megas.csv, coluna 1). */
+	private static void baixarMegas() throws Exception {
+		Path csv = Path.of("dados", "megas.csv");
+		if (!Files.exists(csv)) {
+			return;
+		}
+		int baixadas = 0;
+		for (String linha : Files.readAllLines(csv, java.nio.charset.StandardCharsets.UTF_8).subList(1, Files.readAllLines(csv).size())) {
+			if (linha.isBlank()) {
+				continue;
+			}
+			String id = linha.split(";")[0];
+			Path destino = Path.of(PASTA, id + ".png");
+			if (Files.exists(destino)) {
+				continue;
+			}
+			try (InputStream in = URI.create(BASE + id + ".png").toURL().openStream()) {
+				Files.copy(in, destino, StandardCopyOption.REPLACE_EXISTING);
+				baixadas++;
+				System.out.println("Baixada (mega): " + destino);
+			} catch (IOException e) {
+				System.out.println("Falhou mega " + id + ": " + e.getMessage());
+			}
+			Thread.sleep(100);
+		}
+		System.out.println("Megas baixadas: " + baixadas);
+	}
+
 	public static void main(String[] args) throws Exception {
 		List<Pokemon> lista = CarregadorPokemon.carregar("pokemons.csv");
 
@@ -63,6 +91,9 @@ public class BaixadorImagens {
 
 			Thread.sleep(100); // pausa para não sobrecarregar o servidor
 		}
+
+ 
+		baixarMegas();
 
 		System.out.println();
 		System.out.println("Baixadas: " + baixadas + " | Puladas: " + puladas + " | Falhas: " + falhas
