@@ -14,7 +14,7 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
-import static PokePackage.PokemonViewer.PokemonViewer.*;
+import static PokePackage.PokemonViewer.*;
 
 /**
  * Tela do modo batalha: o jogador monta o time (até 3) com os Pokémon que já capturou (descobriu).

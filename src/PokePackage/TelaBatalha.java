@@ -17,7 +17,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static PokePackage.PokemonViewer.PokemonViewer.*;
+import static PokePackage.PokemonViewer.*;
 
 /**
  * Janela da batalha em equipe: o seu time contra o time adversário, um Pokémon de cada vez.
