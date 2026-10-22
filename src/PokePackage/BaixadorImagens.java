@@ -29,25 +29,46 @@ public class BaixadorImagens {
 	private static final String BASE_PIXEL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 	private static final String PASTA_PIXEL = "images/pixel";
 
-	private static void baixarPixel(List<Pokemon> lista) throws Exception {
-		Files.createDirectories(Path.of(PASTA_PIXEL));
-		int baixadas = 0;
-		for (Pokemon p : lista) {
-			int dex = p.getNumeroDex();
-			if (dex < 1 || dex > ULTIMO_DEX_API) {
-				continue;
-			}
-			Path destino = Path.of(PASTA_PIXEL, dex + ".png");
-			if (Files.exists(destino)) {
-				continue;
-			}
-			try (InputStream in = URI.create(BASE_PIXEL + dex + ".png").toURL().openStream()) {
-				Files.copy(in, destino, StandardCopyOption.REPLACE_EXISTING);
-				baixadas++;
-			} catch (IOException e) {
-				System.out.println("Falhou sprite pixel #" + dex + ": " + e.getMessage());
-			}
+	private static boolean baixarSprite(String url, Path destino) throws InterruptedException {
+		if (Files.exists(destino)) {
+			return false;
+		}
+		try (InputStream in = URI.create(url).toURL().openStream()) {
+			Files.copy(in, destino, StandardCopyOption.REPLACE_EXISTING);
 			Thread.sleep(100);
+			return true;
+		} catch (IOException e) {
+			System.out.println("Falhou sprite: " + url + " (" + e.getMessage() + ")");
+			return false;
+		}
+	}
+
+	/** Sprites pixelados de frente (images/pixel/N.png) e de costas (images/pixel/costas/N.png), inclusive das Megas. */
+	private static void baixarPixel(List<Pokemon> lista) throws Exception {
+		Files.createDirectories(Path.of(PASTA_PIXEL, "costas"));
+		java.util.List<Integer> ids = new java.util.ArrayList<>();
+		for (Pokemon p : lista) {
+			if (p.getNumeroDex() >= 1 && p.getNumeroDex() <= ULTIMO_DEX_API) {
+				ids.add(p.getNumeroDex());
+			}
+		}
+		Path megas = Path.of("dados", "megas.csv");
+		if (Files.exists(megas)) {
+			List<String> linhas = Files.readAllLines(megas, java.nio.charset.StandardCharsets.UTF_8);
+			for (String linha : linhas.subList(1, linhas.size())) {
+				if (!linha.isBlank()) {
+					ids.add(Integer.parseInt(linha.split(";")[0].trim()));
+				}
+			}
+		}
+		int baixadas = 0;
+		for (int id : ids) {
+			if (baixarSprite(BASE_PIXEL + id + ".png", Path.of(PASTA_PIXEL, id + ".png"))) {
+				baixadas++;
+			}
+			if (baixarSprite(BASE_PIXEL + "back/" + id + ".png", Path.of(PASTA_PIXEL, "costas", id + ".png"))) {
+				baixadas++;
+			}
 		}
 		System.out.println("Sprites pixel baixados: " + baixadas);
 	}

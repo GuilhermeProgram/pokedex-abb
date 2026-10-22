@@ -26,10 +26,11 @@ Buscas (`BuscaPokemon`): número usa a ABB (`buscar`); texto procura o nome exat
   - `BaixadorImagens`: baixa as imagens oficiais, as das formas Mega e os sprites pixelados (PokeAPI)
   - `PokemonViewer`: interface da Pokédex (busca, filtro por região, descoberta de Pokémon, **PC** e **Batalhar**)
   - `JanelaPC`: o PC (caixas com sprites pixelados e botão **Liberar**)
-  - Batalha (extra): `Batalha`, `DadosBatalha`, `Golpe`, `Atributos`, `SeletorBatalha`, `TelaBatalha`
-  - Testes e demonstrações: `ArvoreTeste`, `TesteBuscaPokemon`, `BatalhaConsole`
+  - Batalha (extra): `Batalha`, `DadosBatalha`, `Golpe`, `Status`, `EstadoPokemon`, `Atributos`, `SeletorBatalha`, `TelaBatalha`
+  - Testes e demonstrações: `ArvoreTeste`, `TesteBuscaPokemon`, `TesteBatalha`, `BatalhaConsole`
 - `pokemons.csv`: 1025 Pokémon (separador `;`, UTF-8)
 - `dados`: dados da batalha (`atributos.csv`, `golpes.csv`, `golpes_pokemon.csv`, `vantagens.csv`, `megas.csv`)
+- `ferramentas`: `gerar_golpes.py` (gera `golpes.csv` e `golpes_pokemon.csv`) e `smogon/` (dados do Smogon que ele usa)
 - `images`: criada pelo `BaixadorImagens` (artes, `mini/` e `pixel/`; não vai para o Git)
 
 ## Como rodar
@@ -42,11 +43,19 @@ Na tela:
 - Digite um nome ou número na busca e aperte Enter. Pokémon ainda não descobertos aparecem como silhueta; use **Cadastrar** (o scan) para descobri-los e colocá-los no PC.
 - **PC**: abre as caixas com os Pokémon capturados. Clique num deles e use **Liberar** para soltá-lo (ele volta a ser silhueta). Setas do teclado movem a seleção; `PageUp`/`PageDown` trocam de caixa.
 - O seletor de região filtra a lista.
-- **Batalhar** (precisa de pelo menos 2 Pokémon no PC): monte um time de até 3 Pokémon e lute contra um time adversário. Você escolhe os golpes, o adversário é controlado por uma IA simples. Alguns Pokémon podem usar **Mega Evoluir** (uma vez por luta; tecla `M`). Os golpes também funcionam com as teclas `1` a `4`.
+- **Batalhar** (precisa de pelo menos 1 Pokémon no PC): monte um time de até 6 Pokémon, escolhidos entre os que você capturou, e lute contra um time do mesmo tamanho sorteado entre **todos** os Pokémon (capturados ou não; cada adversário é achado pela ABB do catálogo). Na tela de batalha você escolhe **Lutar**, **Pokémon** (trocar), **Mega** ou **Fugir**; o adversário é controlado por uma IA simples. Alguns Pokémon podem usar **Mega Evoluir** (uma vez por luta). Os sprites pixelados (frente e costas) são baixados por `BaixadorImagens`.
+
+## Golpes e batalha
+- Catálogo de 331 golpes (`dados/golpes.csv`) com poder, precisão, prioridade, **PP** e efeito, baseado no Smogon Strategy Dex (formato Champions). Cada Pokémon tem 4 golpes (`dados/golpes_pokemon.csv`).
+- Golpes de dano (físico ou especial) e golpes de **status**. Efeitos: queimar, paralisar, envenenar, dormir, congelar, subir/descer atributos (-6 a +6 níveis), curar, drenar e recuo.
+- Condições (QMD, PAR, PSN, SLP, CGL) e PP continuam valendo quando o Pokémon sai e volta; os níveis de atributo zeram na troca, como nos jogos. Sem PP em todos os golpes, o Pokémon usa o Esforço (Struggle).
+- Os 4 golpes de cada Pokémon vêm do conjunto recomendado pelo Smogon (quando existe) e, no que faltar, de uma regra: golpe do tipo do Pokémon (STAB) na categoria em que ele é mais forte, um golpe de cobertura e um de utilidade conforme o papel (rápido e forte, resistente...). Só entram golpes que ele aprende. A regra está em `ferramentas/gerar_golpes.py`; para regenerar os CSV: `python ferramentas/gerar_golpes.py` (na raiz do projeto).
+- A IA do adversário compara dano esperado, cura quando está ferida, aumenta atributos quando está saudável e usa condições em quem ainda não tem uma.
 
 ## Testes
 - `ArvoreTeste`: testa a ABB sozinha, sem a interface (inserir, buscar, remover, em ordem, altura). Também compara a altura com a ordem do CSV (1025) e com a ordem balanceada (11). Termina com "Todos os testes passaram."
 - `TesteBuscaPokemon`: testa as buscas (número, nome, prefixo, acentos). Termina com "Todos os testes de busca passaram."
+- `TesteBatalha`: confere os dados dos golpes (4 por Pokémon, PP, efeitos), PP/Esforço, níveis de atributo, condições, recuo e dreno, e simula 3000 lutas completas. Termina com "Todos os testes de batalha passaram".
 - `BatalhaConsole`: roda uma luta completa no console (usa o cálculo de dano da batalha).
 
 ## Documentação

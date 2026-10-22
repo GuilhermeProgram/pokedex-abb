@@ -24,7 +24,7 @@ public class BatalhaConsole {
 		Batalha batalha = new Batalha(dados, a, b, new Random(7));
 		System.out.println(a.getNome() + " x " + b.getNome());
 		while (!batalha.terminou()) {
-			Golpe escolhido = batalha.escolherGolpeIA(a, b); // aqui seria o jogador clicando num golpe
+			Golpe escolhido = batalha.escolherGolpeAuto(true); // aqui seria o jogador clicando num golpe
 			System.out.println("\n--- Turno " + (batalha.getNumeroTurno() + 1) + " ---");
 			for (String linha : batalha.turno(escolhido)) {
 				System.out.println(linha);

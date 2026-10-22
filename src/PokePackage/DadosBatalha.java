@@ -35,6 +35,8 @@ public class DadosBatalha {
 
 	private final Map<Integer, Atributos> atributos = new HashMap<>();
 	private final Map<Integer, Golpe> golpes = new HashMap<>();
+	/** Golpe usado quando todos os PP acabaram (no jogo se chama Struggle / Esforço). */
+	private Golpe esforco;
 	private final Map<Integer, List<Golpe>> golpesDoPokemon = new HashMap<>();
 	private final Map<String, Integer> vantagens = new HashMap<>(); // "Atacante>Defensor" -> fator em %
 	/** Formas Mega de cada Pokémon (chave = número Dex original). Cada forma é um Pokemon com numeroDex = id da forma (>10000). */
@@ -47,7 +49,11 @@ public class DadosBatalha {
 		}
 		for (String[] c : ler(pasta + "/golpes.csv")) {
 			int id = num(c[0]);
-			golpes.put(id, new Golpe(id, c[1], c[2], "Físico".equals(c[3]), num(c[4]), num(c[5]), num(c[6])));
+			golpes.put(id, new Golpe(id, c[1], c[2], c[3], num(c[4]), num(c[5]), num(c[6]), num(c[7]), c[8].trim(),
+					c[9].isBlank() ? 0 : num(c[9]), c[10].trim()));
+			if ("Struggle".equals(c[1])) {
+				esforco = golpes.get(id);
+			}
 		}
 		for (String[] c : ler(pasta + "/golpes_pokemon.csv")) {
 			List<Golpe> lista = new ArrayList<>();
@@ -103,6 +109,21 @@ public class DadosBatalha {
 		return atributos.get(numeroDex);
 	}
 
+	/** Procura um golpe do catálogo pelo nome (em inglês, como no golpes.csv); null se não existir. */
+	public Golpe golpePorNome(String nome) {
+		for (Golpe g : golpes.values()) {
+			if (g.getNome().equalsIgnoreCase(nome)) {
+				return g;
+			}
+		}
+		return null;
+	}
+
+	/** O golpe que o Pokémon é obrigado a usar quando não sobra PP em nenhum dos seus golpes. */
+	public Golpe golpeEsforco() {
+		return esforco;
+	}
+
 	/** Os (até) 4 golpes do Pokémon. */
 	public List<Golpe> golpesDe(int numeroDex) {
 		List<Golpe> lista = golpesDoPokemon.get(numeroDex);
@@ -125,18 +146,27 @@ public class DadosBatalha {
 
 	/**
 	 * Dano esperado, sem sorte (sem sorteio de erro, crítico ou variação). Serve para a IA comparar golpes.
+	 * Golpes de status não causam dano (devolve 0).
 	 */
 	public double danoEsperado(Pokemon atacante, Golpe g, Pokemon defensor) {
-		return danoBase(atacante, g, defensor) * stab(atacante, g) * multiplicadorDeTipo(g.getTipo(), defensor)
-				* 0.925 * (g.getPrecisao() / 100.0);
+		return danoEsperado(atacante, g, defensor, 1, 1);
 	}
 
-	private double danoBase(Pokemon atacante, Golpe g, Pokemon defensor) {
+	/** Igual ao anterior, mas com os multiplicadores de atributo (níveis e queimadura) do atacante e do defensor. */
+	public double danoEsperado(Pokemon atacante, Golpe g, Pokemon defensor, double mAtaque, double mDefesa) {
+		if (g.isStatus()) {
+			return 0;
+		}
+		return danoBase(atacante, g, defensor, mAtaque, mDefesa) * stab(atacante, g)
+				* multiplicadorDeTipo(g.getTipo(), defensor) * 0.925 * (g.getPrecisao() / 100.0);
+	}
+
+	private double danoBase(Pokemon atacante, Golpe g, Pokemon defensor, double mAtaque, double mDefesa) {
 		Atributos a = atributos(atacante.getNumeroDex()), d = atributos(defensor.getNumeroDex());
 		int ataque = g.isFisico() ? a.ataqueNaBatalha() : a.ataqueEspecialNaBatalha();
 		int defesa = g.isFisico() ? d.defesaNaBatalha() : d.defesaEspecialNaBatalha();
 		int nivel = Atributos.NIVEL;
-		return (2 * nivel / 5 + 2) * g.getPoder() * (double) ataque / defesa / 50 + 2;
+		return (2 * nivel / 5 + 2) * g.getPoder() * (ataque * mAtaque) / Math.max(1, defesa * mDefesa) / 50 + 2;
 	}
 
 	private static double stab(Pokemon atacante, Golpe g) {
@@ -144,8 +174,15 @@ public class DadosBatalha {
 		return mesmoTipo ? 1.5 : 1.0;
 	}
 
-	/** Executa o ataque de verdade: sorteia acerto, crítico (1 em 24) e variação de 85% a 100%. */
 	public Resultado atacar(Pokemon atacante, Golpe g, Pokemon defensor, Random sorte) {
+		return atacar(atacante, g, defensor, sorte, 1, 1);
+	}
+
+	/**
+	 * Executa o ataque de verdade: sorteia acerto, crítico (1 em 24) e variação de 85% a 100%.
+	 * mAtaque e mDefesa são os multiplicadores (níveis de atributo, queimadura) do atacante e do defensor.
+	 */
+	public Resultado atacar(Pokemon atacante, Golpe g, Pokemon defensor, Random sorte, double mAtaque, double mDefesa) {
 		if (sorte.nextInt(100) >= g.getPrecisao()) {
 			return new Resultado(false, false, 1, 0);
 		}
@@ -155,7 +192,8 @@ public class DadosBatalha {
 		}
 		boolean critico = sorte.nextInt(24) == 0;
 		double variacao = 0.85 + sorte.nextDouble() * 0.15;
-		double dano = danoBase(atacante, g, defensor) * stab(atacante, g) * tipo * variacao * (critico ? 1.5 : 1.0);
+		double dano = danoBase(atacante, g, defensor, mAtaque, mDefesa) * stab(atacante, g) * tipo * variacao
+				* (critico ? 1.5 : 1.0);
 		return new Resultado(true, critico, tipo, Math.max(1, (int) dano));
 	}
 }

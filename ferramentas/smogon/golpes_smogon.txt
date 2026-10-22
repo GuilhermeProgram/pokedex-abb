@@ -1,0 +1,331 @@
+Dragon Pulse|Dragon|E|85|100|0|10||0|
+High Horsepower|Ground|F|95|95|0|10||0|
+Acid Armor|Poison|S|0|100|0|20|DEF+2|100|eu
+Fire Lash|Fire|F|90|100|0|15|DEF-1|100|inimigo
+Fire Punch|Fire|F|75|100|0|15|QUEIMAR|10|inimigo
+Fire Spin|Fire|E|35|85|0|15||0|
+First Impression|Bug|F|100|100|2|10||0|
+Flame Charge|Fire|F|50|100|0|20|VEL+1|100|eu
+Flamethrower|Fire|E|90|100|0|15|QUEIMAR|10|inimigo
+Flare Blitz|Fire|F|120|100|0|15|RECOIL|100|eu
+Flash Cannon|Steel|E|80|100|0|10|DFE-1|10|inimigo
+Flower Trick|Grass|F|70|100|0|10||0|
+Flying Press|Fighting|F|100|95|0|10||0|
+Focus Blast|Fighting|E|120|70|0|5|DFE-1|10|inimigo
+Soft-Boiled|Normal|S|0|100|0|5|CURAR|100|eu
+Aerial Ace|Flying|F|60|100|0|20||0|
+Muddy Water|Water|E|90|85|0|10||0|
+Alluring Voice|Fairy|E|80|100|0|10||0|
+Ancient Power|Rock|E|60|100|0|5||0|
+Apple Acid|Grass|E|90|100|0|10|DFE-1|100|inimigo
+Aqua Cutter|Water|F|70|100|0|20||0|
+Aqua Jet|Water|F|40|100|1|20||0|
+Bug Buzz|Bug|E|90|100|0|10|DFE-1|10|inimigo
+Bulk Up|Fighting|S|0|100|0|20|ATQ+1,DEF+1|100|eu
+Bulldoze|Ground|F|60|100|0|20||0|
+Bullet Punch|Steel|F|40|100|1|30||0|
+Bullet Seed|Grass|F|78|100|0|30||0|
+Burn Up|Fire|E|130|100|0|5||0|
+Burning Jealousy|Fire|E|70|100|0|5||0|
+Calm Mind|Psychic|S|0|100|0|20|ATE+1,DFE+1|100|eu
+Ceaseless Edge|Dark|F|65|90|0|15||0|
+Charge Beam|Electric|E|50|90|0|10|ATE+1|70|eu
+Charm|Fairy|S|0|100|0|20|ATQ-2|100|inimigo
+Chilling Water|Water|E|50|100|0|20|ATQ-1|100|inimigo
+Circle Throw|Fighting|F|60|90|-6|10||0|
+Clanging Scales|Dragon|E|110|100|0|5|DEF-1|100|eu
+Clear Smog|Poison|E|50|100|0|15||0|
+Close Combat|Fighting|F|120|100|0|5|DEF-1,DFE-1|100|eu
+Mystical Fire|Fire|E|75|100|0|10|ATE-1|100|inimigo
+Nasty Plot|Dark|S|0|100|0|20|ATE+2|100|eu
+Agility|Psychic|S|0|100|0|30|VEL+2|100|eu
+Amnesia|Psychic|S|0|100|0|20|DFE+2|100|eu
+Dazzling Gleam|Fairy|E|80|100|0|10||0|
+Night Slash|Dark|F|70|100|0|20||0|
+Will-O-Wisp|Fire|S|0|85|0|15|QUEIMAR|100|inimigo
+Recover|Normal|S|0|100|0|5|CURAR|100|eu
+Mud Shot|Ground|E|55|95|0|15|VEL-1|100|inimigo
+Night Daze|Dark|E|90|95|0|10||0|
+Pin Missile|Bug|F|78|95|0|20||0|
+Air Slash|Flying|E|75|95|0|15||0|
+Dragon Dance|Dragon|S|0|100|0|20|ATQ+1,VEL+1|100|eu
+Accelerock|Rock|F|40|100|1|20||0|
+Acid Spray|Poison|E|40|100|0|20|DFE-2|100|inimigo
+Acrobatics|Flying|F|55|100|0|15||0|
+Air Cutter|Flying|E|60|95|0|25||0|
+Aqua Step|Water|F|80|100|0|10|VEL+1|100|eu
+Aqua Tail|Water|F|90|90|0|10||0|
+Armor Cannon|Fire|E|120|100|0|5|DEF-1,DFE-1|100|eu
+Assurance|Dark|F|60|100|0|10||0|
+Aura Sphere|Fighting|E|80|100|0|20||0|
+Aura Wheel|Electric|F|110|100|0|10||0|
+Avalanche|Ice|F|60|100|-4|10||0|
+Baby-Doll Eyes|Fairy|S|0|100|1|30|ATQ-1|100|inimigo
+Barb Barrage|Poison|F|60|100|0|10||0|
+Beak Blast|Flying|F|120|100|-3|5||0|
+Belch|Poison|E|120|90|0|10||0|
+Bind|Normal|F|15|85|0|20||0|
+Bite|Dark|F|60|100|0|25||0|
+Bitter Blade|Fire|F|90|100|0|10|DRENAR|100|eu
+Bitter Malice|Ghost|E|75|100|0|10|ATQ-1|100|inimigo
+Blaze Kick|Fire|F|85|90|0|10|QUEIMAR|10|inimigo
+Blizzard|Ice|E|110|70|0|5|CONGELAR|10|inimigo
+Body Press|Fighting|F|80|100|0|10||0|
+Body Slam|Normal|F|85|100|0|15|PARALISAR|30|inimigo
+Bone Rush|Ground|F|93|90|0|10||0|
+Boomburst|Normal|E|140|100|0|10||0|
+Brave Bird|Flying|F|120|100|0|15|RECOIL|100|eu
+Breaking Swipe|Dragon|F|60|100|0|15|ATQ-1|100|inimigo
+Brick Break|Fighting|F|75|100|0|15||0|
+Brutal Swing|Dark|F|60|100|0|20||0|
+Bug Bite|Bug|F|60|100|0|20||0|
+Cosmic Power|Psychic|S|0|100|0|20|DEF+1,DFE+1|100|eu
+Cotton Guard|Grass|S|0|100|0|10|DEF+3|100|eu
+Cotton Spore|Grass|S|0|100|0|40|VEL-2|100|inimigo
+Covet|Normal|F|60|100|0|25||0|
+Crabhammer|Water|F|100|95|0|10||0|
+Cross Chop|Fighting|F|100|80|0|5||0|
+Cross Poison|Poison|F|70|100|0|20|ENVENENAR|10|inimigo
+Crunch|Dark|F|80|100|0|15|DEF-1|20|inimigo
+Crush Claw|Normal|F|75|95|0|10|DEF-1|50|inimigo
+Dragon Darts|Dragon|F|100|100|0|10||0|
+Dark Pulse|Dark|E|80|100|0|15||0|
+Darkest Lariat|Dark|F|85|100|0|10||0|
+Dire Claw|Poison|F|80|100|0|15||0|
+Discharge|Electric|E|80|100|0|15|PARALISAR|30|inimigo
+Double-Edge|Normal|F|120|100|0|15|RECOIL|100|eu
+Double Hit|Normal|F|70|90|0|10||0|
+Double Shock|Electric|F|120|100|0|5||0|
+Draco Meteor|Dragon|E|130|90|0|5|ATE-2|100|eu
+Dragon Claw|Dragon|F|80|100|0|15||0|
+Dragon Rush|Dragon|F|100|75|0|10||0|
+Dragon Tail|Dragon|F|60|90|-6|10||0|
+Drain Punch|Fighting|F|75|100|0|10|DRENAR|100|eu
+Draining Kiss|Fairy|E|50|100|0|10|DRENAR|100|eu
+Drill Peck|Flying|F|80|100|0|20||0|
+Drill Run|Ground|F|80|95|0|10||0|
+Drum Beating|Grass|F|80|100|0|10|VEL-1|100|inimigo
+Dual Wingbeat|Flying|F|80|90|0|10||0|
+Dynamic Punch|Fighting|F|100|50|0|5||0|
+Earth Power|Ground|E|90|100|0|10|DFE-1|10|inimigo
+Earthquake|Ground|F|100|100|0|10||0|
+Eerie Impulse|Electric|S|0|100|0|15|ATE-2|100|inimigo
+Eerie Spell|Psychic|E|80|100|0|5||0|
+Electroweb|Electric|E|55|95|0|15|VEL-1|100|inimigo
+Focus Punch|Fighting|F|150|100|-3|20||0|
+Energy Ball|Grass|E|90|100|0|10|DFE-1|10|inimigo
+Eruption|Fire|E|150|100|0|5||0|
+Expanding Force|Psychic|E|80|100|0|10||0|
+Extrasensory|Psychic|E|80|100|0|20||0|
+Extreme Speed|Normal|F|80|100|2|5||0|
+Facade|Normal|F|70|100|0|20||0|
+Fake Out|Normal|F|40|100|3|10||0|
+Fake Tears|Dark|S|0|100|0|20|DFE-2|100|inimigo
+Feather Dance|Flying|S|0|100|0|15|ATQ-2|100|inimigo
+Feint|Normal|F|30|100|2|10||0|
+Fell Stinger|Bug|F|50|100|0|25||0|
+Fickle Beam|Dragon|E|80|100|0|5||0|
+Fiery Dance|Fire|E|80|100|0|10|ATE+1|50|eu
+Fire Blast|Fire|E|110|85|0|5|QUEIMAR|10|inimigo
+Fire Fang|Fire|F|65|95|0|15|QUEIMAR|10|inimigo
+Foul Play|Dark|F|95|100|0|15||0|
+Freeze-Dry|Ice|E|70|100|0|20||0|
+Frost Breath|Ice|E|60|90|0|10||0|
+Giga Drain|Grass|E|75|100|0|10|DRENAR|100|eu
+Gigaton Hammer|Steel|F|160|100|0|5||0|
+Glare|Normal|S|0|100|0|30|PARALISAR|100|inimigo
+Grassy Glide|Grass|F|55|100|0|20||0|
+Grav Apple|Grass|F|90|100|0|10||0|
+Gunk Shot|Poison|F|120|80|0|5|ENVENENAR|30|inimigo
+Hammer Arm|Fighting|F|100|90|0|10|VEL-1|100|eu
+Head Smash|Rock|F|150|80|0|5|RECOIL|100|eu
+Headlong Rush|Ground|F|120|100|0|5|DEF-1,DFE-1|100|eu
+Heat Wave|Fire|E|95|90|0|10|QUEIMAR|10|inimigo
+Hex|Ghost|E|65|100|0|10||0|
+High Jump Kick|Fighting|F|130|90|0|10||0|
+Horn Leech|Grass|F|75|100|0|10|DRENAR|100|eu
+Hurricane|Flying|E|110|70|0|10||0|
+Hydro Pump|Water|E|110|80|0|5||0|
+Hyper Voice|Normal|E|90|100|0|10||0|
+Hypnosis|Psychic|S|0|60|0|20|DORMIR|100|inimigo
+Ice Beam|Ice|E|90|100|0|10|CONGELAR|10|inimigo
+Ice Fang|Ice|F|65|95|0|15|CONGELAR|10|inimigo
+Ice Hammer|Ice|F|100|90|0|10|VEL-1|100|eu
+Ice Punch|Ice|F|75|100|0|15|CONGELAR|10|inimigo
+Ice Shard|Ice|F|40|100|1|30||0|
+Ice Spinner|Ice|F|80|100|0|15||0|
+Icicle Crash|Ice|F|85|90|0|10||0|
+Icicle Spear|Ice|F|78|100|0|30||0|
+Icy Wind|Ice|E|55|95|0|15|VEL-1|100|inimigo
+Infernal Parade|Ghost|E|65|100|0|15||0|
+Inferno|Fire|E|100|50|0|5|QUEIMAR|100|inimigo
+Leech Life|Bug|F|80|100|0|10|DRENAR|100|eu
+Snipe Shot|Water|E|85|100|0|15||0|
+Infestation|Bug|E|20|100|0|20||0|
+Iron Defense|Steel|S|0|100|0|15|DEF+2|100|eu
+Iron Head|Steel|F|80|100|0|15||0|
+Iron Tail|Steel|F|100|75|0|15|DEF-1|30|inimigo
+Jaw Lock|Dark|F|80|100|0|10||0|
+Jet Punch|Water|F|60|100|1|15||0|
+Knock Off|Dark|F|65|100|0|20||0|
+Kowtow Cleave|Dark|F|85|100|0|10||0|
+Lash Out|Dark|F|75|100|0|5||0|
+Last Resort|Normal|F|140|100|0|5||0|
+Last Respects|Ghost|F|50|100|0|10||0|
+Lava Plume|Fire|E|80|100|0|15|QUEIMAR|30|inimigo
+Leaf Blade|Grass|F|90|100|0|15||0|
+Leaf Storm|Grass|E|130|90|0|5|ATE-2|100|eu
+Snore|Normal|E|50|100|0|15||0|
+Light of Ruin|Fairy|E|140|90|0|5||0|
+Liquidation|Water|F|85|100|0|10|DEF-1|20|inimigo
+Low Sweep|Fighting|F|65|100|0|20|VEL-1|100|inimigo
+Lumina Crash|Psychic|E|80|100|0|10|DFE-2|100|inimigo
+Lunge|Bug|F|80|100|0|15|ATQ-1|100|inimigo
+Mach Punch|Fighting|F|40|100|1|30||0|
+Make It Rain|Steel|E|120|95|0|5|ATE-2|100|eu
+Matcha Gotcha|Grass|E|80|90|0|15||0|
+Mega Kick|Normal|F|120|75|0|5||0|
+Megahorn|Bug|F|120|85|0|10||0|
+Metal Sound|Steel|S|0|85|0|40|DFE-2|100|inimigo
+Meteor Mash|Steel|F|90|90|0|10|ATQ+1|20|eu
+Milk Drink|Normal|S|0|100|0|5|CURAR|100|eu
+Moonblast|Fairy|E|95|100|0|15|ATE-1|10|inimigo
+Mortal Spin|Poison|F|30|100|0|15||0|
+Mountain Gale|Ice|F|120|85|0|10||0|
+Mud-Slap|Ground|E|20|100|0|10||0|
+Noble Roar|Normal|S|0|100|0|30|ATQ-1,ATE-1|100|inimigo
+Nuzzle|Electric|F|20|100|0|20|PARALISAR|100|inimigo
+Outrage|Dragon|F|120|100|0|10||0|
+Overdrive|Electric|E|80|100|0|10||0|
+Overheat|Fire|E|130|90|0|5|ATE-2|100|eu
+Parabolic Charge|Electric|E|65|100|0|20|DRENAR|100|eu
+Payback|Dark|F|50|100|0|10||0|
+Petal Blizzard|Grass|F|90|100|0|15||0|
+Petal Dance|Grass|E|120|100|0|10||0|
+Play Rough|Fairy|F|90|90|0|10|ATQ-1|10|inimigo
+Pluck|Flying|F|60|100|0|20||0|
+Poison Fang|Poison|F|50|100|0|15|ENVENENAR|50|inimigo
+Poison Jab|Poison|F|80|100|0|20|ENVENENAR|30|inimigo
+Poison Powder|Poison|S|0|75|0|35|ENVENENAR|100|inimigo
+Pollen Puff|Bug|E|90|100|0|15||0|
+Poltergeist|Ghost|F|110|90|0|5||0|
+Population Bomb|Normal|F|100|90|0|10||0|
+Pounce|Bug|F|50|100|0|20|VEL-1|100|inimigo
+Pound|Normal|F|40|100|0|35||0|
+Power Gem|Rock|E|80|100|0|20||0|
+Power Trip|Dark|F|20|100|0|10||0|
+Power Whip|Grass|F|120|85|0|10||0|
+Psychic|Psychic|E|90|100|0|10|DFE-1|10|inimigo
+Psychic Fangs|Psychic|F|85|100|0|10||0|
+Psychic Noise|Psychic|E|75|100|0|10||0|
+Psycho Cut|Psychic|F|70|100|0|20||0|
+Psyshield Bash|Psychic|F|90|90|0|10|DEF+1|100|eu
+Psyshock|Psychic|E|80|100|0|10||0|
+Pyro Ball|Fire|F|120|90|0|5|QUEIMAR|10|inimigo
+Quick Attack|Normal|F|40|100|1|30||0|
+Quiver Dance|Bug|S|0|100|0|20|ATE+1,DFE+1,VEL+1|100|eu
+Rage Fist|Ghost|F|50|100|0|10||0|
+Raging Bull|Normal|F|90|100|0|10||0|
+Raging Fury|Fire|F|120|100|0|10||0|
+Rapid Spin|Normal|F|50|100|0|40||0|
+Razor Shell|Water|F|75|95|0|10|DEF-1|50|inimigo
+Rising Voltage|Electric|E|70|100|0|20||0|
+Rock Blast|Rock|F|78|90|0|10||0|
+Rock Polish|Rock|S|0|100|0|20|VEL+2|100|eu
+Rock Slide|Rock|F|75|90|0|10||0|
+Rock Tomb|Rock|F|60|95|0|15|VEL-1|100|inimigo
+Round|Normal|E|60|100|0|15||0|
+Sacred Sword|Fighting|F|90|100|0|15||0|
+Salt Cure|Rock|F|40|100|0|15||0|
+Sand Tomb|Ground|F|35|85|0|15||0|
+Scald|Water|E|80|100|0|15|QUEIMAR|30|inimigo
+Scale Shot|Dragon|F|78|90|0|20||0|
+Scary Face|Normal|S|0|100|0|10|VEL-2|100|inimigo
+Scorching Sands|Ground|E|70|100|0|10|QUEIMAR|30|inimigo
+Screech|Normal|S|0|85|0|40|DEF-2|100|inimigo
+Seed Bomb|Grass|F|80|100|0|15||0|
+Shadow Ball|Ghost|E|80|100|0|15|DFE-1|20|inimigo
+Shadow Claw|Ghost|F|70|100|0|15||0|
+Shadow Punch|Ghost|F|60|100|0|20||0|
+Shadow Sneak|Ghost|F|40|100|1|30||0|
+Shell Side Arm|Poison|E|90|100|0|10||0|
+Shell Smash|Normal|S|0|100|0|15|ATQ+2,ATE+2,VEL+2,DEF-1,DFE-1|100|eu
+Shelter|Steel|S|0|100|0|10|DEF+2|100|eu
+Shift Gear|Steel|S|0|100|0|10|VEL+2|100|eu
+Sing|Normal|S|0|55|0|15|DORMIR|100|inimigo
+Skitter Smack|Bug|F|70|90|0|10||0|
+Slack Off|Normal|S|0|100|0|5|CURAR|100|eu
+Slash|Normal|F|80|100|0|20||0|
+Sleep Powder|Grass|S|0|75|0|15|DORMIR|100|inimigo
+Sludge Bomb|Poison|E|90|100|0|10|ENVENENAR|30|inimigo
+Sludge Wave|Poison|E|95|100|0|10|ENVENENAR|10|inimigo
+Smack Down|Rock|F|50|100|0|15||0|
+Smart Strike|Steel|F|70|100|0|10||0|
+Snap Trap|Steel|F|35|100|0|15||0|
+Snarl|Dark|E|55|95|0|15|ATE-1|100|inimigo
+Sparkling Aria|Water|E|90|100|0|10||0|
+Spirit Break|Fairy|F|75|100|0|15|ATE-1|100|inimigo
+Spirit Shackle|Ghost|F|90|100|0|10||0|
+Spore|Grass|S|0|100|0|15|DORMIR|100|inimigo
+Steel Roller|Steel|F|130|100|0|5||0|
+Steel Wing|Steel|F|70|90|0|25|DEF+1|10|eu
+Stomping Tantrum|Ground|F|75|100|0|10||0|
+Stone Axe|Rock|F|65|90|0|15||0|
+Stone Edge|Rock|F|100|80|0|5||0|
+Stored Power|Psychic|E|20|100|0|10||0|
+Storm Throw|Fighting|F|60|100|0|10||0|
+String Shot|Bug|S|0|95|0|40|VEL-2|100|inimigo
+Struggle|Normal|F|50|100|0|1|RECOIL|100|eu
+Struggle Bug|Bug|E|50|100|0|20|ATE-1|100|inimigo
+Stun Spore|Grass|S|0|75|0|30|PARALISAR|100|inimigo
+Sucker Punch|Dark|F|70|100|1|5||0|
+Supercell Slam|Electric|F|100|95|0|15||0|
+Superpower|Fighting|F|120|100|0|5|ATQ-1,DEF-1|100|eu
+Surf|Water|E|90|100|0|15||0|
+Swords Dance|Normal|S|0|100|0|20|ATQ+2|100|eu
+Syrup Bomb|Grass|E|60|90|0|10||0|
+Tail Slap|Normal|F|78|85|0|10||0|
+Tearful Look|Normal|S|0|100|0|20|ATQ-1,ATE-1|100|inimigo
+Temper Flare|Fire|F|75|100|0|10||0|
+Terrain Pulse|Normal|E|50|100|0|10||0|
+Thief|Dark|F|60|100|0|25||0|
+Thrash|Normal|F|120|100|0|10||0|
+Throat Chop|Dark|F|80|100|0|15||0|
+Thunder|Electric|E|110|70|0|10|PARALISAR|30|inimigo
+Thunder Fang|Electric|F|65|95|0|15|PARALISAR|10|inimigo
+Thunder Punch|Electric|F|75|100|0|15|PARALISAR|10|inimigo
+Thunder Wave|Electric|S|0|90|0|20|PARALISAR|100|inimigo
+Thunderbolt|Electric|E|90|100|0|15|PARALISAR|10|inimigo
+Tickle|Normal|S|0|100|0|20|ATQ-1,DEF-1|100|inimigo
+Torch Song|Fire|E|80|100|0|10|ATE+1|100|eu
+Toxic|Poison|S|0|90|0|10|ENVENENAR|100|inimigo
+Toxic Thread|Poison|S|0|100|0|20|VEL-2|100|inimigo
+Trailblaze|Grass|F|50|100|0|20|VEL+1|100|eu
+Tri Attack|Normal|E|80|100|0|10|PARALISAR|20|inimigo
+Triple Arrows|Fighting|F|90|100|0|10||0|
+Triple Axel|Ice|F|120|90|0|10||0|
+Trop Kick|Grass|F|85|100|0|15|ATQ-1|100|inimigo
+Twin Beam|Psychic|E|80|100|0|10||0|
+Upper Hand|Fighting|F|65|100|3|15||0|
+Uproar|Normal|E|90|100|0|10||0|
+Vacuum Wave|Fighting|E|40|100|1|30||0|
+Venoshock|Poison|E|65|100|0|10||0|
+Volt Tackle|Electric|F|120|100|0|15|RECOIL|100|eu
+Water Pulse|Water|E|60|100|0|20||0|
+Water Shuriken|Water|E|47|100|1|20||0|
+Water Spout|Water|E|150|100|0|5||0|
+Waterfall|Water|F|80|100|0|15||0|
+Wave Crash|Water|F|120|100|0|10|RECOIL|100|eu
+Weather Ball|Normal|E|50|100|0|10||0|
+Whirlpool|Water|E|35|85|0|15||0|
+Wild Charge|Electric|F|90|100|0|15|RECOIL|100|eu
+Wood Hammer|Grass|F|120|100|0|15|RECOIL|100|eu
+Wrap|Normal|F|15|90|0|20||0|
+X-Scissor|Bug|F|80|100|0|15||0|
+Zap Cannon|Electric|E|120|50|0|5|PARALISAR|100|inimigo
+Zen Headbutt|Psychic|F|80|90|0|15||0|
+Zing Zap|Electric|F|80|100|0|10||0|
+Roost|Flying|S|0|100|0|5|CURAR|100|eu
+Synthesis|Grass|S|0|100|0|5|CURAR|100|eu
+Moonlight|Fairy|S|0|100|0|5|CURAR|100|eu
+Morning Sun|Normal|S|0|100|0|5|CURAR|100|eu

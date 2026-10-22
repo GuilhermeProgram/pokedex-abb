@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.LinkedHashMap;
@@ -245,18 +246,27 @@ public class PokemonViewer extends JFrame {
 
 					@Override
 					protected boolean removeEldestEntry(Map.Entry<Integer, BufferedImage> e) {
-						return size() > 150;
+						return size() > 300;
 					}
 				});
 
 		/** Sprite pixelado do Pokémon (ou null se o arquivo não existe: rode o BaixadorImagens). */
 		static BufferedImage pixel(int dex) {
-			BufferedImage c = PIXELS.get(dex);
+			return lerPixel(dex, "images/pixel/" + dex + ".png", dex);
+		}
+
+		/** Sprite pixelado de costas (usado na batalha); null se não existe. */
+		static BufferedImage pixelCostas(int dex) {
+			return lerPixel(-dex, "images/pixel/costas/" + dex + ".png", dex);
+		}
+
+		private static BufferedImage lerPixel(int chave, String caminho, int dex) {
+			BufferedImage c = PIXELS.get(chave);
 			if (c != null) {
 				return c == SEM ? null : c;
 			}
 			BufferedImage img = null;
-			File arquivo = new File("images/pixel/" + dex + ".png");
+			File arquivo = new File(caminho);
 			if (arquivo.exists()) {
 				try {
 					img = ImageIO.read(arquivo);
@@ -264,7 +274,7 @@ public class PokemonViewer extends JFrame {
 					img = null;
 				}
 			}
-			PIXELS.put(dex, img == null ? SEM : img);
+			PIXELS.put(chave, img == null ? SEM : img);
 			return img;
 		}
 
@@ -1270,7 +1280,7 @@ public class PokemonViewer extends JFrame {
 			BotaoTexto abrirPc = new BotaoTexto("PC", "Ver e liberar os Pokémon capturados (ABB)");
 			abrirPc.addActionListener(e -> abrirPC());
 			botoes.add(abrirPc);
-			BotaoTexto batalhar = new BotaoTexto("Batalhar", "Modo batalha: monte um time com os Pokémon que você capturou");
+			BotaoTexto batalhar = new BotaoTexto("Batalhar", "Modo batalha: monte um time de até 6 com os Pokémon que você capturou");
 			batalhar.addActionListener(e -> batalhar());
 			botoes.add(batalhar);
 			BotaoRedondo anterior = new BotaoRedondo("‹", "Anterior (seta esquerda)");
@@ -1395,8 +1405,8 @@ public class PokemonViewer extends JFrame {
 		private transient DadosBatalha dadosBatalha;
 
 		/**
-		 * Modo batalha: o jogador monta um time com os Pokémon já descobertos (capturados) e luta contra
-		 * um time sorteado entre os outros descobertos (cada adversário é achado pelo buscador, ou seja, pela ABB).
+		 * Modo batalha: o jogador monta um time (até 6) com os Pokémon que capturou e luta contra um time do mesmo
+		 * tamanho sorteado entre todos os Pokémon (cada adversário é achado pelo buscador, ou seja, pela ABB do catálogo).
 		 */
 		private void batalhar() {
 			try {
@@ -1407,14 +1417,19 @@ public class PokemonViewer extends JFrame {
 				aviso("Não achei a pasta dados/ (rode a partir da raiz do projeto).");
 				return;
 			}
-			List<Pokemon> capturados = new ArrayList<>();
+			List<Pokemon> capturados = new ArrayList<>(); // o seu time só pode ter Pokémon do PC
+			List<Pokemon> sorteaveis = new ArrayList<>(); // o adversário sorteia entre todos que têm golpes
 			for (Pokemon p : lista) {
-				if (descoberto(p.getNumeroDex()) && !dadosBatalha.golpesDe(p.getNumeroDex()).isEmpty()) {
+				if (dadosBatalha.golpesDe(p.getNumeroDex()).isEmpty()) {
+					continue;
+				}
+				sorteaveis.add(p);
+				if (descoberto(p.getNumeroDex())) {
 					capturados.add(p);
 				}
 			}
-			if (capturados.size() < 2) {
-				aviso("Descubra pelo menos 2 Pokémon para poder batalhar.");
+			if (capturados.isEmpty()) {
+				aviso("Descubra pelo menos 1 Pokémon para poder batalhar.");
 				return;
 			}
 			Frame dono = (Frame) SwingUtilities.getWindowAncestor(this);
@@ -1424,16 +1439,12 @@ public class PokemonViewer extends JFrame {
 				if (meu.isEmpty()) {
 					return;
 				}
-				List<Pokemon> candidatos = new ArrayList<>(capturados);
+				List<Pokemon> candidatos = new ArrayList<>(sorteaveis);
 				candidatos.removeAll(meu);
-				if (candidatos.isEmpty()) {
-					aviso("Falta um adversário: descubra mais um Pokémon além do seu time.");
-					return;
-				}
 				Collections.shuffle(candidatos);
 				List<Pokemon> adversarios = new ArrayList<>();
 				for (Pokemon c : candidatos.subList(0, Math.min(meu.size(), candidatos.size()))) {
-					Pokemon achado = pc.buscar(c.getNumeroDex()); // busca no PC (ABB)
+					Pokemon achado = buscador.apply(String.valueOf(c.getNumeroDex())); // busca no catálogo (ABB)
 					adversarios.add(achado != null ? achado : c);
 				}
 				new TelaBatalha(dono, dadosBatalha, meu, adversarios).setVisible(true);

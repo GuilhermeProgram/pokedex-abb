@@ -1,201 +1,332 @@
-id;nome;tipo;categoria;poder;precisao;prioridade
-7;Fire Punch;Fogo;Físico;75;100;0
-8;Ice Punch;Gelo;Físico;75;100;0
-9;Thunder Punch;Elétrico;Físico;75;100;0
-16;Gust;Voador;Especial;40;100;0
-17;Wing Attack;Voador;Físico;60;100;0
-24;Double Kick;Lutador;Físico;30;100;0
-25;Mega Kick;Normal;Físico;120;75;0
-26;Jump Kick;Lutador;Físico;100;95;0
-29;Headbutt;Normal;Físico;70;100;0
-33;Tackle;Normal;Físico;40;100;0
-34;Body Slam;Normal;Físico;85;100;0
-36;Take Down;Normal;Físico;90;85;0
-38;Double-Edge;Normal;Físico;120;100;0
-40;Poison Sting;Veneno;Físico;15;100;0
-44;Bite;Sombrio;Físico;60;100;0
-51;Acid;Veneno;Especial;40;100;0
-53;Flamethrower;Fogo;Especial;90;100;0
-56;Hydro Pump;Água;Especial;110;80;0
-57;Surf;Água;Especial;90;100;0
-58;Ice Beam;Gelo;Especial;90;100;0
-61;Bubble Beam;Água;Especial;65;100;0
-65;Drill Peck;Voador;Físico;80;100;0
-70;Strength;Normal;Físico;80;100;0
-71;Absorb;Planta;Especial;20;100;0
-85;Thunderbolt;Elétrico;Especial;90;100;0
-89;Earthquake;Terra;Físico;100;100;0
-94;Psychic;Psíquico;Especial;90;100;0
-126;Fire Blast;Fogo;Especial;110;85;0
-127;Waterfall;Água;Físico;80;100;0
-129;Swift;Normal;Especial;60;100;0
-136;High Jump Kick;Lutador;Físico;130;90;0
-141;Leech Life;Inseto;Físico;80;100;0
-152;Crabhammer;Água;Físico;100;90;0
-157;Rock Slide;Pedra;Físico;75;90;0
-158;Hyper Fang;Normal;Físico;80;90;0
-168;Thief;Sombrio;Físico;60;100;0
-188;Sludge Bomb;Veneno;Especial;90;100;0
-189;Mud-Slap;Terra;Especial;20;100;0
-196;Icy Wind;Gelo;Especial;55;95;0
-202;Giga Drain;Planta;Especial;75;100;0
-209;Spark;Elétrico;Físico;65;100;0
-211;Steel Wing;Aço;Físico;70;90;0
-224;Megahorn;Inseto;Físico;120;85;0
-231;Iron Tail;Aço;Físico;100;75;0
-237;Hidden Power;Normal;Especial;60;100;0
-238;Cross Chop;Lutador;Físico;100;80;0
-242;Crunch;Sombrio;Físico;80;100;0
-246;Ancient Power;Pedra;Especial;60;100;0
-247;Shadow Ball;Fantasma;Especial;80;100;0
-249;Rock Smash;Lutador;Físico;40;100;0
-257;Heat Wave;Fogo;Especial;95;90;0
-263;Facade;Normal;Físico;70;100;0
-276;Superpower;Lutador;Físico;120;100;0
-280;Brick Break;Lutador;Físico;75;100;0
-295;Luster Purge;Psíquico;Especial;95;100;0
-296;Mist Ball;Psíquico;Especial;95;100;0
-299;Blaze Kick;Fogo;Físico;85;90;0
-304;Hyper Voice;Normal;Especial;90;100;0
-310;Astonish;Fantasma;Físico;30;100;0
-314;Air Cutter;Voador;Especial;60;95;0
-315;Overheat;Fogo;Especial;130;90;0
-317;Rock Tomb;Pedra;Físico;60;95;0
-324;Signal Beam;Inseto;Especial;75;100;0
-326;Extrasensory;Psíquico;Especial;80;100;0
-330;Muddy Water;Água;Especial;90;85;0
-332;Aerial Ace;Voador;Físico;60;100;0
-337;Dragon Claw;Dragão;Físico;80;100;0
-341;Mud Shot;Terra;Especial;55;95;0
-348;Leaf Blade;Planta;Físico;90;100;0
-352;Water Pulse;Água;Especial;60;100;0
-354;Psycho Boost;Psíquico;Especial;140;90;0
-358;Wake-Up Slap;Lutador;Físico;70;100;0
-359;Hammer Arm;Lutador;Físico;100;90;0
-369;U-turn;Inseto;Físico;70;100;0
-370;Close Combat;Lutador;Físico;120;100;0
-371;Payback;Sombrio;Físico;50;100;0
-372;Assurance;Sombrio;Físico;60;100;0
-394;Flare Blitz;Fogo;Físico;120;100;0
-396;Aura Sphere;Lutador;Especial;80;100;0
-398;Poison Jab;Veneno;Físico;80;100;0
-399;Dark Pulse;Sombrio;Especial;80;100;0
-401;Aqua Tail;Água;Físico;90;90;0
-402;Seed Bomb;Planta;Físico;80;100;0
-403;Air Slash;Voador;Especial;75;95;0
-404;X-Scissor;Inseto;Físico;80;100;0
-405;Bug Buzz;Inseto;Especial;90;100;0
-406;Dragon Pulse;Dragão;Especial;85;100;0
-407;Dragon Rush;Dragão;Físico;100;75;0
-408;Power Gem;Pedra;Especial;80;100;0
-409;Drain Punch;Lutador;Físico;75;100;0
-411;Focus Blast;Lutador;Especial;120;70;0
-412;Energy Ball;Planta;Especial;90;100;0
-413;Brave Bird;Voador;Físico;120;100;0
-414;Earth Power;Terra;Especial;90;100;0
-421;Shadow Claw;Fantasma;Físico;70;100;0
-424;Fire Fang;Fogo;Físico;65;95;0
-427;Psycho Cut;Psíquico;Físico;70;100;0
-428;Zen Headbutt;Psíquico;Físico;80;90;0
-430;Flash Cannon;Aço;Especial;80;100;0
-434;Draco Meteor;Dragão;Especial;130;90;0
-435;Discharge;Elétrico;Especial;80;100;0
-437;Leaf Storm;Planta;Especial;130;90;0
-438;Power Whip;Planta;Físico;120;85;0
-440;Cross Poison;Veneno;Físico;70;100;0
-441;Gunk Shot;Veneno;Físico;120;80;0
-442;Iron Head;Aço;Físico;80;100;0
-444;Stone Edge;Pedra;Físico;100;80;0
-450;Bug Bite;Inseto;Físico;60;100;0
-451;Charge Beam;Elétrico;Especial;50;90;0
-452;Wood Hammer;Planta;Físico;120;100;0
-454;Attack Order;Inseto;Físico;90;100;0
-482;Sludge Wave;Veneno;Especial;95;100;0
-488;Flame Charge;Fogo;Físico;50;100;0
-490;Low Sweep;Lutador;Físico;65;100;0
-492;Foul Play;Sombrio;Físico;95;100;0
-496;Round;Normal;Especial;60;100;0
-499;Clear Smog;Veneno;Especial;50;100;0
-500;Stored Power;Psíquico;Especial;20;100;0
-503;Scald;Água;Especial;80;100;0
-506;Hex;Fantasma;Especial;65;100;0
-512;Acrobatics;Voador;Físico;55;100;0
-522;Struggle Bug;Inseto;Especial;50;100;0
-527;Electroweb;Elétrico;Especial;55;95;0
-528;Wild Charge;Elétrico;Físico;90;100;0
-529;Drill Run;Terra;Físico;80;95;0
-532;Horn Leech;Planta;Físico;75;100;0
-533;Sacred Sword;Lutador;Físico;90;100;0
-537;Steamroller;Inseto;Físico;65;100;0
-539;Night Daze;Sombrio;Especial;85;95;0
-540;Psystrike;Psíquico;Especial;100;100;0
-542;Hurricane;Voador;Especial;110;70;0
-543;Head Charge;Normal;Físico;120;100;0
-550;Bolt Strike;Elétrico;Físico;130;85;0
-556;Icicle Crash;Gelo;Físico;85;90;0
-557;V-create;Fogo;Físico;180;95;0
-574;Disarming Voice;Fada;Especial;40;100;0
-577;Draining Kiss;Fada;Especial;50;100;0
-583;Play Rough;Fada;Físico;90;90;0
-585;Moonblast;Fada;Especial;95;100;0
-586;Boomburst;Normal;Especial;140;100;0
-591;Diamond Storm;Pedra;Físico;100;95;0
-592;Steam Eruption;Água;Especial;110;95;0
-595;Mystical Fire;Fogo;Especial;75;100;0
-605;Dazzling Gleam;Fada;Especial;80;100;0
-609;Nuzzle;Elétrico;Físico;20;100;0
-618;Origin Pulse;Água;Especial;110;85;0
-620;Dragon Ascent;Voador;Físico;120;100;0
-660;First Impression;Inseto;Físico;90;100;2
-662;Spirit Shackle;Fantasma;Físico;80;100;0
-663;Darkest Lariat;Sombrio;Físico;85;100;0
-665;Ice Hammer;Gelo;Físico;100;90;0
-667;High Horsepower;Terra;Físico;95;95;0
-669;Solar Blade;Planta;Físico;125;100;0
-675;Throat Chop;Sombrio;Físico;80;100;0
-676;Pollen Puff;Inseto;Especial;90;100;0
-679;Lunge;Inseto;Físico;80;100;0
-682;Burn Up;Fogo;Especial;130;100;0
-684;Smart Strike;Aço;Físico;70;100;0
-686;Revelation Dance;Normal;Especial;90;100;0
-687;Core Enforcer;Dragão;Especial;100;100;0
-705;Fleur Cannon;Fada;Especial;130;90;0
-706;Psychic Fangs;Psíquico;Físico;85;100;0
-707;Stomping Tantrum;Terra;Físico;75;100;0
-710;Liquidation;Água;Físico;85;100;0
-712;Spectral Thief;Fantasma;Físico;90;100;0
-714;Moongeist Beam;Fantasma;Especial;100;100;0
-720;Mind Blown;Fogo;Especial;150;100;0
-721;Plasma Fists;Elétrico;Físico;100;100;0
-722;Photon Geyser;Psíquico;Especial;100;100;0
-776;Body Press;Lutador;Físico;80;100;0
-783;Aura Wheel;Elétrico;Físico;110;100;0
-789;Spirit Break;Fada;Físico;75;100;0
-796;Steel Beam;Aço;Especial;140;95;0
-798;Steel Roller;Aço;Físico;130;100;0
-800;Meteor Beam;Pedra;Especial;120;90;0
-806;Skitter Smack;Inseto;Físico;70;90;0
-807;Burning Jealousy;Fogo;Especial;70;100;0
-808;Lash Out;Sombrio;Físico;75;100;0
-815;Scorching Sands;Terra;Especial;70;100;0
-820;Dragon Energy;Dragão;Especial;150;100;0
-834;Wave Crash;Água;Físico;120;100;0
-838;Headlong Rush;Terra;Físico;120;100;0
-846;Bleakwind Storm;Voador;Especial;100;80;0
-851;Tera Blast;Normal;Especial;80;100;0
-853;Axe Kick;Lutador;Físico;120;90;0
-861;Ice Spinner;Gelo;Físico;80;100;0
-862;Glaive Rush;Dragão;Físico;120;100;0
-875;Psyblade;Psíquico;Físico;80;100;0
-879;Electro Drift;Elétrico;Especial;100;100;0
-884;Pounce;Inseto;Físico;50;100;0
-885;Trailblaze;Planta;Físico;50;100;0
-890;Armor Cannon;Fogo;Especial;120;100;0
-892;Double Shock;Elétrico;Físico;120;100;0
-893;Gigaton Hammer;Aço;Físico;160;100;0
-905;Electro Shot;Elétrico;Especial;130;100;0
-910;Mighty Cleave;Pedra;Físico;95;100;0
-914;Alluring Voice;Fada;Especial;80;100;0
-915;Temper Flare;Fogo;Físico;75;100;0
-916;Supercell Slam;Elétrico;Físico;100;95;0
-917;Psychic Noise;Psíquico;Especial;75;100;0
+id;nome;tipo;categoria;poder;precisao;prioridade;pp;efeito;chance;alvo
+1;Dragon Pulse;Dragão;Especial;85;100;0;10;;0;
+2;High Horsepower;Terra;Físico;95;95;0;10;;0;
+3;Acid Armor;Veneno;Status;0;100;0;20;DEF+2;100;eu
+4;Fire Lash;Fogo;Físico;90;100;0;15;DEF-1;100;inimigo
+5;Fire Punch;Fogo;Físico;75;100;0;15;QUEIMAR;10;inimigo
+6;Fire Spin;Fogo;Especial;35;85;0;15;;0;
+7;First Impression;Inseto;Físico;100;100;2;10;;0;
+8;Flame Charge;Fogo;Físico;50;100;0;20;VEL+1;100;eu
+9;Flamethrower;Fogo;Especial;90;100;0;15;QUEIMAR;10;inimigo
+10;Flare Blitz;Fogo;Físico;120;100;0;15;RECOIL;100;eu
+11;Flash Cannon;Aço;Especial;80;100;0;10;DFE-1;10;inimigo
+12;Flower Trick;Planta;Físico;70;100;0;10;;0;
+13;Flying Press;Lutador;Físico;100;95;0;10;;0;
+14;Focus Blast;Lutador;Especial;120;70;0;5;DFE-1;10;inimigo
+15;Soft-Boiled;Normal;Status;0;100;0;5;CURAR;100;eu
+16;Aerial Ace;Voador;Físico;60;100;0;20;;0;
+17;Muddy Water;Água;Especial;90;85;0;10;;0;
+18;Alluring Voice;Fada;Especial;80;100;0;10;;0;
+19;Ancient Power;Pedra;Especial;60;100;0;5;;0;
+20;Apple Acid;Planta;Especial;90;100;0;10;DFE-1;100;inimigo
+21;Aqua Cutter;Água;Físico;70;100;0;20;;0;
+22;Aqua Jet;Água;Físico;40;100;1;20;;0;
+23;Bug Buzz;Inseto;Especial;90;100;0;10;DFE-1;10;inimigo
+24;Bulk Up;Lutador;Status;0;100;0;20;ATQ+1,DEF+1;100;eu
+25;Bulldoze;Terra;Físico;60;100;0;20;;0;
+26;Bullet Punch;Aço;Físico;40;100;1;30;;0;
+27;Bullet Seed;Planta;Físico;78;100;0;30;;0;
+28;Burn Up;Fogo;Especial;130;100;0;5;;0;
+29;Burning Jealousy;Fogo;Especial;70;100;0;5;;0;
+30;Calm Mind;Psíquico;Status;0;100;0;20;ATE+1,DFE+1;100;eu
+31;Ceaseless Edge;Sombrio;Físico;65;90;0;15;;0;
+32;Charge Beam;Elétrico;Especial;50;90;0;10;ATE+1;70;eu
+33;Charm;Fada;Status;0;100;0;20;ATQ-2;100;inimigo
+34;Chilling Water;Água;Especial;50;100;0;20;ATQ-1;100;inimigo
+35;Circle Throw;Lutador;Físico;60;90;-6;10;;0;
+36;Clanging Scales;Dragão;Especial;110;100;0;5;DEF-1;100;eu
+37;Clear Smog;Veneno;Especial;50;100;0;15;;0;
+38;Close Combat;Lutador;Físico;120;100;0;5;DEF-1,DFE-1;100;eu
+39;Mystical Fire;Fogo;Especial;75;100;0;10;ATE-1;100;inimigo
+40;Nasty Plot;Sombrio;Status;0;100;0;20;ATE+2;100;eu
+41;Agility;Psíquico;Status;0;100;0;30;VEL+2;100;eu
+42;Amnesia;Psíquico;Status;0;100;0;20;DFE+2;100;eu
+43;Dazzling Gleam;Fada;Especial;80;100;0;10;;0;
+44;Night Slash;Sombrio;Físico;70;100;0;20;;0;
+45;Will-O-Wisp;Fogo;Status;0;85;0;15;QUEIMAR;100;inimigo
+46;Recover;Normal;Status;0;100;0;5;CURAR;100;eu
+47;Mud Shot;Terra;Especial;55;95;0;15;VEL-1;100;inimigo
+48;Night Daze;Sombrio;Especial;90;95;0;10;;0;
+49;Pin Missile;Inseto;Físico;78;95;0;20;;0;
+50;Air Slash;Voador;Especial;75;95;0;15;;0;
+51;Dragon Dance;Dragão;Status;0;100;0;20;ATQ+1,VEL+1;100;eu
+52;Accelerock;Pedra;Físico;40;100;1;20;;0;
+53;Acid Spray;Veneno;Especial;40;100;0;20;DFE-2;100;inimigo
+54;Acrobatics;Voador;Físico;55;100;0;15;;0;
+55;Air Cutter;Voador;Especial;60;95;0;25;;0;
+56;Aqua Step;Água;Físico;80;100;0;10;VEL+1;100;eu
+57;Aqua Tail;Água;Físico;90;90;0;10;;0;
+58;Armor Cannon;Fogo;Especial;120;100;0;5;DEF-1,DFE-1;100;eu
+59;Assurance;Sombrio;Físico;60;100;0;10;;0;
+60;Aura Sphere;Lutador;Especial;80;100;0;20;;0;
+61;Aura Wheel;Elétrico;Físico;110;100;0;10;;0;
+62;Avalanche;Gelo;Físico;60;100;-4;10;;0;
+63;Baby-Doll Eyes;Fada;Status;0;100;1;30;ATQ-1;100;inimigo
+64;Barb Barrage;Veneno;Físico;60;100;0;10;;0;
+65;Beak Blast;Voador;Físico;120;100;-3;5;;0;
+66;Belch;Veneno;Especial;120;90;0;10;;0;
+67;Bind;Normal;Físico;15;85;0;20;;0;
+68;Bite;Sombrio;Físico;60;100;0;25;;0;
+69;Bitter Blade;Fogo;Físico;90;100;0;10;DRENAR;100;eu
+70;Bitter Malice;Fantasma;Especial;75;100;0;10;ATQ-1;100;inimigo
+71;Blaze Kick;Fogo;Físico;85;90;0;10;QUEIMAR;10;inimigo
+72;Blizzard;Gelo;Especial;110;70;0;5;CONGELAR;10;inimigo
+73;Body Press;Lutador;Físico;80;100;0;10;;0;
+74;Body Slam;Normal;Físico;85;100;0;15;PARALISAR;30;inimigo
+75;Bone Rush;Terra;Físico;93;90;0;10;;0;
+76;Boomburst;Normal;Especial;140;100;0;10;;0;
+77;Brave Bird;Voador;Físico;120;100;0;15;RECOIL;100;eu
+78;Breaking Swipe;Dragão;Físico;60;100;0;15;ATQ-1;100;inimigo
+79;Brick Break;Lutador;Físico;75;100;0;15;;0;
+80;Brutal Swing;Sombrio;Físico;60;100;0;20;;0;
+81;Bug Bite;Inseto;Físico;60;100;0;20;;0;
+82;Cosmic Power;Psíquico;Status;0;100;0;20;DEF+1,DFE+1;100;eu
+83;Cotton Guard;Planta;Status;0;100;0;10;DEF+3;100;eu
+84;Cotton Spore;Planta;Status;0;100;0;40;VEL-2;100;inimigo
+85;Covet;Normal;Físico;60;100;0;25;;0;
+86;Crabhammer;Água;Físico;100;95;0;10;;0;
+87;Cross Chop;Lutador;Físico;100;80;0;5;;0;
+88;Cross Poison;Veneno;Físico;70;100;0;20;ENVENENAR;10;inimigo
+89;Crunch;Sombrio;Físico;80;100;0;15;DEF-1;20;inimigo
+90;Crush Claw;Normal;Físico;75;95;0;10;DEF-1;50;inimigo
+91;Dragon Darts;Dragão;Físico;100;100;0;10;;0;
+92;Dark Pulse;Sombrio;Especial;80;100;0;15;;0;
+93;Darkest Lariat;Sombrio;Físico;85;100;0;10;;0;
+94;Dire Claw;Veneno;Físico;80;100;0;15;;0;
+95;Discharge;Elétrico;Especial;80;100;0;15;PARALISAR;30;inimigo
+96;Double-Edge;Normal;Físico;120;100;0;15;RECOIL;100;eu
+97;Double Hit;Normal;Físico;70;90;0;10;;0;
+98;Double Shock;Elétrico;Físico;120;100;0;5;;0;
+99;Draco Meteor;Dragão;Especial;130;90;0;5;ATE-2;100;eu
+100;Dragon Claw;Dragão;Físico;80;100;0;15;;0;
+101;Dragon Rush;Dragão;Físico;100;75;0;10;;0;
+102;Dragon Tail;Dragão;Físico;60;90;-6;10;;0;
+103;Drain Punch;Lutador;Físico;75;100;0;10;DRENAR;100;eu
+104;Draining Kiss;Fada;Especial;50;100;0;10;DRENAR;100;eu
+105;Drill Peck;Voador;Físico;80;100;0;20;;0;
+106;Drill Run;Terra;Físico;80;95;0;10;;0;
+107;Drum Beating;Planta;Físico;80;100;0;10;VEL-1;100;inimigo
+108;Dual Wingbeat;Voador;Físico;80;90;0;10;;0;
+109;Dynamic Punch;Lutador;Físico;100;50;0;5;;0;
+110;Earth Power;Terra;Especial;90;100;0;10;DFE-1;10;inimigo
+111;Earthquake;Terra;Físico;100;100;0;10;;0;
+112;Eerie Impulse;Elétrico;Status;0;100;0;15;ATE-2;100;inimigo
+113;Eerie Spell;Psíquico;Especial;80;100;0;5;;0;
+114;Electroweb;Elétrico;Especial;55;95;0;15;VEL-1;100;inimigo
+115;Focus Punch;Lutador;Físico;150;100;-3;20;;0;
+116;Energy Ball;Planta;Especial;90;100;0;10;DFE-1;10;inimigo
+117;Eruption;Fogo;Especial;150;100;0;5;;0;
+118;Expanding Force;Psíquico;Especial;80;100;0;10;;0;
+119;Extrasensory;Psíquico;Especial;80;100;0;20;;0;
+120;Extreme Speed;Normal;Físico;80;100;2;5;;0;
+121;Facade;Normal;Físico;70;100;0;20;;0;
+122;Fake Out;Normal;Físico;40;100;3;10;;0;
+123;Fake Tears;Sombrio;Status;0;100;0;20;DFE-2;100;inimigo
+124;Feather Dance;Voador;Status;0;100;0;15;ATQ-2;100;inimigo
+125;Feint;Normal;Físico;30;100;2;10;;0;
+126;Fell Stinger;Inseto;Físico;50;100;0;25;;0;
+127;Fickle Beam;Dragão;Especial;80;100;0;5;;0;
+128;Fiery Dance;Fogo;Especial;80;100;0;10;ATE+1;50;eu
+129;Fire Blast;Fogo;Especial;110;85;0;5;QUEIMAR;10;inimigo
+130;Fire Fang;Fogo;Físico;65;95;0;15;QUEIMAR;10;inimigo
+131;Foul Play;Sombrio;Físico;95;100;0;15;;0;
+132;Freeze-Dry;Gelo;Especial;70;100;0;20;;0;
+133;Frost Breath;Gelo;Especial;60;90;0;10;;0;
+134;Giga Drain;Planta;Especial;75;100;0;10;DRENAR;100;eu
+135;Gigaton Hammer;Aço;Físico;160;100;0;5;;0;
+136;Glare;Normal;Status;0;100;0;30;PARALISAR;100;inimigo
+137;Grassy Glide;Planta;Físico;55;100;0;20;;0;
+138;Grav Apple;Planta;Físico;90;100;0;10;;0;
+139;Gunk Shot;Veneno;Físico;120;80;0;5;ENVENENAR;30;inimigo
+140;Hammer Arm;Lutador;Físico;100;90;0;10;VEL-1;100;eu
+141;Head Smash;Pedra;Físico;150;80;0;5;RECOIL;100;eu
+142;Headlong Rush;Terra;Físico;120;100;0;5;DEF-1,DFE-1;100;eu
+143;Heat Wave;Fogo;Especial;95;90;0;10;QUEIMAR;10;inimigo
+144;Hex;Fantasma;Especial;65;100;0;10;;0;
+145;High Jump Kick;Lutador;Físico;130;90;0;10;;0;
+146;Horn Leech;Planta;Físico;75;100;0;10;DRENAR;100;eu
+147;Hurricane;Voador;Especial;110;70;0;10;;0;
+148;Hydro Pump;Água;Especial;110;80;0;5;;0;
+149;Hyper Voice;Normal;Especial;90;100;0;10;;0;
+150;Hypnosis;Psíquico;Status;0;60;0;20;DORMIR;100;inimigo
+151;Ice Beam;Gelo;Especial;90;100;0;10;CONGELAR;10;inimigo
+152;Ice Fang;Gelo;Físico;65;95;0;15;CONGELAR;10;inimigo
+153;Ice Hammer;Gelo;Físico;100;90;0;10;VEL-1;100;eu
+154;Ice Punch;Gelo;Físico;75;100;0;15;CONGELAR;10;inimigo
+155;Ice Shard;Gelo;Físico;40;100;1;30;;0;
+156;Ice Spinner;Gelo;Físico;80;100;0;15;;0;
+157;Icicle Crash;Gelo;Físico;85;90;0;10;;0;
+158;Icicle Spear;Gelo;Físico;78;100;0;30;;0;
+159;Icy Wind;Gelo;Especial;55;95;0;15;VEL-1;100;inimigo
+160;Infernal Parade;Fantasma;Especial;65;100;0;15;;0;
+161;Inferno;Fogo;Especial;100;50;0;5;QUEIMAR;100;inimigo
+162;Leech Life;Inseto;Físico;80;100;0;10;DRENAR;100;eu
+163;Snipe Shot;Água;Especial;85;100;0;15;;0;
+164;Infestation;Inseto;Especial;20;100;0;20;;0;
+165;Iron Defense;Aço;Status;0;100;0;15;DEF+2;100;eu
+166;Iron Head;Aço;Físico;80;100;0;15;;0;
+167;Iron Tail;Aço;Físico;100;75;0;15;DEF-1;30;inimigo
+168;Jaw Lock;Sombrio;Físico;80;100;0;10;;0;
+169;Jet Punch;Água;Físico;60;100;1;15;;0;
+170;Knock Off;Sombrio;Físico;65;100;0;20;;0;
+171;Kowtow Cleave;Sombrio;Físico;85;100;0;10;;0;
+172;Lash Out;Sombrio;Físico;75;100;0;5;;0;
+173;Last Resort;Normal;Físico;140;100;0;5;;0;
+174;Last Respects;Fantasma;Físico;50;100;0;10;;0;
+175;Lava Plume;Fogo;Especial;80;100;0;15;QUEIMAR;30;inimigo
+176;Leaf Blade;Planta;Físico;90;100;0;15;;0;
+177;Leaf Storm;Planta;Especial;130;90;0;5;ATE-2;100;eu
+178;Snore;Normal;Especial;50;100;0;15;;0;
+179;Light of Ruin;Fada;Especial;140;90;0;5;;0;
+180;Liquidation;Água;Físico;85;100;0;10;DEF-1;20;inimigo
+181;Low Sweep;Lutador;Físico;65;100;0;20;VEL-1;100;inimigo
+182;Lumina Crash;Psíquico;Especial;80;100;0;10;DFE-2;100;inimigo
+183;Lunge;Inseto;Físico;80;100;0;15;ATQ-1;100;inimigo
+184;Mach Punch;Lutador;Físico;40;100;1;30;;0;
+185;Make It Rain;Aço;Especial;120;95;0;5;ATE-2;100;eu
+186;Matcha Gotcha;Planta;Especial;80;90;0;15;;0;
+187;Mega Kick;Normal;Físico;120;75;0;5;;0;
+188;Megahorn;Inseto;Físico;120;85;0;10;;0;
+189;Metal Sound;Aço;Status;0;85;0;40;DFE-2;100;inimigo
+190;Meteor Mash;Aço;Físico;90;90;0;10;ATQ+1;20;eu
+191;Milk Drink;Normal;Status;0;100;0;5;CURAR;100;eu
+192;Moonblast;Fada;Especial;95;100;0;15;ATE-1;10;inimigo
+193;Mortal Spin;Veneno;Físico;30;100;0;15;;0;
+194;Mountain Gale;Gelo;Físico;120;85;0;10;;0;
+195;Mud-Slap;Terra;Especial;20;100;0;10;;0;
+196;Noble Roar;Normal;Status;0;100;0;30;ATQ-1,ATE-1;100;inimigo
+197;Nuzzle;Elétrico;Físico;20;100;0;20;PARALISAR;100;inimigo
+198;Outrage;Dragão;Físico;120;100;0;10;;0;
+199;Overdrive;Elétrico;Especial;80;100;0;10;;0;
+200;Overheat;Fogo;Especial;130;90;0;5;ATE-2;100;eu
+201;Parabolic Charge;Elétrico;Especial;65;100;0;20;DRENAR;100;eu
+202;Payback;Sombrio;Físico;50;100;0;10;;0;
+203;Petal Blizzard;Planta;Físico;90;100;0;15;;0;
+204;Petal Dance;Planta;Especial;120;100;0;10;;0;
+205;Play Rough;Fada;Físico;90;90;0;10;ATQ-1;10;inimigo
+206;Pluck;Voador;Físico;60;100;0;20;;0;
+207;Poison Fang;Veneno;Físico;50;100;0;15;ENVENENAR;50;inimigo
+208;Poison Jab;Veneno;Físico;80;100;0;20;ENVENENAR;30;inimigo
+209;Poison Powder;Veneno;Status;0;75;0;35;ENVENENAR;100;inimigo
+210;Pollen Puff;Inseto;Especial;90;100;0;15;;0;
+211;Poltergeist;Fantasma;Físico;110;90;0;5;;0;
+212;Population Bomb;Normal;Físico;100;90;0;10;;0;
+213;Pounce;Inseto;Físico;50;100;0;20;VEL-1;100;inimigo
+214;Pound;Normal;Físico;40;100;0;35;;0;
+215;Power Gem;Pedra;Especial;80;100;0;20;;0;
+216;Power Trip;Sombrio;Físico;20;100;0;10;;0;
+217;Power Whip;Planta;Físico;120;85;0;10;;0;
+218;Psychic;Psíquico;Especial;90;100;0;10;DFE-1;10;inimigo
+219;Psychic Fangs;Psíquico;Físico;85;100;0;10;;0;
+220;Psychic Noise;Psíquico;Especial;75;100;0;10;;0;
+221;Psycho Cut;Psíquico;Físico;70;100;0;20;;0;
+222;Psyshield Bash;Psíquico;Físico;90;90;0;10;DEF+1;100;eu
+223;Psyshock;Psíquico;Especial;80;100;0;10;;0;
+224;Pyro Ball;Fogo;Físico;120;90;0;5;QUEIMAR;10;inimigo
+225;Quick Attack;Normal;Físico;40;100;1;30;;0;
+226;Quiver Dance;Inseto;Status;0;100;0;20;ATE+1,DFE+1,VEL+1;100;eu
+227;Rage Fist;Fantasma;Físico;50;100;0;10;;0;
+228;Raging Bull;Normal;Físico;90;100;0;10;;0;
+229;Raging Fury;Fogo;Físico;120;100;0;10;;0;
+230;Rapid Spin;Normal;Físico;50;100;0;40;;0;
+231;Razor Shell;Água;Físico;75;95;0;10;DEF-1;50;inimigo
+232;Rising Voltage;Elétrico;Especial;70;100;0;20;;0;
+233;Rock Blast;Pedra;Físico;78;90;0;10;;0;
+234;Rock Polish;Pedra;Status;0;100;0;20;VEL+2;100;eu
+235;Rock Slide;Pedra;Físico;75;90;0;10;;0;
+236;Rock Tomb;Pedra;Físico;60;95;0;15;VEL-1;100;inimigo
+237;Round;Normal;Especial;60;100;0;15;;0;
+238;Sacred Sword;Lutador;Físico;90;100;0;15;;0;
+239;Salt Cure;Pedra;Físico;40;100;0;15;;0;
+240;Sand Tomb;Terra;Físico;35;85;0;15;;0;
+241;Scald;Água;Especial;80;100;0;15;QUEIMAR;30;inimigo
+242;Scale Shot;Dragão;Físico;78;90;0;20;;0;
+243;Scary Face;Normal;Status;0;100;0;10;VEL-2;100;inimigo
+244;Scorching Sands;Terra;Especial;70;100;0;10;QUEIMAR;30;inimigo
+245;Screech;Normal;Status;0;85;0;40;DEF-2;100;inimigo
+246;Seed Bomb;Planta;Físico;80;100;0;15;;0;
+247;Shadow Ball;Fantasma;Especial;80;100;0;15;DFE-1;20;inimigo
+248;Shadow Claw;Fantasma;Físico;70;100;0;15;;0;
+249;Shadow Punch;Fantasma;Físico;60;100;0;20;;0;
+250;Shadow Sneak;Fantasma;Físico;40;100;1;30;;0;
+251;Shell Side Arm;Veneno;Especial;90;100;0;10;;0;
+252;Shell Smash;Normal;Status;0;100;0;15;ATQ+2,ATE+2,VEL+2,DEF-1,DFE-1;100;eu
+253;Shelter;Aço;Status;0;100;0;10;DEF+2;100;eu
+254;Shift Gear;Aço;Status;0;100;0;10;VEL+2;100;eu
+255;Sing;Normal;Status;0;55;0;15;DORMIR;100;inimigo
+256;Skitter Smack;Inseto;Físico;70;90;0;10;;0;
+257;Slack Off;Normal;Status;0;100;0;5;CURAR;100;eu
+258;Slash;Normal;Físico;80;100;0;20;;0;
+259;Sleep Powder;Planta;Status;0;75;0;15;DORMIR;100;inimigo
+260;Sludge Bomb;Veneno;Especial;90;100;0;10;ENVENENAR;30;inimigo
+261;Sludge Wave;Veneno;Especial;95;100;0;10;ENVENENAR;10;inimigo
+262;Smack Down;Pedra;Físico;50;100;0;15;;0;
+263;Smart Strike;Aço;Físico;70;100;0;10;;0;
+264;Snap Trap;Aço;Físico;35;100;0;15;;0;
+265;Snarl;Sombrio;Especial;55;95;0;15;ATE-1;100;inimigo
+266;Sparkling Aria;Água;Especial;90;100;0;10;;0;
+267;Spirit Break;Fada;Físico;75;100;0;15;ATE-1;100;inimigo
+268;Spirit Shackle;Fantasma;Físico;90;100;0;10;;0;
+269;Spore;Planta;Status;0;100;0;15;DORMIR;100;inimigo
+270;Steel Roller;Aço;Físico;130;100;0;5;;0;
+271;Steel Wing;Aço;Físico;70;90;0;25;DEF+1;10;eu
+272;Stomping Tantrum;Terra;Físico;75;100;0;10;;0;
+273;Stone Axe;Pedra;Físico;65;90;0;15;;0;
+274;Stone Edge;Pedra;Físico;100;80;0;5;;0;
+275;Stored Power;Psíquico;Especial;20;100;0;10;;0;
+276;Storm Throw;Lutador;Físico;60;100;0;10;;0;
+277;String Shot;Inseto;Status;0;95;0;40;VEL-2;100;inimigo
+278;Struggle;Normal;Físico;50;100;0;1;RECOIL;100;eu
+279;Struggle Bug;Inseto;Especial;50;100;0;20;ATE-1;100;inimigo
+280;Stun Spore;Planta;Status;0;75;0;30;PARALISAR;100;inimigo
+281;Sucker Punch;Sombrio;Físico;70;100;1;5;;0;
+282;Supercell Slam;Elétrico;Físico;100;95;0;15;;0;
+283;Superpower;Lutador;Físico;120;100;0;5;ATQ-1,DEF-1;100;eu
+284;Surf;Água;Especial;90;100;0;15;;0;
+285;Swords Dance;Normal;Status;0;100;0;20;ATQ+2;100;eu
+286;Syrup Bomb;Planta;Especial;60;90;0;10;;0;
+287;Tail Slap;Normal;Físico;78;85;0;10;;0;
+288;Tearful Look;Normal;Status;0;100;0;20;ATQ-1,ATE-1;100;inimigo
+289;Temper Flare;Fogo;Físico;75;100;0;10;;0;
+290;Terrain Pulse;Normal;Especial;50;100;0;10;;0;
+291;Thief;Sombrio;Físico;60;100;0;25;;0;
+292;Thrash;Normal;Físico;120;100;0;10;;0;
+293;Throat Chop;Sombrio;Físico;80;100;0;15;;0;
+294;Thunder;Elétrico;Especial;110;70;0;10;PARALISAR;30;inimigo
+295;Thunder Fang;Elétrico;Físico;65;95;0;15;PARALISAR;10;inimigo
+296;Thunder Punch;Elétrico;Físico;75;100;0;15;PARALISAR;10;inimigo
+297;Thunder Wave;Elétrico;Status;0;90;0;20;PARALISAR;100;inimigo
+298;Thunderbolt;Elétrico;Especial;90;100;0;15;PARALISAR;10;inimigo
+299;Tickle;Normal;Status;0;100;0;20;ATQ-1,DEF-1;100;inimigo
+300;Torch Song;Fogo;Especial;80;100;0;10;ATE+1;100;eu
+301;Toxic;Veneno;Status;0;90;0;10;ENVENENAR;100;inimigo
+302;Toxic Thread;Veneno;Status;0;100;0;20;VEL-2;100;inimigo
+303;Trailblaze;Planta;Físico;50;100;0;20;VEL+1;100;eu
+304;Tri Attack;Normal;Especial;80;100;0;10;PARALISAR;20;inimigo
+305;Triple Arrows;Lutador;Físico;90;100;0;10;;0;
+306;Triple Axel;Gelo;Físico;120;90;0;10;;0;
+307;Trop Kick;Planta;Físico;85;100;0;15;ATQ-1;100;inimigo
+308;Twin Beam;Psíquico;Especial;80;100;0;10;;0;
+309;Upper Hand;Lutador;Físico;65;100;3;15;;0;
+310;Uproar;Normal;Especial;90;100;0;10;;0;
+311;Vacuum Wave;Lutador;Especial;40;100;1;30;;0;
+312;Venoshock;Veneno;Especial;65;100;0;10;;0;
+313;Volt Tackle;Elétrico;Físico;120;100;0;15;RECOIL;100;eu
+314;Water Pulse;Água;Especial;60;100;0;20;;0;
+315;Water Shuriken;Água;Especial;47;100;1;20;;0;
+316;Water Spout;Água;Especial;150;100;0;5;;0;
+317;Waterfall;Água;Físico;80;100;0;15;;0;
+318;Wave Crash;Água;Físico;120;100;0;10;RECOIL;100;eu
+319;Weather Ball;Normal;Especial;50;100;0;10;;0;
+320;Whirlpool;Água;Especial;35;85;0;15;;0;
+321;Wild Charge;Elétrico;Físico;90;100;0;15;RECOIL;100;eu
+322;Wood Hammer;Planta;Físico;120;100;0;15;RECOIL;100;eu
+323;Wrap;Normal;Físico;15;90;0;20;;0;
+324;X-Scissor;Inseto;Físico;80;100;0;15;;0;
+325;Zap Cannon;Elétrico;Especial;120;50;0;5;PARALISAR;100;inimigo
+326;Zen Headbutt;Psíquico;Físico;80;90;0;15;;0;
+327;Zing Zap;Elétrico;Físico;80;100;0;10;;0;
+328;Roost;Voador;Status;0;100;0;5;CURAR;100;eu
+329;Synthesis;Planta;Status;0;100;0;5;CURAR;100;eu
+330;Moonlight;Fada;Status;0;100;0;5;CURAR;100;eu
+331;Morning Sun;Normal;Status;0;100;0;5;CURAR;100;eu

@@ -24,8 +24,9 @@ import static PokePackage.PokemonViewer.*;
 public class SeletorBatalha extends JDialog {
 
 	private static final long serialVersionUID = 1L;
-	public static final int MAXIMO = 3;
-	/** Limite real: precisa sobrar pelo menos 1 Pokémon capturado para ser o adversário. */
+	public static final int MAXIMO = 6;
+	private static final int COLUNAS = 3;
+	/** Limite real: o menor entre o máximo e quantos Pokémon capturados você tem (o adversário sorteia entre todos). */
 	private final int limite;
 
 	private final transient List<Pokemon> capturados;
@@ -44,7 +45,7 @@ public class SeletorBatalha extends JDialog {
 	public SeletorBatalha(Frame dono, List<Pokemon> capturados, Pokemon inicial) {
 		super(dono, "Modo Batalha", true);
 		this.capturados = new ArrayList<>(capturados);
-		this.limite = Math.max(1, Math.min(MAXIMO, capturados.size() - 1));
+		this.limite = Math.max(1, Math.min(MAXIMO, capturados.size()));
 		if (inicial != null && this.capturados.contains(inicial)) {
 			time.add(inicial);
 		}
@@ -178,8 +179,7 @@ public class SeletorBatalha extends JDialog {
 	}
 
 	private void atualizar() {
-		contagem.setText(time.size() + " de " + limite + " no time · o adversário terá o mesmo número"
-				+ (limite < MAXIMO ? " (descubra mais Pokémon para montar times maiores)" : ""));
+		contagem.setText(time.size() + " de " + limite + " no time · adversário sorteado entre todos");
 		botaoLutar.setEnabled(!time.isEmpty());
 		jlist.repaint();
 		slots.repaint();
@@ -219,58 +219,110 @@ public class SeletorBatalha extends JDialog {
 			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		}
 
+		private int larguraCartao() {
+			return (getWidth() - 14 * (COLUNAS - 1)) / COLUNAS;
+		}
+
+		private int alturaCartao() {
+			int linhas = (MAXIMO + COLUNAS - 1) / COLUNAS;
+			return (getHeight() - 14 * (linhas - 1)) / linhas;
+		}
+
 		private int indiceEm(Point pt) {
-			int lado = getWidth() / MAXIMO;
-			return Math.min(MAXIMO - 1, pt.x / Math.max(1, lado));
+			int larg = larguraCartao(), alt = alturaCartao();
+			int col = pt.x / Math.max(1, larg + 14), lin = pt.y / Math.max(1, alt + 14);
+			if (col >= COLUNAS || pt.x % (larg + 14) >= larg || pt.y % (alt + 14) >= alt) {
+				return -1;
+			}
+			int i = lin * COLUNAS + col;
+			return i < MAXIMO ? i : -1;
+		}
+
+		/** Sprite pixelado sem a borda transparente, ampliado com escala inteira para caber em lado x lado. */
+		private BufferedImage spriteDo(Pokemon p, int lado) {
+			BufferedImage img = Imagens.pixel(p.getNumeroDex());
+			if (img == null) {
+				return null;
+			}
+			int minX = img.getWidth(), minY = img.getHeight(), maxX = -1, maxY = -1;
+			for (int y = 0; y < img.getHeight(); y++) {
+				for (int x = 0; x < img.getWidth(); x++) {
+					if ((img.getRGB(x, y) >>> 24) > 20) {
+						minX = Math.min(minX, x);
+						minY = Math.min(minY, y);
+						maxX = Math.max(maxX, x);
+						maxY = Math.max(maxY, y);
+					}
+				}
+			}
+			BufferedImage rec = maxX < 0 ? img : img.getSubimage(minX, minY, maxX - minX + 1, maxY - minY + 1);
+			int esc = Math.max(1, lado / Math.max(rec.getWidth(), rec.getHeight()));
+			BufferedImage saida = new BufferedImage(rec.getWidth() * esc, rec.getHeight() * esc, BufferedImage.TYPE_INT_ARGB);
+			Graphics2D g = saida.createGraphics();
+			g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+			g.drawImage(rec, 0, 0, saida.getWidth(), saida.getHeight(), null);
+			g.dispose();
+			return saida;
 		}
 
 		@Override
 		protected void paintComponent(Graphics g0) {
 			Graphics2D g = (Graphics2D) g0.create();
 			qualidade(g);
-			int gap = 14, larg = (getWidth() - gap * (MAXIMO - 1)) / MAXIMO, alt = Math.min(getHeight(), 360);
+			int gap = 14, larg = larguraCartao(), alt = alturaCartao();
 			for (int i = 0; i < MAXIMO; i++) {
-				int x = i * (larg + gap), y = 0;
+				int x = (i % COLUNAS) * (larg + gap), y = (i / COLUNAS) * (alt + gap);
+				boolean disponivel = i < limite;
 				Pokemon p = i < time.size() ? time.get(i) : null;
 				Color cor = p == null ? BORDA : corDoTipo(p.getTipo1());
 				g.setPaint(new GradientPaint(0, y, p == null ? PAINEL : mix(PAINEL, cor, 0.35f), 0, y + alt,
-						p == null ? escurecer(PAINEL, 0.7f) : escurecer(cor, 0.35f)));
-				g.fill(new RoundRectangle2D.Float(x, y, larg, alt, 24, 24));
+						p == null ? escurecer(PAINEL, disponivel ? 0.7f : 0.45f) : escurecer(cor, 0.35f)));
+				g.fill(new RoundRectangle2D.Float(x, y, larg, alt, 22, 22));
 				g.setColor(p == null ? BORDA : comAlpha(cor, 200));
 				g.setStroke(new BasicStroke(1.6f));
-				g.draw(new RoundRectangle2D.Float(x + 0.8f, y + 0.8f, larg - 1.6f, alt - 1.6f, 24, 24));
+				g.draw(new RoundRectangle2D.Float(x + 0.8f, y + 0.8f, larg - 1.6f, alt - 1.6f, 22, 22));
 
-				g.setFont(fonte(Font.BOLD, 14f));
+				g.setFont(fonte(Font.BOLD, 13f));
 				g.setColor(p == null ? SUAVE : comAlpha(Color.WHITE, 200));
-				g.drawString((i + 1) + "º a entrar", x + 14, y + 26);
+				g.drawString((i + 1) + "º a entrar", x + 12, y + 22);
 				if (p == null) {
-					g.setFont(fonte(Font.PLAIN, 14f));
+					g.setFont(fonte(Font.PLAIN, 13f));
 					g.setColor(SUAVE);
-					String t = "vazio";
+					String t = disponivel ? "vazio" : "bloqueado";
 					g.drawString(t, x + (larg - g.getFontMetrics().stringWidth(t)) / 2, y + alt / 2);
+					if (!disponivel) {
+						g.setFont(fonte(Font.PLAIN, 11f));
+						String d = "capture mais";
+						g.drawString(d, x + (larg - g.getFontMetrics().stringWidth(d)) / 2, y + alt / 2 + 16);
+					}
 					continue;
 				}
-				BufferedImage img = Imagens.grande(p.getNumeroDex());
-				if (img != null) {
-					int lado = larg - 20;
-					double esc = Math.min((double) lado / img.getWidth(), (double) lado / img.getHeight());
-					int dw = (int) (img.getWidth() * esc), dh = (int) (img.getHeight() * esc);
-					g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-					g.drawImage(img, x + (larg - dw) / 2, y + 40, dw, dh, null);
+				int lado = Math.min(larg - 24, alt - 84);
+				BufferedImage sprite = spriteDo(p, lado);
+				if (sprite != null) {
+					g.drawImage(sprite, x + (larg - sprite.getWidth()) / 2, y + 30 + (lado - sprite.getHeight()) / 2, null);
+				} else {
+					BufferedImage img = Imagens.grande(p.getNumeroDex());
+					if (img != null) {
+						double esc = Math.min((double) lado / img.getWidth(), (double) lado / img.getHeight());
+						int dw = (int) (img.getWidth() * esc), dh = (int) (img.getHeight() * esc);
+						g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+						g.drawImage(img, x + (larg - dw) / 2, y + 30, dw, dh, null);
+					}
 				}
-				g.setFont(fonte(Font.BOLD, 18f));
+				g.setFont(fonte(Font.BOLD, 16f));
 				g.setColor(TEXTO);
 				String nome = p.getNome();
-				g.drawString(nome, x + (larg - g.getFontMetrics().stringWidth(nome)) / 2, y + alt - 40);
-				g.setFont(fonte(Font.PLAIN, 12f));
+				g.drawString(nome, x + (larg - g.getFontMetrics().stringWidth(nome)) / 2, y + alt - 30);
+				g.setFont(fonte(Font.PLAIN, 11f));
 				g.setColor(new Color(255, 255, 255, 190));
 				String tipos = p.getTipo1() + (p.getTipo2() != null ? " · " + p.getTipo2() : "");
-				g.drawString(tipos, x + (larg - g.getFontMetrics().stringWidth(tipos)) / 2, y + alt - 20);
+				g.drawString(tipos, x + (larg - g.getFontMetrics().stringWidth(tipos)) / 2, y + alt - 12);
 				g.setColor(new Color(255, 255, 255, 120));
-				g.fill(new Ellipse2D.Float(x + larg - 28, y + 12, 16, 16));
+				g.fill(new Ellipse2D.Float(x + larg - 26, y + 8, 16, 16));
 				g.setColor(new Color(0x14, 0x17, 0x2B));
 				g.setFont(fonte(Font.BOLD, 13f));
-				g.drawString("×", x + larg - 24, y + 25);
+				g.drawString("×", x + larg - 22, y + 21);
 			}
 			g.dispose();
 		}

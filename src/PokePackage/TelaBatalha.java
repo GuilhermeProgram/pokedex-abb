@@ -1,17 +1,20 @@
 package PokePackage;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -20,24 +23,44 @@ import java.util.regex.Pattern;
 import static PokePackage.PokemonViewer.*;
 
 /**
- * Janela da batalha em equipe: o seu time contra o time adversário, um Pokémon de cada vez.
- * A lógica de cada confronto fica em {@link Batalha}; aqui ficam o desenho, os botões e a fila de mensagens.
+ * Janela da batalha em equipe, no estilo dos jogos: cenário com sprites pixelados (o seu de costas, o do
+ * adversário de frente), caixas de HP, caixa de texto e menu Lutar / Pokémon / Mega / Fugir. À direita fica o
+ * seu time, e dá para trocar de Pokémon no meio da luta (a troca gasta o turno).
  *
- * Tamanho fixo (a janela não cresce com o texto) e sprites/fundo em cache, para a animação ficar leve.
+ * A lógica de cada confronto fica em {@link Batalha}; aqui ficam o desenho, o menu e a fila de mensagens.
+ * Tamanho fixo e cenário em cache, para a animação ficar leve.
  */
 public class TelaBatalha extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final int LARGURA = 920, ALTURA_ARENA = 470, ALTURA_BAIXO = 190;
+	private static final int MARGEM = 12;
+	private static final int LARG_ARENA = 660, ALT_ARENA = 400, ALT_BAIXO = 170, LARG_LATERAL = 300, ALT_TOPO = 52;
 	private static final Pattern PERDEU = Pattern.compile("^(.+) perdeu (\\d+) de HP\\.$");
+	private static final Pattern GANHOU = Pattern.compile("^(.+) recuperou (\\d+) de HP\\.$");
+	private static final Pattern MUDOU_STATUS = Pattern.compile(".*(se queimou|ficou paralisado|foi envenenado|adormeceu|congelou|acordou|descongelou)[!.].*");
 	private static final Pattern EVOLUIU = Pattern.compile("^(.+) Mega Evoluiu para (.+)!$");
+
+	// cores no estilo dos jogos
+	private static final Color MOLDURA = new Color(0x2B, 0x3A, 0x63);
+	private static final Color CAIXA_CLARA = new Color(0xF6, 0xF1, 0xDD);
+	private static final Color TINTA = new Color(0x26, 0x2F, 0x4A);
+	private static final Color C_LUTAR = new Color(0xE8, 0x55, 0x3B), C_POKEMON = new Color(0x3F, 0xAE, 0x5C),
+			C_MEGA = new Color(0xF0, 0xA9, 0x2B), C_FUGIR = new Color(0x3F, 0x7B, 0xD9);
+
+	private enum Modo { MENU, GOLPES, TIME_ESCOLHA, TIME_FORCADA }
 
 	private final transient DadosBatalha dados;
 	private final transient Random sorte = new Random();
 	private final List<Pokemon> meuTime, timeOponente;
+	private final int[] hpMeu; // HP atual de cada um do seu time (0 = ainda com a vida cheia)
+	private final boolean[] caiu;
+	private final EstadoPokemon[] estMeu, estOpo; // condição e PP de cada Pokémon dos dois times
+	private Status stJog = Status.NENHUM, stOpo = Status.NENHUM; // condição mostrada na caixa de HP
 	private int iJog = 0, iOpo = 0;
+	private int turnoTotal = 0;
 	private transient Batalha batalha;
+	private Modo modo = Modo.MENU;
 
 	// o que está desenhado agora (muda só quando a mensagem correspondente aparece)
 	private Pokemon formaJogador, formaOponente;
@@ -58,14 +81,17 @@ public class TelaBatalha extends JDialog {
 	private boolean megaUsadaNaLuta = false;
 	private transient Pokemon megaEscolhida;
 	private final Set<String> nomesJogador = new HashSet<>();
+	private transient Pokemon pendOpo; // adversário em campo quando o seu Pokémon desmaiou
+	private int pendHpOpo;
 
+	private final Map<Integer, BufferedImage> miniaturas = new HashMap<>();
+
+	private final Topo topo = new Topo();
 	private final Arena arena = new Arena();
-	private final CaixaMensagem caixaMensagem = new CaixaMensagem();
-	private final List<BotaoGolpe> botoesGolpe = new ArrayList<>();
-	private final JPanel linhaMega = new JPanel(new FlowLayout(FlowLayout.LEFT, 8, 0));
-	private final List<BotaoMega> botoesMega = new ArrayList<>();
-	private final BotaoTexto botaoFechar = new BotaoTexto("Fechar", "Voltar para a Pokédex (Esc)");
+	private final PainelBaixo baixo = new PainelBaixo();
+	private final PainelTime lateral = new PainelTime();
 	private final javax.swing.Timer relogio;
+	private int assinaturaUI = 0, assinaturaArena = 0;
 
 	private static class Evento {
 		final String texto;
@@ -84,6 +110,16 @@ public class TelaBatalha extends JDialog {
 		this.dados = dados;
 		this.meuTime = new ArrayList<>(meuTime);
 		this.timeOponente = new ArrayList<>(timeOponente);
+		this.hpMeu = new int[meuTime.size()];
+		this.caiu = new boolean[meuTime.size()];
+		this.estMeu = new EstadoPokemon[meuTime.size()];
+		for (int i = 0; i < estMeu.length; i++) {
+			estMeu[i] = new EstadoPokemon(dados.golpesDe(meuTime.get(i).getNumeroDex()));
+		}
+		this.estOpo = new EstadoPokemon[timeOponente.size()];
+		for (int i = 0; i < estOpo.length; i++) {
+			estOpo[i] = new EstadoPokemon(dados.golpesDe(timeOponente.get(i).getNumeroDex()));
+		}
 		for (Pokemon p : meuTime) {
 			nomesJogador.add(p.getNome());
 			for (Pokemon m : dados.megasDe(p.getNumeroDex())) {
@@ -93,9 +129,19 @@ public class TelaBatalha extends JDialog {
 
 		JPanel raiz = new JPanel(new BorderLayout());
 		raiz.setBackground(FUNDO_A);
-		raiz.add(arena, BorderLayout.CENTER);
-		raiz.add(montarBaixo(), BorderLayout.SOUTH);
-		raiz.setPreferredSize(new Dimension(LARGURA, ALTURA_ARENA + ALTURA_BAIXO));
+		topo.setPreferredSize(new Dimension(MARGEM * 3 + LARG_ARENA + LARG_LATERAL, ALT_TOPO));
+		raiz.add(topo, BorderLayout.NORTH);
+
+		JPanel esquerda = new JPanel(new BorderLayout(0, 0));
+		esquerda.setOpaque(false);
+		esquerda.add(arena, BorderLayout.CENTER);
+		esquerda.add(baixo, BorderLayout.SOUTH);
+		JPanel centro = new JPanel(new BorderLayout(MARGEM, 0));
+		centro.setOpaque(false);
+		centro.setBorder(BorderFactory.createEmptyBorder(0, MARGEM, MARGEM, MARGEM));
+		centro.add(esquerda, BorderLayout.CENTER);
+		centro.add(lateral, BorderLayout.EAST);
+		raiz.add(centro, BorderLayout.CENTER);
 		setContentPane(raiz);
 		setResizable(false);
 		pack();
@@ -105,6 +151,8 @@ public class TelaBatalha extends JDialog {
 
 		novaBatalha(this.meuTime.get(0), 0, this.timeOponente.get(0), 0);
 		mensagem = "O adversário enviou " + formaOponente.getNome() + "! Vai, " + formaJogador.getNome() + "!";
+		fila.add(new Evento("O que " + formaJogador.getNome() + " fará?", null, 0));
+		proximoEm = System.currentTimeMillis() + 1700;
 
 		relogio = new javax.swing.Timer(33, e -> passo());
 		relogio.start();
@@ -117,58 +165,20 @@ public class TelaBatalha extends JDialog {
 	}
 
 	// =====================================================================
-	// Montagem da parte de baixo (mensagem, Mega Evolução e golpes)
+	// Teclas
 	// =====================================================================
-	private JComponent montarBaixo() {
-		JPanel baixo = new JPanel(new BorderLayout(14, 0));
-		baixo.setBackground(escurecer(FUNDO_A, 0.8f));
-		baixo.setBorder(new EmptyBorder(14, 18, 14, 18));
-		baixo.setPreferredSize(new Dimension(LARGURA, ALTURA_BAIXO));
-
-		JPanel esquerda = new JPanel();
-		esquerda.setOpaque(false);
-		esquerda.setLayout(new BoxLayout(esquerda, BoxLayout.Y_AXIS));
-		esquerda.setPreferredSize(new Dimension(400, 100));
-		caixaMensagem.setAlignmentX(Component.LEFT_ALIGNMENT);
-		caixaMensagem.setMaximumSize(new Dimension(400, 106));
-		caixaMensagem.setPreferredSize(new Dimension(400, 106));
-		esquerda.add(caixaMensagem);
-		esquerda.add(Box.createVerticalStrut(10));
-		linhaMega.setOpaque(false);
-		linhaMega.setAlignmentX(Component.LEFT_ALIGNMENT);
-		linhaMega.setPreferredSize(new Dimension(400, 42));
-		linhaMega.setMaximumSize(new Dimension(400, 42));
-		botaoFechar.setPreferredSize(new Dimension(108, 42));
-		botaoFechar.addActionListener(e -> dispose());
-		botaoFechar.setVisible(false);
-		esquerda.add(linhaMega);
-		baixo.add(esquerda, BorderLayout.WEST);
-
-		JPanel grade = new JPanel(new GridLayout(2, 2, 10, 10));
-		grade.setOpaque(false);
-		for (int i = 0; i < 4; i++) {
-			BotaoGolpe b = new BotaoGolpe(i);
-			botoesGolpe.add(b);
-			grade.add(b);
-		}
-		baixo.add(grade, BorderLayout.CENTER);
-		return baixo;
-	}
-
 	private void configurarTeclas(JComponent raiz) {
 		InputMap im = raiz.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
 		ActionMap am = raiz.getActionMap();
 		for (int i = 0; i < 4; i++) {
 			final int n = i;
-			im.put(KeyStroke.getKeyStroke("" + (i + 1)), "golpe" + i);
-			am.put("golpe" + i, new AbstractAction() {
+			im.put(KeyStroke.getKeyStroke("" + (i + 1)), "opcao" + i);
+			am.put("opcao" + i, new AbstractAction() {
 				private static final long serialVersionUID = 1L;
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					if (botoesGolpe.get(n).isEnabled()) {
-						botoesGolpe.get(n).doClick();
-					}
+					baixo.acionar(n);
 				}
 			});
 		}
@@ -178,19 +188,19 @@ public class TelaBatalha extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (!botoesMega.isEmpty() && botoesMega.get(0).isVisible()) {
-					botoesMega.get(0).doClick();
-				}
+				alternarMega();
 			}
 		});
-		im.put(KeyStroke.getKeyStroke("ESCAPE"), "sair");
-		am.put("sair", new AbstractAction() {
+		im.put(KeyStroke.getKeyStroke("ESCAPE"), "voltar");
+		am.put("voltar", new AbstractAction() {
 			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (fim) {
 					dispose();
+				} else if (modo == Modo.GOLPES || modo == Modo.TIME_ESCOLHA) {
+					modo = Modo.MENU;
 				}
 			}
 		});
@@ -202,7 +212,9 @@ public class TelaBatalha extends JDialog {
 
 	/** Começa (ou continua) um confronto: quem já estava ferido entra com o HP que tinha. */
 	private void novaBatalha(Pokemon jogador, int hpJogador, Pokemon oponente, int hpOponente) {
-		batalha = new Batalha(dados, jogador, hpJogador, oponente, hpOponente, sorte);
+		batalha = new Batalha(dados, jogador, hpJogador, estMeu[iJog], oponente, hpOponente, estOpo[iOpo], sorte);
+		stJog = estMeu[iJog].getStatus();
+		stOpo = estOpo[iOpo].getStatus();
 		formaJogador = batalha.getJogador();
 		formaOponente = batalha.getOponente();
 		hpJogMax = batalha.getHpMaxJogador();
@@ -214,67 +226,68 @@ public class TelaBatalha extends JDialog {
 		alfaJog = alfaOpo = 1;
 		caindoJog = caindoOpo = false;
 		megaEscolhida = null;
+		modo = Modo.MENU;
 		atualizarSprites();
 		atualizarFundo();
-		atualizarGolpes();
-		atualizarMegas();
-		habilitar(true);
-	}
-
-	private void atualizarGolpes() {
-		List<Golpe> golpes = dados.golpesDe(formaJogador.getNumeroDex());
-		for (int i = 0; i < botoesGolpe.size(); i++) {
-			botoesGolpe.get(i).definir(i < golpes.size() ? golpes.get(i) : null);
-		}
-	}
-
-	private void atualizarMegas() {
-		linhaMega.removeAll();
-		botoesMega.clear();
-		List<Pokemon> megas = (megaUsadaNaLuta || fim) ? new ArrayList<>() : batalha.megasDisponiveisDoJogador();
-		for (Pokemon m : megas) {
-			BotaoMega b = new BotaoMega(m, megas.size() > 1);
-			b.addActionListener(e -> {
-				megaEscolhida = megaEscolhida == m ? null : m;
-				for (BotaoMega o : botoesMega) {
-					o.repaint();
-				}
-			});
-			botoesMega.add(b);
-			linhaMega.add(b);
-		}
-		if (fim) {
-			linhaMega.add(botaoFechar);
-		}
-		linhaMega.revalidate();
-		linhaMega.repaint();
-	}
-
-	private void habilitar(boolean sim) {
-		for (BotaoGolpe b : botoesGolpe) {
-			b.setEnabled(sim && b.golpe != null);
-		}
-		for (BotaoMega b : botoesMega) {
-			b.setEnabled(sim);
-		}
 	}
 
 	private boolean ocupado() {
 		return !fila.isEmpty() || System.currentTimeMillis() < proximoEm;
 	}
 
-	/** O jogador escolheu um golpe: joga o turno e enfileira o relato (uma linha por vez na tela). */
-	private void jogar(Golpe g) {
-		if (fim || ocupado() || batalha.terminou()) {
+	/** Dá para o jogador agir agora (nada na fila e a luta não acabou). */
+	private boolean liberado() {
+		return !fim && !ocupado();
+	}
+
+	/** Os golpes do menu; se não sobrou PP em nenhum, só o Esforço. */
+	private List<Golpe> golpesAtuais() {
+		if (estMeu[iJog].semPpNenhum() && dados.golpeEsforco() != null) {
+			List<Golpe> so = new ArrayList<>();
+			so.add(dados.golpeEsforco());
+			return so;
+		}
+		return dados.golpesDe(formaJogador.getNumeroDex());
+	}
+
+	private boolean usavel(Golpe g) {
+		return g == dados.golpeEsforco() || estMeu[iJog].temPp(g);
+	}
+
+	private List<Pokemon> opcoesMega() {
+		return (megaUsadaNaLuta || fim || batalha == null) ? new ArrayList<>() : batalha.megasDisponiveisDoJogador();
+	}
+
+	/** Liga/desliga a Mega Evolução do próximo golpe (se houver mais de uma forma, passa para a próxima). */
+	private void alternarMega() {
+		if (!liberado() || (modo != Modo.MENU && modo != Modo.GOLPES)) {
 			return;
 		}
-		habilitar(false);
+		List<Pokemon> opcoes = opcoesMega();
+		if (opcoes.isEmpty()) {
+			return;
+		}
+		int i = megaEscolhida == null ? -1 : opcoes.indexOf(megaEscolhida);
+		megaEscolhida = i + 1 < opcoes.size() ? opcoes.get(i + 1) : null;
+	}
+
+	/** O jogador escolheu um golpe: joga o turno e enfileira o relato (uma linha por vez na tela). */
+	private void jogar(Golpe g) {
+		if (!liberado() || batalha.terminou()) {
+			return;
+		}
 		Pokemon mega = megaEscolhida;
 		megaEscolhida = null;
 		if (mega != null) {
 			megaUsadaNaLuta = true;
 		}
+		modo = Modo.MENU;
+		executarTurno(g, mega);
+	}
+
+	private void executarTurno(Golpe g, Pokemon mega) {
 		final Batalha atual = batalha;
+		turnoTotal++;
 		List<String> relato = atual.turno(g, mega);
 		for (String linha : relato) {
 			if (linha.endsWith("venceu a batalha!")) {
@@ -287,22 +300,80 @@ public class TelaBatalha extends JDialog {
 		fila.add(new Evento(null, () -> fimDoTurno(atual), 50));
 	}
 
+	/** Troca por vontade própria: o Pokémon que sai não ataca, e o adversário ataca o que entra. */
+	private void trocarVoluntaria(int k) {
+		if (!liberado() || k == iJog || caiu[k]) {
+			return;
+		}
+		final Batalha antiga = batalha;
+		hpMeu[iJog] = Math.max(1, antiga.getHpJogador());
+		final String sai = meuTime.get(iJog).getNome();
+		final Pokemon novo = meuTime.get(k);
+		final Pokemon opo = antiga.getOponente();
+		final int hpOpo = antiga.getHpOponente();
+		megaEscolhida = null;
+		modo = Modo.MENU;
+		fila.add(new Evento("Volta, " + sai + "!", () -> caindoJog = true, 900));
+		fila.add(new Evento("Vai, " + novo.getNome() + "!", () -> {
+			iJog = k;
+			novaBatalha(novo, hpMeu[k], opo, hpOpo);
+			executarTurno(null, null);
+		}, 900));
+	}
+
+	/** Troca obrigatória (o seu Pokémon desmaiou): entra o escolhido, sem gastar turno. */
+	private void trocarForcada(int k) {
+		if (!liberado() || caiu[k]) {
+			return;
+		}
+		final Pokemon novo = meuTime.get(k);
+		final Pokemon opo = pendOpo;
+		final int hpOpo = pendHpOpo;
+		modo = Modo.MENU;
+		fila.add(new Evento("Vai, " + novo.getNome() + "!", () -> {
+			iJog = k;
+			novaBatalha(novo, hpMeu[k], opo, hpOpo);
+			mensagem = "O que " + formaJogador.getNome() + " fará?";
+		}, 900));
+	}
+
+	private void fugir() {
+		if (!liberado()) {
+			return;
+		}
+		int r = JOptionPane.showConfirmDialog(this, "Fugir da luta? Isso conta como derrota.", "Fugir", JOptionPane.YES_NO_OPTION);
+		if (r == JOptionPane.YES_OPTION) {
+			modo = Modo.MENU;
+			fila.add(new Evento("Você fugiu da luta...", null, 1200));
+			terminar("Você desistiu da luta.");
+		}
+	}
+
 	/** Efeitos visuais ligados à linha do relato que acabou de aparecer. */
 	private void aplicarLinha(String linha, Batalha b) {
 		Matcher ev = EVOLUIU.matcher(linha);
 		if (ev.matches()) {
 			if (nomesJogador.contains(ev.group(2))) {
 				formaJogador = b.getJogador();
-				atualizarSprites();
-				atualizarGolpes();
-				for (BotaoMega bm : botoesMega) {
-					bm.setVisible(false);
-				}
 			} else {
 				formaOponente = b.getOponente();
-				atualizarSprites();
 			}
+			atualizarSprites();
 			atualizarFundo();
+			return;
+		}
+		if (MUDOU_STATUS.matcher(linha).matches()) {
+			stJog = b.getEstadoJogador().getStatus();
+			stOpo = b.getEstadoOponente().getStatus();
+		}
+		Matcher gan = GANHOU.matcher(linha);
+		if (gan.matches()) {
+			int cura = Integer.parseInt(gan.group(2));
+			if (nomesJogador.contains(gan.group(1))) {
+				hpJogAlvo = Math.min(hpJogMax, hpJogAlvo + cura);
+			} else {
+				hpOpoAlvo = Math.min(hpOpoMax, hpOpoAlvo + cura);
+			}
 			return;
 		}
 		Matcher m = PERDEU.matcher(linha);
@@ -322,10 +393,14 @@ public class TelaBatalha extends JDialog {
 		}
 	}
 
-	/** Acabou de mostrar o turno: ou libera os golpes, ou troca o Pokémon que caiu. */
+	/** Acabou de mostrar o turno: ou volta ao menu, ou entra o próximo Pokémon de quem caiu. */
 	private void fimDoTurno(Batalha b) {
+		if (b.getHpJogador() > 0) {
+			hpMeu[iJog] = b.getHpJogador();
+		}
 		if (!b.terminou()) {
-			habilitar(true);
+			modo = Modo.MENU;
+			mensagem = "O que " + formaJogador.getNome() + " fará?";
 			return;
 		}
 		boolean jogadorCaiu = b.getHpJogador() <= 0;
@@ -333,12 +408,27 @@ public class TelaBatalha extends JDialog {
 		final int hpSobrevivente = jogadorCaiu ? b.getHpOponente() : b.getHpJogador();
 		fila.add(new Evento((jogadorCaiu ? formaJogador : formaOponente).getNome() + " desmaiou!", null, 1500));
 		if (jogadorCaiu) {
-			iJog++;
-			if (iJog >= meuTime.size()) {
+			caiu[iJog] = true;
+			List<Integer> vivos = new ArrayList<>();
+			for (int i = 0; i < meuTime.size(); i++) {
+				if (!caiu[i]) {
+					vivos.add(i);
+				}
+			}
+			if (vivos.isEmpty()) {
 				terminar("Todo o seu time desmaiou... Você perdeu a luta!");
+			} else if (vivos.size() == 1) {
+				final int k = vivos.get(0);
+				final Pokemon proximo = meuTime.get(k);
+				fila.add(new Evento("Vai, " + proximo.getNome() + "!", () -> {
+					iJog = k;
+					novaBatalha(proximo, hpMeu[k], sobrevivente, hpSobrevivente);
+					mensagem = "O que " + formaJogador.getNome() + " fará?";
+				}, 900));
 			} else {
-				final Pokemon proximo = meuTime.get(iJog);
-				fila.add(new Evento("Vai, " + proximo.getNome() + "!", () -> novaBatalha(proximo, 0, sobrevivente, hpSobrevivente), 900));
+				pendOpo = sobrevivente;
+				pendHpOpo = hpSobrevivente;
+				fila.add(new Evento("Escolha o próximo Pokémon do seu time.", () -> modo = Modo.TIME_FORCADA, 0));
 			}
 		} else {
 			iOpo++;
@@ -347,17 +437,16 @@ public class TelaBatalha extends JDialog {
 			} else {
 				final Pokemon proximo = timeOponente.get(iOpo);
 				fila.add(new Evento("O adversário enviou " + proximo.getNome() + "!",
-						() -> novaBatalha(sobrevivente, hpSobrevivente, proximo, 0), 900));
+						() -> {
+							novaBatalha(sobrevivente, hpSobrevivente, proximo, 0);
+							mensagem = "O que " + formaJogador.getNome() + " fará?";
+						}, 900));
 			}
 		}
 	}
 
 	private void terminar(String texto) {
-		fila.add(new Evento(texto, () -> {
-			fim = true;
-			botaoFechar.setVisible(true);
-			atualizarMegas(); // mostra o botão Fechar
-		}, 100));
+		fila.add(new Evento(texto, () -> fim = true, 100));
 	}
 
 	// =====================================================================
@@ -386,100 +475,203 @@ public class TelaBatalha extends JDialog {
 			Evento e = fila.poll();
 			if (e.texto != null) {
 				mensagem = e.texto;
-				caixaMensagem.repaint();
 			}
 			if (e.acao != null) {
 				e.acao.run();
 			}
 			proximoEm = agora + e.ms;
 		}
-		arena.repaint();
+
+		// repinta só o que mudou
+		int bob = (int) Math.round(Math.sin(fase) * 3);
+		int ua = java.util.Objects.hash(modo, liberado(), mensagem, megaEscolhida, iJog, iOpo, fim, Math.round(hpJogMostrado),
+				Math.round(hpOpoMostrado), formaJogador, caiu[iJog], turnoTotal, stJog, stOpo);
+		if (ua != assinaturaUI) {
+			assinaturaUI = ua;
+			baixo.repaint();
+			lateral.repaint();
+			topo.repaint();
+		}
+		int sa = java.util.Objects.hash(bob, Math.round(hpJogMostrado), Math.round(hpOpoMostrado), tremerJog > 0, tremerOpo > 0,
+				Math.round(alfaJog * 20), Math.round(alfaOpo * 20), popups.size(), popups.isEmpty() ? 0 : Math.round(popups.get(0)[1] * 30),
+				formaJogador, formaOponente, iJog, iOpo, stJog, stOpo);
+		if (sa != assinaturaArena) {
+			assinaturaArena = sa;
+			arena.repaint();
+		}
 	}
 
 	// =====================================================================
-	// Caches (sprites e fundo): desenhados uma vez, só copiados a cada quadro
+	// Sprites e cenário (desenhados uma vez, só copiados a cada quadro)
 	// =====================================================================
 	private void atualizarSprites() {
-		spriteJog = preparar(formaJogador.getNumeroDex(), 310, true);
-		spriteOpo = preparar(formaOponente.getNumeroDex(), 250, false);
+		spriteJog = pixelPronto(formaJogador, true, 220);
+		spriteOpo = pixelPronto(formaOponente, false, 170);
 	}
 
-	private static BufferedImage preparar(int dex, int lado, boolean espelhar) {
-		BufferedImage img = Imagens.grande(dex);
-		if (img == null) {
-			return null;
+	/** Recorta a borda transparente do sprite (os sprites 96x96 têm tamanhos diferentes dentro da imagem). */
+	private static BufferedImage recortar(BufferedImage img) {
+		int minX = img.getWidth(), minY = img.getHeight(), maxX = -1, maxY = -1;
+		for (int y = 0; y < img.getHeight(); y++) {
+			for (int x = 0; x < img.getWidth(); x++) {
+				if ((img.getRGB(x, y) >>> 24) > 20) {
+					minX = Math.min(minX, x);
+					minY = Math.min(minY, y);
+					maxX = Math.max(maxX, x);
+					maxY = Math.max(maxY, y);
+				}
+			}
 		}
-		double escala = Math.min((double) lado / img.getWidth(), (double) lado / img.getHeight());
-		int w = Math.max(1, (int) (img.getWidth() * escala)), h = Math.max(1, (int) (img.getHeight() * escala));
+		return maxX < 0 ? img : img.getSubimage(minX, minY, maxX - minX + 1, maxY - minY + 1);
+	}
+
+	/** Sprite pixelado ampliado com escala inteira (pixel nítido). De costas, se o arquivo faltar, espelha o da frente. */
+	private static BufferedImage pixelPronto(Pokemon p, boolean costas, int alvo) {
+		int dex = p.getNumeroDex();
+		BufferedImage img = costas ? Imagens.pixelCostas(dex) : Imagens.pixel(dex);
+		boolean espelhar = false;
+		if (img == null && costas) {
+			img = Imagens.pixel(dex);
+			espelhar = true;
+		}
+		if (img == null) { // sem sprite pixel: usa a arte grande
+			BufferedImage arte = Imagens.grande(dex);
+			if (arte == null) {
+				return null;
+			}
+			double e = Math.min((double) alvo / arte.getWidth(), (double) alvo / arte.getHeight());
+			BufferedImage s = new BufferedImage(Math.max(1, (int) (arte.getWidth() * e)), Math.max(1, (int) (arte.getHeight() * e)),
+					BufferedImage.TYPE_INT_ARGB);
+			Graphics2D g = s.createGraphics();
+			g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+			g.drawImage(arte, 0, 0, s.getWidth(), s.getHeight(), null);
+			g.dispose();
+			return s;
+		}
+		BufferedImage rec = recortar(img);
+		int esc = Math.max(1, alvo / Math.max(rec.getWidth(), rec.getHeight()));
+		int w = rec.getWidth() * esc, h = rec.getHeight() * esc;
 		BufferedImage saida = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g = saida.createGraphics();
-		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-		g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+		g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
 		if (espelhar) {
-			g.drawImage(img, w, 0, -w, h, null);
+			g.drawImage(rec, w, 0, -w, h, null);
 		} else {
-			g.drawImage(img, 0, 0, w, h, null);
+			g.drawImage(rec, 0, 0, w, h, null);
 		}
 		g.dispose();
 		return saida;
 	}
 
+	/** Ícone pequeno (do time na lateral). */
+	private BufferedImage miniatura(Pokemon p, int lado) {
+		int chave = p.getNumeroDex() * 1000 + lado;
+		BufferedImage m = miniaturas.get(chave);
+		if (m == null) {
+			BufferedImage img = Imagens.pixel(p.getNumeroDex());
+			if (img == null) {
+				img = Imagens.miniatura(p.getNumeroDex());
+			}
+			if (img != null) {
+				BufferedImage rec = recortar(img);
+				double e = (double) lado / Math.max(rec.getWidth(), rec.getHeight());
+				e = e >= 1 ? Math.floor(e) : e;
+				int w = Math.max(1, (int) Math.round(rec.getWidth() * e)), h = Math.max(1, (int) Math.round(rec.getHeight() * e));
+				m = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+				Graphics2D g = m.createGraphics();
+				g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
+						e >= 1 ? RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR : RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+				g.drawImage(rec, 0, 0, w, h, null);
+				g.dispose();
+			}
+			if (m != null) {
+				miniaturas.put(chave, m);
+			}
+		}
+		return m;
+	}
+
+	/** Cenário: céu, colinas, campo de grama e as duas plataformas (a cor do campo muda um pouco com o tipo). */
 	private void atualizarFundo() {
-		Color co = corDoTipo(formaOponente.getTipo1()), cj = corDoTipo(formaJogador.getTipo1());
-		BufferedImage f = new BufferedImage(LARGURA, ALTURA_ARENA, BufferedImage.TYPE_INT_RGB);
+		BufferedImage f = new BufferedImage(LARG_ARENA, ALT_ARENA, BufferedImage.TYPE_INT_RGB);
 		Graphics2D g = f.createGraphics();
 		qualidade(g);
-		g.setPaint(new GradientPaint(0, 0, mix(FUNDO_A, co, 0.28f), 0, ALTURA_ARENA, mix(FUNDO_A, cj, 0.22f)));
-		g.fillRect(0, 0, LARGURA, ALTURA_ARENA);
-
-		// listras diagonais bem suaves
-		g.setColor(new Color(255, 255, 255, 9));
-		for (int x = -ALTURA_ARENA; x < LARGURA; x += 70) {
-			g.fillPolygon(new int[] { x, x + 28, x + 28 + ALTURA_ARENA, x + ALTURA_ARENA }, new int[] { ALTURA_ARENA, ALTURA_ARENA, 0, 0 }, 4);
+		// céu
+		g.setPaint(new GradientPaint(0, 0, new Color(0x7F, 0xC8, 0xF8), 0, 190, new Color(0xE3, 0xF5, 0xFF)));
+		g.fillRect(0, 0, LARG_ARENA, 200);
+		g.setColor(new Color(255, 255, 255, 190));
+		g.fill(new Ellipse2D.Float(90, 40, 120, 34));
+		g.fill(new Ellipse2D.Float(130, 28, 80, 34));
+		g.fill(new Ellipse2D.Float(430, 20, 140, 36));
+		g.fill(new Ellipse2D.Float(480, 8, 80, 34));
+		// colinas ao fundo
+		g.setColor(new Color(0x6F, 0xB8, 0x6A));
+		g.fill(new Ellipse2D.Float(-80, 130, 420, 160));
+		g.setColor(new Color(0x5F, 0xA9, 0x5E));
+		g.fill(new Ellipse2D.Float(300, 120, 520, 180));
+		// campo
+		Color ca = mix(new Color(0x86, 0xD0, 0x68), corDoTipo(formaOponente.getTipo1()), 0.10f);
+		Color cb = mix(new Color(0x4F, 0x9E, 0x47), corDoTipo(formaJogador.getTipo1()), 0.10f);
+		g.setPaint(new GradientPaint(0, 170, ca, 0, ALT_ARENA, cb));
+		g.fill(new Ellipse2D.Float(-200, 170, LARG_ARENA + 400, 520));
+		g.setColor(new Color(255, 255, 255, 14));
+		for (int y = 200; y < ALT_ARENA; y += 34) {
+			g.fillRect(0, y, LARG_ARENA, 16);
 		}
-		// brilhos atrás de cada Pokémon
-		brilho(g, 690, 190, 280, co, 120);
-		brilho(g, 250, 370, 330, cj, 110);
 		// plataformas
-		plataforma(g, 690, 250, 330, 64, co);
-		plataforma(g, 250, 438, 400, 74, cj);
-		// vinheta
-		g.setPaint(new GradientPaint(0, 0, new Color(0, 0, 0, 90), 0, 70, new Color(0, 0, 0, 0)));
-		g.fillRect(0, 0, LARGURA, 70);
-		g.setPaint(new GradientPaint(0, ALTURA_ARENA - 60, new Color(0, 0, 0, 0), 0, ALTURA_ARENA, new Color(0, 0, 0, 110)));
-		g.fillRect(0, ALTURA_ARENA - 60, LARGURA, 60);
+		plataforma(g, 470, 212, 240, 56);
+		plataforma(g, 190, 352, 340, 76);
 		g.dispose();
 		fundo = f;
 	}
 
-	private static void brilho(Graphics2D g, int cx, int cy, int raio, Color cor, int alfa) {
-		g.setPaint(new RadialGradientPaint(cx, cy, raio, new float[] { 0f, 1f },
-				new Color[] { comAlpha(cor, alfa), comAlpha(cor, 0) }));
-		g.fill(new Ellipse2D.Float(cx - raio, cy - raio, raio * 2, raio * 2));
+	private static void plataforma(Graphics2D g, int cx, int cy, int larg, int alt) {
+		g.setColor(new Color(0, 0, 0, 55));
+		g.fill(new Ellipse2D.Float(cx - larg / 2f - 4, cy - alt / 2f + 10, larg + 8, alt));
+		g.setColor(new Color(0x7C, 0xA8, 0x4A));
+		g.fill(new Ellipse2D.Float(cx - larg / 2f, cy - alt / 2f + 6, larg, alt));
+		g.setPaint(new GradientPaint(0, cy - alt / 2f, new Color(0xCF, 0xEB, 0x9A), 0, cy + alt / 2f, new Color(0xA5, 0xD0, 0x6E)));
+		g.fill(new Ellipse2D.Float(cx - larg / 2f, cy - alt / 2f, larg, alt));
+		g.setColor(new Color(255, 255, 255, 90));
+		g.setStroke(new BasicStroke(2f));
+		g.draw(new Ellipse2D.Float(cx - larg / 2f + 3, cy - alt / 2f + 3, larg - 6, alt - 8));
 	}
 
-	private static void plataforma(Graphics2D g, int cx, int cy, int larg, int alt, Color cor) {
-		g.setColor(new Color(0, 0, 0, 80));
-		g.fill(new Ellipse2D.Float(cx - larg / 2f - 6, cy - alt / 2f + 10, larg + 12, alt));
-		g.setPaint(new GradientPaint(0, cy - alt / 2f, mix(cor, Color.WHITE, 0.25f), 0, cy + alt / 2f, escurecer(cor, 0.35f)));
-		g.fill(new Ellipse2D.Float(cx - larg / 2f, cy - alt / 2f, larg, alt));
-		g.setColor(comAlpha(Color.WHITE, 70));
-		g.setStroke(new BasicStroke(2f));
-		g.draw(new Ellipse2D.Float(cx - larg / 2f + 1, cy - alt / 2f + 1, larg - 2, alt - 2));
-		g.setColor(new Color(0, 0, 0, 60));
-		g.fill(new Ellipse2D.Float(cx - larg / 2f + 26, cy - alt / 2f + 9, larg - 52, alt - 18));
+	// =====================================================================
+	// Faixa do topo
+	// =====================================================================
+	private class Topo extends JComponent {
+		private static final long serialVersionUID = 1L;
+
+		@Override
+		protected void paintComponent(Graphics g0) {
+			Graphics2D g = (Graphics2D) g0.create();
+			qualidade(g);
+			int w = getWidth(), h = getHeight();
+			g.setPaint(new GradientPaint(0, 0, new Color(0x3A, 0x5B, 0xD9), 0, h, new Color(0x2A, 0x3F, 0x9E)));
+			g.fillRect(0, 0, w, h);
+			g.setColor(new Color(255, 255, 255, 40));
+			g.fillRect(0, h - 3, w, 3);
+			desenharPokebola(g, 36, h / 2f, 13, new Color(0xE8, 0x55, 0x3B), 255);
+			g.setFont(fonte(Font.BOLD, 20f));
+			g.setColor(Color.WHITE);
+			g.drawString("BATALHA POKÉMON", 62, h / 2 + 7);
+			g.setFont(fonte(Font.BOLD, 14f));
+			String t = "Turno " + turnoTotal + "   ·   Nv. " + Atributos.NIVEL;
+			g.setColor(new Color(0xD8, 0xE4, 0xFF));
+			g.drawString(t, w - MARGEM - 8 - g.getFontMetrics().stringWidth(t), h / 2 + 5);
+			g.dispose();
+		}
 	}
 
 	// =====================================================================
 	// Arena
 	// =====================================================================
-	private class Arena extends JPanel {
+	private class Arena extends JComponent {
 		private static final long serialVersionUID = 1L;
 
 		Arena() {
-			setOpaque(true);
-			setBackground(FUNDO_A);
-			setPreferredSize(new Dimension(LARGURA, ALTURA_ARENA));
+			setPreferredSize(new Dimension(LARG_ARENA, ALT_ARENA));
 		}
 
 		@Override
@@ -489,17 +681,17 @@ public class TelaBatalha extends JDialog {
 				g.drawImage(fundo, 0, 0, null);
 			}
 			qualidade(g);
+			int bob = (int) Math.round(Math.sin(fase) * 3);
 
-			// adversário (fundo, à direita) e seu Pokémon (frente, à esquerda)
-			sprite(g, spriteOpo, 690, 244 + (int) (Math.sin(fase) * 5), tremerOpo, alfaOpo);
-			sprite(g, spriteJog, 250, 430 + (int) (Math.sin(fase + 2) * 5), tremerJog, alfaJog);
+			sprite(g, spriteOpo, 470, 214 + bob, tremerOpo, alfaOpo);
+			sprite(g, spriteJog, 190, 356 - bob, tremerJog, alfaJog);
 
-			caixaHp(g, formaOponente, hpOpoMostrado, hpOpoMax, 22, 20, 340, timeOponente.size() - iOpo, timeOponente.size(), false);
-			caixaHp(g, formaJogador, hpJogMostrado, hpJogMax, LARGURA - 362, 330, 340, meuTime.size() - iJog, meuTime.size(), true);
+			caixaHp(g, formaOponente, hpOpoMostrado, hpOpoMax, 18, 20, 300, 90, false, timeOponente.size() - iOpo, timeOponente.size(), stOpo);
+			caixaHp(g, formaJogador, hpJogMostrado, hpJogMax, LARG_ARENA - 318, 284, 300, 98, true, vivosMeus(), meuTime.size(), stJog);
 
 			for (double[] p : popups) {
 				boolean doJog = p[0] == 1;
-				int x = doJog ? 250 : 690, y = (doJog ? 250 : 80) - (int) (p[1] * 50);
+				int x = doJog ? 190 : 470, y = (doJog ? 210 : 100) - (int) (p[1] * 50);
 				g.setFont(fonte(Font.BOLD, 34f));
 				String t = "-" + (int) p[2];
 				int tx = x - g.getFontMetrics().stringWidth(t) / 2;
@@ -526,76 +718,304 @@ public class TelaBatalha extends JDialog {
 				g.drawImage(img, x, y, null);
 			}
 		}
+	}
 
-		private void caixaHp(Graphics2D g, Pokemon p, double hp, int max, int x, int y, int larg, int vivos, int total,
-				boolean mostrarNumeros) {
-			int alt = 92;
-			g.setColor(new Color(8, 10, 22, 200));
-			g.fill(new RoundRectangle2D.Float(x, y, larg, alt, 22, 22));
-			g.setPaint(new GradientPaint(x, y, comAlpha(Color.WHITE, 38), x, y + alt, comAlpha(Color.WHITE, 6)));
-			g.setStroke(new BasicStroke(1.4f));
-			g.draw(new RoundRectangle2D.Float(x + 0.7f, y + 0.7f, larg - 1.4f, alt - 1.4f, 22, 22));
+	/** Etiqueta colorida com a sigla da condição (QMD, PAR...). */
+	private static void etiquetaStatus(Graphics2D g, Status st, int x, int y, int w, int h, float fonte) {
+		Color c;
+		switch (st) {
+		case QUEIMADO:
+			c = new Color(0xE8, 0x6A, 0x2B);
+			break;
+		case PARALISADO:
+			c = new Color(0xD9, 0xAE, 0x1F);
+			break;
+		case ENVENENADO:
+			c = new Color(0x9B, 0x4F, 0xC4);
+			break;
+		case DORMINDO:
+			c = new Color(0x7A, 0x84, 0x9E);
+			break;
+		default:
+			c = new Color(0x3F, 0xB5, 0xD6);
+		}
+		g.setColor(c);
+		g.fill(new RoundRectangle2D.Float(x, y, w, h, h, h));
+		g.setFont(fonte(Font.BOLD, fonte));
+		g.setColor(Color.WHITE);
+		FontMetrics fm = g.getFontMetrics();
+		g.drawString(st.getSigla(), x + (w - fm.stringWidth(st.getSigla())) / 2, y + (h + fm.getAscent() - fm.getDescent()) / 2);
+	}
 
-			g.setFont(fonte(Font.BOLD, 20f));
-			g.setColor(TEXTO);
-			g.drawString(p.getNome(), x + 18, y + 30);
-			g.setFont(fonte(Font.PLAIN, 13f));
-			g.setColor(SUAVE);
-			String nivel = "Nv. " + Atributos.NIVEL;
-			g.drawString(nivel, x + larg - 18 - g.getFontMetrics().stringWidth(nivel), y + 29);
-
-			double frac = Math.max(0, Math.min(1, hp / max));
-			int bx = x + 18, by = y + 42, bw = larg - 36, bh = 14;
-			g.setColor(new Color(255, 255, 255, 28));
-			g.fill(new RoundRectangle2D.Float(bx, by, bw, bh, bh, bh));
-			Color cor = frac > 0.5 ? new Color(0x3F, 0xD2, 0x7A) : frac > 0.2 ? new Color(0xF4, 0xC4, 0x3B) : new Color(0xEF, 0x4B, 0x4B);
-			if (frac > 0) {
-				g.setPaint(new GradientPaint(0, by, mix(cor, Color.WHITE, 0.3f), 0, by + bh, escurecer(cor, 0.78f)));
-				g.fill(new RoundRectangle2D.Float(bx, by, (float) Math.max(bh, bw * frac), bh, bh, bh));
+	private int vivosMeus() {
+		int n = 0;
+		for (boolean c : caiu) {
+			if (!c) {
+				n++;
 			}
-			g.setFont(fonte(Font.PLAIN, 12f));
-			g.setColor(SUAVE);
-			g.drawString(mostrarNumeros ? Math.round(hp) + " / " + max : Math.round(frac * 100) + "%", bx, by + bh + 16);
+		}
+		return n;
+	}
 
-			// bolinhas do time (quantos ainda podem lutar)
-			for (int i = 0; i < total; i++) {
-				int px = x + larg - 18 - 12 - (total - 1 - i) * 17;
-				g.setColor(i < total - vivos ? new Color(255, 255, 255, 40) : new Color(0xFF, 0xD1, 0x66));
-				g.fill(new Ellipse2D.Float(px, by + bh + 6, 12, 12));
-			}
+	/** Caixa de HP no estilo dos jogos: nome, nível, barra e (no seu Pokémon) os números. */
+	private static void caixaHp(Graphics2D g, Pokemon p, double hp, int max, int x, int y, int larg, int alt, boolean numeros,
+			int vivos, int total, Status status) {
+		g.setColor(new Color(0, 0, 0, 50));
+		g.fill(new RoundRectangle2D.Float(x + 3, y + 4, larg, alt, 18, 18));
+		g.setColor(CAIXA_CLARA);
+		g.fill(new RoundRectangle2D.Float(x, y, larg, alt, 18, 18));
+		g.setColor(MOLDURA);
+		g.setStroke(new BasicStroke(3f));
+		g.draw(new RoundRectangle2D.Float(x + 1.5f, y + 1.5f, larg - 3, alt - 3, 18, 18));
+
+		g.setFont(fonte(Font.BOLD, 19f));
+		g.setColor(TINTA);
+		g.drawString(p.getNome(), x + 16, y + 28);
+		g.setFont(fonte(Font.BOLD, 14f));
+		String nivel = "Nv" + Atributos.NIVEL;
+		g.drawString(nivel, x + larg - 16 - g.getFontMetrics().stringWidth(nivel), y + 27);
+		if (status != Status.NENHUM) {
+			etiquetaStatus(g, status, x + larg - 16 - g.getFontMetrics().stringWidth(nivel) - 44, y + 12, 38, 18, 12f);
+		}
+
+		// rótulo HP + barra
+		double frac = Math.max(0, Math.min(1, hp / max));
+		int by = y + 40, bh = 14, bx = x + 54, bw = larg - 54 - 16;
+		g.setColor(new Color(0xE2, 0x5A, 0x3B));
+		g.fill(new RoundRectangle2D.Float(x + 16, by - 1, 32, bh + 2, 8, 8));
+		g.setFont(fonte(Font.BOLD, 12f));
+		g.setColor(Color.WHITE);
+		g.drawString("HP", x + 24, by + 11);
+		g.setColor(new Color(0x39, 0x42, 0x5C));
+		g.fill(new RoundRectangle2D.Float(bx - 2, by - 2, bw + 4, bh + 4, bh, bh));
+		g.setColor(new Color(0x23, 0x2A, 0x40));
+		g.fill(new RoundRectangle2D.Float(bx, by, bw, bh, bh, bh));
+		Color cor = frac > 0.5 ? new Color(0x3F, 0xD2, 0x7A) : frac > 0.2 ? new Color(0xF4, 0xC4, 0x3B) : new Color(0xEF, 0x4B, 0x4B);
+		if (frac > 0) {
+			g.setPaint(new GradientPaint(0, by, mix(cor, Color.WHITE, 0.35f), 0, by + bh, escurecer(cor, 0.85f)));
+			g.fill(new RoundRectangle2D.Float(bx, by, (float) Math.max(bh, bw * frac), bh, bh, bh));
+		}
+		if (numeros) {
+			g.setFont(fonte(Font.BOLD, 15f));
+			g.setColor(TINTA);
+			String t = Math.round(hp) + " / " + max;
+			g.drawString(t, x + larg - 16 - g.getFontMetrics().stringWidth(t), y + 84);
+		}
+		// bolinhas do time
+		for (int i = 0; i < total; i++) {
+			g.setColor(i < vivos ? new Color(0xE8, 0x55, 0x3B) : new Color(0xB8, 0xB4, 0xA4));
+			g.fill(new Ellipse2D.Float(x + 18 + i * 18, y + alt - 28, 13, 13));
+			g.setColor(new Color(0x26, 0x2F, 0x4A, 160));
+			g.setStroke(new BasicStroke(1.5f));
+			g.draw(new Ellipse2D.Float(x + 18 + i * 18, y + alt - 28, 13, 13));
 		}
 	}
 
 	// =====================================================================
-	// Caixa de mensagem (tamanho fixo; o texto quebra em linhas dentro dela)
+	// Parte de baixo: caixa de texto + menu
 	// =====================================================================
-	private class CaixaMensagem extends JComponent {
+	private class PainelBaixo extends JComponent {
 		private static final long serialVersionUID = 1L;
+		private static final int LARG_TEXTO = 404;
+		private final Rectangle[] botoes = new Rectangle[4];
+		private final Rectangle voltar = new Rectangle();
+		private int hover = -1;
+		private boolean hoverVoltar = false;
+
+		PainelBaixo() {
+			setPreferredSize(new Dimension(LARG_ARENA, ALT_BAIXO));
+			for (int i = 0; i < 4; i++) {
+				int col = i % 2, lin = i / 2;
+				botoes[i] = new Rectangle(LARG_TEXTO + 14 + col * 124, 6 + lin * 80, 118, 72);
+			}
+			addMouseListener(new MouseAdapter() {
+				@Override
+				public void mousePressed(MouseEvent e) {
+					if (voltar.contains(e.getPoint()) && podeVoltar()) {
+						modo = Modo.MENU;
+						return;
+					}
+					for (int i = 0; i < 4; i++) {
+						if (botoes[i].contains(e.getPoint())) {
+							acionar(i);
+						}
+					}
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					hover = -1;
+					hoverVoltar = false;
+					repaint();
+				}
+			});
+			addMouseMotionListener(new MouseAdapter() {
+				@Override
+				public void mouseMoved(MouseEvent e) {
+					int h = -1;
+					for (int i = 0; i < 4; i++) {
+						if (botoes[i].contains(e.getPoint())) {
+							h = i;
+						}
+					}
+					boolean hv = podeVoltar() && voltar.contains(e.getPoint());
+					if (h != hover || hv != hoverVoltar) {
+						hover = h;
+						hoverVoltar = hv;
+						setCursor(Cursor.getPredefinedCursor(h >= 0 || hv ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
+						repaint();
+					}
+				}
+			});
+		}
+
+		private boolean podeVoltar() {
+			return liberado() && (modo == Modo.GOLPES || modo == Modo.TIME_ESCOLHA);
+		}
+
+		/** Aciona a opção n (0 a 3) do menu atual. */
+		void acionar(int n) {
+			if (fim) {
+				if (n == 0 || n == 3) {
+					dispose();
+				}
+				return;
+			}
+			if (!liberado()) {
+				return;
+			}
+			if (modo == Modo.MENU) {
+				switch (n) {
+				case 0:
+					modo = Modo.GOLPES;
+					break;
+				case 1:
+					if (vivosMeus() > 1) {
+						modo = Modo.TIME_ESCOLHA;
+					}
+					break;
+				case 2:
+					alternarMega();
+					break;
+				default:
+					fugir();
+				}
+			} else if (modo == Modo.GOLPES) {
+				List<Golpe> golpes = golpesAtuais();
+				if (n < golpes.size() && usavel(golpes.get(n))) {
+					jogar(golpes.get(n));
+				}
+			}
+		}
 
 		@Override
 		protected void paintComponent(Graphics g0) {
 			Graphics2D g = (Graphics2D) g0.create();
 			qualidade(g);
 			int w = getWidth(), h = getHeight();
-			g.setColor(new Color(0x14, 0x19, 0x33));
-			g.fill(new RoundRectangle2D.Float(0, 0, w - 1, h - 1, 22, 22));
-			g.setColor(BORDA);
-			g.setStroke(new BasicStroke(1.6f));
-			g.draw(new RoundRectangle2D.Float(0.8f, 0.8f, w - 2.6f, h - 2.6f, 22, 22));
-			g.setColor(new Color(0xFF, 0xB8, 0x3D));
-			g.fill(new RoundRectangle2D.Float(10, 16, 4, h - 32, 4, 4));
+			g.setColor(new Color(0x12, 0x18, 0x30));
+			g.fillRect(0, 0, w, h);
 
-			g.setFont(fonte(Font.BOLD, 19f));
-			g.setColor(TEXTO);
+			// caixa de texto
+			g.setColor(new Color(0x1C, 0x25, 0x4A));
+			g.fill(new RoundRectangle2D.Float(0, 8, LARG_TEXTO, h - 16, 20, 20));
+			g.setColor(new Color(0xE8, 0xEE, 0xFF));
+			g.setStroke(new BasicStroke(3f));
+			g.draw(new RoundRectangle2D.Float(1.5f, 9.5f, LARG_TEXTO - 3, h - 19, 20, 20));
+			g.setFont(fonte(Font.BOLD, 20f));
+			g.setColor(Color.WHITE);
 			FontMetrics fm = g.getFontMetrics();
-			List<String> linhas = quebrar(mensagem, fm, w - 56);
+			String texto = textoAtual();
+			List<String> linhas = quebrar(texto, fm, LARG_TEXTO - 48);
 			int total = linhas.size() * (fm.getHeight() + 2);
-			int y = (h - total) / 2 + fm.getAscent();
+			int y = 8 + (h - 16 - total) / 2 + fm.getAscent() - (podeVoltar() ? 8 : 0);
 			for (String l : linhas) {
-				g.drawString(l, 28, y);
+				g.drawString(l, 24, y);
 				y += fm.getHeight() + 2;
 			}
+			// botão voltar
+			if (podeVoltar()) {
+				voltar.setBounds(20, h - 46, 110, 26);
+				g.setColor(hoverVoltar ? new Color(0x4A, 0x5C, 0x9A) : new Color(0x33, 0x40, 0x72));
+				g.fill(new RoundRectangle2D.Float(voltar.x, voltar.y, voltar.width, voltar.height, 26, 26));
+				g.setFont(fonte(Font.BOLD, 12f));
+				g.setColor(Color.WHITE);
+				g.drawString("‹ Voltar (Esc)", voltar.x + 14, voltar.y + 17);
+			} else {
+				voltar.setBounds(0, 0, 0, 0);
+			}
+
+			// menu
+			boolean lib = liberado();
+			if (fim) {
+				botaoMenu(g, botoes[0], "FECHAR", C_FUGIR, true, hover == 0, null);
+				return;
+			}
+			if (modo == Modo.GOLPES) {
+				List<Golpe> golpes = golpesAtuais();
+				for (int i = 0; i < 4; i++) {
+					Golpe gl = i < golpes.size() ? golpes.get(i) : null;
+					if (gl == null) {
+						g.setColor(new Color(255, 255, 255, 14));
+						g.fill(new RoundRectangle2D.Float(botoes[i].x, botoes[i].y, botoes[i].width, botoes[i].height, 16, 16));
+					} else {
+						boolean esforco = gl == dados.golpeEsforco();
+						String pp = esforco ? "sem PP" : "PP " + estMeu[iJog].ppDe(gl) + "/" + gl.getPp();
+						String sub = gl.isStatus() ? "Status · " + pp : gl.getTipo() + " " + gl.getPoder() + " · " + pp;
+						botaoMenu(g, botoes[i], gl.getNome().toUpperCase(), corDoTipo(gl.getTipo()), lib && usavel(gl), hover == i, sub);
+					}
+				}
+			} else {
+				boolean ativoMenu = lib && modo == Modo.MENU;
+				List<Pokemon> megas = opcoesMega();
+				botaoMenu(g, botoes[0], "LUTAR", C_LUTAR, ativoMenu, hover == 0, "golpes");
+				botaoMenu(g, botoes[1], "POKÉMON", C_POKEMON, ativoMenu && vivosMeus() > 1, hover == 1, "trocar");
+				String rotMega = megaEscolhida != null ? "✦ MEGA" : "MEGA";
+				botaoMenu(g, botoes[2], rotMega, C_MEGA, ativoMenu && !megas.isEmpty(), hover == 2,
+						megaEscolhida != null ? "armada" : megas.isEmpty() ? "indisponível" : "evoluir");
+				botaoMenu(g, botoes[3], "FUGIR", C_FUGIR, ativoMenu, hover == 3, "desistir");
+			}
 			g.dispose();
+		}
+
+		private String textoAtual() {
+			if (!liberado() || fim) {
+				return mensagem;
+			}
+			if (modo == Modo.GOLPES) {
+				return "Escolha o golpe de " + formaJogador.getNome() + ".";
+			}
+			if (modo == Modo.TIME_ESCOLHA) {
+				return "Escolha, no seu time, o Pokémon que vai entrar. Trocar gasta o turno.";
+			}
+			if (modo == Modo.TIME_FORCADA) {
+				return "Escolha o próximo Pokémon do seu time.";
+			}
+			return mensagem;
+		}
+
+		private void botaoMenu(Graphics2D g, Rectangle r, String texto, Color base, boolean ativo, boolean hover, String sub) {
+			Color c = ativo ? base : new Color(0x4B, 0x52, 0x68);
+			Color cima = mix(c, Color.WHITE, hover && ativo ? 0.30f : 0.14f);
+			g.setPaint(new GradientPaint(0, r.y, cima, 0, r.y + r.height, escurecer(c, 0.78f)));
+			g.fill(new RoundRectangle2D.Float(r.x, r.y, r.width, r.height, 16, 16));
+			g.setColor(escurecer(c, 0.5f));
+			g.setStroke(new BasicStroke(2.5f));
+			g.draw(new RoundRectangle2D.Float(r.x + 1, r.y + 1, r.width - 2, r.height - 2, 16, 16));
+			Color txt = ativo ? Color.WHITE : new Color(0xB5, 0xBB, 0xCC);
+			g.setFont(fonte(Font.BOLD, texto.length() > 9 ? 13f : 16f));
+			FontMetrics fm = g.getFontMetrics();
+			int ty = r.y + (sub == null ? r.height / 2 + fm.getAscent() / 2 - 2 : r.height / 2 - 2);
+			g.setColor(new Color(0, 0, 0, 70));
+			g.drawString(texto, r.x + (r.width - fm.stringWidth(texto)) / 2 + 1, ty + 1);
+			g.setColor(txt);
+			g.drawString(texto, r.x + (r.width - fm.stringWidth(texto)) / 2, ty);
+			if (sub != null) {
+				g.setFont(fonte(Font.PLAIN, 12f));
+				FontMetrics f2 = g.getFontMetrics();
+				g.setColor(ativo ? new Color(255, 255, 255, 210) : new Color(0xB5, 0xBB, 0xCC, 170));
+				g.drawString(sub, r.x + (r.width - f2.stringWidth(sub)) / 2, r.y + r.height / 2 + 18);
+			}
 		}
 
 		private List<String> quebrar(String texto, FontMetrics fm, int largura) {
@@ -618,38 +1038,67 @@ public class TelaBatalha extends JDialog {
 	}
 
 	// =====================================================================
-	// Botões
+	// Lateral: seu time (clicável para trocar) e o time adversário
 	// =====================================================================
-	private class BotaoGolpe extends JButton {
+	private class PainelTime extends JComponent {
 		private static final long serialVersionUID = 1L;
-		private final int posicao;
-		private transient Golpe golpe;
+		private int hover = -1;
 
-		BotaoGolpe(int posicao) {
-			this.posicao = posicao;
-			setContentAreaFilled(false);
-			setBorderPainted(false);
-			setFocusPainted(false);
-			setFocusable(false);
-			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-			addActionListener(e -> {
-				if (golpe != null) {
-					jogar(golpe);
+		/** Altura do cartão: cabe 6 no painel (compacto) ou 3 (grande). */
+		private int cartaoH() {
+			return meuTime.size() <= 3 ? 108 : 64;
+		}
+
+		private boolean compacto() {
+			return meuTime.size() > 3;
+		}
+
+		PainelTime() {
+			setPreferredSize(new Dimension(LARG_LATERAL, ALT_ARENA + ALT_BAIXO));
+			addMouseListener(new MouseAdapter() {
+				@Override
+				public void mousePressed(MouseEvent e) {
+					int k = cartaoEm(e.getPoint());
+					if (k < 0) {
+						return;
+					}
+					if (modo == Modo.TIME_ESCOLHA) {
+						trocarVoluntaria(k);
+					} else if (modo == Modo.TIME_FORCADA) {
+						trocarForcada(k);
+					}
+				}
+
+				@Override
+				public void mouseExited(MouseEvent e) {
+					hover = -1;
+					repaint();
+				}
+			});
+			addMouseMotionListener(new MouseAdapter() {
+				@Override
+				public void mouseMoved(MouseEvent e) {
+					int k = cartaoEm(e.getPoint());
+					if (k != hover) {
+						hover = k;
+						setCursor(Cursor.getPredefinedCursor(k >= 0 && selecionavel(k) ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
+						repaint();
+					}
 				}
 			});
 		}
 
-		void definir(Golpe g) {
-			this.golpe = g;
-			if (g == null) {
-				setToolTipText(null);
-			} else {
-				double m = dados.multiplicadorDeTipo(g.getTipo(), formaOponente);
-				String efeito = m == 0 ? " · não afeta o adversário" : m > 1 ? " · super efetivo" : m < 1 ? " · pouco efetivo" : "";
-				setToolTipText("Precisão " + g.getPrecisao() + "%" + (g.getPrioridade() > 0 ? " · age primeiro" : "") + efeito
-						+ "  (tecla " + (posicao + 1) + ")");
+		private int cartaoEm(Point p) {
+			for (int i = 0; i < meuTime.size(); i++) {
+				if (new Rectangle(0, 40 + i * (cartaoH() + (compacto() ? 6 : 8)), LARG_LATERAL, cartaoH()).contains(p)) {
+					return i;
+				}
 			}
-			repaint();
+			return -1;
+		}
+
+		private boolean selecionavel(int i) {
+			return liberado() && (modo == Modo.TIME_ESCOLHA || modo == Modo.TIME_FORCADA) && !caiu[i] && !(modo == Modo.TIME_ESCOLHA && i == iJog);
 		}
 
 		@Override
@@ -657,79 +1106,106 @@ public class TelaBatalha extends JDialog {
 			Graphics2D g = (Graphics2D) g0.create();
 			qualidade(g);
 			int w = getWidth(), h = getHeight();
-			if (golpe == null) {
-				g.setColor(new Color(255, 255, 255, 14));
-				g.fill(new RoundRectangle2D.Float(0, 0, w - 1, h - 1, 20, 20));
-				g.dispose();
-				return;
-			}
-			Color base = corDoTipo(golpe.getTipo());
-			boolean ativo = isEnabled();
-			Color topo = ativo ? mix(base, Color.WHITE, getModel().isRollover() ? 0.28f : 0.12f) : escurecer(base, 0.4f);
-			Color fundoBaixo = ativo ? escurecer(base, getModel().isPressed() ? 0.55f : 0.72f) : escurecer(base, 0.28f);
-			g.setPaint(new GradientPaint(0, 0, topo, 0, h, fundoBaixo));
-			g.fill(new RoundRectangle2D.Float(0, 0, w - 1, h - 1, 20, 20));
-			g.setColor(comAlpha(Color.WHITE, ativo ? 70 : 25));
-			g.setStroke(new BasicStroke(1.3f));
-			g.draw(new RoundRectangle2D.Float(0.7f, 0.7f, w - 2.4f, h - 2.4f, 20, 20));
+			g.setPaint(new GradientPaint(0, 0, new Color(0x1E, 0x2A, 0x55), 0, h, new Color(0x14, 0x1C, 0x3A)));
+			g.fill(new RoundRectangle2D.Float(0, 0, w, h, 20, 20));
+			g.setColor(new Color(0x3F, 0x55, 0xA0));
+			g.setStroke(new BasicStroke(2.5f));
+			g.draw(new RoundRectangle2D.Float(1.25f, 1.25f, w - 2.5f, h - 2.5f, 20, 20));
 
-			Color texto = ativo ? Color.WHITE : new Color(255, 255, 255, 120);
-			g.setColor(texto);
-			g.setFont(fonte(Font.BOLD, 18f));
-			g.drawString(golpe.getNome(), 16, h / 2 - 4);
-			g.setFont(fonte(Font.PLAIN, 12f));
-			g.setColor(ativo ? new Color(255, 255, 255, 215) : new Color(255, 255, 255, 100));
-			g.drawString(golpe.getTipo() + " · " + (golpe.isFisico() ? "Físico" : "Especial"), 16, h / 2 + 15);
-			// poder à direita
-			g.setFont(fonte(Font.BOLD, 20f));
-			String poder = String.valueOf(golpe.getPoder());
-			g.setColor(texto);
-			g.drawString(poder, w - 16 - g.getFontMetrics().stringWidth(poder), h / 2 - 2);
+			g.setFont(fonte(Font.BOLD, 15f));
+			g.setColor(new Color(0xB9, 0xC7, 0xF5));
+			g.drawString("SEU TIME", 18, 28);
+
+			for (int i = 0; i < meuTime.size(); i++) {
+				desenharCartao(g, i, 10, 40 + i * (cartaoH() + (compacto() ? 6 : 8)), w - 20, cartaoH());
+			}
+
+			// time adversário
+			int oy = 40 + meuTime.size() * (cartaoH() + (compacto() ? 6 : 8)) + 2;
+			g.setFont(fonte(Font.BOLD, 15f));
+			g.setColor(new Color(0xB9, 0xC7, 0xF5));
+			g.drawString("ADVERSÁRIO", 18, oy + 14);
+			int tam = timeOponente.size() > 4 ? 36 : 54, passoOp = tam + 6;
+			for (int i = 0; i < timeOponente.size(); i++) {
+				int ox = 18 + i * passoOp, oyy = oy + 22;
+				boolean visto = i <= iOpo, derrotado = i < iOpo;
+				g.setColor(new Color(255, 255, 255, visto ? 28 : 14));
+				g.fill(new RoundRectangle2D.Float(ox, oyy, tam, tam, 12, 12));
+				if (visto) {
+					BufferedImage mi = miniatura(timeOponente.get(i), tam - 10);
+					if (mi != null) {
+						if (derrotado) {
+							g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f));
+						}
+						g.drawImage(mi, ox + (tam - mi.getWidth()) / 2, oyy + (tam - mi.getHeight()) / 2, null);
+						g.setComposite(AlphaComposite.SrcOver);
+					}
+				} else {
+					g.setFont(fonte(Font.BOLD, 22f));
+					g.setColor(new Color(0xB9, 0xC7, 0xF5, 150));
+					g.drawString("?", ox + tam / 2 - 6, oyy + tam / 2 + 8);
+				}
+			}
+			g.dispose();
+		}
+
+		private void desenharCartao(Graphics2D g, int i, int x, int y, int w, int h) {
+			Pokemon p = meuTime.get(i);
+			boolean ativo = i == iJog && !caiu[i];
+			boolean sel = selecionavel(i);
+			g.setColor(caiu[i] ? new Color(0x26, 0x2A, 0x3C) : ativo ? new Color(0x3A, 0x4C, 0x96) : new Color(0x2A, 0x38, 0x70));
+			g.fill(new RoundRectangle2D.Float(x, y, w, h, 16, 16));
+			Color borda = ativo ? new Color(0xFF, 0xD8, 0x4D) : sel ? (hover == i ? Color.WHITE : new Color(0x7B, 0xE0, 0x9A)) : new Color(0x4A, 0x5E, 0xB0);
+			g.setColor(borda);
+			g.setStroke(new BasicStroke(sel || ativo ? 3f : 1.6f));
+			g.draw(new RoundRectangle2D.Float(x + 1, y + 1, w - 2, h - 2, 16, 16));
+
+			boolean comp = compacto();
+			BufferedImage mi = miniatura(p, comp ? 46 : 72);
+			if (mi != null) {
+				if (caiu[i]) {
+					g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f));
+				}
+				int lado = comp ? 46 : 72;
+				g.drawImage(mi, x + (comp ? 8 : 12) + (lado - mi.getWidth()) / 2, y + (h - mi.getHeight()) / 2, null);
+				g.setComposite(AlphaComposite.SrcOver);
+			}
+			int tx = x + (comp ? 66 : 96);
+			String estado = caiu[i] ? "DESMAIOU" : ativo ? "EM CAMPO" : sel ? "TOQUE PARA ENTRAR" : "PRONTO";
+			g.setFont(fonte(Font.BOLD, comp ? 15f : 17f));
+			g.setColor(caiu[i] ? new Color(0x8A, 0x90, 0xA8) : Color.WHITE);
+			g.drawString(p.getNome(), tx, y + (comp ? 22 : 30));
+			Status stCartao = i == iJog ? stJog : estMeu[i].getStatus();
+			if (stCartao != Status.NENHUM && !caiu[i]) {
+				int nx = tx + g.getFontMetrics().stringWidth(p.getNome()) + 8;
+				etiquetaStatus(g, stCartao, nx, y + (comp ? 9 : 16), 34, 16, 11f);
+			}
+			g.setFont(fonte(Font.PLAIN, comp ? 11f : 12f));
+			g.setColor(new Color(0xB9, 0xC7, 0xF5));
+			if (comp) {
+				String st = estado;
+				g.drawString(st, x + w - 10 - g.getFontMetrics().stringWidth(st), y + 22);
+			} else {
+				g.drawString("Nv" + Atributos.NIVEL + "  ·  " + estado, tx, y + 48);
+			}
+
+			int max = Batalha.hpMaximo(dados, p);
+			double hp = caiu[i] ? 0 : (i == iJog ? hpJogMostrado : (hpMeu[i] > 0 ? hpMeu[i] : max));
+			if (i == iJog && !caiu[i]) {
+				max = Math.max(1, hpJogMax);
+			}
+			double frac = Math.max(0, Math.min(1, hp / max));
+			int bx = tx, by = comp ? y + 34 : y + 62, bw = w - (comp ? 66 : 96) - 14, bh = comp ? 9 : 11;
+			g.setColor(new Color(0x14, 0x1A, 0x33));
+			g.fill(new RoundRectangle2D.Float(bx, by, bw, bh, bh, bh));
+			Color cor = frac > 0.5 ? new Color(0x3F, 0xD2, 0x7A) : frac > 0.2 ? new Color(0xF4, 0xC4, 0x3B) : new Color(0xEF, 0x4B, 0x4B);
+			if (frac > 0) {
+				g.setColor(cor);
+				g.fill(new RoundRectangle2D.Float(bx, by, (float) Math.max(bh, bw * frac), bh, bh, bh));
+			}
 			g.setFont(fonte(Font.PLAIN, 11f));
-			g.setColor(ativo ? new Color(255, 255, 255, 190) : new Color(255, 255, 255, 90));
-			String rot = "PODER";
-			g.drawString(rot, w - 16 - g.getFontMetrics().stringWidth(rot), h / 2 + 14);
-			g.dispose();
-		}
-	}
-
-	private class BotaoMega extends JButton {
-		private static final long serialVersionUID = 1L;
-		private final transient Pokemon mega;
-
-		BotaoMega(Pokemon mega, boolean varias) {
-			super(varias ? mega.getNome() : "Mega Evoluir");
-			this.mega = mega;
-			setToolTipText("Mega Evolui antes de atacar no próximo golpe (uma vez por luta, tecla M)");
-			setFont(fonte(Font.BOLD, 14f));
-			setPreferredSize(new Dimension(varias ? 186 : 150, 42));
-			setContentAreaFilled(false);
-			setBorderPainted(false);
-			setFocusPainted(false);
-			setFocusable(false);
-			setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		}
-
-		@Override
-		protected void paintComponent(Graphics g0) {
-			Graphics2D g = (Graphics2D) g0.create();
-			qualidade(g);
-			boolean armado = megaEscolhida == mega;
-			Color base = armado ? new Color(0xFF, 0xB8, 0x3D) : PAINEL;
-			if (getModel().isRollover() && !armado && isEnabled()) {
-				base = mix(PAINEL, Color.WHITE, 0.10f);
-			}
-			g.setColor(isEnabled() ? base : escurecer(base, 0.6f));
-			g.fill(new RoundRectangle2D.Float(0, 0, getWidth() - 1, getHeight() - 1, getHeight(), getHeight()));
-			g.setColor(armado ? new Color(0xFF, 0xE0, 0x8A) : BORDA);
-			g.setStroke(new BasicStroke(1.4f));
-			g.draw(new RoundRectangle2D.Float(0.7f, 0.7f, getWidth() - 2.4f, getHeight() - 2.4f, getHeight(), getHeight()));
-			g.setFont(getFont());
-			FontMetrics fm = g.getFontMetrics();
-			String txt = (armado ? "✦ " : "") + getText();
-			g.setColor(armado ? new Color(0x2A, 0x1A, 0x00) : TEXTO);
-			g.drawString(txt, (getWidth() - fm.stringWidth(txt)) / 2f, (getHeight() - fm.getHeight()) / 2f + fm.getAscent());
-			g.dispose();
+			g.setColor(new Color(0xD8, 0xE4, 0xFF));
+			g.drawString(Math.round(hp) + " / " + max, bx, by + (comp ? 21 : 26));
 		}
 	}
 }
