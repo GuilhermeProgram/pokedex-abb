@@ -18,7 +18,7 @@ O sistema usa **duas ABBs**, ambas com o **número da Pokédex** como chave:
 Buscas (`BuscaPokemon`): número usa a ABB (`buscar`); texto procura o nome exato e depois o começo do nome ("char" acha Charmander), sem diferenciar acentos nem maiúsculas.
 
 ## Estrutura
-- `src/PokePackage`
+- `../Downloads/src/PokePackage`
   - `Pokemon`: dados de um Pokémon
   - `No` e `ArvoreBinaria`: a ABB (`inserir`, `buscar`, `buscarPorNome`, `remover`, `emOrdem`, `altura`)
   - `BuscaPokemon`: buscas por número, nome, prefixo e busca geral da interface
@@ -27,7 +27,7 @@ Buscas (`BuscaPokemon`): número usa a ABB (`buscar`); texto procura o nome exat
   - `PokemonViewer`: interface da Pokédex (busca, filtro por região, descoberta de Pokémon, **PC** e **Batalhar**)
   - `JanelaPC`: o PC (caixas com sprites pixelados e botão **Liberar**)
   - Batalha (extra): `Batalha`, `DadosBatalha`, `Golpe`, `Atributos`, `SeletorBatalha`, `TelaBatalha`
-  - Testes e demonstrações: `ArvoreTeste`, `TesteBuscaPokemon`, `BatalhaDemo`, `BatalhaConsole`
+  - Testes e demonstrações: `ArvoreTeste`, `TesteBuscaPokemon`, `BatalhaConsole`
 - `pokemons.csv`: 1025 Pokémon (separador `;`, UTF-8)
 - `dados`: dados da batalha (`atributos.csv`, `golpes.csv`, `golpes_pokemon.csv`, `vantagens.csv`, `megas.csv`)
 - `images`: criada pelo `BaixadorImagens` (artes, `mini/` e `pixel/`; não vai para o Git)
@@ -47,7 +47,7 @@ Na tela:
 ## Testes
 - `ArvoreTeste`: testa a ABB sozinha, sem a interface (inserir, buscar, remover, em ordem, altura). Também compara a altura com a ordem do CSV (1025) e com a ordem balanceada (11). Termina com "Todos os testes passaram."
 - `TesteBuscaPokemon`: testa as buscas (número, nome, prefixo, acentos). Termina com "Todos os testes de busca passaram."
-- `BatalhaDemo` e `BatalhaConsole`: testam o cálculo de dano e uma luta completa no console.
+- `BatalhaConsole`: roda uma luta completa no console (usa o cálculo de dano da batalha).
 
 ## Documentação
 - Sprint 1: definição do projeto (pasta `documents/`).
