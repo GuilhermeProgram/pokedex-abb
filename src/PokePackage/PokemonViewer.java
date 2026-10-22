@@ -2531,7 +2531,7 @@ public class PokemonViewer extends JFrame {
 
 		// Cria a ABB e insere os Pokémon carregados do CSV.
 		final ArvoreBinaria arvore = new ArvoreBinaria();
-		for (Pokemon pokemon : todos) {
+		for (Pokemon pokemon : CarregadorPokemon.ordemBalanceada(todos, Comparator.comparingInt(Pokemon::getNumeroDex))) {
 			arvore.inserir(pokemon);
 		}
 

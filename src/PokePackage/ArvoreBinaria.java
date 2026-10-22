@@ -126,4 +126,29 @@ public class ArvoreBinaria {
 
         return buscarPorNomeNo(atual.direita, nome);
     }
+
+    // PERCURSO EM ORDEM (devolve os Pokémon em ordem crescente do número da Pokédex)
+    public java.util.List<Pokemon> emOrdem() {
+        java.util.List<Pokemon> lista = new java.util.ArrayList<>();
+        emOrdem(raiz, lista);
+        return lista;
+    }
+
+    private void emOrdem(No atual, java.util.List<Pokemon> lista) {
+        if (atual == null) {
+            return;
+        }
+        emOrdem(atual.esquerda, lista);
+        lista.add(atual.pokemon);
+        emOrdem(atual.direita, lista);
+    }
+
+    // ALTURA (quantidade de níveis; árvore vazia = 0)
+    public int altura() {
+        return altura(raiz);
+    }
+
+    private int altura(No atual) {
+        return atual == null ? 0 : 1 + Math.max(altura(atual.esquerda), altura(atual.direita));
+    }
 }
