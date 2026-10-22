@@ -57,8 +57,13 @@ public class PokemonViewer extends JFrame {
 	}
 
 	public PokemonViewer(Function<String, Pokemon> buscador, Supplier<List<Pokemon>> todos) {
+		this(buscador, todos, new ArvoreBinaria());
+	}
+
+	/** O "pc" é a ABB dos Pokémon capturados: cadastrar insere nela e (em breve) liberar remove. */
+	public PokemonViewer(Function<String, Pokemon> buscador, Supplier<List<Pokemon>> todos, ArvoreBinaria pc) {
 		super("Pokédex");
-		painel = new PainelPokedex(buscador, todos);
+		painel = new PainelPokedex(buscador, todos, pc);
 		setContentPane(painel);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(1200, 760);
@@ -232,6 +237,36 @@ public class PokemonViewer extends JFrame {
 
 		static BufferedImage miniatura(int dex) {
 			return MINIATURAS.get(dex);
+		}
+
+		// sprites pixelados das caixas do PC (images/pixel/{dex}.png); guarda só os usados há pouco
+		private static final Map<Integer, BufferedImage> PIXELS = Collections
+				.synchronizedMap(new LinkedHashMap<Integer, BufferedImage>(16, 0.75f, true) {
+					private static final long serialVersionUID = 1L;
+
+					@Override
+					protected boolean removeEldestEntry(Map.Entry<Integer, BufferedImage> e) {
+						return size() > 150;
+					}
+				});
+
+		/** Sprite pixelado do Pokémon (ou null se o arquivo não existe: rode o BaixadorImagens). */
+		static BufferedImage pixel(int dex) {
+			BufferedImage c = PIXELS.get(dex);
+			if (c != null) {
+				return c == SEM ? null : c;
+			}
+			BufferedImage img = null;
+			File arquivo = new File("images/pixel/" + dex + ".png");
+			if (arquivo.exists()) {
+				try {
+					img = ImageIO.read(arquivo);
+				} catch (IOException e) {
+					img = null;
+				}
+			}
+			PIXELS.put(dex, img == null ? SEM : img);
+			return img;
 		}
 
 		private static final Map<Integer, BufferedImage> SIL_GRANDES = Collections
@@ -1008,7 +1043,7 @@ public class PokemonViewer extends JFrame {
 		private transient Pokemon atual;
 
 		// descobertas (a Pokédex começa vazia; cada Pokémon precisa ser escaneado)
-		private final Set<Integer> descobertos = new HashSet<>();
+		private final transient ArvoreBinaria pc; // ABB dos capturados (o PC)
 		private int scanDex = -1; // Pokémon sendo escaneado agora (-1 = nenhum)
 		private double scanT = 0; // progresso do scan, de 0 a 1
 		private double flash = 0; // clarão ao revelar
@@ -1038,7 +1073,8 @@ public class PokemonViewer extends JFrame {
 		private final JTextArea txtDescricao = criarAreaTexto(15f);
 		private final JTextArea txtCuriosidade = criarAreaTexto(15f);
 
-		PainelPokedex(Function<String, Pokemon> buscador, Supplier<List<Pokemon>> todos) {
+		PainelPokedex(Function<String, Pokemon> buscador, Supplier<List<Pokemon>> todos, ArvoreBinaria pc) {
+			this.pc = pc;
 			this.buscador = buscador;
 
 			List<Pokemon> origem = (todos == null) ? null : todos.get();
@@ -1170,7 +1206,7 @@ public class PokemonViewer extends JFrame {
 			jlist.setBackground(new Color(0, 0, 0, 0));
 			jlist.setFixedCellHeight(64);
 			jlist.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-			jlist.setCellRenderer(new LinhaPokemon(p -> descobertos.contains(p.getNumeroDex())));
+			jlist.setCellRenderer(new LinhaPokemon(p -> descoberto(p.getNumeroDex())));
 			jlist.addListSelectionListener(e -> {
 				if (sincronizando || e.getValueIsAdjusting()) {
 					return;
@@ -1229,6 +1265,9 @@ public class PokemonViewer extends JFrame {
 			BotaoTexto cadastrar = new BotaoTexto("Cadastrar", "Registrar um Pokémon pelo nome ou número");
 			cadastrar.addActionListener(e -> cadastrar());
 			botoes.add(cadastrar);
+			BotaoTexto abrirPc = new BotaoTexto("PC", "Ver e liberar os Pokémon capturados (ABB)");
+			abrirPc.addActionListener(e -> abrirPC());
+			botoes.add(abrirPc);
 			BotaoTexto batalhar = new BotaoTexto("Batalhar", "Modo batalha: monte um time com os Pokémon que você capturou");
 			batalhar.addActionListener(e -> batalhar());
 			botoes.add(batalhar);
@@ -1368,7 +1407,7 @@ public class PokemonViewer extends JFrame {
 			}
 			List<Pokemon> capturados = new ArrayList<>();
 			for (Pokemon p : lista) {
-				if (descobertos.contains(p.getNumeroDex()) && !dadosBatalha.golpesDe(p.getNumeroDex()).isEmpty()) {
+				if (descoberto(p.getNumeroDex()) && !dadosBatalha.golpesDe(p.getNumeroDex()).isEmpty()) {
 					capturados.add(p);
 				}
 			}
@@ -1392,7 +1431,7 @@ public class PokemonViewer extends JFrame {
 				Collections.shuffle(candidatos);
 				List<Pokemon> adversarios = new ArrayList<>();
 				for (Pokemon c : candidatos.subList(0, Math.min(meu.size(), candidatos.size()))) {
-					Pokemon achado = buscador.apply(String.valueOf(c.getNumeroDex())); // busca na ABB
+					Pokemon achado = pc.buscar(c.getNumeroDex()); // busca no PC (ABB)
 					adversarios.add(achado != null ? achado : c);
 				}
 				new TelaBatalha(dono, dadosBatalha, meu, adversarios).setVisible(true);
@@ -1400,6 +1439,28 @@ public class PokemonViewer extends JFrame {
 				ultimoQuadro = System.nanoTime();
 				relogio.start();
 			}
+		}
+
+		/** Abre o PC (a ABB dos capturados). Depois de liberar, a Pokédex é atualizada. */
+		private void abrirPC() {
+			if (scanDex >= 0) {
+				aviso("Aguarde o scan terminar.");
+				return;
+			}
+			Frame dono = (Frame) SwingUtilities.getWindowAncestor(this);
+			relogio.stop();
+			try {
+				new JanelaPC(dono, pc, this::aposMudancaNoPC).setVisible(true);
+			} finally {
+				ultimoQuadro = System.nanoTime();
+				relogio.start();
+			}
+		}
+
+		/** Chamado quando algo sai do PC: refaz a lista lateral, o contador e o painel do Pokémon atual. */
+		private void aposMudancaNoPC() {
+			filtrar();
+			exibir(atual);
 		}
 
 		/** Enter no campo: usa o buscador (a ABB, quando estiver ligada). */
@@ -1411,7 +1472,7 @@ public class PokemonViewer extends JFrame {
 			}
 			Pokemon p = buscador.apply(texto);
 			boolean porNumero = texto.matches("\\d+");
-			if (p != null && !porNumero && !descobertos.contains(p.getNumeroDex())) {
+			if (p != null && !porNumero && !descoberto(p.getNumeroDex())) {
 				aviso("Esse Pokémon ainda não foi descoberto. Use Cadastrar.");
 			} else if (p == null) {
 				aviso("Nenhum Pokémon encontrado para \"" + texto + "\".");
@@ -1424,7 +1485,7 @@ public class PokemonViewer extends JFrame {
 
 		/** Começa a animação de scan do Pokémon (ignora se já descoberto ou se há outro scan). */
 		private void iniciarScan(Pokemon p) {
-			if (p == null || scanDex >= 0 || descobertos.contains(p.getNumeroDex())) {
+			if (p == null || scanDex >= 0 || descoberto(p.getNumeroDex())) {
 				return;
 			}
 			scanDex = p.getNumeroDex();
@@ -1432,19 +1493,29 @@ public class PokemonViewer extends JFrame {
 			heroi.repaint();
 		}
 
+		/** Um Pokémon está descoberto quando está no PC (ABB dos capturados). */
+		private boolean descoberto(int dex) {
+			return pc.buscar(dex) != null;
+		}
+
+		private Pokemon naLista(int dex) {
+			for (Pokemon p : lista) {
+				if (p.getNumeroDex() == dex) {
+					return p;
+				}
+			}
+			return null;
+		}
+
 		private void concluirScan() {
 			int dex = scanDex;
 			scanDex = -1;
 			scanT = 0;
-			descobertos.add(dex);
-			flash = 1;
-			Pokemon revelado = null;
-			for (Pokemon p : lista) {
-				if (p.getNumeroDex() == dex) {
-					revelado = p;
-					break;
-				}
+			Pokemon revelado = naLista(dex);
+			if (revelado != null) {
+				pc.inserir(revelado);
 			}
+			flash = 1;
 			if (revelado != null && atual != null && atual.getNumeroDex() == dex) {
 				exibir(revelado); // anima a troca de cores já com os dados
 			} else {
@@ -1472,7 +1543,7 @@ public class PokemonViewer extends JFrame {
 				aviso("Não existe Pokémon \"" + texto.trim() + "\" nesta Pokédex.");
 			} else if (Imagens.grande(p.getNumeroDex()) == null) {
 				aviso("Sem imagem para o Nº " + p.getNumeroDex() + ". Rode o BaixadorImagens.");
-			} else if (descobertos.contains(p.getNumeroDex())) {
+			} else if (descoberto(p.getNumeroDex())) {
 				aviso(p.getNome() + " já está registrado.");
 				exibir(p);
 			} else {
@@ -1484,7 +1555,10 @@ public class PokemonViewer extends JFrame {
 
 		/** Só para testes: marca como descoberto sem animação. */
 		void descobrir(int dex) {
-			descobertos.add(dex);
+			Pokemon p = naLista(dex);
+			if (p != null) {
+				pc.inserir(p);
+			}
 		}
 
 		/** Só para testes: deixa o scan num ponto (0 a 1) sem avançar. */
@@ -1542,7 +1616,7 @@ public class PokemonViewer extends JFrame {
 			for (Pokemon p : lista) {
 				if (regiao == null || regiao.equals(p.getRegiao())) {
 					total++;
-					if (descobertos.contains(p.getNumeroDex())) {
+					if (descoberto(p.getNumeroDex())) {
 						achados++;
 					}
 				}
@@ -1571,7 +1645,7 @@ public class PokemonViewer extends JFrame {
 				if (regiao != null && !regiao.equals(p.getRegiao())) {
 					continue;
 				}
-				boolean nomeVisivel = descobertos.contains(p.getNumeroDex()); // nome de quem não foi descoberto é segredo
+				boolean nomeVisivel = descoberto(p.getNumeroDex()); // nome de quem não foi descoberto é segredo
 				if (f.isEmpty() || (nomeVisivel && normalizar(p.getNome()).contains(f))
 						|| String.valueOf(p.getNumeroDex()).startsWith(f)) {
 					modelo.addElement(p);
@@ -1600,11 +1674,11 @@ public class PokemonViewer extends JFrame {
 
 		void exibir(Pokemon p) {
 			// as barras guardam o valor atual antes de mudar, para animar a troca
-			boolean sabido = p != null && descobertos.contains(p.getNumeroDex());
+			boolean sabido = p != null && descoberto(p.getNumeroDex());
 			barraAltura.definir(!sabido || p.getAltura() == null ? 0 : Math.sqrt(p.getAltura() / maxAltura));
 			barraPeso.definir(!sabido || p.getPeso() == null ? 0 : Math.sqrt(p.getPeso() / maxPeso));
 
-			boolean conhecido = p != null && descobertos.contains(p.getNumeroDex());
+			boolean conhecido = p != null && descoberto(p.getNumeroDex());
 			Color novaA = (!conhecido) ? PADRAO_A : corDoTipo(p.getTipo1());
 			Color novaB;
 			if (!conhecido) {
@@ -1646,7 +1720,7 @@ public class PokemonViewer extends JFrame {
 
 		private void atualizarContador() {
 			atualizarSeletorRegiao();
-			String progresso = "Descobertos " + descobertos.size() + "/" + lista.size();
+			String progresso = "Descobertos " + pc.emOrdem().size() + "/" + lista.size();
 			if (atual == null) {
 				lblContador.setText(lista.isEmpty() ? " " : progresso);
 				return;
@@ -1658,7 +1732,7 @@ public class PokemonViewer extends JFrame {
 					break;
 				}
 			}
-			boolean sabido = descobertos.contains(atual.getNumeroDex());
+			boolean sabido = descoberto(atual.getNumeroDex());
 			String regiao = (!sabido || atual.getRegiao() == null) ? "" : atual.getRegiao() + "  ·  ";
 			lblContador.setText((pos > 0 ? regiao + pos + " de " + lista.size() : regiao.trim()) + "  ·  " + progresso);
 		}
@@ -1841,7 +1915,7 @@ public class PokemonViewer extends JFrame {
 				float raio = lado * 0.46f * (float) (0.9 + 0.1 * e);
 				Composite antes = g2.getComposite();
 				g2.setComposite(AlphaComposite.SrcOver.derive((float) Math.max(0.0, Math.min(1.0, e))));
-				final boolean conhecido = descobertos.contains(p.getNumeroDex());
+				final boolean conhecido = descoberto(p.getNumeroDex());
 				final boolean escaneando = scanDex == p.getNumeroDex();
 				Ambiente.desenhar(g2, conhecido ? Ambiente.tipoDoCenario(p) : null, p.getNumeroDex(), cx, cy, raio, a, b, fase);
 				g2.setComposite(antes);
@@ -2529,16 +2603,20 @@ public class PokemonViewer extends JFrame {
 			}
 		}
 
-		// Cria a ABB e insere os Pokémon carregados do CSV.
+		// Catálogo: ABB com os 1025 Pokémon do CSV (usada na busca, balanceada pela ordem de inserção).
 		final ArvoreBinaria arvore = new ArvoreBinaria();
 		for (Pokemon pokemon : CarregadorPokemon.ordemBalanceada(todos, Comparator.comparingInt(Pokemon::getNumeroDex))) {
 			arvore.inserir(pokemon);
 		}
 
+		// A View utiliza esta função para buscar por número ou nome (classe BuscaPokemon, em cima da ABB).
 		Function<String, Pokemon> buscador = texto -> BuscaPokemon.buscar(arvore, texto);
 
+		// PC: ABB que começa vazia; cada Pokémon cadastrado é inserido nela.
+		final ArvoreBinaria pc = new ArvoreBinaria();
+
 		SwingUtilities.invokeLater(() -> {
-			PokemonViewer janela = new PokemonViewer(buscador, () -> todos);
+			PokemonViewer janela = new PokemonViewer(buscador, () -> todos, pc);
 			janela.setVisible(true);
 			if (!todos.isEmpty()) {
 				janela.exibir(todos.get(0));
