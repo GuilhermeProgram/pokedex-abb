@@ -50,6 +50,22 @@ public class TesteBuscaPokemon {
             completa.inserir(p);
         }
 
+        confere("CSV e ABB possuem 1025 Pokemon",
+            todos.size() == 1025 && completa.percorrerEmOrdem().size() == 1025);
+        confere("carga balanceada possui altura 11", completa.altura() == 11);
+        confere("busca da interface encontra todos os numeros do CSV",
+            todos.stream().allMatch(p ->
+                BuscaPokemon.buscar(completa, String.valueOf(p.getNumeroDex())) == p));
+        confere("busca da interface encontra todos os nomes do CSV",
+            todos.stream().allMatch(p -> BuscaPokemon.buscar(completa, p.getNome()) == p));
+
+        completa.remover(25);
+        confere("busca consulta a ABB apos remocao, mesmo com Pikachu ainda na lista",
+            todos.stream().anyMatch(p -> p.getNumeroDex() == 25)
+                && BuscaPokemon.buscar(completa, "25") == null
+                && BuscaPokemon.buscar(completa, "Pikachu") == null);
+        completa.inserir(todos.stream().filter(p -> p.getNumeroDex() == 25).findFirst().orElseThrow());
+
         confere("número 6 acha Charizard",
             BuscaPokemon.buscarPorNumero(completa, 6).getNome().equals("Charizard"));
         confere("nome \"CHARIZARD\" (maiúsculo) acha Charizard",
@@ -73,5 +89,8 @@ public class TesteBuscaPokemon {
             BuscaPokemon.buscar(completa, "   ") == null);
 
         System.out.println(falhas == 0 ? "\nTodos os testes de busca passaram." : "\n" + falhas + " teste(s) falharam.");
+        if (falhas > 0) {
+            throw new AssertionError(falhas + " teste(s) falharam.");
+        }
     }
 }

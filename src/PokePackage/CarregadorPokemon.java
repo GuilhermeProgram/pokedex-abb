@@ -16,7 +16,7 @@ public class CarregadorPokemon {
 
 		// UTF-8 explícito para os acentos não quebrarem
 		try (BufferedReader leitor = new BufferedReader(
-				new InputStreamReader(new FileInputStream(caminho), StandardCharsets.UTF_8))) {
+				new InputStreamReader(new FileInputStream(CaminhosProjeto.resolver(caminho).toFile()), StandardCharsets.UTF_8))) {
 
 			String linha = leitor.readLine(); // pula o cabeçalho
 

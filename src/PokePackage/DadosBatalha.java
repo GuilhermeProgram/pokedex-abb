@@ -44,6 +44,7 @@ public class DadosBatalha {
 
 	/** @param pasta pasta com os CSV, normalmente "dados" */
 	public DadosBatalha(String pasta) throws IOException {
+		pasta = CaminhosProjeto.resolver(pasta).toString();
 		for (String[] c : ler(pasta + "/atributos.csv")) {
 			atributos.put(Integer.parseInt(c[0]), new Atributos(num(c[1]), num(c[2]), num(c[3]), num(c[4]), num(c[5]), num(c[6])));
 		}

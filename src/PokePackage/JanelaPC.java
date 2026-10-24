@@ -133,7 +133,7 @@ public class JanelaPC extends JDialog {
 	/** Relê a ABB em ordem (esquerda, raiz, direita) e atualiza as caixas e o resumo. */
 	private void recarregar() {
 		itens.clear();
-		itens.addAll(pc.emOrdem());
+		itens.addAll(pc.percorrerEmOrdem());
 		int n = itens.size();
 		selecionado = n == 0 ? -1 : Math.max(0, Math.min(selecionado, n - 1));
 		caixa = n == 0 ? 0 : selecionado / POR_CAIXA;

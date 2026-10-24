@@ -13,14 +13,14 @@ Trabalho em grupo da faculdade, entregue em sprints.
 ## Como funciona
 O sistema usa **duas ABBs**, ambas com o **número da Pokédex** como chave:
 - **Catálogo**: os 1025 Pokémon do `pokemons.csv`. Para a árvore não virar uma lista (o CSV está em ordem crescente), a carga usa `CarregadorPokemon.ordemBalanceada`, que insere a mediana primeiro. Resultado: altura **11** em vez de **1025**. É a árvore usada nas buscas.
-- **PC**: os Pokémon **capturados**. Começa vazia. **Cadastrar** (o scan) chama `inserir`; **Liberar** chama `remover`. A janela do PC mostra os capturados em caixas de 6 x 5 (percurso em ordem, `emOrdem`) e a altura atual da árvore.
+- **PC**: os Pokémon **capturados**. Começa vazia. **Cadastrar** (o scan) chama `inserir`; **Liberar** chama `remover`. A janela do PC mostra os capturados em caixas de 6 x 5 (percurso em ordem, `percorrerEmOrdem`) e a altura atual da árvore.
 
 Buscas (`BuscaPokemon`): número usa a ABB (`buscar`); texto procura o nome exato e depois o começo do nome ("char" acha Charmander), sem diferenciar acentos nem maiúsculas.
 
 ## Estrutura
 - `../Downloads/src/PokePackage`
   - `Pokemon`: dados de um Pokémon
-  - `No` e `ArvoreBinaria`: a ABB (`inserir`, `buscar`, `buscarPorNome`, `remover`, `emOrdem`, `altura`)
+  - `No` e `ArvoreBinaria`: a ABB (`inserir`, `buscar`, `buscarPorNome`, `remover`, `percorrerEmOrdem`, `altura`)
   - `BuscaPokemon`: buscas por número, nome, prefixo e busca geral da interface
   - `CarregadorPokemon`: lê o `pokemons.csv` e define a ordem balanceada de inserção
   - `BaixadorImagens`: baixa as imagens oficiais, as das formas Mega e os sprites pixelados (PokeAPI)

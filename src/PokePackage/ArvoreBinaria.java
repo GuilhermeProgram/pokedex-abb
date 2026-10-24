@@ -1,5 +1,8 @@
 package PokePackage;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class ArvoreBinaria {
 
     No raiz;
@@ -128,19 +131,19 @@ public class ArvoreBinaria {
     }
 
     // PERCURSO EM ORDEM (devolve os Pokémon em ordem crescente do número da Pokédex)
-    public java.util.List<Pokemon> emOrdem() {
-        java.util.List<Pokemon> lista = new java.util.ArrayList<>();
-        emOrdem(raiz, lista);
+    public List<Pokemon> percorrerEmOrdem() {
+        List<Pokemon> lista = new ArrayList<>();
+        percorrerEmOrdem(raiz, lista);
         return lista;
     }
 
-    private void emOrdem(No atual, java.util.List<Pokemon> lista) {
+    private void percorrerEmOrdem(No atual, List<Pokemon> lista) {
         if (atual == null) {
             return;
         }
-        emOrdem(atual.esquerda, lista);
+        percorrerEmOrdem(atual.esquerda, lista);
         lista.add(atual.pokemon);
-        emOrdem(atual.direita, lista);
+        percorrerEmOrdem(atual.direita, lista);
     }
 
     // ALTURA (quantidade de níveis; árvore vazia = 0)

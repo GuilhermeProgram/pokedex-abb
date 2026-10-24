@@ -266,7 +266,7 @@ public class PokemonViewer extends JFrame {
 				return c == SEM ? null : c;
 			}
 			BufferedImage img = null;
-			File arquivo = new File(caminho);
+			File arquivo = CaminhosProjeto.resolver(caminho).toFile();
 			if (arquivo.exists()) {
 				try {
 					img = ImageIO.read(arquivo);
@@ -329,7 +329,7 @@ public class PokemonViewer extends JFrame {
 		}
 
 		private static BufferedImage ler(int dex) {
-			File arquivo = new File("images/" + dex + ".png");
+			File arquivo = CaminhosProjeto.resolver("images/" + dex + ".png").toFile();
 			if (!arquivo.exists()) {
 				return null;
 			}
@@ -379,8 +379,8 @@ public class PokemonViewer extends JFrame {
 		 * em vez de decodificar e reduzir as 1025 artes grandes de novo.
 		 */
 		private static BufferedImage lerMiniaturaGuardada(int dex) {
-			File arquivo = new File("images/mini/" + dex + ".png");
-			File original = new File("images/" + dex + ".png");
+			File arquivo = CaminhosProjeto.resolver("images/mini/" + dex + ".png").toFile();
+			File original = CaminhosProjeto.resolver("images/" + dex + ".png").toFile();
 			if (!arquivo.exists() || arquivo.lastModified() < original.lastModified()) {
 				return null; // não existe, ou a arte foi baixada de novo depois
 			}
@@ -393,7 +393,7 @@ public class PokemonViewer extends JFrame {
 
 		private static void guardarMiniatura(int dex, BufferedImage mini) {
 			try {
-				File pasta = new File("images/mini");
+				File pasta = CaminhosProjeto.resolver("images/mini").toFile();
 				if (pasta.isDirectory() || pasta.mkdirs()) {
 					ImageIO.write(mini, "png", new File(pasta, dex + ".png"));
 				}
@@ -1733,7 +1733,7 @@ public class PokemonViewer extends JFrame {
 
 		private void atualizarContador() {
 			atualizarSeletorRegiao();
-			String progresso = "Descobertos " + pc.emOrdem().size() + "/" + lista.size();
+			String progresso = "Descobertos " + pc.percorrerEmOrdem().size() + "/" + lista.size();
 			if (atual == null) {
 				lblContador.setText(lista.isEmpty() ? " " : progresso);
 				return;
@@ -2609,7 +2609,7 @@ public class PokemonViewer extends JFrame {
 	}
 
 	// =====================================================================
-	// Execução (usa o CSV; troque o buscador e a lista pela ABB quando ela estiver pronta)
+	// Execução (carrega o CSV na ABB e conecta a busca da interface)
 	// =====================================================================
 	public static void main(String[] args) {
 		List<Pokemon> lista;

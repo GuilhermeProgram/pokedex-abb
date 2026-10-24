@@ -23,11 +23,11 @@ public class BaixadorImagens {
 	public static final int ULTIMO_DEX_API = 1025;
 
 	private static final String BASE = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
-	private static final String PASTA = "images";
+	private static final String PASTA = CaminhosProjeto.resolver("images").toString();
 
 	/** Sprites pixelados 96x96 (usados nas caixas do PC), salvos em images/pixel/{numeroDex}.png. */
 	private static final String BASE_PIXEL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-	private static final String PASTA_PIXEL = "images/pixel";
+	private static final String PASTA_PIXEL = CaminhosProjeto.resolver("images/pixel").toString();
 
 	private static boolean baixarSprite(String url, Path destino) throws InterruptedException {
 		if (Files.exists(destino)) {
@@ -52,7 +52,7 @@ public class BaixadorImagens {
 				ids.add(p.getNumeroDex());
 			}
 		}
-		Path megas = Path.of("dados", "megas.csv");
+		Path megas = CaminhosProjeto.resolver("dados/megas.csv");
 		if (Files.exists(megas)) {
 			List<String> linhas = Files.readAllLines(megas, java.nio.charset.StandardCharsets.UTF_8);
 			for (String linha : linhas.subList(1, linhas.size())) {
@@ -75,7 +75,7 @@ public class BaixadorImagens {
 
 	/** Baixa também a arte das formas Mega (ids da forma em dados/megas.csv, coluna 1). */
 	private static void baixarMegas() throws Exception {
-		Path csv = Path.of("dados", "megas.csv");
+		Path csv = CaminhosProjeto.resolver("dados/megas.csv");
 		if (!Files.exists(csv)) {
 			return;
 		}
